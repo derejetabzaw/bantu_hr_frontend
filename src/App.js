@@ -1,11 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
-import Login from './views/login/pages/Login';
+import Register from './views/pages/Registration/registration';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
-    <Login></Login>
+    <Register></Register>
   )
     
 }

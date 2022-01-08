@@ -7,10 +7,10 @@ const Registration = ()=>{
         <div style={{marginLeft:'auto',marginRight:'auto',marginTop:'5%'}}>
 
         <Container>
-            <Card style={{marginBottom:'2%',border: '2px solid #D3DEDC'}}> 
+            <Card style={{marginBottom:'2%',border: '3px solid #D3DEDC'}}> 
                 <h2 style={{padding:'4px',marginLeft:'auto',marginRight:'auto'}}>Add Employee</h2>
             </Card>
-        <Card style={{padding:'10px',border: '2px solid #D3DEDC'}}>
+        <Card style={{padding:'10px',border: '3px solid #D3DEDC'}}>
             <Row>
                 
              

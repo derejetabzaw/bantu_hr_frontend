@@ -1,20 +1,37 @@
-import React from 'react'
+import { React,useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Container,Form,Button,Card,InputGroup,FormControl,Row,Col,DropdownButton,Dropdown } from 'react-bootstrap';
+import { Container,Form,Button,Card,InputGroup,
+    FormControl,Row,Col,
+    DropdownButton,Dropdown,
+    Modal,Table } from 'react-bootstrap';
 
 const Registration = ()=>{
+    const [show,setShow] = useState(false);
+    
+    
+    const handleClose= () => setShow(false)
+    const handleShow = () => setShow(true)
+   
+   
+        
+    
     return (
-        <div style={{marginLeft:'auto',marginRight:'auto',marginTop:'5%'}}>
+        <>
+    
 
-        <Container>
-            <Card style={{marginBottom:'2%',border: '3px solid #D3DEDC'}}> 
-                <h2 style={{padding:'4px',marginLeft:'auto',marginRight:'auto'}}>Add Employee</h2>
-            </Card>
-        <Card style={{padding:'10px',border: '3px solid #D3DEDC'}}>
+<Modal show={show} onHide = {handleClose}>
+           
+            <Modal.Title>
+                 
+                <h3 style={{padding:'4px'}}>Add Employee</h3>
+            
+            </Modal.Title>
+            <Modal.Body style={{marginLeft:'0px'}}>
+                
+           
+        
             <Row>
                 
-             
-           
                 <Col>
                     <Form.Label>First Name</Form.Label>
                     <InputGroup>
@@ -56,7 +73,7 @@ const Registration = ()=>{
                 </Col>
                 
             </Row>
-            <h2 style={{padding:'4px',marginLeft:'auto',marginRight:'auto'}}>Additional Information</h2>
+            <h3 style={{padding:'4px'}}>Additional Information</h3>
             <Row>
                 <Col>
                     <Form.Label>Email</Form.Label>
@@ -93,15 +110,55 @@ const Registration = ()=>{
                 </InputGroup>
                 </Col>
             </Row>
-                <Button>Add Employee</Button>
-            </Card>
-        
-            </Container>
-            </div>
-           
-        
+                <Button onClick={handleClose}>Add Employee</Button>
+            </Modal.Body>
+        </Modal>
 
+<div style={{marginLeft:'auto',marginRight:'auto',}}>
+<Container>
+<Row>
+    <Col>
+        <Button onClick={()=>{handleShow()}} style={{float:'right',marginTop:'5%',marginBottom:'2%'}}>Add Employee</Button>
+    </Col>
+</Row>
+    </Container>
+    
+ <Container>    
+<Table responsive>
+  <thead>
+    <tr>
+      <th>#</th>
+      {Array.from({ length: 12 }).map((_, index) => (
+        <th key={index}>Table heading</th>
+      ))}
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      {Array.from({ length: 12 }).map((_, index) => (
+        <td key={index}>Table cell {index}</td>
+      ))}
+    </tr>
+    <tr>
+      <td>2</td>
+      {Array.from({ length: 12 }).map((_, index) => (
+        <td key={index}>Table cell {index}</td>
+      ))}
+    </tr>
+    <tr>
+      <td>3</td>
+      {Array.from({ length: 12 }).map((_, index) => (
+        <td key={index}>Table cell {index}</td>
+      ))}
+    </tr>
+  </tbody>
+</Table>
+</Container>
+</div>
+
+    </>
+      
     )
-}
-
+    }
 export default Registration

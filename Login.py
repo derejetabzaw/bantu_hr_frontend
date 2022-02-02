@@ -51,7 +51,7 @@ class Ui_MainWindow(object):
         self.plainTextEdit_2.setObjectName("plainTextEdit_2")
         self.LoginBtn = QtWidgets.QPushButton(self.centralwidget)
         self.LoginBtn.setGeometry(QtCore.QRect(270, 260, 111, 61))
-        self.LoginBtn.clicked.connect(self.click_event)
+        self.LoginBtn.clicked.connect(lambda x: self.click_event(MainWindow))
         self.LoginBtn.setStyleSheet(" \n"
 "    background-color:#44c767;\n"
 "    border-radius:28px;\n"
@@ -75,7 +75,7 @@ class Ui_MainWindow(object):
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
         MainWindow.setStatusBar(self.statusbar)
-        self.adminWindow = adminDashboard.Ui_AdminDashBoard()
+        
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
@@ -88,8 +88,12 @@ class Ui_MainWindow(object):
         self.label_3.setText(_translate("MainWindow", "G!ZE"))
         self.LoginBtn.setText(_translate("MainWindow", "Login"))
         
-    def click_event(self):
-        self.adminWindow.runwindow()
+    def click_event(self,MainWindow):
+        self.adminWindow = adminDashboard.Ui_AdminDashBoard()
+        self.adminWindow.setupUi(MainWindow)
+        MainWindow.show()
+
+        # self.adminWindow.runwindow()
      
 
 

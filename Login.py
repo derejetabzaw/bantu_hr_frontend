@@ -9,7 +9,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-
+import AdminDashBoard
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -89,7 +89,7 @@ class Ui_MainWindow(object):
         self.LoginBtn.setText(_translate("MainWindow", "Login"))
         
     def click_event(self,MainWindow):
-        self.adminWindow = adminDashboard.Ui_AdminDashBoard()
+        self.adminWindow = AdminDashBoard.Ui_AdminDashBoard()
         self.adminWindow.setupUi(MainWindow)
         MainWindow.show()
 

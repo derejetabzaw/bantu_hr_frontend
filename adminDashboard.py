@@ -20,7 +20,7 @@ class Ui_AdminDashBoard(object):
         self.centralwidget = QtWidgets.QWidget(AdminDashBoard)
         self.centralwidget.setObjectName("centralwidget")
         self.stackedWidget = QtWidgets.QStackedWidget(self.centralwidget)
-        self.stackedWidget.setGeometry(QtCore.QRect(0, 0, 1920, 691))
+        self.stackedWidget.setGeometry(QtCore.QRect(0, 0, 1920, 811))
         self.stackedWidget.setObjectName("stackedWidget")
         self.DeprartmentTab = QtWidgets.QWidget()
         self.DeprartmentTab.setObjectName("DeprartmentTab")
@@ -356,7 +356,7 @@ class Ui_AdminDashBoard(object):
         self.menubar.addAction(self.menuAttendance.menuAction())
         self.menubar.addAction(self.menuPayroll_Function.menuAction())
         self.menubar.addAction(self.menuSystem_Settings.menuAction())
-        
+
          #click events for the menu bar options
         self.department.triggered.connect(self.Dep_clicked)
         self.AreaSettingsmenu.triggered.connect(self.AreaSettings_clicked)
@@ -424,7 +424,6 @@ class Ui_AdminDashBoard(object):
         self.actionCompany_Settings.setText(_translate("AdminDashBoard", "Company Settings"))
         self.actionAlert_Settings.setText(_translate("AdminDashBoard", "Alert Settings"))
         self.actionAdd_Personel.setText(_translate("AdminDashBoard", "Add Personel"))
-        self.stackedWidget.setCurrentWidget(self.home)
     def Dep_clicked(self):
         self.stackedWidget.setCurrentWidget(self.DeprartmentTab)
     def AreaSettings_clicked(self):

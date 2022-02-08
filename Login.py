@@ -13,90 +13,109 @@ import AdminDashBoard
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
-        MainWindow.setObjectName("Login")
-        MainWindow.resize(640, 480)
+        MainWindow.setObjectName("MainWindow")
+        MainWindow.resize(1920, 1000)
+        MainWindow.setMaximumSize(QtCore.QSize(16777215, 1000))
         MainWindow.setAutoFillBackground(False)
-        MainWindow.setStyleSheet("background-color:rgb(255,255,255)")
+        MainWindow.setStyleSheet("background-color:rgb(255,255,255)\n"
+"")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
-        self.label = QtWidgets.QLabel(self.centralwidget)
-        self.label.setGeometry(QtCore.QRect(100, 120, 131, 31))
+        self.LoginBtn = QtWidgets.QPushButton(self.centralwidget)
+        self.LoginBtn.setGeometry(QtCore.QRect(550, 560, 171, 61))
+        self.LoginBtn.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        self.LoginBtn.setStyleSheet("background-color:#0076bd;\n"
+"border-radius:28px;\n"
+"border:1px solid #000;\n"
+"cursor:pointer;\n"
+"color:#ffffff;\n"
+"font-family:Arial;\n"
+"font-size:17px;\n"
+"padding:16px 31px;\n"
+"QPushButton::hover{\n"
+"    background-color:#fff\n"
+"}\n"
+"   ")
+        self.LoginBtn.setFlat(False)
+        self.LoginBtn.setObjectName("LoginBtn")
+        self.frame = QtWidgets.QFrame(self.centralwidget)
+        self.frame.setGeometry(QtCore.QRect(280, 280, 721, 261))
+        self.frame.setStyleSheet("background-color:#0076bd")
+        self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame.setObjectName("frame")
+        self.label = QtWidgets.QLabel(self.frame)
+        self.label.setGeometry(QtCore.QRect(150, 100, 131, 31))
         font = QtGui.QFont()
         font.setFamily("Yu Gothic UI Semilight")
         font.setPointSize(16)
         self.label.setFont(font)
+        self.label.setStyleSheet("color:#fff")
         self.label.setObjectName("label")
-        self.label_2 = QtWidgets.QLabel(self.centralwidget)
-        self.label_2.setGeometry(QtCore.QRect(110, 180, 121, 31))
+        self.plainTextEdit_2 = QtWidgets.QPlainTextEdit(self.frame)
+        self.plainTextEdit_2.setGeometry(QtCore.QRect(280, 100, 281, 31))
+        self.plainTextEdit_2.setStyleSheet("border:1px solid #fff;\n"
+"border-radius:8px;\n"
+"color:#fff;\n"
+"font-family: monospace;\n"
+"font-size:15px;")
+        self.plainTextEdit_2.setObjectName("plainTextEdit_2")
+        self.label_2 = QtWidgets.QLabel(self.frame)
+        self.label_2.setGeometry(QtCore.QRect(150, 140, 121, 31))
         font = QtGui.QFont()
         font.setFamily("Yu Gothic UI Semilight")
         font.setPointSize(16)
         self.label_2.setFont(font)
+        self.label_2.setStyleSheet("color:#fff")
         self.label_2.setObjectName("label_2")
+        self.plainTextEdit = QtWidgets.QPlainTextEdit(self.frame)
+        self.plainTextEdit.setGeometry(QtCore.QRect(280, 140, 281, 31))
+        self.plainTextEdit.setStyleSheet("border:1px solid #fff;\n"
+"border-radius:8px;\n"
+"font-family: monospace;\n"
+"color:#fff;\n"
+"font-size:15px;")
+        self.plainTextEdit.setObjectName("plainTextEdit")
+        self.label_4 = QtWidgets.QLabel(self.frame)
+        self.label_4.setGeometry(QtCore.QRect(280, 10, 151, 71))
+        font = QtGui.QFont()
+        font.setFamily("Yu Gothic UI Semibold")
+        font.setPointSize(22)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_4.setFont(font)
+        self.label_4.setStyleSheet("color:#fff;\n"
+"")
+        self.label_4.setObjectName("label_4")
         self.label_3 = QtWidgets.QLabel(self.centralwidget)
-        self.label_3.setGeometry(QtCore.QRect(240, 50, 401, 61))
+        self.label_3.setGeometry(QtCore.QRect(550, 190, 401, 61))
         font = QtGui.QFont()
         font.setFamily("Yu Gothic UI Semibold")
         font.setPointSize(24)
         font.setBold(True)
         font.setWeight(75)
         self.label_3.setFont(font)
-        self.label_3.setObjectName("label_3")
-        self.plainTextEdit = QtWidgets.QPlainTextEdit(self.centralwidget)
-        self.plainTextEdit.setGeometry(QtCore.QRect(250, 120, 281, 31))
-        self.plainTextEdit.setStyleSheet("")
-        self.plainTextEdit.setObjectName("plainTextEdit")
-        self.plainTextEdit_2 = QtWidgets.QPlainTextEdit(self.centralwidget)
-        self.plainTextEdit_2.setGeometry(QtCore.QRect(250, 170, 281, 31))
-        self.plainTextEdit_2.setObjectName("plainTextEdit_2")
-        self.LoginBtn = QtWidgets.QPushButton(self.centralwidget)
-        self.LoginBtn.setGeometry(QtCore.QRect(270, 260, 111, 61))
-        self.LoginBtn.clicked.connect(lambda x: self.click_event(MainWindow))
-        self.LoginBtn.setStyleSheet(" \n"
-"    background-color:#44c767;\n"
-"    border-radius:28px;\n"
-"    border:1px solid #18ab29;\n"
-"    display:inline-block;\n"
-"    cursor:pointer;\n"
-"    color:#ffffff;\n"
-"    font-family:Arial;\n"
-"    font-size:17px;\n"
-"    padding:16px 31px;\n"
-"    text-decoration:none;\n"
-"    text-shadow:0px 1px 0px #2f6627;\n"
+        self.label_3.setStyleSheet("color:#0076bd\n"
 "")
-        self.LoginBtn.setFlat(False)
-        self.LoginBtn.setObjectName("LoginBtn")
+        self.label_3.setObjectName("label_3")
         MainWindow.setCentralWidget(self.centralwidget)
-        self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 640, 26))
-        self.menubar.setObjectName("menubar")
-        MainWindow.setMenuBar(self.menubar)
-        self.statusbar = QtWidgets.QStatusBar(MainWindow)
-        self.statusbar.setObjectName("statusbar")
-        MainWindow.setStatusBar(self.statusbar)
-        
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
+        self.LoginBtn.clicked.connect(lambda x:self.click_event(MainWindow))
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        self.LoginBtn.setText(_translate("MainWindow", "Login"))
         self.label.setText(_translate("MainWindow", "Username"))
         self.label_2.setText(_translate("MainWindow", "Password"))
+        self.label_4.setText(_translate("MainWindow", "Login"))
         self.label_3.setText(_translate("MainWindow", "G!ZE"))
-        self.LoginBtn.setText(_translate("MainWindow", "Login"))
-        
     def click_event(self,MainWindow):
         self.adminWindow = AdminDashBoard.Ui_AdminDashBoard()
         self.adminWindow.setupUi(MainWindow)
         MainWindow.show()
-
-        # self.adminWindow.runwindow()
-     
-
-
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
@@ -104,4 +123,4 @@ if __name__ == "__main__":
     ui = Ui_MainWindow()
     ui.setupUi(MainWindow)
     MainWindow.show()
-    sys.exit(app.exec_())
+    sys.exit(app.exec_())        

@@ -20,7 +20,7 @@ class Ui_AdminDashBoard(object):
         self.centralwidget = QtWidgets.QWidget(AdminDashBoard)
         self.centralwidget.setObjectName("centralwidget")
         self.stackedWidget = QtWidgets.QStackedWidget(self.centralwidget)
-        self.stackedWidget.setGeometry(QtCore.QRect(0, 0, 1920, 871))
+        self.stackedWidget.setGeometry(QtCore.QRect(0, 0, 1920, 1000))
         self.stackedWidget.setMaximumSize(QtCore.QSize(16777215, 16777215))
         self.stackedWidget.setStyleSheet("background-color:#fff")
         self.stackedWidget.setObjectName("stackedWidget")
@@ -60,7 +60,7 @@ class Ui_AdminDashBoard(object):
         self.addpersonelMenu = QtWidgets.QWidget()
         self.addpersonelMenu.setObjectName("addpersonelMenu")
         self.label_17 = QtWidgets.QLabel(self.addpersonelMenu)
-        self.label_17.setGeometry(QtCore.QRect(410, 110, 231, 51))
+        self.label_17.setGeometry(QtCore.QRect(180, 40, 231, 61))
         font = QtGui.QFont()
         font.setFamily("Yu Gothic UI Semibold")
         font.setPointSize(20)
@@ -69,7 +69,7 @@ class Ui_AdminDashBoard(object):
         self.label_17.setFont(font)
         self.label_17.setObjectName("label_17")
         self.frame = QtWidgets.QFrame(self.addpersonelMenu)
-        self.frame.setGeometry(QtCore.QRect(400, 190, 1101, 581))
+        self.frame.setGeometry(QtCore.QRect(20, 100, 1361, 821))
         self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame.setObjectName("frame")
@@ -223,6 +223,24 @@ class Ui_AdminDashBoard(object):
 "font-size:20px\n"
 "")
         self.cnclbtn.setObjectName("cnclbtn")
+        self.label_18 = QtWidgets.QLabel(self.frame)
+        self.label_18.setGeometry(QtCore.QRect(1060, 20, 261, 241))
+        self.label_18.setObjectName("label_18")
+        self.pushButton = QtWidgets.QPushButton(self.frame)
+        self.pushButton.setGeometry(QtCore.QRect(1110, 280, 131, 61))
+        self.pushButton.setStyleSheet("background-color:#0076bd;\n"
+"border-radius:28px;\n"
+"border:1px solid #000;\n"
+"cursor:pointer;\n"
+"color:#ffffff;\n"
+"font-family:Arial;\n"
+"font-size:17px;\n"
+"padding:16px 31px;\n"
+"QPushButton::hover{\n"
+"    background-color:#fff\n"
+"}\n"
+"   ")
+        self.pushButton.setObjectName("pushButton")
         self.stackedWidget.addWidget(self.addpersonelMenu)
         self.home = QtWidgets.QWidget()
         self.home.setObjectName("home")
@@ -258,9 +276,6 @@ class Ui_AdminDashBoard(object):
         self.label_6.setObjectName("label_6")
         self.stackedWidget.addWidget(self.ParametersTab)
         AdminDashBoard.setCentralWidget(self.centralwidget)
-        self.statusbar = QtWidgets.QStatusBar(AdminDashBoard)
-        self.statusbar.setObjectName("statusbar")
-        AdminDashBoard.setStatusBar(self.statusbar)
         self.menubar = QtWidgets.QMenuBar(AdminDashBoard)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 1920, 26))
         self.menubar.setStyleSheet("background-color:#0076bd")
@@ -406,6 +421,8 @@ class Ui_AdminDashBoard(object):
         self.label_16.setText(_translate("AdminDashBoard", "Pay Grade"))
         self.okbtn.setText(_translate("AdminDashBoard", "Ok"))
         self.cnclbtn.setText(_translate("AdminDashBoard", "Cancel"))
+        self.label_18.setText(_translate("AdminDashBoard", "<html><head/><body><p><img src=\"iconmonstr-user-14-240.png\"/></p></body></html>"))
+        self.pushButton.setText(_translate("AdminDashBoard", "Browse"))
         self.label.setText(_translate("AdminDashBoard", "Home page"))
         self.label_5.setText(_translate("AdminDashBoard", "Area Settings"))
         self.label_6.setText(_translate("AdminDashBoard", "Parameters"))
@@ -455,4 +472,4 @@ class Ui_AdminDashBoard(object):
     def show_homepage(self):
         self.stackedWidget.setCurrentWidget(self.home)
     def add_Empl_clicked(self):
-        self.stackedWidget.setCurrentWidget(self.addpersonelMenu)
+        self.stackedWidget.setCurrentWidget(self.addpersonelMenu)   

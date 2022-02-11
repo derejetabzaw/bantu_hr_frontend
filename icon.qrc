@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="icon">
     <file>baseline_add_white_24dp.png</file>
+    <file>iconmonstr-plus-2-240.png</file>
   </qresource>
 </RCC>

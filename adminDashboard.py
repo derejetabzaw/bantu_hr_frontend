@@ -709,7 +709,7 @@ class Ui_AdminDashBoard(object):
 "border-radius:50%;")
         self.add_aprrovebtn.setText("")
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap(":/icon/iconmonstr-plus-2-240.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap("iconmonstr-plus-2-240.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.add_aprrovebtn.setIcon(icon)
         self.add_aprrovebtn.setObjectName("add_aprrovebtn")
         self.horizontalLayoutWidget_8 = QtWidgets.QWidget(self.tab_5)
@@ -3779,7 +3779,7 @@ class Ui_AdminDashBoard(object):
         self.label_11.setText(_translate("AdminDashBoard", "Employeement Date"))
         self.label_12.setText(_translate("AdminDashBoard", "Set password"))
         self.pushButton.setText(_translate("AdminDashBoard", "Browse"))
-        self.label_18.setText(_translate("AdminDashBoard", "<html><head/><body><p><img src=\":/placeholder/iconmonstr-user-14-240.png\"/></p></body></html>"))
+        self.label_18.setText(_translate("AdminDashBoard", "<html><head/><body><p><img src=\"iconmonstr-user-14-240.png\"/></p></body></html>"))
         self.label_17.setText(_translate("AdminDashBoard", "Add personel"))
         self.label_13.setText(_translate("AdminDashBoard", "First Name"))
         self.label_14.setText(_translate("AdminDashBoard", "Last Name"))
@@ -4306,8 +4306,8 @@ class Ui_AdminDashBoard(object):
         self.actionAdd_position.setText(_translate("AdminDashBoard", "add position"))
         self.actionSetting_Department.setText(_translate("AdminDashBoard", "setting Department"))
         self.actionSetting_Approver_2.setText(_translate("AdminDashBoard", "Setting Approver"))
-import icon_rc
-import placeholder_rc
+# import icon_rc
+# import placeholder_rc
 
 
 if __name__ == "__main__":

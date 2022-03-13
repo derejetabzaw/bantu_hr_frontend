@@ -21,9 +21,13 @@ class Ui_AdminDashBoard(object):
         self.centralwidget.setObjectName("centralwidget")
         self.tabWidget_2 = QtWidgets.QTabWidget(self.centralwidget)
         self.tabWidget_2.setGeometry(QtCore.QRect(0, 0, 1920, 1000))
-        self.tabWidget_2.setStyleSheet("tabWidget_2:tab-bar {\n"
-"   border: 1px solid #000;\n"
-"}")
+        font = QtGui.QFont()
+        font.setFamily("Yu Gothic UI Semibold")
+        font.setPointSize(9)
+        font.setBold(True)
+        font.setWeight(75)
+        self.tabWidget_2.setFont(font)
+        self.tabWidget_2.setStyleSheet("color:#000")
         self.tabWidget_2.setIconSize(QtCore.QSize(20, 40))
         self.tabWidget_2.setObjectName("tabWidget_2")
         self.Homepage = QtWidgets.QWidget()
@@ -42,6 +46,12 @@ class Ui_AdminDashBoard(object):
         self.tabWidget = QtWidgets.QTabWidget(self.personel)
         self.tabWidget.setGeometry(QtCore.QRect(0, 0, 1921, 1011))
         self.tabWidget.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        font = QtGui.QFont()
+        font.setFamily("Yu Gothic UI Semibold")
+        font.setPointSize(9)
+        font.setBold(True)
+        font.setWeight(75)
+        self.tabWidget.setFont(font)
         self.tabWidget.setStyleSheet("background-color:#fff\n"
 "")
         self.tabWidget.setObjectName("tabWidget")
@@ -53,7 +63,14 @@ class Ui_AdminDashBoard(object):
         self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame.setObjectName("frame")
         self.tabWidget_3 = QtWidgets.QTabWidget(self.frame)
-        self.tabWidget_3.setGeometry(QtCore.QRect(0, 0, 1920, 1000))
+        self.tabWidget_3.setGeometry(QtCore.QRect(0, 10, 1920, 1000))
+        font = QtGui.QFont()
+        font.setFamily("Yu Gothic UI Semibold")
+        font.setPointSize(9)
+        font.setBold(True)
+        font.setWeight(75)
+        self.tabWidget_3.setFont(font)
+        self.tabWidget_3.setStyleSheet("c")
         self.tabWidget_3.setObjectName("tabWidget_3")
         self.tab_6 = QtWidgets.QWidget()
         self.tab_6.setObjectName("tab_6")
@@ -80,7 +97,7 @@ class Ui_AdminDashBoard(object):
         self.label_8.setObjectName("label_8")
         self.formLayout_2.setWidget(1, QtWidgets.QFormLayout.LabelRole, self.label_8)
         self.Gendercmb = QtWidgets.QComboBox(self.formLayoutWidget_2)
-        self.Gendercmb.setMinimumSize(QtCore.QSize(0, 40))
+        self.Gendercmb.setMinimumSize(QtCore.QSize(0, 28))
         self.Gendercmb.setStyleSheet("border :1px solid #0076bd;\n"
 "border-radius:10px;")
         self.Gendercmb.setObjectName("Gendercmb")
@@ -98,7 +115,7 @@ class Ui_AdminDashBoard(object):
         self.label_9.setObjectName("label_9")
         self.formLayout_2.setWidget(2, QtWidgets.QFormLayout.LabelRole, self.label_9)
         self.dep_cmbx = QtWidgets.QComboBox(self.formLayoutWidget_2)
-        self.dep_cmbx.setMinimumSize(QtCore.QSize(0, 40))
+        self.dep_cmbx.setMinimumSize(QtCore.QSize(0, 28))
         self.dep_cmbx.setStyleSheet("border :1px solid #0076bd;\n"
 "border-radius:10px;")
         self.dep_cmbx.setObjectName("dep_cmbx")
@@ -116,7 +133,7 @@ class Ui_AdminDashBoard(object):
         self.label_10.setObjectName("label_10")
         self.formLayout_2.setWidget(3, QtWidgets.QFormLayout.LabelRole, self.label_10)
         self.Empment_cmbx = QtWidgets.QComboBox(self.formLayoutWidget_2)
-        self.Empment_cmbx.setMinimumSize(QtCore.QSize(0, 40))
+        self.Empment_cmbx.setMinimumSize(QtCore.QSize(0, 28))
         self.Empment_cmbx.setStyleSheet("border :1px solid #0076bd;\n"
 "border-radius:10px;")
         self.Empment_cmbx.setObjectName("Empment_cmbx")
@@ -135,7 +152,7 @@ class Ui_AdminDashBoard(object):
         self.label_11.setObjectName("label_11")
         self.formLayout_2.setWidget(4, QtWidgets.QFormLayout.LabelRole, self.label_11)
         self.DateCmbx = QtWidgets.QDateEdit(self.formLayoutWidget_2)
-        self.DateCmbx.setMinimumSize(QtCore.QSize(0, 40))
+        self.DateCmbx.setMinimumSize(QtCore.QSize(0, 28))
         self.DateCmbx.setStyleSheet("border :1px solid #0076bd;\n"
 "border-radius:10px;")
         self.DateCmbx.setObjectName("DateCmbx")
@@ -150,14 +167,14 @@ class Ui_AdminDashBoard(object):
         self.label_12.setObjectName("label_12")
         self.formLayout_2.setWidget(5, QtWidgets.QFormLayout.LabelRole, self.label_12)
         self.lineEdit = QtWidgets.QLineEdit(self.formLayoutWidget_2)
-        self.lineEdit.setMinimumSize(QtCore.QSize(20, 40))
+        self.lineEdit.setMinimumSize(QtCore.QSize(20, 28))
         self.lineEdit.setStyleSheet("border :1px solid #0076bd;\n"
 "border-radius:10px;\n"
 "")
         self.lineEdit.setObjectName("lineEdit")
         self.formLayout_2.setWidget(5, QtWidgets.QFormLayout.FieldRole, self.lineEdit)
         self.lineEdit_7 = QtWidgets.QLineEdit(self.formLayoutWidget_2)
-        self.lineEdit_7.setMinimumSize(QtCore.QSize(20, 40))
+        self.lineEdit_7.setMinimumSize(QtCore.QSize(20, 28))
         self.lineEdit_7.setStyleSheet("border :1px solid #0076bd;\n"
 "border-radius:10px;\n"
 "")
@@ -233,28 +250,28 @@ class Ui_AdminDashBoard(object):
         self.label_16.setObjectName("label_16")
         self.formLayout_3.setWidget(3, QtWidgets.QFormLayout.LabelRole, self.label_16)
         self.lineEdit_8 = QtWidgets.QLineEdit(self.formLayoutWidget_3)
-        self.lineEdit_8.setMinimumSize(QtCore.QSize(20, 40))
+        self.lineEdit_8.setMinimumSize(QtCore.QSize(20, 28))
         self.lineEdit_8.setStyleSheet("border :1px solid #0076bd;\n"
 "border-radius:10px;\n"
 "")
         self.lineEdit_8.setObjectName("lineEdit_8")
         self.formLayout_3.setWidget(0, QtWidgets.QFormLayout.FieldRole, self.lineEdit_8)
         self.lineEdit_9 = QtWidgets.QLineEdit(self.formLayoutWidget_3)
-        self.lineEdit_9.setMinimumSize(QtCore.QSize(20, 40))
+        self.lineEdit_9.setMinimumSize(QtCore.QSize(20, 28))
         self.lineEdit_9.setStyleSheet("border :1px solid #0076bd;\n"
 "border-radius:10px;\n"
 "")
         self.lineEdit_9.setObjectName("lineEdit_9")
         self.formLayout_3.setWidget(1, QtWidgets.QFormLayout.FieldRole, self.lineEdit_9)
         self.lineEdit_10 = QtWidgets.QLineEdit(self.formLayoutWidget_3)
-        self.lineEdit_10.setMinimumSize(QtCore.QSize(20, 40))
+        self.lineEdit_10.setMinimumSize(QtCore.QSize(20, 28))
         self.lineEdit_10.setStyleSheet("border :1px solid #0076bd;\n"
 "border-radius:10px;\n"
 "")
         self.lineEdit_10.setObjectName("lineEdit_10")
         self.formLayout_3.setWidget(2, QtWidgets.QFormLayout.FieldRole, self.lineEdit_10)
         self.lineEdit_11 = QtWidgets.QLineEdit(self.formLayoutWidget_3)
-        self.lineEdit_11.setMinimumSize(QtCore.QSize(20, 40))
+        self.lineEdit_11.setMinimumSize(QtCore.QSize(20, 28))
         self.lineEdit_11.setStyleSheet("border :1px solid #0076bd;\n"
 "border-radius:10px;\n"
 "")
@@ -269,9 +286,8 @@ class Ui_AdminDashBoard(object):
         self.okbtn = QtWidgets.QPushButton(self.horizontalLayoutWidget_2)
         self.okbtn.setStyleSheet("background-color:#fff;\n"
 "color:#0076bd;\n"
-"border: 1px solid #fff;\n"
+"border: 1px solid #0076bd;\n"
 "border-radius:12px;\n"
-"text-decoration: underline;\n"
 "font-family:monospace;\n"
 "font-size:20px\n"
 "")
@@ -307,7 +323,7 @@ class Ui_AdminDashBoard(object):
         self.tableWidget_7.setColumnCount(0)
         self.tableWidget_7.setRowCount(0)
         self.horizontalLayoutWidget_14 = QtWidgets.QWidget(self.tab_8)
-        self.horizontalLayoutWidget_14.setGeometry(QtCore.QRect(30, 0, 761, 80))
+        self.horizontalLayoutWidget_14.setGeometry(QtCore.QRect(30, 0, 781, 80))
         self.horizontalLayoutWidget_14.setObjectName("horizontalLayoutWidget_14")
         self.horizontalLayout_15 = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget_14)
         self.horizontalLayout_15.setContentsMargins(0, 0, 0, 0)
@@ -321,13 +337,13 @@ class Ui_AdminDashBoard(object):
         self.label_41.setFont(font)
         self.label_41.setObjectName("label_41")
         self.horizontalLayout_15.addWidget(self.label_41)
-        self.lineEdit_12 = QtWidgets.QLineEdit(self.horizontalLayoutWidget_14)
-        self.lineEdit_12.setMinimumSize(QtCore.QSize(20, 40))
-        self.lineEdit_12.setStyleSheet("border :1px solid #0076bd;\n"
+        self.lineEdit_2 = QtWidgets.QLineEdit(self.horizontalLayoutWidget_14)
+        self.lineEdit_2.setMinimumSize(QtCore.QSize(0, 28))
+        self.lineEdit_2.setStyleSheet("border :1px solid #0076bd;\n"
 "border-radius:10px;\n"
 "")
-        self.lineEdit_12.setObjectName("lineEdit_12")
-        self.horizontalLayout_15.addWidget(self.lineEdit_12)
+        self.lineEdit_2.setObjectName("lineEdit_2")
+        self.horizontalLayout_15.addWidget(self.lineEdit_2)
         self.okbtn_2 = QtWidgets.QPushButton(self.horizontalLayoutWidget_14)
         self.okbtn_2.setStyleSheet("background-color:#fff;\n"
 "color:#0076bd;\n"
@@ -386,7 +402,7 @@ class Ui_AdminDashBoard(object):
         self.label_42.setObjectName("label_42")
         self.formLayout_4.setWidget(0, QtWidgets.QFormLayout.LabelRole, self.label_42)
         self.lineEdit_15 = QtWidgets.QLineEdit(self.formLayoutWidget_4)
-        self.lineEdit_15.setMinimumSize(QtCore.QSize(20, 40))
+        self.lineEdit_15.setMinimumSize(QtCore.QSize(20, 28))
         self.lineEdit_15.setStyleSheet("border :1px solid #0076bd;\n"
 "border-radius:10px;\n"
 "")
@@ -400,7 +416,7 @@ class Ui_AdminDashBoard(object):
         self.label_43.setObjectName("label_43")
         self.formLayout_4.setWidget(1, QtWidgets.QFormLayout.LabelRole, self.label_43)
         self.lineEdit_3 = QtWidgets.QLineEdit(self.formLayoutWidget_4)
-        self.lineEdit_3.setMinimumSize(QtCore.QSize(20, 40))
+        self.lineEdit_3.setMinimumSize(QtCore.QSize(20, 28))
         self.lineEdit_3.setStyleSheet("border :1px solid #0076bd;\n"
 "border-radius:10px;\n"
 "")
@@ -416,7 +432,7 @@ class Ui_AdminDashBoard(object):
         self.label_44.setObjectName("label_44")
         self.formLayout_4.setWidget(2, QtWidgets.QFormLayout.LabelRole, self.label_44)
         self.dep_cmbx_6 = QtWidgets.QComboBox(self.formLayoutWidget_4)
-        self.dep_cmbx_6.setMinimumSize(QtCore.QSize(0, 40))
+        self.dep_cmbx_6.setMinimumSize(QtCore.QSize(0, 28))
         self.dep_cmbx_6.setStyleSheet("border :1px solid #0076bd;\n"
 "border-radius:10px;")
         self.dep_cmbx_6.setObjectName("dep_cmbx_6")
@@ -508,7 +524,7 @@ class Ui_AdminDashBoard(object):
         self.search_dep_rb.setObjectName("search_dep_rb")
         self.horizontalLayout_3.addWidget(self.search_dep_rb)
         self.tableWidget_3 = QtWidgets.QTableWidget(self.tab_4)
-        self.tableWidget_3.setGeometry(QtCore.QRect(440, 350, 481, 211))
+        self.tableWidget_3.setGeometry(QtCore.QRect(440, 340, 481, 221))
         self.tableWidget_3.setObjectName("tableWidget_3")
         self.tableWidget_3.setColumnCount(0)
         self.tableWidget_3.setRowCount(0)
@@ -531,6 +547,7 @@ class Ui_AdminDashBoard(object):
         self.label_32.setObjectName("label_32")
         self.horizontalLayout_5.addWidget(self.label_32)
         self.comboBox_3 = QtWidgets.QComboBox(self.horizontalLayoutWidget_5)
+        self.comboBox_3.setMinimumSize(QtCore.QSize(0, 28))
         self.comboBox_3.setStyleSheet("border :1px solid #0076bd;\n"
 "border-radius:10px;")
         self.comboBox_3.setObjectName("comboBox_3")
@@ -640,6 +657,7 @@ class Ui_AdminDashBoard(object):
         self.label_31.setObjectName("label_31")
         self.horizontalLayout_4.addWidget(self.label_31)
         self.comboBox_2 = QtWidgets.QComboBox(self.horizontalLayoutWidget_4)
+        self.comboBox_2.setMinimumSize(QtCore.QSize(0, 28))
         self.comboBox_2.setStyleSheet("border :1px solid #0076bd;\n"
 "border-radius:10px;")
         self.comboBox_2.setObjectName("comboBox_2")
@@ -730,26 +748,8 @@ class Ui_AdminDashBoard(object):
         self.tabWidget.addTab(self.Department, "")
         self.Positionmangement = QtWidgets.QWidget()
         self.Positionmangement.setObjectName("Positionmangement")
-        self.label_22 = QtWidgets.QLabel(self.Positionmangement)
-        self.label_22.setGeometry(QtCore.QRect(30, 50, 91, 31))
-        font = QtGui.QFont()
-        font.setFamily("Yu Gothic UI Semibold")
-        font.setPointSize(11)
-        font.setBold(True)
-        font.setWeight(75)
-        self.label_22.setFont(font)
-        self.label_22.setObjectName("label_22")
-        self.label_23 = QtWidgets.QLabel(self.Positionmangement)
-        self.label_23.setGeometry(QtCore.QRect(270, 40, 141, 41))
-        font = QtGui.QFont()
-        font.setFamily("Yu Gothic UI Semibold")
-        font.setPointSize(11)
-        font.setBold(True)
-        font.setWeight(75)
-        self.label_23.setFont(font)
-        self.label_23.setObjectName("label_23")
         self.label_24 = QtWidgets.QLabel(self.Positionmangement)
-        self.label_24.setGeometry(QtCore.QRect(570, 50, 91, 31))
+        self.label_24.setGeometry(QtCore.QRect(670, 390, 91, 31))
         font = QtGui.QFont()
         font.setFamily("Yu Gothic UI Semibold")
         font.setPointSize(11)
@@ -758,7 +758,7 @@ class Ui_AdminDashBoard(object):
         self.label_24.setFont(font)
         self.label_24.setObjectName("label_24")
         self.SearchBtn = QtWidgets.QPushButton(self.Positionmangement)
-        self.SearchBtn.setGeometry(QtCore.QRect(870, 50, 93, 28))
+        self.SearchBtn.setGeometry(QtCore.QRect(1020, 60, 93, 28))
         font = QtGui.QFont()
         font.setFamily("Yu Gothic UI Semibold")
         font.setPointSize(10)
@@ -773,7 +773,7 @@ class Ui_AdminDashBoard(object):
 "")
         self.SearchBtn.setObjectName("SearchBtn")
         self.clrbtn = QtWidgets.QPushButton(self.Positionmangement)
-        self.clrbtn.setGeometry(QtCore.QRect(990, 50, 93, 28))
+        self.clrbtn.setGeometry(QtCore.QRect(1100, 60, 93, 28))
         font = QtGui.QFont()
         font.setFamily("Yu Gothic UI Semibold")
         font.setPointSize(10)
@@ -787,21 +787,6 @@ class Ui_AdminDashBoard(object):
 "padding-bottom:0px\n"
 "")
         self.clrbtn.setObjectName("clrbtn")
-        self.textEdit = QtWidgets.QTextEdit(self.Positionmangement)
-        self.textEdit.setGeometry(QtCore.QRect(110, 50, 151, 31))
-        self.textEdit.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;")
-        self.textEdit.setObjectName("textEdit")
-        self.textEdit_2 = QtWidgets.QTextEdit(self.Positionmangement)
-        self.textEdit_2.setGeometry(QtCore.QRect(380, 50, 171, 31))
-        self.textEdit_2.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;")
-        self.textEdit_2.setObjectName("textEdit_2")
-        self.textEdit_3 = QtWidgets.QTextEdit(self.Positionmangement)
-        self.textEdit_3.setGeometry(QtCore.QRect(670, 50, 171, 31))
-        self.textEdit_3.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;")
-        self.textEdit_3.setObjectName("textEdit_3")
         self.tableWidget = QtWidgets.QTableWidget(self.Positionmangement)
         self.tableWidget.setGeometry(QtCore.QRect(40, 120, 1131, 701))
         self.tableWidget.setMinimumSize(QtCore.QSize(1131, 0))
@@ -831,6 +816,69 @@ class Ui_AdminDashBoard(object):
         font.setWeight(75)
         self.label_3.setFont(font)
         self.label_3.setObjectName("label_3")
+        self.formLayoutWidget_9 = QtWidgets.QWidget(self.Positionmangement)
+        self.formLayoutWidget_9.setGeometry(QtCore.QRect(20, 50, 281, 54))
+        self.formLayoutWidget_9.setObjectName("formLayoutWidget_9")
+        self.formLayout_9 = QtWidgets.QFormLayout(self.formLayoutWidget_9)
+        self.formLayout_9.setContentsMargins(0, 0, 0, 0)
+        self.formLayout_9.setObjectName("formLayout_9")
+        self.label_22 = QtWidgets.QLabel(self.formLayoutWidget_9)
+        font = QtGui.QFont()
+        font.setFamily("Yu Gothic UI Semibold")
+        font.setPointSize(11)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_22.setFont(font)
+        self.label_22.setObjectName("label_22")
+        self.formLayout_9.setWidget(0, QtWidgets.QFormLayout.LabelRole, self.label_22)
+        self.lineEdit_4 = QtWidgets.QLineEdit(self.formLayoutWidget_9)
+        self.lineEdit_4.setMaximumSize(QtCore.QSize(16777215, 30))
+        self.lineEdit_4.setStyleSheet("border :1px solid #0076bd;\n"
+"border-radius:10px;")
+        self.lineEdit_4.setObjectName("lineEdit_4")
+        self.formLayout_9.setWidget(1, QtWidgets.QFormLayout.SpanningRole, self.lineEdit_4)
+        self.formLayoutWidget_10 = QtWidgets.QWidget(self.Positionmangement)
+        self.formLayoutWidget_10.setGeometry(QtCore.QRect(300, 50, 351, 54))
+        self.formLayoutWidget_10.setObjectName("formLayoutWidget_10")
+        self.formLayout_10 = QtWidgets.QFormLayout(self.formLayoutWidget_10)
+        self.formLayout_10.setContentsMargins(0, 0, 0, 0)
+        self.formLayout_10.setObjectName("formLayout_10")
+        self.lineEdit_5 = QtWidgets.QLineEdit(self.formLayoutWidget_10)
+        self.lineEdit_5.setMaximumSize(QtCore.QSize(16777215, 30))
+        self.lineEdit_5.setStyleSheet("border :1px solid #0076bd;\n"
+"border-radius:10px;")
+        self.lineEdit_5.setObjectName("lineEdit_5")
+        self.formLayout_10.setWidget(1, QtWidgets.QFormLayout.FieldRole, self.lineEdit_5)
+        self.label_23 = QtWidgets.QLabel(self.formLayoutWidget_10)
+        font = QtGui.QFont()
+        font.setFamily("Yu Gothic UI Semibold")
+        font.setPointSize(11)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_23.setFont(font)
+        self.label_23.setObjectName("label_23")
+        self.formLayout_10.setWidget(0, QtWidgets.QFormLayout.FieldRole, self.label_23)
+        self.formLayoutWidget_11 = QtWidgets.QWidget(self.Positionmangement)
+        self.formLayoutWidget_11.setGeometry(QtCore.QRect(660, 50, 361, 51))
+        self.formLayoutWidget_11.setObjectName("formLayoutWidget_11")
+        self.formLayout_11 = QtWidgets.QFormLayout(self.formLayoutWidget_11)
+        self.formLayout_11.setContentsMargins(0, 0, 0, 0)
+        self.formLayout_11.setObjectName("formLayout_11")
+        self.label_40 = QtWidgets.QLabel(self.formLayoutWidget_11)
+        font = QtGui.QFont()
+        font.setFamily("Yu Gothic UI Semibold")
+        font.setPointSize(11)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_40.setFont(font)
+        self.label_40.setObjectName("label_40")
+        self.formLayout_11.setWidget(0, QtWidgets.QFormLayout.LabelRole, self.label_40)
+        self.lineEdit_6 = QtWidgets.QLineEdit(self.formLayoutWidget_11)
+        self.lineEdit_6.setMaximumSize(QtCore.QSize(16777215, 30))
+        self.lineEdit_6.setStyleSheet("border :1px solid #0076bd;\n"
+"border-radius:10px;")
+        self.lineEdit_6.setObjectName("lineEdit_6")
+        self.formLayout_11.setWidget(1, QtWidgets.QFormLayout.SpanningRole, self.lineEdit_6)
         self.tabWidget.addTab(self.Positionmangement, "")
         self.Addposition = QtWidgets.QWidget()
         self.Addposition.setObjectName("Addposition")
@@ -879,16 +927,6 @@ class Ui_AdminDashBoard(object):
         font.setWeight(75)
         self.label_29.setFont(font)
         self.label_29.setObjectName("label_29")
-        self.pos_name = QtWidgets.QPlainTextEdit(self.Addposition)
-        self.pos_name.setGeometry(QtCore.QRect(210, 190, 321, 31))
-        self.pos_name.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;")
-        self.pos_name.setObjectName("pos_name")
-        self.posno = QtWidgets.QPlainTextEdit(self.Addposition)
-        self.posno.setGeometry(QtCore.QRect(220, 240, 321, 31))
-        self.posno.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;")
-        self.posno.setObjectName("posno")
         self.selectDepbx = QtWidgets.QComboBox(self.Addposition)
         self.selectDepbx.setGeometry(QtCore.QRect(220, 90, 301, 31))
         self.selectDepbx.setStyleSheet("border :1px solid #0076bd;\n"
@@ -964,6 +1002,20 @@ class Ui_AdminDashBoard(object):
         font.setWeight(75)
         self.label_30.setFont(font)
         self.label_30.setObjectName("label_30")
+        self.lineEdit_12 = QtWidgets.QLineEdit(self.Addposition)
+        self.lineEdit_12.setGeometry(QtCore.QRect(220, 200, 311, 30))
+        self.lineEdit_12.setMinimumSize(QtCore.QSize(0, 30))
+        self.lineEdit_12.setMaximumSize(QtCore.QSize(16777215, 30))
+        self.lineEdit_12.setStyleSheet("border :1px solid #0076bd;\n"
+"border-radius:10px;")
+        self.lineEdit_12.setObjectName("lineEdit_12")
+        self.lineEdit_26 = QtWidgets.QLineEdit(self.Addposition)
+        self.lineEdit_26.setGeometry(QtCore.QRect(220, 250, 311, 30))
+        self.lineEdit_26.setMinimumSize(QtCore.QSize(0, 30))
+        self.lineEdit_26.setMaximumSize(QtCore.QSize(16777215, 30))
+        self.lineEdit_26.setStyleSheet("border :1px solid #0076bd;\n"
+"border-radius:10px;")
+        self.lineEdit_26.setObjectName("lineEdit_26")
         self.tabWidget.addTab(self.Addposition, "")
         self.tab = QtWidgets.QWidget()
         self.tab.setObjectName("tab")
@@ -1031,7 +1083,7 @@ class Ui_AdminDashBoard(object):
         self.label_37.setGeometry(QtCore.QRect(20, 130, 111, 31))
         font = QtGui.QFont()
         font.setFamily("Yu Gothic UI Semibold")
-        font.setPointSize(11)
+        font.setPointSize(12)
         font.setBold(True)
         font.setWeight(75)
         self.label_37.setFont(font)
@@ -1096,7 +1148,7 @@ class Ui_AdminDashBoard(object):
         self.label_38.setGeometry(QtCore.QRect(20, 170, 111, 31))
         font = QtGui.QFont()
         font.setFamily("Yu Gothic UI Semibold")
-        font.setPointSize(11)
+        font.setPointSize(12)
         font.setBold(True)
         font.setWeight(75)
         self.label_38.setFont(font)
@@ -1105,7 +1157,7 @@ class Ui_AdminDashBoard(object):
         self.label_39.setGeometry(QtCore.QRect(20, 210, 111, 31))
         font = QtGui.QFont()
         font.setFamily("Yu Gothic UI Semibold")
-        font.setPointSize(11)
+        font.setPointSize(12)
         font.setBold(True)
         font.setWeight(75)
         self.label_39.setFont(font)
@@ -1114,7 +1166,7 @@ class Ui_AdminDashBoard(object):
         self.label_36.setGeometry(QtCore.QRect(20, 80, 121, 41))
         font = QtGui.QFont()
         font.setFamily("Yu Gothic UI Semibold")
-        font.setPointSize(11)
+        font.setPointSize(12)
         font.setBold(True)
         font.setWeight(75)
         self.label_36.setFont(font)
@@ -1126,26 +1178,27 @@ class Ui_AdminDashBoard(object):
         self.verticalLayout_3.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_3.setObjectName("verticalLayout_3")
         self.lineEdit_16 = QtWidgets.QLineEdit(self.verticalLayoutWidget_3)
-        self.lineEdit_16.setMinimumSize(QtCore.QSize(20, 40))
+        self.lineEdit_16.setMinimumSize(QtCore.QSize(20, 30))
         self.lineEdit_16.setStyleSheet("border :1px solid #0076bd;\n"
 "border-radius:10px;\n"
 "")
         self.lineEdit_16.setObjectName("lineEdit_16")
         self.verticalLayout_3.addWidget(self.lineEdit_16)
         self.lineEdit_18 = QtWidgets.QLineEdit(self.verticalLayoutWidget_3)
-        self.lineEdit_18.setMinimumSize(QtCore.QSize(20, 40))
+        self.lineEdit_18.setMinimumSize(QtCore.QSize(20, 30))
         self.lineEdit_18.setStyleSheet("border :1px solid #0076bd;\n"
 "border-radius:10px;\n"
 "")
         self.lineEdit_18.setObjectName("lineEdit_18")
         self.verticalLayout_3.addWidget(self.lineEdit_18)
         self.parentarea_cmbx = QtWidgets.QComboBox(self.verticalLayoutWidget_3)
+        self.parentarea_cmbx.setMinimumSize(QtCore.QSize(0, 30))
         self.parentarea_cmbx.setStyleSheet("border :1px solid #0076bd;\n"
 "border-radius:10px;")
         self.parentarea_cmbx.setObjectName("parentarea_cmbx")
         self.verticalLayout_3.addWidget(self.parentarea_cmbx)
         self.lineEdit_17 = QtWidgets.QLineEdit(self.verticalLayoutWidget_3)
-        self.lineEdit_17.setMinimumSize(QtCore.QSize(20, 40))
+        self.lineEdit_17.setMinimumSize(QtCore.QSize(20, 30))
         self.lineEdit_17.setStyleSheet("border :1px solid #0076bd;\n"
 "border-radius:10px;\n"
 "")
@@ -1163,13 +1216,6 @@ class Ui_AdminDashBoard(object):
         self.tabWidget_10.addTab(self.tab_41, "")
         self.tab_42 = QtWidgets.QWidget()
         self.tab_42.setObjectName("tab_42")
-        self.lineEdit_13 = QtWidgets.QLineEdit(self.tab_42)
-        self.lineEdit_13.setGeometry(QtCore.QRect(240, 40, 211, 40))
-        self.lineEdit_13.setMinimumSize(QtCore.QSize(20, 40))
-        self.lineEdit_13.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;\n"
-"")
-        self.lineEdit_13.setObjectName("lineEdit_13")
         self.label_113 = QtWidgets.QLabel(self.tab_42)
         self.label_113.setGeometry(QtCore.QRect(20, 0, 201, 51))
         font = QtGui.QFont()
@@ -1228,7 +1274,7 @@ class Ui_AdminDashBoard(object):
         item.setFont(font)
         self.tableWidget_10.setHorizontalHeaderItem(4, item)
         self.label_112 = QtWidgets.QLabel(self.tab_42)
-        self.label_112.setGeometry(QtCore.QRect(470, 40, 101, 31))
+        self.label_112.setGeometry(QtCore.QRect(450, 40, 101, 31))
         font = QtGui.QFont()
         font.setFamily("Yu Gothic UI Semibold")
         font.setPointSize(11)
@@ -1269,13 +1315,6 @@ class Ui_AdminDashBoard(object):
 "padding-bottom:0px\n"
 "")
         self.Searchareabtn.setObjectName("Searchareabtn")
-        self.lineEdit_14 = QtWidgets.QLineEdit(self.tab_42)
-        self.lineEdit_14.setGeometry(QtCore.QRect(580, 40, 221, 40))
-        self.lineEdit_14.setMinimumSize(QtCore.QSize(20, 40))
-        self.lineEdit_14.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;\n"
-"")
-        self.lineEdit_14.setObjectName("lineEdit_14")
         self.clrareabtn = QtWidgets.QPushButton(self.tab_42)
         self.clrareabtn.setGeometry(QtCore.QRect(940, 40, 93, 28))
         font = QtGui.QFont()
@@ -1291,6 +1330,18 @@ class Ui_AdminDashBoard(object):
 "padding-bottom:0px\n"
 "")
         self.clrareabtn.setObjectName("clrareabtn")
+        self.lineEdit_13 = QtWidgets.QLineEdit(self.tab_42)
+        self.lineEdit_13.setGeometry(QtCore.QRect(190, 40, 250, 30))
+        self.lineEdit_13.setMaximumSize(QtCore.QSize(16777215, 30))
+        self.lineEdit_13.setStyleSheet("border :1px solid #0076bd;\n"
+"border-radius:10px;")
+        self.lineEdit_13.setObjectName("lineEdit_13")
+        self.lineEdit_14 = QtWidgets.QLineEdit(self.tab_42)
+        self.lineEdit_14.setGeometry(QtCore.QRect(560, 40, 250, 30))
+        self.lineEdit_14.setMaximumSize(QtCore.QSize(16777215, 30))
+        self.lineEdit_14.setStyleSheet("border :1px solid #0076bd;\n"
+"border-radius:10px;")
+        self.lineEdit_14.setObjectName("lineEdit_14")
         self.tabWidget_10.addTab(self.tab_42, "")
         self.AddArea.addTab(self.tab_37, "")
         self.Adddevice = QtWidgets.QWidget()
@@ -1367,10 +1418,11 @@ class Ui_AdminDashBoard(object):
         self.label_116.setObjectName("label_116")
         self.formLayout.setWidget(0, QtWidgets.QFormLayout.LabelRole, self.label_116)
         self.lineEdit_21 = QtWidgets.QLineEdit(self.formLayoutWidget)
-        self.lineEdit_21.setMinimumSize(QtCore.QSize(20, 40))
+        self.lineEdit_21.setMinimumSize(QtCore.QSize(20, 30))
         self.lineEdit_21.setStyleSheet("border :1px solid #0076bd;\n"
 "border-radius:10px;\n"
 "")
+        self.lineEdit_21.setInputMask("")
         self.lineEdit_21.setObjectName("lineEdit_21")
         self.formLayout.setWidget(0, QtWidgets.QFormLayout.FieldRole, self.lineEdit_21)
         self.label_118 = QtWidgets.QLabel(self.formLayoutWidget)
@@ -1383,7 +1435,7 @@ class Ui_AdminDashBoard(object):
         self.label_118.setObjectName("label_118")
         self.formLayout.setWidget(1, QtWidgets.QFormLayout.LabelRole, self.label_118)
         self.lineEdit_19 = QtWidgets.QLineEdit(self.formLayoutWidget)
-        self.lineEdit_19.setMinimumSize(QtCore.QSize(20, 40))
+        self.lineEdit_19.setMinimumSize(QtCore.QSize(20, 30))
         self.lineEdit_19.setStyleSheet("border :1px solid #0076bd;\n"
 "border-radius:10px;\n"
 "")
@@ -1399,7 +1451,7 @@ class Ui_AdminDashBoard(object):
         self.label_119.setObjectName("label_119")
         self.formLayout.setWidget(2, QtWidgets.QFormLayout.LabelRole, self.label_119)
         self.lineEdit_20 = QtWidgets.QLineEdit(self.formLayoutWidget)
-        self.lineEdit_20.setMinimumSize(QtCore.QSize(20, 40))
+        self.lineEdit_20.setMinimumSize(QtCore.QSize(20, 30))
         self.lineEdit_20.setStyleSheet("border :1px solid #0076bd;\n"
 "border-radius:10px;\n"
 "")
@@ -1424,14 +1476,14 @@ class Ui_AdminDashBoard(object):
         self.label_121.setObjectName("label_121")
         self.formLayout.setWidget(4, QtWidgets.QFormLayout.LabelRole, self.label_121)
         self.lineEdit_22 = QtWidgets.QLineEdit(self.formLayoutWidget)
-        self.lineEdit_22.setMinimumSize(QtCore.QSize(20, 40))
+        self.lineEdit_22.setMinimumSize(QtCore.QSize(20, 30))
         self.lineEdit_22.setStyleSheet("border :1px solid #0076bd;\n"
 "border-radius:10px;\n"
 "")
         self.lineEdit_22.setObjectName("lineEdit_22")
         self.formLayout.setWidget(3, QtWidgets.QFormLayout.FieldRole, self.lineEdit_22)
         self.areacmbx = QtWidgets.QComboBox(self.formLayoutWidget)
-        self.areacmbx.setMinimumSize(QtCore.QSize(0, 40))
+        self.areacmbx.setMinimumSize(QtCore.QSize(0, 30))
         self.areacmbx.setStyleSheet("border :1px solid #0076bd;\n"
 "border-radius:10px;")
         self.areacmbx.setObjectName("areacmbx")
@@ -1803,7 +1855,7 @@ class Ui_AdminDashBoard(object):
         self.tab_76 = QtWidgets.QWidget()
         self.tab_76.setObjectName("tab_76")
         self.formLayoutWidget_7 = QtWidgets.QWidget(self.tab_76)
-        self.formLayoutWidget_7.setGeometry(QtCore.QRect(10, 60, 571, 331))
+        self.formLayoutWidget_7.setGeometry(QtCore.QRect(10, 60, 571, 211))
         self.formLayoutWidget_7.setObjectName("formLayoutWidget_7")
         self.formLayout_7 = QtWidgets.QFormLayout(self.formLayoutWidget_7)
         self.formLayout_7.setContentsMargins(0, 0, 0, 0)
@@ -1854,6 +1906,7 @@ class Ui_AdminDashBoard(object):
         self.label_168.setObjectName("label_168")
         self.formLayout_7.setWidget(4, QtWidgets.QFormLayout.LabelRole, self.label_168)
         self.parentarea_cmbx_23 = QtWidgets.QComboBox(self.formLayoutWidget_7)
+        self.parentarea_cmbx_23.setMinimumSize(QtCore.QSize(0, 30))
         self.parentarea_cmbx_23.setStyleSheet("border :1px solid #0076bd;\n"
 "border-radius:10px;")
         self.parentarea_cmbx_23.setObjectName("parentarea_cmbx_23")
@@ -1861,33 +1914,34 @@ class Ui_AdminDashBoard(object):
         self.parentarea_cmbx_23.addItem("")
         self.formLayout_7.setWidget(3, QtWidgets.QFormLayout.FieldRole, self.parentarea_cmbx_23)
         self.parentarea_cmbx_24 = QtWidgets.QComboBox(self.formLayoutWidget_7)
+        self.parentarea_cmbx_24.setMinimumSize(QtCore.QSize(0, 30))
         self.parentarea_cmbx_24.setStyleSheet("border :1px solid #0076bd;\n"
 "border-radius:10px;")
         self.parentarea_cmbx_24.setObjectName("parentarea_cmbx_24")
         self.formLayout_7.setWidget(2, QtWidgets.QFormLayout.FieldRole, self.parentarea_cmbx_24)
         self.lineEdit_36 = QtWidgets.QLineEdit(self.formLayoutWidget_7)
-        self.lineEdit_36.setMinimumSize(QtCore.QSize(20, 40))
+        self.lineEdit_36.setMinimumSize(QtCore.QSize(20, 30))
         self.lineEdit_36.setStyleSheet("border :1px solid #0076bd;\n"
 "border-radius:10px;\n"
 "")
         self.lineEdit_36.setObjectName("lineEdit_36")
         self.formLayout_7.setWidget(0, QtWidgets.QFormLayout.FieldRole, self.lineEdit_36)
         self.lineEdit_37 = QtWidgets.QLineEdit(self.formLayoutWidget_7)
-        self.lineEdit_37.setMinimumSize(QtCore.QSize(20, 40))
+        self.lineEdit_37.setMinimumSize(QtCore.QSize(20, 30))
         self.lineEdit_37.setStyleSheet("border :1px solid #0076bd;\n"
 "border-radius:10px;\n"
 "")
         self.lineEdit_37.setObjectName("lineEdit_37")
         self.formLayout_7.setWidget(1, QtWidgets.QFormLayout.FieldRole, self.lineEdit_37)
         self.lineEdit_38 = QtWidgets.QLineEdit(self.formLayoutWidget_7)
-        self.lineEdit_38.setMinimumSize(QtCore.QSize(20, 40))
+        self.lineEdit_38.setMinimumSize(QtCore.QSize(20, 30))
         self.lineEdit_38.setStyleSheet("border :1px solid #0076bd;\n"
 "border-radius:10px;\n"
 "")
         self.lineEdit_38.setObjectName("lineEdit_38")
         self.formLayout_7.setWidget(4, QtWidgets.QFormLayout.FieldRole, self.lineEdit_38)
         self.area_okbtn_5 = QtWidgets.QPushButton(self.tab_76)
-        self.area_okbtn_5.setGeometry(QtCore.QRect(198, 418, 165, 27))
+        self.area_okbtn_5.setGeometry(QtCore.QRect(198, 288, 165, 27))
         font = QtGui.QFont()
         font.setFamily("Yu Gothic UI Semibold")
         font.setPointSize(11)
@@ -1901,7 +1955,7 @@ class Ui_AdminDashBoard(object):
 "padding-bottom:0px")
         self.area_okbtn_5.setObjectName("area_okbtn_5")
         self.savearea_new_5 = QtWidgets.QPushButton(self.tab_76)
-        self.savearea_new_5.setGeometry(QtCore.QRect(26, 418, 165, 27))
+        self.savearea_new_5.setGeometry(QtCore.QRect(26, 288, 165, 27))
         font = QtGui.QFont()
         font.setFamily("Yu Gothic UI Semibold")
         font.setPointSize(11)
@@ -1915,7 +1969,7 @@ class Ui_AdminDashBoard(object):
 "padding-bottom:0px")
         self.savearea_new_5.setObjectName("savearea_new_5")
         self.cancel_areabtn_5 = QtWidgets.QPushButton(self.tab_76)
-        self.cancel_areabtn_5.setGeometry(QtCore.QRect(370, 420, 165, 24))
+        self.cancel_areabtn_5.setGeometry(QtCore.QRect(370, 290, 165, 24))
         font = QtGui.QFont()
         font.setPointSize(11)
         font.setBold(True)
@@ -3092,13 +3146,13 @@ class Ui_AdminDashBoard(object):
         self.label_57.setObjectName("label_57")
         self.formLayout_6.setWidget(4, QtWidgets.QFormLayout.LabelRole, self.label_57)
         self.parentarea_cmbx_2 = QtWidgets.QComboBox(self.formLayoutWidget_6)
-        self.parentarea_cmbx_2.setMinimumSize(QtCore.QSize(0, 40))
+        self.parentarea_cmbx_2.setMinimumSize(QtCore.QSize(0, 30))
         self.parentarea_cmbx_2.setStyleSheet("border :1px solid #0076bd;\n"
 "border-radius:10px;")
         self.parentarea_cmbx_2.setObjectName("parentarea_cmbx_2")
         self.formLayout_6.setWidget(3, QtWidgets.QFormLayout.FieldRole, self.parentarea_cmbx_2)
         self.parentarea_cmbx_3 = QtWidgets.QComboBox(self.formLayoutWidget_6)
-        self.parentarea_cmbx_3.setMinimumSize(QtCore.QSize(0, 40))
+        self.parentarea_cmbx_3.setMinimumSize(QtCore.QSize(0, 30))
         self.parentarea_cmbx_3.setStyleSheet("border :1px solid #0076bd;\n"
 "border-radius:10px;")
         self.parentarea_cmbx_3.setObjectName("parentarea_cmbx_3")
@@ -3137,42 +3191,42 @@ class Ui_AdminDashBoard(object):
         self.checkBox_2.setObjectName("checkBox_2")
         self.formLayout_6.setWidget(8, QtWidgets.QFormLayout.FieldRole, self.checkBox_2)
         self.lineEdit_33 = QtWidgets.QLineEdit(self.formLayoutWidget_6)
-        self.lineEdit_33.setMinimumSize(QtCore.QSize(20, 40))
+        self.lineEdit_33.setMinimumSize(QtCore.QSize(20, 30))
         self.lineEdit_33.setStyleSheet("border :1px solid #0076bd;\n"
 "border-radius:10px;\n"
 "")
         self.lineEdit_33.setObjectName("lineEdit_33")
         self.formLayout_6.setWidget(0, QtWidgets.QFormLayout.FieldRole, self.lineEdit_33)
         self.lineEdit_31 = QtWidgets.QLineEdit(self.formLayoutWidget_6)
-        self.lineEdit_31.setMinimumSize(QtCore.QSize(20, 40))
+        self.lineEdit_31.setMinimumSize(QtCore.QSize(20, 30))
         self.lineEdit_31.setStyleSheet("border :1px solid #0076bd;\n"
 "border-radius:10px;\n"
 "")
         self.lineEdit_31.setObjectName("lineEdit_31")
         self.formLayout_6.setWidget(1, QtWidgets.QFormLayout.FieldRole, self.lineEdit_31)
         self.lineEdit_30 = QtWidgets.QLineEdit(self.formLayoutWidget_6)
-        self.lineEdit_30.setMinimumSize(QtCore.QSize(20, 40))
+        self.lineEdit_30.setMinimumSize(QtCore.QSize(20, 30))
         self.lineEdit_30.setStyleSheet("border :1px solid #0076bd;\n"
 "border-radius:10px;\n"
 "")
         self.lineEdit_30.setObjectName("lineEdit_30")
         self.formLayout_6.setWidget(2, QtWidgets.QFormLayout.FieldRole, self.lineEdit_30)
         self.lineEdit_32 = QtWidgets.QLineEdit(self.formLayoutWidget_6)
-        self.lineEdit_32.setMinimumSize(QtCore.QSize(20, 40))
+        self.lineEdit_32.setMinimumSize(QtCore.QSize(20, 30))
         self.lineEdit_32.setStyleSheet("border :1px solid #0076bd;\n"
 "border-radius:10px;\n"
 "")
         self.lineEdit_32.setObjectName("lineEdit_32")
         self.formLayout_6.setWidget(5, QtWidgets.QFormLayout.FieldRole, self.lineEdit_32)
         self.lineEdit_35 = QtWidgets.QLineEdit(self.formLayoutWidget_6)
-        self.lineEdit_35.setMinimumSize(QtCore.QSize(20, 40))
+        self.lineEdit_35.setMinimumSize(QtCore.QSize(20, 30))
         self.lineEdit_35.setStyleSheet("border :1px solid #0076bd;\n"
 "border-radius:10px;\n"
 "")
         self.lineEdit_35.setObjectName("lineEdit_35")
         self.formLayout_6.setWidget(6, QtWidgets.QFormLayout.FieldRole, self.lineEdit_35)
         self.lineEdit_34 = QtWidgets.QLineEdit(self.formLayoutWidget_6)
-        self.lineEdit_34.setMinimumSize(QtCore.QSize(20, 40))
+        self.lineEdit_34.setMinimumSize(QtCore.QSize(20, 30))
         self.lineEdit_34.setStyleSheet("border :1px solid #0076bd;\n"
 "border-radius:10px;\n"
 "")
@@ -3192,7 +3246,7 @@ class Ui_AdminDashBoard(object):
         self.label_216.setFont(font)
         self.label_216.setObjectName("label_216")
         self.basic_okbtn_42 = QtWidgets.QPushButton(self.tab_20)
-        self.basic_okbtn_42.setGeometry(QtCore.QRect(30, 430, 165, 27))
+        self.basic_okbtn_42.setGeometry(QtCore.QRect(530, 590, 165, 27))
         font = QtGui.QFont()
         font.setFamily("Yu Gothic UI Semibold")
         font.setPointSize(11)
@@ -3229,7 +3283,7 @@ class Ui_AdminDashBoard(object):
         self.checkBox_11.setFont(font)
         self.checkBox_11.setObjectName("checkBox_11")
         self.formLayoutWidget_8 = QtWidgets.QWidget(self.tab_20)
-        self.formLayoutWidget_8.setGeometry(QtCore.QRect(20, 20, 381, 371))
+        self.formLayoutWidget_8.setGeometry(QtCore.QRect(30, 100, 381, 557))
         self.formLayoutWidget_8.setObjectName("formLayoutWidget_8")
         self.formLayout_8 = QtWidgets.QFormLayout(self.formLayoutWidget_8)
         self.formLayout_8.setContentsMargins(0, 0, 0, 0)
@@ -3253,6 +3307,8 @@ class Ui_AdminDashBoard(object):
         self.label_221.setObjectName("label_221")
         self.formLayout_8.setWidget(1, QtWidgets.QFormLayout.LabelRole, self.label_221)
         self.selectposbx_3 = QtWidgets.QComboBox(self.formLayoutWidget_8)
+        self.selectposbx_3.setMinimumSize(QtCore.QSize(0, 30))
+        self.selectposbx_3.setMaximumSize(QtCore.QSize(16777215, 30))
         self.selectposbx_3.setStyleSheet("border :1px solid #0076bd;\n"
 "border-radius:10px;")
         self.selectposbx_3.setObjectName("selectposbx_3")
@@ -3314,49 +3370,50 @@ class Ui_AdminDashBoard(object):
         self.label_223.setObjectName("label_223")
         self.formLayout_8.setWidget(7, QtWidgets.QFormLayout.LabelRole, self.label_223)
         self.lineEdit_25 = QtWidgets.QLineEdit(self.formLayoutWidget_8)
-        self.lineEdit_25.setMinimumSize(QtCore.QSize(20, 40))
+        self.lineEdit_25.setMinimumSize(QtCore.QSize(30, 30))
+        self.lineEdit_25.setMaximumSize(QtCore.QSize(500, 16777215))
         self.lineEdit_25.setStyleSheet("border :1px solid #0076bd;\n"
 "border-radius:10px;\n"
 "")
         self.lineEdit_25.setObjectName("lineEdit_25")
         self.formLayout_8.setWidget(0, QtWidgets.QFormLayout.FieldRole, self.lineEdit_25)
         self.lineEdit_24 = QtWidgets.QLineEdit(self.formLayoutWidget_8)
-        self.lineEdit_24.setMinimumSize(QtCore.QSize(20, 40))
+        self.lineEdit_24.setMinimumSize(QtCore.QSize(20, 30))
         self.lineEdit_24.setStyleSheet("border :1px solid #0076bd;\n"
 "border-radius:10px;\n"
 "")
         self.lineEdit_24.setObjectName("lineEdit_24")
         self.formLayout_8.setWidget(2, QtWidgets.QFormLayout.FieldRole, self.lineEdit_24)
         self.lineEdit_23 = QtWidgets.QLineEdit(self.formLayoutWidget_8)
-        self.lineEdit_23.setMinimumSize(QtCore.QSize(20, 40))
+        self.lineEdit_23.setMinimumSize(QtCore.QSize(20, 30))
         self.lineEdit_23.setStyleSheet("border :1px solid #0076bd;\n"
 "border-radius:10px;\n"
 "")
         self.lineEdit_23.setObjectName("lineEdit_23")
         self.formLayout_8.setWidget(3, QtWidgets.QFormLayout.FieldRole, self.lineEdit_23)
         self.lineEdit_40 = QtWidgets.QLineEdit(self.formLayoutWidget_8)
-        self.lineEdit_40.setMinimumSize(QtCore.QSize(20, 40))
+        self.lineEdit_40.setMinimumSize(QtCore.QSize(20, 30))
         self.lineEdit_40.setStyleSheet("border :1px solid #0076bd;\n"
 "border-radius:10px;\n"
 "")
         self.lineEdit_40.setObjectName("lineEdit_40")
         self.formLayout_8.setWidget(4, QtWidgets.QFormLayout.FieldRole, self.lineEdit_40)
         self.lineEdit_39 = QtWidgets.QLineEdit(self.formLayoutWidget_8)
-        self.lineEdit_39.setMinimumSize(QtCore.QSize(20, 40))
+        self.lineEdit_39.setMinimumSize(QtCore.QSize(20, 30))
         self.lineEdit_39.setStyleSheet("border :1px solid #0076bd;\n"
 "border-radius:10px;\n"
 "")
         self.lineEdit_39.setObjectName("lineEdit_39")
         self.formLayout_8.setWidget(5, QtWidgets.QFormLayout.FieldRole, self.lineEdit_39)
         self.lineEdit_42 = QtWidgets.QLineEdit(self.formLayoutWidget_8)
-        self.lineEdit_42.setMinimumSize(QtCore.QSize(20, 40))
+        self.lineEdit_42.setMinimumSize(QtCore.QSize(20, 30))
         self.lineEdit_42.setStyleSheet("border :1px solid #0076bd;\n"
 "border-radius:10px;\n"
 "")
         self.lineEdit_42.setObjectName("lineEdit_42")
         self.formLayout_8.setWidget(6, QtWidgets.QFormLayout.FieldRole, self.lineEdit_42)
         self.lineEdit_41 = QtWidgets.QLineEdit(self.formLayoutWidget_8)
-        self.lineEdit_41.setMinimumSize(QtCore.QSize(20, 40))
+        self.lineEdit_41.setMinimumSize(QtCore.QSize(20, 30))
         self.lineEdit_41.setStyleSheet("border :1px solid #0076bd;\n"
 "border-radius:10px;\n"
 "")
@@ -3417,7 +3474,7 @@ class Ui_AdminDashBoard(object):
         self.label_172.setObjectName("label_172")
         self.verticalLayout_9.addWidget(self.label_172)
         self.verticalLayoutWidget_10 = QtWidgets.QWidget(self.tab_32)
-        self.verticalLayoutWidget_10.setGeometry(QtCore.QRect(220, 80, 481, 191))
+        self.verticalLayoutWidget_10.setGeometry(QtCore.QRect(220, 80, 481, 465))
         self.verticalLayoutWidget_10.setObjectName("verticalLayoutWidget_10")
         self.verticalLayout_10 = QtWidgets.QVBoxLayout(self.verticalLayoutWidget_10)
         self.verticalLayout_10.setContentsMargins(0, 0, 0, 0)
@@ -3597,16 +3654,6 @@ class Ui_AdminDashBoard(object):
         self.label_179.setFont(font)
         self.label_179.setObjectName("label_179")
         self.formLayout_5.setWidget(0, QtWidgets.QFormLayout.LabelRole, self.label_179)
-        self.verticalLayoutWidget_9.raise_()
-        self.verticalLayoutWidget_10.raise_()
-        self.label_177.raise_()
-        self.label_178.raise_()
-        self.label_184.raise_()
-        self.checkBox_12.raise_()
-        self.checkBox_13.raise_()
-        self.basic_okbtn_44.raise_()
-        self.formLayoutWidget_5.raise_()
-        self.label_181.raise_()
         self.tabWidget_6.addTab(self.tab_32, "")
         self.tab_72 = QtWidgets.QWidget()
         self.tab_72.setObjectName("tab_72")
@@ -3615,13 +3662,6 @@ class Ui_AdminDashBoard(object):
         self.tab_71.setObjectName("tab_71")
         self.tabWidget_6.addTab(self.tab_71, "")
         self.tabWidget_2.addTab(self.SystemSettings, "")
-        self.lineEdit_26 = QtWidgets.QLineEdit(self.centralwidget)
-        self.lineEdit_26.setGeometry(QtCore.QRect(1240, 970, 312, 40))
-        self.lineEdit_26.setMinimumSize(QtCore.QSize(20, 40))
-        self.lineEdit_26.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;\n"
-"")
-        self.lineEdit_26.setObjectName("lineEdit_26")
         AdminDashBoard.setCentralWidget(self.centralwidget)
         self.department = QtWidgets.QAction(AdminDashBoard)
         self.department.setObjectName("department")
@@ -3695,7 +3735,7 @@ class Ui_AdminDashBoard(object):
         self.AddArea.setCurrentIndex(0)
         self.tabWidget_8.setCurrentIndex(0)
         self.tabWidget_9.setCurrentIndex(0)
-        self.tabWidget_10.setCurrentIndex(4)
+        self.tabWidget_10.setCurrentIndex(0)
         self.tabWidget_11.setCurrentIndex(0)
         self.tabWidget_4.setCurrentIndex(0)
         self.tabWidget_13.setCurrentIndex(0)
@@ -3704,7 +3744,7 @@ class Ui_AdminDashBoard(object):
         self.tabWidget_15.setCurrentIndex(0)
         self.tabWidget_16.setCurrentIndex(0)
         self.tabWidget_18.setCurrentIndex(0)
-        self.tabWidget_24.setCurrentIndex(1)
+        self.tabWidget_24.setCurrentIndex(0)
         self.tabWidget_26.setCurrentIndex(0)
         self.tabWidget_25.setCurrentIndex(0)
         self.tabWidget_5.setCurrentIndex(0)
@@ -3714,7 +3754,7 @@ class Ui_AdminDashBoard(object):
         self.tabWidget_21.setCurrentIndex(0)
         self.tabWidget_20.setCurrentIndex(0)
         self.tabWidget_6.setCurrentIndex(0)
-        self.tabWidget_17.setCurrentIndex(1)
+        self.tabWidget_17.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(AdminDashBoard)
 
     def retranslateUi(self, AdminDashBoard):
@@ -3747,7 +3787,7 @@ class Ui_AdminDashBoard(object):
         self.label_16.setText(_translate("AdminDashBoard", "Pay Grade"))
         self.okbtn.setText(_translate("AdminDashBoard", "Ok"))
         self.cnclbtn.setText(_translate("AdminDashBoard", "Cancel"))
-        self.label_19.setText(_translate("AdminDashBoard", "<html><head/><body><p><img src=\"iconmonstr-user-14-240.png\"/></p></body></html>"))
+        self.label_19.setText(_translate("AdminDashBoard", "<html><head/><body><p><img src=\":/placeholder/iconmonstr-user-14-240.png\"/></p></body></html>"))
         self.pushButton_2.setText(_translate("AdminDashBoard", "Browse"))
         self.tabWidget_3.setTabText(self.tabWidget_3.indexOf(self.tab_6), _translate("AdminDashBoard", "Add personel"))
         self.label_41.setText(_translate("AdminDashBoard", "Search personel"))
@@ -3798,8 +3838,6 @@ class Ui_AdminDashBoard(object):
         self.label_5.setText(_translate("AdminDashBoard", "Approval"))
         self.Departmentwidget.setTabText(self.Departmentwidget.indexOf(self.tab_5), _translate("AdminDashBoard", "setting approval"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.Department), _translate("AdminDashBoard", "Department"))
-        self.label_22.setText(_translate("AdminDashBoard", "Search"))
-        self.label_23.setText(_translate("AdminDashBoard", "position No"))
         self.label_24.setText(_translate("AdminDashBoard", "Position"))
         self.SearchBtn.setText(_translate("AdminDashBoard", "Search"))
         self.clrbtn.setText(_translate("AdminDashBoard", "Clear"))
@@ -3818,6 +3856,9 @@ class Ui_AdminDashBoard(object):
         item = self.tableWidget.horizontalHeaderItem(6)
         item.setText(_translate("AdminDashBoard", "New Column"))
         self.label_3.setText(_translate("AdminDashBoard", "Position Mangement"))
+        self.label_22.setText(_translate("AdminDashBoard", "Search"))
+        self.label_23.setText(_translate("AdminDashBoard", "position No"))
+        self.label_40.setText(_translate("AdminDashBoard", "position"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.Positionmangement), _translate("AdminDashBoard", "Position Mangement"))
         self.label_25.setText(_translate("AdminDashBoard", "Department"))
         self.label_26.setText(_translate("AdminDashBoard", "Parent Position"))
@@ -4197,7 +4238,7 @@ class Ui_AdminDashBoard(object):
         self.tabWidget_17.setTabText(self.tabWidget_17.indexOf(self.tab_75), _translate("AdminDashBoard", "User management"))
         self.tabWidget_6.setTabText(self.tabWidget_6.indexOf(self.tab_19), _translate("AdminDashBoard", "User"))
         self.label_216.setText(_translate("AdminDashBoard", "Company logo"))
-        self.basic_okbtn_42.setText(_translate("AdminDashBoard", "Ok\'"))
+        self.basic_okbtn_42.setText(_translate("AdminDashBoard", "Ok"))
         self.basic_okbtn_43.setText(_translate("AdminDashBoard", "Browse"))
         self.checkBox_11.setText(_translate("AdminDashBoard", "Show in report"))
         self.label_283.setText(_translate("AdminDashBoard", "Company Name"))
@@ -4265,4 +4306,15 @@ class Ui_AdminDashBoard(object):
         self.actionAdd_position.setText(_translate("AdminDashBoard", "add position"))
         self.actionSetting_Department.setText(_translate("AdminDashBoard", "setting Department"))
         self.actionSetting_Approver_2.setText(_translate("AdminDashBoard", "Setting Approver"))
+# import icon_rc
+# import placeholder_rc
 
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    AdminDashBoard = QtWidgets.QMainWindow()
+    ui = Ui_AdminDashBoard()
+    ui.setupUi(AdminDashBoard)
+    AdminDashBoard.show()
+    sys.exit(app.exec_())

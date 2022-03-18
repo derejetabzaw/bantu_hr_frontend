@@ -38,7 +38,7 @@ create table personel
     deviceId int,
     FOREIGN KEY (deviceId) REFERENCES device(deviceID)
 );
-<<<<<<< HEAD
+drop table personel;
 
 create table Department
 (
@@ -64,22 +64,32 @@ create table Position
     approved boolean
 );
 
-create table area 
-(
-	area_id int primary key,
-    area_code varchar(100),
-    Area_name varchar(60),
-    parent_area varchar(60),
-    remarks text
+
+create table holiday(
+holiday_id int primary key,
+hoiday_name varchar(60),
+min_unit int, 
+unit int,
+round_off int, 
+symbol_in_report varchar(25)
 );
-create table Device
+create table MailAlertSetting
 (
-	Device_id int primary key,
-    Device_name varchar(100),
-    Serial_number bigint,
-    ip_address varchar(32),
-    port_number int,
-    Area varchar (60)
+	alert_id int primary key auto_increment,
+    email_sending_server varchar(300),
+    server_port Decimal,
+    email_account varchar(100),
+    pwd varchar(100),
+    email_adress varchar(100)
 );
-=======
->>>>>>> 74e92ac196fc42cad21db1bfbb6279d56be7d246
+create table alarmSetting
+(
+ alarm_id int primary key auto_increment,
+ max_late_days int,
+ max_early_leaves int,
+ max_number_of_absents int,
+ email_sending_frequency varchar(40),
+ email_for_attendance boolean,
+ approval_alert boolean,
+ pop_alert boolean
+);

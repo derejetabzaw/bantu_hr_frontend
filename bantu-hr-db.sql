@@ -1,3 +1,5 @@
+create database `bantu-hr-db`;
+
 use  `bantu-hr-db`;
 
 create table areas
@@ -38,7 +40,6 @@ create table personel
     deviceId int,
     FOREIGN KEY (deviceId) REFERENCES device(deviceID)
 );
-drop table personel;
 
 create table Department
 (

@@ -1,4 +1,4 @@
-import mysql .connector as mysql
+import mysql.connector as mysql
 from datetime import date
 
 #Used to connect to the database
@@ -7,7 +7,7 @@ bantudb = mysql.connect(
       host='localhost',
       user='root',
       database='bantu-hr-db',
-      password='Sa@654321', 
+      password='wutangclan', 
       port=3306,
       auth_plugin = 'mysql_native_password'
 )
@@ -53,6 +53,15 @@ def addAreas(area_id, area_code, area_name, par_area, remark):
       bantudb.commit()
       print("Area Added Successfully!")
       viewAreas()
+      
+def addPersonel(**personel):
+      mycursor.execute( """INSERT INTO personel (personel_id,Gender,Department,Employee_type,Employemnet_date,pasword,first_name,last_name,job_title,paygrade,image) 
+                  VALUES (%s, %s, %s, %s, %s,%s, %s, %s, %s, %s,%s)""", 
+                  (personel["personel_id"],personel["Gender"],personel["Department"],personel["Employee_type"],personel["Employemnet_date"],personel["pasword"],personel["first_name"],personel["last_name"],personel["job_title"],personel["paygrade"],personel["image"]))
+      bantudb.commit()
+      bantudb.close()
+      print("Area Added Successfully!")
+            
 
 def editAreas(area_id, area_name, par_area, remark):
       mycursor.execute( """UPDATE areas 
@@ -101,14 +110,7 @@ def viewPersonel():
             print(temp)
       bantudb.close()
 
-def addPersonel(personel_id, Gender, Department, Employee_type, pasword, first_name, last_name, job_title, paygrade, image, deviceId):
-      mycursor.execute( """INSERT INTO 
-                        personel (`personel_id`,`Gender`,`Department`,`Employee_type`,`Employemnet_date`,`pasword`,`first_name`,`last_name`,`job_title`,`paygrade`,`image`,`deviceId`) 
-                        VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)""", 
-                        (personel_id, Gender, Department, Employee_type, date.today(), pasword, first_name, last_name, job_title, paygrade, image, deviceId))
-      bantudb.commit()
-      print("Personel Added Successfully!")
-      viewPersonel()
+
 
 def editPersonel(personel_id, Department, Employee_type, pasword, job_title, paygrade, image, deviceId):
       mycursor.execute( """UPDATE personel 
@@ -123,19 +125,12 @@ def deletePersonel(personel_id):
       bantudb.commit()
       print("Personel Deleted Successfully!")
       viewPersonel()
-
-# addDepartment(12, 'ZX', 'XZ')
-#editDepartment(12, 'AS', 'TU')
-#deleteDepartment(12)
-
-#addAreas(3, 100, 'Add', 'Ethio', 'old' )
-#editAreas(3,'ASDF', 'QWERTY' ,'GHJKL')
-#deleteAreas(3)
-
-#addDevice(12, 'Sams', '123456789', '128.52.11.90', '75', '2')
-#editDevice(12, 'Samsung', '11.12.13.14', 123, 1 )
-#deleteDevice(12)
-
-# addPersonel(3, 'Male', 1, 'Temporary', 'QWERTY', 'Kebe', 'Abe', 'Guide', 222, None, 1)
-# editPersonel(3, 'Lead', 'Permanent', 'ASDFGH', 'New', 555.55, None, 1)
-#deletePersonel(3)
+      
+def add_holiday(*args):
+      mycursor.execute( """INSERT INTO holiday (holiday_id, hoiday_name, min_unit, unit, round_off, symbol_in_report) 
+                        VALUES (%s, %s, %s, %s, %s, %s)""", (args[0], args[1], args[2], args[3], args[4], args[5]))
+      bantudb.commit()
+      print("holiday Added Successfully!")
+      
+      
+      

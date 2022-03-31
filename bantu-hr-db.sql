@@ -11,7 +11,9 @@ create table areas
     remarks varchar(45),
 	PRIMARY KEY (areaId)
 );
-
+insert into areas values
+(1,"443","atlas","bole","new office");
+select*from areas;
 create table device
 (
 	deviceId int NOT NULL,
@@ -23,7 +25,9 @@ create table device
     PRIMARY KEY (deviceID),
     FOREIGN KEY (areaId) REFERENCES areas (areaId)
 );
-
+insert into device values
+(1,"bio_scanner","ap619","192.168.1.1",80,1);
+select *from personel;
 create table personel
 (
 	personel_id int primary key,
@@ -36,11 +40,11 @@ create table personel
     last_name varchar(45),
     job_title varchar(45),
     paygrade double,
-    image Blob,
-    deviceId int,
-    FOREIGN KEY (deviceId) REFERENCES device(deviceID)
+    image Blob
 );
-
+drop table personel;
+select *from personel;
+select current_date();
 create table Department
 (
 		Department_id int primary key,
@@ -74,6 +78,8 @@ unit int,
 round_off int, 
 symbol_in_report varchar(25)
 );
+alter table holiday 
+modify column round_off boolean;
 create table MailAlertSetting
 (
 	alert_id int primary key auto_increment,

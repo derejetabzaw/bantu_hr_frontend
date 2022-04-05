@@ -11,6 +11,7 @@
 from ipaddress import ip_address
 from ssl import SSL_ERROR_INVALID_ERROR_CODE
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtWidgets import *
 import connection as con
 
 class Ui_AdminDashBoard(object):
@@ -3860,6 +3861,7 @@ class Ui_AdminDashBoard(object):
         self.dep_okbtn.clicked.connect(lambda x:self.add_department())
         self.area_okbtn_5.clicked.connect(lambda x:self.add_holiday())
         self.dev_okbtn.clicked.connect(lambda x:self.add_device())
+        self.pushButton_2.clicked.connect(lambda x:self.dialog())
     def retranslateUi(self, AdminDashBoard):
         _translate = QtCore.QCoreApplication.translate
         AdminDashBoard.setWindowTitle(_translate("AdminDashBoard", "G!ze"))
@@ -4414,8 +4416,8 @@ class Ui_AdminDashBoard(object):
         self.actionAdd_position.setText(_translate("AdminDashBoard", "add position"))
         self.actionSetting_Department.setText(_translate("AdminDashBoard", "setting Department"))
         self.actionSetting_Approver_2.setText(_translate("AdminDashBoard", "Setting Approver"))
+    image_file = ""
     def get_personel_added(self):
-        
          personel_id = self.lineEdit_7.text()
          gender = self.Gendercmb.currentText()
          department = self.dep_cmbx.currentText()
@@ -4426,8 +4428,9 @@ class Ui_AdminDashBoard(object):
          last_name = self.lineEdit_9.text()
          job_title = self.lineEdit_10.text()
          pay_grade = self.lineEdit_11.text()
+         print(self.image_file)
          con.addPersonel(personel_id=personel_id,Gender=gender,Department=department,
-         Employee_type=employement,Employemnet_date=date_of_employeement,pasword=password,first_name=first_name,last_name=last_name,job_title=job_title,paygrade=pay_grade,image="NULL")
+         Employee_type=employement,Employemnet_date=date_of_employeement,pasword=password,first_name=first_name,last_name=last_name,job_title=job_title,paygrade=pay_grade,image=self.image_file)
          print("connection succesful")
          
     def add_area(self):
@@ -4461,8 +4464,20 @@ class Ui_AdminDashBoard(object):
         unit = self.parentarea_cmbx_24.currentText()
         round_off = self.parentarea_cmbx_23.currentText()
         symbol_in_report = self.lineEdit_38.text()
-        con.add_holiday(holiday_id,holiday_name,min_unit,1,True,symbol_in_report)     
-          
+        con.add_holiday(holiday_id,holiday_name,min_unit,1,True,symbol_in_report)
+   
+    def ConvertToBinary(self,file):
+         with open(file,"rb") as fl:
+                    binary_data = fl.read()
+                    self.image_file = binary_data
+           
+        
+    def dialog(self):
+         file , check = QFileDialog.getOpenFileName(None, "QFileDialog.getOpenFileName()", "", "All Files (*);;Python Files (*.py);;Text Files (*.txt)")
+         if check:
+                 self.label_19.setPixmap(QtGui.QPixmap(file))
+                 self.ConvertToBinary(file) 
+                 
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)

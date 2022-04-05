@@ -40,10 +40,10 @@ create table personel
     last_name varchar(45),
     job_title varchar(45),
     paygrade double,
-    image Blob
+    image longblob
 );
 drop table personel;
-select *from personel;
+select * from personel;
 select current_date();
 create table Department
 (
@@ -100,3 +100,5 @@ create table alarmSetting
  approval_alert boolean,
  pop_alert boolean
 );
+select * from Department;
+select * from Holiday

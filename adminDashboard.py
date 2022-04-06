@@ -3898,6 +3898,8 @@ class Ui_AdminDashBoard(object):
         self.dev_okbtn.clicked.connect(lambda x:self.add_device())
         self.pushButton_2.clicked.connect(lambda x:self.dialog())
 
+        self.okbtn_3.clicked.connect(lambda x:self.get_department())
+
 
     def retranslateUi(self, AdminDashBoard):
         _translate = QtCore.QCoreApplication.translate
@@ -4525,6 +4527,16 @@ class Ui_AdminDashBoard(object):
                  self.ConvertToBinary(file)
 
 
+    def get_department(self):
+            tblData = con.viewDepartment()
+            print ("\n")
+            self.tableWidget_4.setRowCount(0)
+            for row_num, row_data in enumerate(tblData):
+                    self.tableWidget_4.insertRow(row_num)
+                    for column_num, data in enumerate(row_data):
+                        self.tableWidget_4.setItem(row_num, column_num, QTableWidgetItem(str(data)))
+    
+            
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)

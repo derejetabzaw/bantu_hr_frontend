@@ -18,7 +18,7 @@ class Ui_AdminDashBoard(object):
         AdminDashBoard.setObjectName("AdminDashBoard")
         AdminDashBoard.resize(1694, 1080)
         AdminDashBoard.setMaximumSize(QtCore.QSize(16777215, 16777215))
-        AdminDashBoard.setStyleSheet("bacground-color:#fff")
+        AdminDashBoard.setStyleSheet("background-color:#fff")
         self.centralwidget = QtWidgets.QWidget(AdminDashBoard)
         self.centralwidget.setObjectName("centralwidget")
         self.tabWidget_2 = QtWidgets.QTabWidget(self.centralwidget)
@@ -187,7 +187,7 @@ class Ui_AdminDashBoard(object):
         self.pushButton.setStyleSheet("background-color:#0076bd;\n"
 "border-radius:28px;\n"
 "border:1px solid #000;\n"
-"cursor:pointer;\n"
+#"cursor:pointer;\n"
 "color:#ffffff;\n"
 "font-family:Arial;\n"
 "font-size:17px;\n"
@@ -3898,6 +3898,8 @@ class Ui_AdminDashBoard(object):
         self.dev_okbtn.clicked.connect(lambda x:self.add_device())
         self.pushButton_2.clicked.connect(lambda x:self.dialog())
 
+        self.okbtn_3.clicked.connect(lambda x:self.get_department())
+
 
     def retranslateUi(self, AdminDashBoard):
         _translate = QtCore.QCoreApplication.translate
@@ -4486,7 +4488,7 @@ class Ui_AdminDashBoard(object):
         parent_area = self.parentarea_cmbx.currentText()
         remarks = self.lineEdit_17.text()
         con.addAreas(area_id,area_code,area_name,parent_area,remarks)
-        print ("operation succesful !")
+        print ("Area Added Successfully! !")
         
     def add_device(self):
         device_id = self.lineEdit_49.text()
@@ -4525,6 +4527,16 @@ class Ui_AdminDashBoard(object):
                  self.ConvertToBinary(file)
 
 
+    def get_department(self):
+            tblData = con.viewDepartment()
+            print ("\n")
+            self.tableWidget_4.setRowCount(0)
+            for row_num, row_data in enumerate(tblData):
+                    self.tableWidget_4.insertRow(row_num)
+                    for column_num, data in enumerate(row_data):
+                        self.tableWidget_4.setItem(row_num, column_num, QTableWidgetItem(str(data)))
+    
+            
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)

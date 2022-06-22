@@ -9,7 +9,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-import AdminDashBoard
+import adminDashboard
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -133,14 +133,14 @@ class Ui_MainWindow(object):
         self.label_3.setText(_translate("MainWindow", "G!ZE"))
         
     def click_event(self,MainWindow):
-        self.adminWindow = AdminDashBoard.Ui_AdminDashBoard()
+        self.adminWindow = adminDashboard.Ui_AdminDashBoard()
         
         self.adminWindow.setupUi(MainWindow)
         MainWindow.show()
 
 
 if __name__ == "__main__":
-    import sys
+    import sys    
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
     ui = Ui_MainWindow()

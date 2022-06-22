@@ -13,8 +13,13 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import *
 import connection as con
 
+import zktecotest as dev
+
 class Ui_AdminDashBoard(object):
     def setupUi(self, AdminDashBoard):
+            
+        dev.con()
+            
         AdminDashBoard.setObjectName("AdminDashBoard")
         AdminDashBoard.resize(1694, 1080)
         AdminDashBoard.setMaximumSize(QtCore.QSize(16777215, 16777215))
@@ -4495,7 +4500,7 @@ class Ui_AdminDashBoard(object):
         device_name = self.lineEdit_21.text()
         serial_number = self.lineEdit_19.text()
         ip_add = self.lineEdit_20.text()
-        port = self.lineEdit_22.text()
+        port = 4370
         Area = self.areacmbx.currentText()
         con.addDevice(device_id,device_name,serial_number,ip_add,port,1)
     
@@ -4543,5 +4548,5 @@ if __name__ == "__main__":
     AdminDashBoard = QtWidgets.QMainWindow()
     ui = Ui_AdminDashBoard()
     ui.setupUi(AdminDashBoard)
-    AdminDashBoard.show()
+    AdminDashBoard.show()    
     sys.exit(app.exec_())

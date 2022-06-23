@@ -9,7 +9,8 @@ config = {
       "host": 'localhost',
       "user": 'root',
       "database": 'bantu-hr-db',
-      "password": 'wutangclan',
+      # "password": 'wutangclan',
+      "password": 'Sa@654321',
       "port": 3306,
       "auth_plugin":  'mysql_native_password'
 }
@@ -22,10 +23,10 @@ try:
             mycursor.execute("use `bantu-hr-db`;")
 
             def viewDepartment():
-                  mycursor.execute("SELECT * FROM Department ORDER BY Department_name;")
+                  mycursor.execute("SELECT * FROM Department ORDER BY Department_Id;")
                   #Get all records
                   records = mycursor.fetchall()
-                  ###REMOVE LINE 28 - 34, Later while cleaning code
+                  ###REMOVE LINE 29 - 34, Later while cleaning code
                   #Print the number of Rows
                   count = mycursor.rowcount
                   print ("Number of Rows: ", count)

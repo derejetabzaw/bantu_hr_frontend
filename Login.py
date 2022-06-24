@@ -27,7 +27,8 @@ class Ui_MainWindow(object):
         self.frame.setStyleSheet("background-color:#0076bd;\n"
 "border:4px solid #fff;\n"
 "border-radius:22px;\n"
-"box-shadow: 10px 10px 5px 0px rgba(0,118,189,0.75);")
+# "box-shadow: 10px 10px 5px 0px rgba(0,118,189,0.75);"
+)
         self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame.setObjectName("frame")
@@ -59,7 +60,7 @@ class Ui_MainWindow(object):
         self.LoginBtn.setStyleSheet("background-color:#0076bd;\n"
 "border-radius:28px;\n"
 "border:1px solid #fff;\n"
-"cursor:pointer;\n"
+# "cursor:pointer;\n"
 "color:#ffffff;\n"
 "font-family:Arial;\n"
 "font-size:17px;\n"

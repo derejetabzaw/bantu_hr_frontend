@@ -20,7 +20,7 @@ class Ui_AdminDashBoard(object):
         AdminDashBoard.setObjectName("AdminDashBoard")
         AdminDashBoard.resize(1694, 1080)
         AdminDashBoard.setMaximumSize(QtCore.QSize(16777215, 16777215))
-        AdminDashBoard.setStyleSheet("bacground-color:#fff")
+        AdminDashBoard.setStyleSheet("background-color:#fff")
         self.centralwidget = QtWidgets.QWidget(AdminDashBoard)
         self.centralwidget.setObjectName("centralwidget")
         self.tabWidget_2 = QtWidgets.QTabWidget(self.centralwidget)
@@ -56,8 +56,7 @@ class Ui_AdminDashBoard(object):
         font.setBold(True)
         font.setWeight(75)
         self.tabWidget.setFont(font)
-        self.tabWidget.setStyleSheet("background-color:#fff\n"
-"")
+        self.tabWidget.setStyleSheet("background-color:#fff\n" "")
         self.tabWidget.setObjectName("tabWidget")
         self.personel1 = QtWidgets.QWidget()
         self.personel1.setObjectName("personel1")
@@ -102,8 +101,9 @@ class Ui_AdminDashBoard(object):
         self.formLayout_2.setWidget(1, QtWidgets.QFormLayout.LabelRole, self.label_8)
         self.Gendercmb = QtWidgets.QComboBox(self.formLayoutWidget_2)
         self.Gendercmb.setMinimumSize(QtCore.QSize(0, 28))
-        self.Gendercmb.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;")
+        self.Gendercmb.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;"
+        )
         self.Gendercmb.setObjectName("Gendercmb")
         self.Gendercmb.addItem("")
         self.Gendercmb.addItem("")
@@ -120,8 +120,9 @@ class Ui_AdminDashBoard(object):
         self.formLayout_2.setWidget(2, QtWidgets.QFormLayout.LabelRole, self.label_9)
         self.dep_cmbx = QtWidgets.QComboBox(self.formLayoutWidget_2)
         self.dep_cmbx.setMinimumSize(QtCore.QSize(0, 28))
-        self.dep_cmbx.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;")
+        self.dep_cmbx.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;"
+        )
         self.dep_cmbx.setObjectName("dep_cmbx")
         self.dep_cmbx.addItem("")
         self.dep_cmbx.addItem("")
@@ -138,14 +139,17 @@ class Ui_AdminDashBoard(object):
         self.formLayout_2.setWidget(3, QtWidgets.QFormLayout.LabelRole, self.label_10)
         self.Empment_cmbx = QtWidgets.QComboBox(self.formLayoutWidget_2)
         self.Empment_cmbx.setMinimumSize(QtCore.QSize(0, 28))
-        self.Empment_cmbx.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;")
+        self.Empment_cmbx.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;"
+        )
         self.Empment_cmbx.setObjectName("Empment_cmbx")
         self.Empment_cmbx.addItem("")
         self.Empment_cmbx.addItem("")
         self.Empment_cmbx.addItem("")
         self.Empment_cmbx.addItem("")
-        self.formLayout_2.setWidget(3, QtWidgets.QFormLayout.FieldRole, self.Empment_cmbx)
+        self.formLayout_2.setWidget(
+            3, QtWidgets.QFormLayout.FieldRole, self.Empment_cmbx
+        )
         self.label_11 = QtWidgets.QLabel(self.formLayoutWidget_2)
         font = QtGui.QFont()
         font.setFamily("Yu Gothic UI Semibold")
@@ -157,8 +161,9 @@ class Ui_AdminDashBoard(object):
         self.formLayout_2.setWidget(4, QtWidgets.QFormLayout.LabelRole, self.label_11)
         self.DateCmbx = QtWidgets.QDateEdit(self.formLayoutWidget_2)
         self.DateCmbx.setMinimumSize(QtCore.QSize(0, 28))
-        self.DateCmbx.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;")
+        self.DateCmbx.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;"
+        )
         self.DateCmbx.setObjectName("DateCmbx")
         self.formLayout_2.setWidget(4, QtWidgets.QFormLayout.FieldRole, self.DateCmbx)
         self.label_12 = QtWidgets.QLabel(self.formLayoutWidget_2)
@@ -172,32 +177,34 @@ class Ui_AdminDashBoard(object):
         self.formLayout_2.setWidget(5, QtWidgets.QFormLayout.LabelRole, self.label_12)
         self.lineEdit = QtWidgets.QLineEdit(self.formLayoutWidget_2)
         self.lineEdit.setMinimumSize(QtCore.QSize(20, 28))
-        self.lineEdit.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;\n"
-"")
+        self.lineEdit.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;\n" ""
+        )
         self.lineEdit.setObjectName("lineEdit")
         self.formLayout_2.setWidget(5, QtWidgets.QFormLayout.FieldRole, self.lineEdit)
         self.lineEdit_7 = QtWidgets.QLineEdit(self.formLayoutWidget_2)
         self.lineEdit_7.setMinimumSize(QtCore.QSize(20, 28))
-        self.lineEdit_7.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;\n"
-"")
+        self.lineEdit_7.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;\n" ""
+        )
         self.lineEdit_7.setObjectName("lineEdit_7")
         self.formLayout_2.setWidget(0, QtWidgets.QFormLayout.FieldRole, self.lineEdit_7)
         self.pushButton = QtWidgets.QPushButton(self.tab_6)
         self.pushButton.setGeometry(QtCore.QRect(1550, 360, 131, 61))
-        self.pushButton.setStyleSheet("background-color:#0076bd;\n"
-"border-radius:28px;\n"
-"border:1px solid #000;\n"
-"cursor:pointer;\n"
-"color:#ffffff;\n"
-"font-family:Arial;\n"
-"font-size:17px;\n"
-"padding:16px 31px;\n"
-"QPushButton::hover{\n"
-"    background-color:#fff\n"
-"}\n"
-"   ")
+        self.pushButton.setStyleSheet(
+            "background-color:#0076bd;\n"
+            "border-radius:28px;\n"
+            "border:1px solid #000;\n"
+            #     "cursor:pointer;\n"
+            "color:#ffffff;\n"
+            "font-family:Arial;\n"
+            "font-size:17px;\n"
+            "padding:16px 31px;\n"
+            "QPushButton::hover{\n"
+            "    background-color:#fff\n"
+            "}\n"
+            "   "
+        )
         self.pushButton.setObjectName("pushButton")
         self.label_18 = QtWidgets.QLabel(self.tab_6)
         self.label_18.setGeometry(QtCore.QRect(1500, 100, 261, 241))
@@ -255,32 +262,36 @@ class Ui_AdminDashBoard(object):
         self.formLayout_3.setWidget(3, QtWidgets.QFormLayout.LabelRole, self.label_16)
         self.lineEdit_8 = QtWidgets.QLineEdit(self.formLayoutWidget_3)
         self.lineEdit_8.setMinimumSize(QtCore.QSize(20, 28))
-        self.lineEdit_8.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;\n"
-"")
+        self.lineEdit_8.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;\n" ""
+        )
         self.lineEdit_8.setObjectName("lineEdit_8")
         self.formLayout_3.setWidget(0, QtWidgets.QFormLayout.FieldRole, self.lineEdit_8)
         self.lineEdit_9 = QtWidgets.QLineEdit(self.formLayoutWidget_3)
         self.lineEdit_9.setMinimumSize(QtCore.QSize(20, 28))
-        self.lineEdit_9.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;\n"
-"")
+        self.lineEdit_9.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;\n" ""
+        )
         self.lineEdit_9.setObjectName("lineEdit_9")
         self.formLayout_3.setWidget(1, QtWidgets.QFormLayout.FieldRole, self.lineEdit_9)
         self.lineEdit_10 = QtWidgets.QLineEdit(self.formLayoutWidget_3)
         self.lineEdit_10.setMinimumSize(QtCore.QSize(20, 28))
-        self.lineEdit_10.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;\n"
-"")
+        self.lineEdit_10.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;\n" ""
+        )
         self.lineEdit_10.setObjectName("lineEdit_10")
-        self.formLayout_3.setWidget(2, QtWidgets.QFormLayout.FieldRole, self.lineEdit_10)
+        self.formLayout_3.setWidget(
+            2, QtWidgets.QFormLayout.FieldRole, self.lineEdit_10
+        )
         self.lineEdit_11 = QtWidgets.QLineEdit(self.formLayoutWidget_3)
         self.lineEdit_11.setMinimumSize(QtCore.QSize(20, 28))
-        self.lineEdit_11.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;\n"
-"")
+        self.lineEdit_11.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;\n" ""
+        )
         self.lineEdit_11.setObjectName("lineEdit_11")
-        self.formLayout_3.setWidget(3, QtWidgets.QFormLayout.FieldRole, self.lineEdit_11)
+        self.formLayout_3.setWidget(
+            3, QtWidgets.QFormLayout.FieldRole, self.lineEdit_11
+        )
         self.horizontalLayoutWidget_2 = QtWidgets.QWidget(self.tab_6)
         self.horizontalLayoutWidget_2.setGeometry(QtCore.QRect(320, 550, 481, 80))
         self.horizontalLayoutWidget_2.setObjectName("horizontalLayoutWidget_2")
@@ -288,24 +299,28 @@ class Ui_AdminDashBoard(object):
         self.horizontalLayout_14.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_14.setObjectName("horizontalLayout_14")
         self.okbtn = QtWidgets.QPushButton(self.horizontalLayoutWidget_2)
-        self.okbtn.setStyleSheet("background-color:#fff;\n"
-"color:#0076bd;\n"
-"border: 1px solid #0076bd;\n"
-"border-radius:12px;\n"
-"font-family:monospace;\n"
-"font-size:20px\n"
-"")
+        self.okbtn.setStyleSheet(
+            "background-color:#fff;\n"
+            "color:#0076bd;\n"
+            "border: 1px solid #0076bd;\n"
+            "border-radius:12px;\n"
+            "font-family:monospace;\n"
+            "font-size:20px\n"
+            ""
+        )
         self.okbtn.setObjectName("okbtn")
         self.horizontalLayout_14.addWidget(self.okbtn)
         self.cnclbtn = QtWidgets.QPushButton(self.horizontalLayoutWidget_2)
-        self.cnclbtn.setStyleSheet("background-color:#fff;\n"
-"color:#ff0000;\n"
-"border: 1px solid #fff;\n"
-"border-radius:12px;\n"
-"text-decoration: underline;\n"
-"font-family:monospace;\n"
-"font-size:20px\n"
-"")
+        self.cnclbtn.setStyleSheet(
+            "background-color:#fff;\n"
+            "color:#ff0000;\n"
+            "border: 1px solid #fff;\n"
+            "border-radius:12px;\n"
+            "text-decoration: underline;\n"
+            "font-family:monospace;\n"
+            "font-size:20px\n"
+            ""
+        )
         self.cnclbtn.setObjectName("cnclbtn")
         self.horizontalLayout_14.addWidget(self.cnclbtn)
         self.label_19 = QtWidgets.QLabel(self.tab_6)
@@ -313,10 +328,12 @@ class Ui_AdminDashBoard(object):
         self.label_19.setObjectName("label_19")
         self.pushButton_2 = QtWidgets.QPushButton(self.tab_6)
         self.pushButton_2.setGeometry(QtCore.QRect(1120, 340, 171, 61))
-        self.pushButton_2.setStyleSheet("border:1px solid #fff;\n"
-"border-radius:25px;\n"
-"background-color:#0076bd;\n"
-"color:#fff")
+        self.pushButton_2.setStyleSheet(
+            "border:1px solid #fff;\n"
+            "border-radius:25px;\n"
+            "background-color:#0076bd;\n"
+            "color:#fff"
+        )
         self.pushButton_2.setObjectName("pushButton_2")
         self.tabWidget_3.addTab(self.tab_6, "")
         self.tab_8 = QtWidgets.QWidget()
@@ -343,20 +360,22 @@ class Ui_AdminDashBoard(object):
         self.horizontalLayout_15.addWidget(self.label_41)
         self.lineEdit_2 = QtWidgets.QLineEdit(self.horizontalLayoutWidget_14)
         self.lineEdit_2.setMinimumSize(QtCore.QSize(0, 28))
-        self.lineEdit_2.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;\n"
-"")
+        self.lineEdit_2.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;\n" ""
+        )
         self.lineEdit_2.setObjectName("lineEdit_2")
         self.horizontalLayout_15.addWidget(self.lineEdit_2)
         self.okbtn_2 = QtWidgets.QPushButton(self.horizontalLayoutWidget_14)
-        self.okbtn_2.setStyleSheet("background-color:#fff;\n"
-"color:#0076bd;\n"
-"border: 1px solid #fff;\n"
-"border-radius:12px;\n"
-"text-decoration: underline;\n"
-"font-family:monospace;\n"
-"font-size:20px\n"
-"")
+        self.okbtn_2.setStyleSheet(
+            "background-color:#fff;\n"
+            "color:#0076bd;\n"
+            "border: 1px solid #fff;\n"
+            "border-radius:12px;\n"
+            "text-decoration: underline;\n"
+            "font-family:monospace;\n"
+            "font-size:20px\n"
+            ""
+        )
         self.okbtn_2.setObjectName("okbtn_2")
         self.horizontalLayout_15.addWidget(self.okbtn_2)
         self.tabWidget_3.addTab(self.tab_8, "")
@@ -386,14 +405,18 @@ class Ui_AdminDashBoard(object):
         font = QtGui.QFont()
         font.setPointSize(12)
         self.label_2.setFont(font)
-        self.label_2.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
+        self.label_2.setAlignment(
+            QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignVCenter
+        )
         self.label_2.setWordWrap(True)
         self.label_2.setObjectName("label_2")
         self.formLayoutWidget_4 = QtWidgets.QWidget(self.DepartmentwidgetPage1)
         self.formLayoutWidget_4.setGeometry(QtCore.QRect(40, 70, 531, 145))
         self.formLayoutWidget_4.setObjectName("formLayoutWidget_4")
         self.formLayout_4 = QtWidgets.QFormLayout(self.formLayoutWidget_4)
-        self.formLayout_4.setFieldGrowthPolicy(QtWidgets.QFormLayout.AllNonFixedFieldsGrow)
+        self.formLayout_4.setFieldGrowthPolicy(
+            QtWidgets.QFormLayout.AllNonFixedFieldsGrow
+        )
         self.formLayout_4.setContentsMargins(0, 0, 0, 0)
         self.formLayout_4.setObjectName("formLayout_4")
         self.label_42 = QtWidgets.QLabel(self.formLayoutWidget_4)
@@ -407,11 +430,13 @@ class Ui_AdminDashBoard(object):
         self.formLayout_4.setWidget(0, QtWidgets.QFormLayout.LabelRole, self.label_42)
         self.lineEdit_15 = QtWidgets.QLineEdit(self.formLayoutWidget_4)
         self.lineEdit_15.setMinimumSize(QtCore.QSize(20, 28))
-        self.lineEdit_15.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;\n"
-"")
+        self.lineEdit_15.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;\n" ""
+        )
         self.lineEdit_15.setObjectName("lineEdit_15")
-        self.formLayout_4.setWidget(0, QtWidgets.QFormLayout.FieldRole, self.lineEdit_15)
+        self.formLayout_4.setWidget(
+            0, QtWidgets.QFormLayout.FieldRole, self.lineEdit_15
+        )
         self.label_43 = QtWidgets.QLabel(self.formLayoutWidget_4)
         font = QtGui.QFont()
         font.setFamily("Yu Gothic UI Semibold")
@@ -421,9 +446,9 @@ class Ui_AdminDashBoard(object):
         self.formLayout_4.setWidget(1, QtWidgets.QFormLayout.LabelRole, self.label_43)
         self.lineEdit_3 = QtWidgets.QLineEdit(self.formLayoutWidget_4)
         self.lineEdit_3.setMinimumSize(QtCore.QSize(20, 28))
-        self.lineEdit_3.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;\n"
-"")
+        self.lineEdit_3.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;\n" ""
+        )
         self.lineEdit_3.setObjectName("lineEdit_3")
         self.formLayout_4.setWidget(1, QtWidgets.QFormLayout.FieldRole, self.lineEdit_3)
         self.label_44 = QtWidgets.QLabel(self.formLayoutWidget_4)
@@ -437,8 +462,9 @@ class Ui_AdminDashBoard(object):
         self.formLayout_4.setWidget(2, QtWidgets.QFormLayout.LabelRole, self.label_44)
         self.dep_cmbx_6 = QtWidgets.QComboBox(self.formLayoutWidget_4)
         self.dep_cmbx_6.setMinimumSize(QtCore.QSize(0, 28))
-        self.dep_cmbx_6.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;")
+        self.dep_cmbx_6.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;"
+        )
         self.dep_cmbx_6.setObjectName("dep_cmbx_6")
         self.dep_cmbx_6.addItem("")
         self.dep_cmbx_6.addItem("")
@@ -446,7 +472,9 @@ class Ui_AdminDashBoard(object):
         self.formLayout_4.setWidget(2, QtWidgets.QFormLayout.FieldRole, self.dep_cmbx_6)
         self.horizontalLayout_16 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_16.setObjectName("horizontalLayout_16")
-        self.formLayout_4.setLayout(3, QtWidgets.QFormLayout.LabelRole, self.horizontalLayout_16)
+        self.formLayout_4.setLayout(
+            3, QtWidgets.QFormLayout.LabelRole, self.horizontalLayout_16
+        )
         self.horizontalLayoutWidget_16 = QtWidgets.QWidget(self.DepartmentwidgetPage1)
         self.horizontalLayoutWidget_16.setGeometry(QtCore.QRect(40, 230, 791, 80))
         self.horizontalLayoutWidget_16.setObjectName("horizontalLayoutWidget_16")
@@ -460,11 +488,13 @@ class Ui_AdminDashBoard(object):
         font.setBold(True)
         font.setWeight(75)
         self.dep_okbtn.setFont(font)
-        self.dep_okbtn.setStyleSheet("background-color:#fff;\n"
-"color:#0076bd;\n"
-"border-top:1px solid #fff;\n"
-"border-bottom:1px solid #0076bd;\n"
-"padding-bottom:0px")
+        self.dep_okbtn.setStyleSheet(
+            "background-color:#fff;\n"
+            "color:#0076bd;\n"
+            "border-top:1px solid #fff;\n"
+            "border-bottom:1px solid #0076bd;\n"
+            "padding-bottom:0px"
+        )
         self.dep_okbtn.setObjectName("dep_okbtn")
         self.horizontalLayout_17.addWidget(self.dep_okbtn)
         self.dep_saveandnwbtn = QtWidgets.QPushButton(self.horizontalLayoutWidget_16)
@@ -474,11 +504,13 @@ class Ui_AdminDashBoard(object):
         font.setBold(True)
         font.setWeight(75)
         self.dep_saveandnwbtn.setFont(font)
-        self.dep_saveandnwbtn.setStyleSheet("background-color:#fff;\n"
-"color:#0076bd;\n"
-"border-top:1px solid #fff;\n"
-"border-bottom:1px solid #0076bd;\n"
-"padding-bottom:0px")
+        self.dep_saveandnwbtn.setStyleSheet(
+            "background-color:#fff;\n"
+            "color:#0076bd;\n"
+            "border-top:1px solid #fff;\n"
+            "border-bottom:1px solid #0076bd;\n"
+            "padding-bottom:0px"
+        )
         self.dep_saveandnwbtn.setObjectName("dep_saveandnwbtn")
         self.horizontalLayout_17.addWidget(self.dep_saveandnwbtn)
         self.cancel_depbtn = QtWidgets.QPushButton(self.horizontalLayoutWidget_16)
@@ -487,11 +519,13 @@ class Ui_AdminDashBoard(object):
         font.setBold(True)
         font.setWeight(75)
         self.cancel_depbtn.setFont(font)
-        self.cancel_depbtn.setStyleSheet("background-color:#fff;\n"
-"color:#ff0000;\n"
-"border-top:1px solid #fff;\n"
-"border-bottom:1px solid #0076bd;\n"
-"padding-bottom:0px")
+        self.cancel_depbtn.setStyleSheet(
+            "background-color:#fff;\n"
+            "color:#ff0000;\n"
+            "border-top:1px solid #fff;\n"
+            "border-bottom:1px solid #0076bd;\n"
+            "padding-bottom:0px"
+        )
         self.cancel_depbtn.setObjectName("cancel_depbtn")
         self.horizontalLayout_17.addWidget(self.cancel_depbtn)
         self.Departmentwidget.addTab(self.DepartmentwidgetPage1, "")
@@ -552,8 +586,9 @@ class Ui_AdminDashBoard(object):
         self.horizontalLayout_5.addWidget(self.label_32)
         self.comboBox_3 = QtWidgets.QComboBox(self.horizontalLayoutWidget_5)
         self.comboBox_3.setMinimumSize(QtCore.QSize(0, 28))
-        self.comboBox_3.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;")
+        self.comboBox_3.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;"
+        )
         self.comboBox_3.setObjectName("comboBox_3")
         self.horizontalLayout_5.addWidget(self.comboBox_3)
         self.horizontalLayoutWidget_6 = QtWidgets.QWidget(self.tab_4)
@@ -563,25 +598,29 @@ class Ui_AdminDashBoard(object):
         self.horizontalLayout_6.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_6.setObjectName("horizontalLayout_6")
         self.approve_updt = QtWidgets.QPushButton(self.horizontalLayoutWidget_6)
-        self.approve_updt.setStyleSheet("background-color:#fff;\n"
-"color:#0076bd;\n"
-"border: 1px solid #fff;\n"
-"border-radius:12px;\n"
-"text-decoration: underline;\n"
-"font-family:monospace;\n"
-"font-size:20px\n"
-"")
+        self.approve_updt.setStyleSheet(
+            "background-color:#fff;\n"
+            "color:#0076bd;\n"
+            "border: 1px solid #fff;\n"
+            "border-radius:12px;\n"
+            "text-decoration: underline;\n"
+            "font-family:monospace;\n"
+            "font-size:20px\n"
+            ""
+        )
         self.approve_updt.setObjectName("approve_updt")
         self.horizontalLayout_6.addWidget(self.approve_updt)
         self.cncl_depupt = QtWidgets.QPushButton(self.horizontalLayoutWidget_6)
-        self.cncl_depupt.setStyleSheet("background-color:#fff;\n"
-"color:#ff0000;\n"
-"border: 1px solid #fff;\n"
-"border-radius:12px;\n"
-"text-decoration: underline;\n"
-"font-family:monospace;\n"
-"font-size:20px\n"
-"")
+        self.cncl_depupt.setStyleSheet(
+            "background-color:#fff;\n"
+            "color:#ff0000;\n"
+            "border: 1px solid #fff;\n"
+            "border-radius:12px;\n"
+            "text-decoration: underline;\n"
+            "font-family:monospace;\n"
+            "font-size:20px\n"
+            ""
+        )
         self.cncl_depupt.setObjectName("cncl_depupt")
         self.horizontalLayout_6.addWidget(self.cncl_depupt)
         self.label_4 = QtWidgets.QLabel(self.tab_4)
@@ -622,8 +661,9 @@ class Ui_AdminDashBoard(object):
         self.tableWidget_2.setHorizontalHeaderItem(2, item)
         self.comboBox = QtWidgets.QComboBox(self.tab_4)
         self.comboBox.setGeometry(QtCore.QRect(50, 210, 251, 31))
-        self.comboBox.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;")
+        self.comboBox.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;"
+        )
         self.comboBox.setObjectName("comboBox")
         self.horizontalLayoutWidget_7 = QtWidgets.QWidget(self.tab_4)
         self.horizontalLayoutWidget_7.setGeometry(QtCore.QRect(440, 260, 481, 80))
@@ -635,14 +675,16 @@ class Ui_AdminDashBoard(object):
         self.label_33.setObjectName("label_33")
         self.horizontalLayout_7.addWidget(self.label_33)
         self.clrselected = QtWidgets.QPushButton(self.horizontalLayoutWidget_7)
-        self.clrselected.setStyleSheet("background-color:#fff;\n"
-"color:#0076bd;\n"
-"border: 1px solid #fff;\n"
-"border-radius:12px;\n"
-"text-decoration: underline;\n"
-"font-family:monospace;\n"
-"font-size:20px\n"
-"")
+        self.clrselected.setStyleSheet(
+            "background-color:#fff;\n"
+            "color:#0076bd;\n"
+            "border: 1px solid #fff;\n"
+            "border-radius:12px;\n"
+            "text-decoration: underline;\n"
+            "font-family:monospace;\n"
+            "font-size:20px\n"
+            ""
+        )
         self.clrselected.setObjectName("clrselected")
         self.horizontalLayout_7.addWidget(self.clrselected)
         self.horizontalLayoutWidget_4 = QtWidgets.QWidget(self.tab_4)
@@ -662,8 +704,9 @@ class Ui_AdminDashBoard(object):
         self.horizontalLayout_4.addWidget(self.label_31)
         self.comboBox_2 = QtWidgets.QComboBox(self.horizontalLayoutWidget_4)
         self.comboBox_2.setMinimumSize(QtCore.QSize(0, 28))
-        self.comboBox_2.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;")
+        self.comboBox_2.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;"
+        )
         self.comboBox_2.setObjectName("comboBox_2")
         self.horizontalLayout_4.addWidget(self.comboBox_2)
         self.Departmentwidget.addTab(self.tab_4, "")
@@ -686,34 +729,43 @@ class Ui_AdminDashBoard(object):
         self.horizontalLayout_10.setObjectName("horizontalLayout_10")
         self.add_aprrover = QtWidgets.QPushButton(self.horizontalLayoutWidget_9)
         self.add_aprrover.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.add_aprrover.setStyleSheet("background-color:#fff;\n"
-"color:#0076bd;\n"
-"border: 1px solid #fff;\n"
-"border-radius:12px;\n"
-"text-decoration: underline;\n"
-"font-family:monospace;\n"
-"font-size:20px\n"
-"")
+        self.add_aprrover.setStyleSheet(
+            "background-color:#fff;\n"
+            "color:#0076bd;\n"
+            "border: 1px solid #fff;\n"
+            "border-radius:12px;\n"
+            "text-decoration: underline;\n"
+            "font-family:monospace;\n"
+            "font-size:20px\n"
+            ""
+        )
         self.add_aprrover.setObjectName("add_aprrover")
         self.horizontalLayout_10.addWidget(self.add_aprrover)
         self.cancel_approver = QtWidgets.QPushButton(self.horizontalLayoutWidget_9)
-        self.cancel_approver.setStyleSheet("background-color:#fff;\n"
-"color:#ff0000;\n"
-"border: 1px solid #fff;\n"
-"border-radius:12px;\n"
-"text-decoration: underline;\n"
-"font-family:monospace;\n"
-"font-size:20px\n"
-"")
+        self.cancel_approver.setStyleSheet(
+            "background-color:#fff;\n"
+            "color:#ff0000;\n"
+            "border: 1px solid #fff;\n"
+            "border-radius:12px;\n"
+            "text-decoration: underline;\n"
+            "font-family:monospace;\n"
+            "font-size:20px\n"
+            ""
+        )
         self.cancel_approver.setObjectName("cancel_approver")
         self.horizontalLayout_10.addWidget(self.cancel_approver)
         self.add_aprrovebtn = QtWidgets.QPushButton(self.tab_5)
         self.add_aprrovebtn.setGeometry(QtCore.QRect(340, 190, 141, 131))
-        self.add_aprrovebtn.setStyleSheet("border:1px solid #0076bd;\n"
-"border-radius:50%;")
+        self.add_aprrovebtn.setStyleSheet(
+            "border:1px solid #0076bd;\n" "border-radius:50%;"
+        )
         self.add_aprrovebtn.setText("")
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("iconmonstr-plus-2-240.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(
+            QtGui.QPixmap("iconmonstr-plus-2-240.png"),
+            QtGui.QIcon.Normal,
+            QtGui.QIcon.Off,
+        )
         self.add_aprrovebtn.setIcon(icon)
         self.add_aprrovebtn.setObjectName("add_aprrovebtn")
         self.horizontalLayoutWidget_8 = QtWidgets.QWidget(self.tab_5)
@@ -733,8 +785,9 @@ class Ui_AdminDashBoard(object):
         self.horizontalLayout_8.addWidget(self.label_34)
         self.comboBox_4 = QtWidgets.QComboBox(self.horizontalLayoutWidget_8)
         self.comboBox_4.setMinimumSize(QtCore.QSize(0, 30))
-        self.comboBox_4.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;")
+        self.comboBox_4.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;"
+        )
         self.comboBox_4.setObjectName("comboBox_4")
         self.comboBox_4.addItem("")
         self.comboBox_4.addItem("")
@@ -752,9 +805,9 @@ class Ui_AdminDashBoard(object):
         self.lineEdit_51 = QtWidgets.QLineEdit(self.tab_5)
         self.lineEdit_51.setGeometry(QtCore.QRect(210, 50, 312, 28))
         self.lineEdit_51.setMinimumSize(QtCore.QSize(20, 28))
-        self.lineEdit_51.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;\n"
-"")
+        self.lineEdit_51.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;\n" ""
+        )
         self.lineEdit_51.setObjectName("lineEdit_51")
         self.label_20 = QtWidgets.QLabel(self.tab_5)
         self.label_20.setGeometry(QtCore.QRect(40, 50, 171, 31))
@@ -781,20 +834,22 @@ class Ui_AdminDashBoard(object):
         self.tableWidget_4.setHorizontalHeaderItem(2, item)
         self.okbtn_3 = QtWidgets.QPushButton(self.tab_111)
         self.okbtn_3.setGeometry(QtCore.QRect(430, 30, 236, 26))
-        self.okbtn_3.setStyleSheet("background-color:#fff;\n"
-"color:#0076bd;\n"
-"border: 1px solid #0076bd;\n"
-"border-radius:12px;\n"
-"font-family:monospace;\n"
-"font-size:20px\n"
-"")
+        self.okbtn_3.setStyleSheet(
+            "background-color:#fff;\n"
+            "color:#0076bd;\n"
+            "border: 1px solid #0076bd;\n"
+            "border-radius:12px;\n"
+            "font-family:monospace;\n"
+            "font-size:20px\n"
+            ""
+        )
         self.okbtn_3.setObjectName("okbtn_3")
         self.lineEdit_53 = QtWidgets.QLineEdit(self.tab_111)
         self.lineEdit_53.setGeometry(QtCore.QRect(90, 30, 312, 28))
         self.lineEdit_53.setMinimumSize(QtCore.QSize(20, 28))
-        self.lineEdit_53.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;\n"
-"")
+        self.lineEdit_53.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;\n" ""
+        )
         self.lineEdit_53.setObjectName("lineEdit_53")
         self.status = QtWidgets.QLabel(self.tab_111)
         self.status.setGeometry(QtCore.QRect(210, 80, 101, 31))
@@ -821,12 +876,14 @@ class Ui_AdminDashBoard(object):
         font.setBold(True)
         font.setWeight(75)
         self.SearchBtn.setFont(font)
-        self.SearchBtn.setStyleSheet("background-color:#fff;\n"
-"color:#0076bd;\n"
-"border-top:1px solid #fff;\n"
-"border-bottom:1px solid #0076bd;\n"
-"padding-bottom:0px\n"
-"")
+        self.SearchBtn.setStyleSheet(
+            "background-color:#fff;\n"
+            "color:#0076bd;\n"
+            "border-top:1px solid #fff;\n"
+            "border-bottom:1px solid #0076bd;\n"
+            "padding-bottom:0px\n"
+            ""
+        )
         self.SearchBtn.setObjectName("SearchBtn")
         self.clrbtn = QtWidgets.QPushButton(self.Positionmangement)
         self.clrbtn.setGeometry(QtCore.QRect(1100, 60, 93, 28))
@@ -836,12 +893,14 @@ class Ui_AdminDashBoard(object):
         font.setBold(True)
         font.setWeight(75)
         self.clrbtn.setFont(font)
-        self.clrbtn.setStyleSheet("background-color:#fff;\n"
-"color:#0076bd;\n"
-"border-top:1px solid #fff;\n"
-"border-bottom:1px solid #0076bd;\n"
-"padding-bottom:0px\n"
-"")
+        self.clrbtn.setStyleSheet(
+            "background-color:#fff;\n"
+            "color:#0076bd;\n"
+            "border-top:1px solid #fff;\n"
+            "border-bottom:1px solid #0076bd;\n"
+            "padding-bottom:0px\n"
+            ""
+        )
         self.clrbtn.setObjectName("clrbtn")
         self.tableWidget = QtWidgets.QTableWidget(self.Positionmangement)
         self.tableWidget.setGeometry(QtCore.QRect(40, 120, 1131, 701))
@@ -889,10 +948,13 @@ class Ui_AdminDashBoard(object):
         self.formLayout_9.setWidget(0, QtWidgets.QFormLayout.LabelRole, self.label_22)
         self.lineEdit_4 = QtWidgets.QLineEdit(self.formLayoutWidget_9)
         self.lineEdit_4.setMaximumSize(QtCore.QSize(16777215, 30))
-        self.lineEdit_4.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;")
+        self.lineEdit_4.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;"
+        )
         self.lineEdit_4.setObjectName("lineEdit_4")
-        self.formLayout_9.setWidget(1, QtWidgets.QFormLayout.SpanningRole, self.lineEdit_4)
+        self.formLayout_9.setWidget(
+            1, QtWidgets.QFormLayout.SpanningRole, self.lineEdit_4
+        )
         self.formLayoutWidget_10 = QtWidgets.QWidget(self.Positionmangement)
         self.formLayoutWidget_10.setGeometry(QtCore.QRect(300, 50, 351, 54))
         self.formLayoutWidget_10.setObjectName("formLayoutWidget_10")
@@ -901,10 +963,13 @@ class Ui_AdminDashBoard(object):
         self.formLayout_10.setObjectName("formLayout_10")
         self.lineEdit_5 = QtWidgets.QLineEdit(self.formLayoutWidget_10)
         self.lineEdit_5.setMaximumSize(QtCore.QSize(16777215, 30))
-        self.lineEdit_5.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;")
+        self.lineEdit_5.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;"
+        )
         self.lineEdit_5.setObjectName("lineEdit_5")
-        self.formLayout_10.setWidget(1, QtWidgets.QFormLayout.FieldRole, self.lineEdit_5)
+        self.formLayout_10.setWidget(
+            1, QtWidgets.QFormLayout.FieldRole, self.lineEdit_5
+        )
         self.label_23 = QtWidgets.QLabel(self.formLayoutWidget_10)
         font = QtGui.QFont()
         font.setFamily("Yu Gothic UI Semibold")
@@ -931,10 +996,13 @@ class Ui_AdminDashBoard(object):
         self.formLayout_11.setWidget(0, QtWidgets.QFormLayout.LabelRole, self.label_40)
         self.lineEdit_6 = QtWidgets.QLineEdit(self.formLayoutWidget_11)
         self.lineEdit_6.setMaximumSize(QtCore.QSize(16777215, 30))
-        self.lineEdit_6.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;")
+        self.lineEdit_6.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;"
+        )
         self.lineEdit_6.setObjectName("lineEdit_6")
-        self.formLayout_11.setWidget(1, QtWidgets.QFormLayout.SpanningRole, self.lineEdit_6)
+        self.formLayout_11.setWidget(
+            1, QtWidgets.QFormLayout.SpanningRole, self.lineEdit_6
+        )
         self.tabWidget.addTab(self.Positionmangement, "")
         self.Addposition = QtWidgets.QWidget()
         self.Addposition.setObjectName("Addposition")
@@ -951,11 +1019,13 @@ class Ui_AdminDashBoard(object):
         font.setBold(True)
         font.setWeight(75)
         self.saveandnwbtn.setFont(font)
-        self.saveandnwbtn.setStyleSheet("background-color:#fff;\n"
-"color:#0076bd;\n"
-"border-top:1px solid #fff;\n"
-"border-bottom:1px solid #0076bd;\n"
-"padding-bottom:0px")
+        self.saveandnwbtn.setStyleSheet(
+            "background-color:#fff;\n"
+            "color:#0076bd;\n"
+            "border-top:1px solid #fff;\n"
+            "border-bottom:1px solid #0076bd;\n"
+            "padding-bottom:0px"
+        )
         self.saveandnwbtn.setObjectName("saveandnwbtn")
         self.horizontalLayout.addWidget(self.saveandnwbtn)
         self.pos_okbtn = QtWidgets.QPushButton(self.horizontalLayoutWidget)
@@ -965,11 +1035,13 @@ class Ui_AdminDashBoard(object):
         font.setBold(True)
         font.setWeight(75)
         self.pos_okbtn.setFont(font)
-        self.pos_okbtn.setStyleSheet("background-color:#fff;\n"
-"color:#0076bd;\n"
-"border-top:1px solid #fff;\n"
-"border-bottom:1px solid #0076bd;\n"
-"padding-bottom:0px")
+        self.pos_okbtn.setStyleSheet(
+            "background-color:#fff;\n"
+            "color:#0076bd;\n"
+            "border-top:1px solid #fff;\n"
+            "border-bottom:1px solid #0076bd;\n"
+            "padding-bottom:0px"
+        )
         self.pos_okbtn.setObjectName("pos_okbtn")
         self.horizontalLayout.addWidget(self.pos_okbtn)
         self.cancel_posbtn = QtWidgets.QPushButton(self.horizontalLayoutWidget)
@@ -978,11 +1050,13 @@ class Ui_AdminDashBoard(object):
         font.setBold(True)
         font.setWeight(75)
         self.cancel_posbtn.setFont(font)
-        self.cancel_posbtn.setStyleSheet("background-color:#fff;\n"
-"color:#ff0000;\n"
-"border-top:1px solid #fff;\n"
-"border-bottom:1px solid #0076bd;\n"
-"padding-bottom:0px")
+        self.cancel_posbtn.setStyleSheet(
+            "background-color:#fff;\n"
+            "color:#ff0000;\n"
+            "border-top:1px solid #fff;\n"
+            "border-bottom:1px solid #0076bd;\n"
+            "padding-bottom:0px"
+        )
         self.cancel_posbtn.setObjectName("cancel_posbtn")
         self.horizontalLayout.addWidget(self.cancel_posbtn)
         self.label_30 = QtWidgets.QLabel(self.Addposition)
@@ -1012,10 +1086,13 @@ class Ui_AdminDashBoard(object):
         self.lineEdit_50 = QtWidgets.QLineEdit(self.formLayoutWidget_14)
         self.lineEdit_50.setMinimumSize(QtCore.QSize(0, 30))
         self.lineEdit_50.setMaximumSize(QtCore.QSize(16777215, 30))
-        self.lineEdit_50.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;")
+        self.lineEdit_50.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;"
+        )
         self.lineEdit_50.setObjectName("lineEdit_50")
-        self.formLayout_14.setWidget(0, QtWidgets.QFormLayout.FieldRole, self.lineEdit_50)
+        self.formLayout_14.setWidget(
+            0, QtWidgets.QFormLayout.FieldRole, self.lineEdit_50
+        )
         self.label_25 = QtWidgets.QLabel(self.formLayoutWidget_14)
         font = QtGui.QFont()
         font.setFamily("Yu Gothic UI Semibold")
@@ -1063,40 +1140,55 @@ class Ui_AdminDashBoard(object):
         self.formLayout_14.setWidget(5, QtWidgets.QFormLayout.LabelRole, self.label_29)
         self.selectDepbx = QtWidgets.QComboBox(self.formLayoutWidget_14)
         self.selectDepbx.setMaximumSize(QtCore.QSize(16777215, 30))
-        self.selectDepbx.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;")
+        self.selectDepbx.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;"
+        )
         self.selectDepbx.setObjectName("selectDepbx")
         self.selectDepbx.addItem("")
-        self.formLayout_14.setWidget(1, QtWidgets.QFormLayout.FieldRole, self.selectDepbx)
+        self.formLayout_14.setWidget(
+            1, QtWidgets.QFormLayout.FieldRole, self.selectDepbx
+        )
         self.selectposbx = QtWidgets.QComboBox(self.formLayoutWidget_14)
         self.selectposbx.setMaximumSize(QtCore.QSize(16777215, 30))
-        self.selectposbx.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;")
+        self.selectposbx.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;"
+        )
         self.selectposbx.setObjectName("selectposbx")
         self.selectposbx.addItem("")
-        self.formLayout_14.setWidget(2, QtWidgets.QFormLayout.FieldRole, self.selectposbx)
+        self.formLayout_14.setWidget(
+            2, QtWidgets.QFormLayout.FieldRole, self.selectposbx
+        )
         self.lineEdit_12 = QtWidgets.QLineEdit(self.formLayoutWidget_14)
         self.lineEdit_12.setMinimumSize(QtCore.QSize(0, 30))
         self.lineEdit_12.setMaximumSize(QtCore.QSize(16777215, 30))
-        self.lineEdit_12.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;")
+        self.lineEdit_12.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;"
+        )
         self.lineEdit_12.setObjectName("lineEdit_12")
-        self.formLayout_14.setWidget(3, QtWidgets.QFormLayout.FieldRole, self.lineEdit_12)
+        self.formLayout_14.setWidget(
+            3, QtWidgets.QFormLayout.FieldRole, self.lineEdit_12
+        )
         self.lineEdit_26 = QtWidgets.QLineEdit(self.formLayoutWidget_14)
         self.lineEdit_26.setMinimumSize(QtCore.QSize(0, 30))
         self.lineEdit_26.setMaximumSize(QtCore.QSize(16777215, 30))
-        self.lineEdit_26.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;")
+        self.lineEdit_26.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;"
+        )
         self.lineEdit_26.setObjectName("lineEdit_26")
-        self.formLayout_14.setWidget(4, QtWidgets.QFormLayout.FieldRole, self.lineEdit_26)
+        self.formLayout_14.setWidget(
+            4, QtWidgets.QFormLayout.FieldRole, self.lineEdit_26
+        )
         self.aprrovedbx = QtWidgets.QComboBox(self.formLayoutWidget_14)
         self.aprrovedbx.setMaximumSize(QtCore.QSize(16777215, 30))
-        self.aprrovedbx.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;")
+        self.aprrovedbx.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;"
+        )
         self.aprrovedbx.setObjectName("aprrovedbx")
         self.aprrovedbx.addItem("")
         self.aprrovedbx.addItem("")
-        self.formLayout_14.setWidget(5, QtWidgets.QFormLayout.FieldRole, self.aprrovedbx)
+        self.formLayout_14.setWidget(
+            5, QtWidgets.QFormLayout.FieldRole, self.aprrovedbx
+        )
         self.tabWidget.addTab(self.Addposition, "")
         self.tab = QtWidgets.QWidget()
         self.tab.setObjectName("tab")
@@ -1157,11 +1249,13 @@ class Ui_AdminDashBoard(object):
         self.formLayout_46.setWidget(1, QtWidgets.QFormLayout.LabelRole, self.label_436)
         self.lineEdit_161 = QtWidgets.QLineEdit(self.formLayoutWidget_46)
         self.lineEdit_161.setMinimumSize(QtCore.QSize(20, 28))
-        self.lineEdit_161.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;\n"
-"")
+        self.lineEdit_161.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;\n" ""
+        )
         self.lineEdit_161.setObjectName("lineEdit_161")
-        self.formLayout_46.setWidget(1, QtWidgets.QFormLayout.FieldRole, self.lineEdit_161)
+        self.formLayout_46.setWidget(
+            1, QtWidgets.QFormLayout.FieldRole, self.lineEdit_161
+        )
         self.label_437 = QtWidgets.QLabel(self.formLayoutWidget_46)
         font = QtGui.QFont()
         font.setFamily("Yu Gothic UI Semibold")
@@ -1182,28 +1276,36 @@ class Ui_AdminDashBoard(object):
         self.formLayout_46.setWidget(3, QtWidgets.QFormLayout.LabelRole, self.label_438)
         self.lineEdit_162 = QtWidgets.QLineEdit(self.formLayoutWidget_46)
         self.lineEdit_162.setMinimumSize(QtCore.QSize(20, 28))
-        self.lineEdit_162.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;\n"
-"")
+        self.lineEdit_162.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;\n" ""
+        )
         self.lineEdit_162.setObjectName("lineEdit_162")
-        self.formLayout_46.setWidget(2, QtWidgets.QFormLayout.FieldRole, self.lineEdit_162)
+        self.formLayout_46.setWidget(
+            2, QtWidgets.QFormLayout.FieldRole, self.lineEdit_162
+        )
         self.lineEdit_160 = QtWidgets.QLineEdit(self.formLayoutWidget_46)
         self.lineEdit_160.setMinimumSize(QtCore.QSize(20, 28))
-        self.lineEdit_160.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;\n"
-"")
+        self.lineEdit_160.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;\n" ""
+        )
         self.lineEdit_160.setObjectName("lineEdit_160")
-        self.formLayout_46.setWidget(3, QtWidgets.QFormLayout.FieldRole, self.lineEdit_160)
+        self.formLayout_46.setWidget(
+            3, QtWidgets.QFormLayout.FieldRole, self.lineEdit_160
+        )
         self.okbtn_10 = QtWidgets.QPushButton(self.formLayoutWidget_46)
-        self.okbtn_10.setStyleSheet("background-color:#fff;\n"
-"color:#0076bd;\n"
-"border: 1px solid #0076bd;\n"
-"border-radius:12px;\n"
-"font-family:monospace;\n"
-"font-size:20px\n"
-"")
+        self.okbtn_10.setStyleSheet(
+            "background-color:#fff;\n"
+            "color:#0076bd;\n"
+            "border: 1px solid #0076bd;\n"
+            "border-radius:12px;\n"
+            "font-family:monospace;\n"
+            "font-size:20px\n"
+            ""
+        )
         self.okbtn_10.setObjectName("okbtn_10")
-        self.formLayout_46.setWidget(4, QtWidgets.QFormLayout.SpanningRole, self.okbtn_10)
+        self.formLayout_46.setWidget(
+            4, QtWidgets.QFormLayout.SpanningRole, self.okbtn_10
+        )
         self.label_439 = QtWidgets.QLabel(self.formLayoutWidget_46)
         font = QtGui.QFont()
         font.setFamily("Yu Gothic UI Semibold")
@@ -1212,7 +1314,9 @@ class Ui_AdminDashBoard(object):
         font.setWeight(75)
         self.label_439.setFont(font)
         self.label_439.setObjectName("label_439")
-        self.formLayout_46.setWidget(0, QtWidgets.QFormLayout.SpanningRole, self.label_439)
+        self.formLayout_46.setWidget(
+            0, QtWidgets.QFormLayout.SpanningRole, self.label_439
+        )
         self.tableWidget_28 = QtWidgets.QTableWidget(self.tab_16)
         self.tableWidget_28.setGeometry(QtCore.QRect(750, 150, 561, 241))
         self.tableWidget_28.setObjectName("tableWidget_28")
@@ -1245,13 +1349,15 @@ class Ui_AdminDashBoard(object):
         self.tableWidget_29.setHorizontalHeaderItem(0, item)
         self.okbtn_11 = QtWidgets.QPushButton(self.tab_21)
         self.okbtn_11.setGeometry(QtCore.QRect(410, 530, 241, 41))
-        self.okbtn_11.setStyleSheet("background-color:#fff;\n"
-"color:#0076bd;\n"
-"border: 1px solid #0076bd;\n"
-"border-radius:12px;\n"
-"font-family:monospace;\n"
-"font-size:20px\n"
-"")
+        self.okbtn_11.setStyleSheet(
+            "background-color:#fff;\n"
+            "color:#0076bd;\n"
+            "border: 1px solid #0076bd;\n"
+            "border-radius:12px;\n"
+            "font-family:monospace;\n"
+            "font-size:20px\n"
+            ""
+        )
         self.okbtn_11.setObjectName("okbtn_11")
         self.label_442 = QtWidgets.QLabel(self.tab_21)
         self.label_442.setGeometry(QtCore.QRect(340, 90, 539, 28))
@@ -1264,13 +1370,15 @@ class Ui_AdminDashBoard(object):
         self.label_442.setObjectName("label_442")
         self.okbtn_12 = QtWidgets.QPushButton(self.tab_21)
         self.okbtn_12.setGeometry(QtCore.QRect(710, 530, 241, 41))
-        self.okbtn_12.setStyleSheet("background-color:#fff;\n"
-"color:#0076bd;\n"
-"border: 1px solid #0076bd;\n"
-"border-radius:12px;\n"
-"font-family:monospace;\n"
-"font-size:20px\n"
-"")
+        self.okbtn_12.setStyleSheet(
+            "background-color:#fff;\n"
+            "color:#0076bd;\n"
+            "border: 1px solid #0076bd;\n"
+            "border-radius:12px;\n"
+            "font-family:monospace;\n"
+            "font-size:20px\n"
+            ""
+        )
         self.okbtn_12.setObjectName("okbtn_12")
         self.AddArea.addTab(self.tab_21, "")
         self.tab_37 = QtWidgets.QWidget()
@@ -1293,11 +1401,13 @@ class Ui_AdminDashBoard(object):
         font.setBold(True)
         font.setWeight(75)
         self.savearea_new.setFont(font)
-        self.savearea_new.setStyleSheet("background-color:#fff;\n"
-"color:#0076bd;\n"
-"border-top:1px solid #fff;\n"
-"border-bottom:1px solid #0076bd;\n"
-"padding-bottom:0px")
+        self.savearea_new.setStyleSheet(
+            "background-color:#fff;\n"
+            "color:#0076bd;\n"
+            "border-top:1px solid #fff;\n"
+            "border-bottom:1px solid #0076bd;\n"
+            "padding-bottom:0px"
+        )
         self.savearea_new.setObjectName("savearea_new")
         self.horizontalLayout_11.addWidget(self.savearea_new)
         self.area_okbtn = QtWidgets.QPushButton(self.horizontalLayoutWidget_10)
@@ -1307,11 +1417,13 @@ class Ui_AdminDashBoard(object):
         font.setBold(True)
         font.setWeight(75)
         self.area_okbtn.setFont(font)
-        self.area_okbtn.setStyleSheet("background-color:#fff;\n"
-"color:#0076bd;\n"
-"border-top:1px solid #fff;\n"
-"border-bottom:1px solid #0076bd;\n"
-"padding-bottom:0px")
+        self.area_okbtn.setStyleSheet(
+            "background-color:#fff;\n"
+            "color:#0076bd;\n"
+            "border-top:1px solid #fff;\n"
+            "border-bottom:1px solid #0076bd;\n"
+            "padding-bottom:0px"
+        )
         self.area_okbtn.setObjectName("area_okbtn")
         self.horizontalLayout_11.addWidget(self.area_okbtn)
         self.cancel_areabtn = QtWidgets.QPushButton(self.horizontalLayoutWidget_10)
@@ -1320,11 +1432,13 @@ class Ui_AdminDashBoard(object):
         font.setBold(True)
         font.setWeight(75)
         self.cancel_areabtn.setFont(font)
-        self.cancel_areabtn.setStyleSheet("background-color:#fff;\n"
-"color:#ff0000;\n"
-"border-top:1px solid #fff;\n"
-"border-bottom:1px solid #0076bd;\n"
-"padding-bottom:0px")
+        self.cancel_areabtn.setStyleSheet(
+            "background-color:#fff;\n"
+            "color:#ff0000;\n"
+            "border-top:1px solid #fff;\n"
+            "border-bottom:1px solid #0076bd;\n"
+            "padding-bottom:0px"
+        )
         self.cancel_areabtn.setObjectName("cancel_areabtn")
         self.horizontalLayout_11.addWidget(self.cancel_areabtn)
         self.label_6 = QtWidgets.QLabel(self.tab_38)
@@ -1353,11 +1467,13 @@ class Ui_AdminDashBoard(object):
         self.formLayout_13.setWidget(0, QtWidgets.QFormLayout.LabelRole, self.label_45)
         self.lineEdit_48 = QtWidgets.QLineEdit(self.formLayoutWidget_13)
         self.lineEdit_48.setMinimumSize(QtCore.QSize(20, 30))
-        self.lineEdit_48.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;\n"
-"")
+        self.lineEdit_48.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;\n" ""
+        )
         self.lineEdit_48.setObjectName("lineEdit_48")
-        self.formLayout_13.setWidget(0, QtWidgets.QFormLayout.FieldRole, self.lineEdit_48)
+        self.formLayout_13.setWidget(
+            0, QtWidgets.QFormLayout.FieldRole, self.lineEdit_48
+        )
         self.label_36 = QtWidgets.QLabel(self.formLayoutWidget_13)
         font = QtGui.QFont()
         font.setFamily("Yu Gothic UI Semibold")
@@ -1369,11 +1485,13 @@ class Ui_AdminDashBoard(object):
         self.formLayout_13.setWidget(1, QtWidgets.QFormLayout.LabelRole, self.label_36)
         self.lineEdit_16 = QtWidgets.QLineEdit(self.formLayoutWidget_13)
         self.lineEdit_16.setMinimumSize(QtCore.QSize(20, 30))
-        self.lineEdit_16.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;\n"
-"")
+        self.lineEdit_16.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;\n" ""
+        )
         self.lineEdit_16.setObjectName("lineEdit_16")
-        self.formLayout_13.setWidget(1, QtWidgets.QFormLayout.FieldRole, self.lineEdit_16)
+        self.formLayout_13.setWidget(
+            1, QtWidgets.QFormLayout.FieldRole, self.lineEdit_16
+        )
         self.label_37 = QtWidgets.QLabel(self.formLayoutWidget_13)
         font = QtGui.QFont()
         font.setFamily("Yu Gothic UI Semibold")
@@ -1385,11 +1503,13 @@ class Ui_AdminDashBoard(object):
         self.formLayout_13.setWidget(2, QtWidgets.QFormLayout.LabelRole, self.label_37)
         self.lineEdit_18 = QtWidgets.QLineEdit(self.formLayoutWidget_13)
         self.lineEdit_18.setMinimumSize(QtCore.QSize(20, 30))
-        self.lineEdit_18.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;\n"
-"")
+        self.lineEdit_18.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;\n" ""
+        )
         self.lineEdit_18.setObjectName("lineEdit_18")
-        self.formLayout_13.setWidget(2, QtWidgets.QFormLayout.FieldRole, self.lineEdit_18)
+        self.formLayout_13.setWidget(
+            2, QtWidgets.QFormLayout.FieldRole, self.lineEdit_18
+        )
         self.label_38 = QtWidgets.QLabel(self.formLayoutWidget_13)
         font = QtGui.QFont()
         font.setFamily("Yu Gothic UI Semibold")
@@ -1401,10 +1521,13 @@ class Ui_AdminDashBoard(object):
         self.formLayout_13.setWidget(3, QtWidgets.QFormLayout.LabelRole, self.label_38)
         self.parentarea_cmbx = QtWidgets.QComboBox(self.formLayoutWidget_13)
         self.parentarea_cmbx.setMinimumSize(QtCore.QSize(0, 30))
-        self.parentarea_cmbx.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;")
+        self.parentarea_cmbx.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;"
+        )
         self.parentarea_cmbx.setObjectName("parentarea_cmbx")
-        self.formLayout_13.setWidget(3, QtWidgets.QFormLayout.FieldRole, self.parentarea_cmbx)
+        self.formLayout_13.setWidget(
+            3, QtWidgets.QFormLayout.FieldRole, self.parentarea_cmbx
+        )
         self.label_39 = QtWidgets.QLabel(self.formLayoutWidget_13)
         font = QtGui.QFont()
         font.setFamily("Yu Gothic UI Semibold")
@@ -1416,11 +1539,13 @@ class Ui_AdminDashBoard(object):
         self.formLayout_13.setWidget(4, QtWidgets.QFormLayout.LabelRole, self.label_39)
         self.lineEdit_17 = QtWidgets.QLineEdit(self.formLayoutWidget_13)
         self.lineEdit_17.setMinimumSize(QtCore.QSize(20, 30))
-        self.lineEdit_17.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;\n"
-"")
+        self.lineEdit_17.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;\n" ""
+        )
         self.lineEdit_17.setObjectName("lineEdit_17")
-        self.formLayout_13.setWidget(4, QtWidgets.QFormLayout.FieldRole, self.lineEdit_17)
+        self.formLayout_13.setWidget(
+            4, QtWidgets.QFormLayout.FieldRole, self.lineEdit_17
+        )
         self.tabWidget_10.addTab(self.tab_38, "")
         self.tab_39 = QtWidgets.QWidget()
         self.tab_39.setObjectName("tab_39")
@@ -1525,12 +1650,14 @@ class Ui_AdminDashBoard(object):
         font.setBold(True)
         font.setWeight(75)
         self.Searchareabtn.setFont(font)
-        self.Searchareabtn.setStyleSheet("background-color:#fff;\n"
-"color:#0076bd;\n"
-"border-top:1px solid #fff;\n"
-"border-bottom:1px solid #0076bd;\n"
-"padding-bottom:0px\n"
-"")
+        self.Searchareabtn.setStyleSheet(
+            "background-color:#fff;\n"
+            "color:#0076bd;\n"
+            "border-top:1px solid #fff;\n"
+            "border-bottom:1px solid #0076bd;\n"
+            "padding-bottom:0px\n"
+            ""
+        )
         self.Searchareabtn.setObjectName("Searchareabtn")
         self.clrareabtn = QtWidgets.QPushButton(self.tab_42)
         self.clrareabtn.setGeometry(QtCore.QRect(940, 40, 93, 28))
@@ -1540,24 +1667,28 @@ class Ui_AdminDashBoard(object):
         font.setBold(True)
         font.setWeight(75)
         self.clrareabtn.setFont(font)
-        self.clrareabtn.setStyleSheet("background-color:#fff;\n"
-"color:#0076bd;\n"
-"border-top:1px solid #fff;\n"
-"border-bottom:1px solid #0076bd;\n"
-"padding-bottom:0px\n"
-"")
+        self.clrareabtn.setStyleSheet(
+            "background-color:#fff;\n"
+            "color:#0076bd;\n"
+            "border-top:1px solid #fff;\n"
+            "border-bottom:1px solid #0076bd;\n"
+            "padding-bottom:0px\n"
+            ""
+        )
         self.clrareabtn.setObjectName("clrareabtn")
         self.lineEdit_13 = QtWidgets.QLineEdit(self.tab_42)
         self.lineEdit_13.setGeometry(QtCore.QRect(190, 40, 250, 30))
         self.lineEdit_13.setMaximumSize(QtCore.QSize(16777215, 30))
-        self.lineEdit_13.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;")
+        self.lineEdit_13.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;"
+        )
         self.lineEdit_13.setObjectName("lineEdit_13")
         self.lineEdit_14 = QtWidgets.QLineEdit(self.tab_42)
         self.lineEdit_14.setGeometry(QtCore.QRect(560, 40, 250, 30))
         self.lineEdit_14.setMaximumSize(QtCore.QSize(16777215, 30))
-        self.lineEdit_14.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;")
+        self.lineEdit_14.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;"
+        )
         self.lineEdit_14.setObjectName("lineEdit_14")
         self.tabWidget_10.addTab(self.tab_42, "")
         self.AddArea.addTab(self.tab_37, "")
@@ -1576,11 +1707,13 @@ class Ui_AdminDashBoard(object):
         font.setBold(True)
         font.setWeight(75)
         self.save_new_device.setFont(font)
-        self.save_new_device.setStyleSheet("background-color:#fff;\n"
-"color:#0076bd;\n"
-"border-top:1px solid #fff;\n"
-"border-bottom:1px solid #0076bd;\n"
-"padding-bottom:0px")
+        self.save_new_device.setStyleSheet(
+            "background-color:#fff;\n"
+            "color:#0076bd;\n"
+            "border-top:1px solid #fff;\n"
+            "border-bottom:1px solid #0076bd;\n"
+            "padding-bottom:0px"
+        )
         self.save_new_device.setObjectName("save_new_device")
         self.horizontalLayout_32.addWidget(self.save_new_device)
         self.dev_okbtn = QtWidgets.QPushButton(self.horizontalLayoutWidget_30)
@@ -1590,11 +1723,13 @@ class Ui_AdminDashBoard(object):
         font.setBold(True)
         font.setWeight(75)
         self.dev_okbtn.setFont(font)
-        self.dev_okbtn.setStyleSheet("background-color:#fff;\n"
-"color:#0076bd;\n"
-"border-top:1px solid #fff;\n"
-"border-bottom:1px solid #0076bd;\n"
-"padding-bottom:0px")
+        self.dev_okbtn.setStyleSheet(
+            "background-color:#fff;\n"
+            "color:#0076bd;\n"
+            "border-top:1px solid #fff;\n"
+            "border-bottom:1px solid #0076bd;\n"
+            "padding-bottom:0px"
+        )
         self.dev_okbtn.setObjectName("dev_okbtn")
         self.horizontalLayout_32.addWidget(self.dev_okbtn)
         self.cancel_devbtn = QtWidgets.QPushButton(self.horizontalLayoutWidget_30)
@@ -1603,11 +1738,13 @@ class Ui_AdminDashBoard(object):
         font.setBold(True)
         font.setWeight(75)
         self.cancel_devbtn.setFont(font)
-        self.cancel_devbtn.setStyleSheet("background-color:#fff;\n"
-"color:#ff0000;\n"
-"border-top:1px solid #fff;\n"
-"border-bottom:1px solid #0076bd;\n"
-"padding-bottom:0px")
+        self.cancel_devbtn.setStyleSheet(
+            "background-color:#fff;\n"
+            "color:#ff0000;\n"
+            "border-top:1px solid #fff;\n"
+            "border-bottom:1px solid #0076bd;\n"
+            "padding-bottom:0px"
+        )
         self.cancel_devbtn.setObjectName("cancel_devbtn")
         self.horizontalLayout_32.addWidget(self.cancel_devbtn)
         self.label_117 = QtWidgets.QLabel(self.Adddevice)
@@ -1636,9 +1773,9 @@ class Ui_AdminDashBoard(object):
         self.formLayout.setWidget(3, QtWidgets.QFormLayout.LabelRole, self.label_116)
         self.lineEdit_21 = QtWidgets.QLineEdit(self.formLayoutWidget)
         self.lineEdit_21.setMinimumSize(QtCore.QSize(20, 30))
-        self.lineEdit_21.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;\n"
-"")
+        self.lineEdit_21.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;\n" ""
+        )
         self.lineEdit_21.setInputMask("")
         self.lineEdit_21.setObjectName("lineEdit_21")
         self.formLayout.setWidget(3, QtWidgets.QFormLayout.FieldRole, self.lineEdit_21)
@@ -1653,9 +1790,9 @@ class Ui_AdminDashBoard(object):
         self.formLayout.setWidget(4, QtWidgets.QFormLayout.LabelRole, self.label_118)
         self.lineEdit_19 = QtWidgets.QLineEdit(self.formLayoutWidget)
         self.lineEdit_19.setMinimumSize(QtCore.QSize(20, 30))
-        self.lineEdit_19.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;\n"
-"")
+        self.lineEdit_19.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;\n" ""
+        )
         self.lineEdit_19.setObjectName("lineEdit_19")
         self.formLayout.setWidget(4, QtWidgets.QFormLayout.FieldRole, self.lineEdit_19)
         self.label_119 = QtWidgets.QLabel(self.formLayoutWidget)
@@ -1669,9 +1806,9 @@ class Ui_AdminDashBoard(object):
         self.formLayout.setWidget(5, QtWidgets.QFormLayout.LabelRole, self.label_119)
         self.lineEdit_20 = QtWidgets.QLineEdit(self.formLayoutWidget)
         self.lineEdit_20.setMinimumSize(QtCore.QSize(20, 30))
-        self.lineEdit_20.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;\n"
-"")
+        self.lineEdit_20.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;\n" ""
+        )
         self.lineEdit_20.setObjectName("lineEdit_20")
         self.formLayout.setWidget(5, QtWidgets.QFormLayout.FieldRole, self.lineEdit_20)
         self.label_120 = QtWidgets.QLabel(self.formLayoutWidget)
@@ -1685,15 +1822,16 @@ class Ui_AdminDashBoard(object):
         self.formLayout.setWidget(6, QtWidgets.QFormLayout.LabelRole, self.label_120)
         self.lineEdit_22 = QtWidgets.QLineEdit(self.formLayoutWidget)
         self.lineEdit_22.setMinimumSize(QtCore.QSize(20, 30))
-        self.lineEdit_22.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;\n"
-"")
+        self.lineEdit_22.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;\n" ""
+        )
         self.lineEdit_22.setObjectName("lineEdit_22")
         self.formLayout.setWidget(6, QtWidgets.QFormLayout.FieldRole, self.lineEdit_22)
         self.areacmbx = QtWidgets.QComboBox(self.formLayoutWidget)
         self.areacmbx.setMinimumSize(QtCore.QSize(0, 30))
-        self.areacmbx.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;")
+        self.areacmbx.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;"
+        )
         self.areacmbx.setObjectName("areacmbx")
         self.formLayout.setWidget(7, QtWidgets.QFormLayout.FieldRole, self.areacmbx)
         self.label_121 = QtWidgets.QLabel(self.formLayoutWidget)
@@ -1707,9 +1845,9 @@ class Ui_AdminDashBoard(object):
         self.formLayout.setWidget(7, QtWidgets.QFormLayout.LabelRole, self.label_121)
         self.lineEdit_49 = QtWidgets.QLineEdit(self.formLayoutWidget)
         self.lineEdit_49.setMinimumSize(QtCore.QSize(20, 30))
-        self.lineEdit_49.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;\n"
-"")
+        self.lineEdit_49.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;\n" ""
+        )
         self.lineEdit_49.setInputMask("")
         self.lineEdit_49.setObjectName("lineEdit_49")
         self.formLayout.setWidget(1, QtWidgets.QFormLayout.FieldRole, self.lineEdit_49)
@@ -1772,28 +1910,40 @@ class Ui_AdminDashBoard(object):
         self.verticalLayout_7.setObjectName("verticalLayout_7")
         self.pushButton_3 = QtWidgets.QPushButton(self.verticalLayoutWidget_7)
         self.pushButton_3.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.pushButton_3.setStyleSheet("background-color:#fff;\n"
-"border-bottom:2px solid red;\n"
-"color:#0076bd;\n"
-"font-family:monospace;\n"
-"font-size:20px")
+        self.pushButton_3.setStyleSheet(
+            "background-color:#fff;\n"
+            "border-bottom:2px solid red;\n"
+            "color:#0076bd;\n"
+            "font-family:monospace;\n"
+            "font-size:20px"
+        )
         icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap("iconmonstr-power-on-off-10-240.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon1.addPixmap(
+            QtGui.QPixmap("iconmonstr-power-on-off-10-240.png"),
+            QtGui.QIcon.Normal,
+            QtGui.QIcon.Off,
+        )
         self.pushButton_3.setIcon(icon1)
         self.pushButton_3.setIconSize(QtCore.QSize(50, 50))
         self.pushButton_3.setObjectName("pushButton_3")
         self.verticalLayout_7.addWidget(self.pushButton_3)
         self.pushButton_10 = QtWidgets.QPushButton(self.verticalLayoutWidget_7)
         self.pushButton_10.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.pushButton_10.setStyleSheet("background-color:#fff;\n"
-"color:#ff0000;\n"
-"border: 1px solid #fff;\n"
-"border-radius:12px;\n"
-"text-decoration: underline;\n"
-"font-family:monospace;\n"
-"font-size:20px")
+        self.pushButton_10.setStyleSheet(
+            "background-color:#fff;\n"
+            "color:#ff0000;\n"
+            "border: 1px solid #fff;\n"
+            "border-radius:12px;\n"
+            "text-decoration: underline;\n"
+            "font-family:monospace;\n"
+            "font-size:20px"
+        )
         icon2 = QtGui.QIcon()
-        icon2.addPixmap(QtGui.QPixmap("iconmonstr-power-on-off-8-240.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon2.addPixmap(
+            QtGui.QPixmap("iconmonstr-power-on-off-8-240.png"),
+            QtGui.QIcon.Normal,
+            QtGui.QIcon.Off,
+        )
         self.pushButton_10.setIcon(icon2)
         self.pushButton_10.setIconSize(QtCore.QSize(50, 50))
         self.pushButton_10.setObjectName("pushButton_10")
@@ -1965,8 +2115,9 @@ class Ui_AdminDashBoard(object):
         self.addShift.setObjectName("addShift")
         self.pos_name_117 = QtWidgets.QPlainTextEdit(self.addShift)
         self.pos_name_117.setGeometry(QtCore.QRect(130, 40, 321, 31))
-        self.pos_name_117.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;")
+        self.pos_name_117.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;"
+        )
         self.pos_name_117.setObjectName("pos_name_117")
         self.label_93 = QtWidgets.QLabel(self.addShift)
         self.label_93.setGeometry(QtCore.QRect(10, 30, 121, 41))
@@ -1988,8 +2139,9 @@ class Ui_AdminDashBoard(object):
         self.label_94.setObjectName("label_94")
         self.parentarea_cmbx_4 = QtWidgets.QComboBox(self.addShift)
         self.parentarea_cmbx_4.setGeometry(QtCore.QRect(590, 40, 321, 31))
-        self.parentarea_cmbx_4.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;")
+        self.parentarea_cmbx_4.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;"
+        )
         self.parentarea_cmbx_4.setObjectName("parentarea_cmbx_4")
         self.label_95 = QtWidgets.QLabel(self.addShift)
         self.label_95.setGeometry(QtCore.QRect(920, 30, 161, 41))
@@ -2002,8 +2154,9 @@ class Ui_AdminDashBoard(object):
         self.label_95.setObjectName("label_95")
         self.parentarea_cmbx_5 = QtWidgets.QComboBox(self.addShift)
         self.parentarea_cmbx_5.setGeometry(QtCore.QRect(1090, 40, 321, 31))
-        self.parentarea_cmbx_5.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;")
+        self.parentarea_cmbx_5.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;"
+        )
         self.parentarea_cmbx_5.setObjectName("parentarea_cmbx_5")
         self.frame_6 = QtWidgets.QFrame(self.addShift)
         self.frame_6.setGeometry(QtCore.QRect(-10, 80, 931, 731))
@@ -2016,7 +2169,9 @@ class Ui_AdminDashBoard(object):
         self.verticalLayout = QtWidgets.QVBoxLayout(self.verticalLayoutWidget)
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout.setObjectName("verticalLayout")
-        self.search_personel_alownc_ded_2 = QtWidgets.QRadioButton(self.verticalLayoutWidget)
+        self.search_personel_alownc_ded_2 = QtWidgets.QRadioButton(
+            self.verticalLayoutWidget
+        )
         font = QtGui.QFont()
         font.setFamily("Yu Gothic UI Semibold")
         font.setPointSize(10)
@@ -2025,7 +2180,9 @@ class Ui_AdminDashBoard(object):
         self.search_personel_alownc_ded_2.setFont(font)
         self.search_personel_alownc_ded_2.setObjectName("search_personel_alownc_ded_2")
         self.verticalLayout.addWidget(self.search_personel_alownc_ded_2)
-        self.search_personel_alownc_ded_3 = QtWidgets.QRadioButton(self.verticalLayoutWidget)
+        self.search_personel_alownc_ded_3 = QtWidgets.QRadioButton(
+            self.verticalLayoutWidget
+        )
         font = QtGui.QFont()
         font.setFamily("Yu Gothic UI Semibold")
         font.setPointSize(10)
@@ -2034,7 +2191,9 @@ class Ui_AdminDashBoard(object):
         self.search_personel_alownc_ded_3.setFont(font)
         self.search_personel_alownc_ded_3.setObjectName("search_personel_alownc_ded_3")
         self.verticalLayout.addWidget(self.search_personel_alownc_ded_3)
-        self.search_personel_alownc_ded_4 = QtWidgets.QRadioButton(self.verticalLayoutWidget)
+        self.search_personel_alownc_ded_4 = QtWidgets.QRadioButton(
+            self.verticalLayoutWidget
+        )
         font = QtGui.QFont()
         font.setFamily("Yu Gothic UI Semibold")
         font.setPointSize(10)
@@ -2043,7 +2202,9 @@ class Ui_AdminDashBoard(object):
         self.search_personel_alownc_ded_4.setFont(font)
         self.search_personel_alownc_ded_4.setObjectName("search_personel_alownc_ded_4")
         self.verticalLayout.addWidget(self.search_personel_alownc_ded_4)
-        self.search_personel_alownc_ded_5 = QtWidgets.QRadioButton(self.verticalLayoutWidget)
+        self.search_personel_alownc_ded_5 = QtWidgets.QRadioButton(
+            self.verticalLayoutWidget
+        )
         font = QtGui.QFont()
         font.setFamily("Yu Gothic UI Semibold")
         font.setPointSize(10)
@@ -2052,7 +2213,9 @@ class Ui_AdminDashBoard(object):
         self.search_personel_alownc_ded_5.setFont(font)
         self.search_personel_alownc_ded_5.setObjectName("search_personel_alownc_ded_5")
         self.verticalLayout.addWidget(self.search_personel_alownc_ded_5)
-        self.search_personel_alownc_ded_6 = QtWidgets.QRadioButton(self.verticalLayoutWidget)
+        self.search_personel_alownc_ded_6 = QtWidgets.QRadioButton(
+            self.verticalLayoutWidget
+        )
         font = QtGui.QFont()
         font.setFamily("Yu Gothic UI Semibold")
         font.setPointSize(10)
@@ -2061,7 +2224,9 @@ class Ui_AdminDashBoard(object):
         self.search_personel_alownc_ded_6.setFont(font)
         self.search_personel_alownc_ded_6.setObjectName("search_personel_alownc_ded_6")
         self.verticalLayout.addWidget(self.search_personel_alownc_ded_6)
-        self.search_personel_alownc_ded_7 = QtWidgets.QRadioButton(self.verticalLayoutWidget)
+        self.search_personel_alownc_ded_7 = QtWidgets.QRadioButton(
+            self.verticalLayoutWidget
+        )
         font = QtGui.QFont()
         font.setFamily("Yu Gothic UI Semibold")
         font.setPointSize(10)
@@ -2070,7 +2235,9 @@ class Ui_AdminDashBoard(object):
         self.search_personel_alownc_ded_7.setFont(font)
         self.search_personel_alownc_ded_7.setObjectName("search_personel_alownc_ded_7")
         self.verticalLayout.addWidget(self.search_personel_alownc_ded_7)
-        self.search_personel_alownc_ded_8 = QtWidgets.QRadioButton(self.verticalLayoutWidget)
+        self.search_personel_alownc_ded_8 = QtWidgets.QRadioButton(
+            self.verticalLayoutWidget
+        )
         font = QtGui.QFont()
         font.setFamily("Yu Gothic UI Semibold")
         font.setPointSize(10)
@@ -2086,38 +2253,45 @@ class Ui_AdminDashBoard(object):
         self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
         self.pos_name_122 = QtWidgets.QPlainTextEdit(self.verticalLayoutWidget_2)
-        self.pos_name_122.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;")
+        self.pos_name_122.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;"
+        )
         self.pos_name_122.setObjectName("pos_name_122")
         self.verticalLayout_2.addWidget(self.pos_name_122)
         self.pos_name_121 = QtWidgets.QPlainTextEdit(self.verticalLayoutWidget_2)
-        self.pos_name_121.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;")
+        self.pos_name_121.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;"
+        )
         self.pos_name_121.setObjectName("pos_name_121")
         self.verticalLayout_2.addWidget(self.pos_name_121)
         self.pos_name_120 = QtWidgets.QPlainTextEdit(self.verticalLayoutWidget_2)
-        self.pos_name_120.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;")
+        self.pos_name_120.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;"
+        )
         self.pos_name_120.setObjectName("pos_name_120")
         self.verticalLayout_2.addWidget(self.pos_name_120)
         self.pos_name_118 = QtWidgets.QPlainTextEdit(self.verticalLayoutWidget_2)
-        self.pos_name_118.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;")
+        self.pos_name_118.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;"
+        )
         self.pos_name_118.setObjectName("pos_name_118")
         self.verticalLayout_2.addWidget(self.pos_name_118)
         self.pos_name_119 = QtWidgets.QPlainTextEdit(self.verticalLayoutWidget_2)
-        self.pos_name_119.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;")
+        self.pos_name_119.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;"
+        )
         self.pos_name_119.setObjectName("pos_name_119")
         self.verticalLayout_2.addWidget(self.pos_name_119)
         self.pos_name_123 = QtWidgets.QPlainTextEdit(self.verticalLayoutWidget_2)
-        self.pos_name_123.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;")
+        self.pos_name_123.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;"
+        )
         self.pos_name_123.setObjectName("pos_name_123")
         self.verticalLayout_2.addWidget(self.pos_name_123)
         self.pos_name_124 = QtWidgets.QPlainTextEdit(self.verticalLayoutWidget_2)
-        self.pos_name_124.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;")
+        self.pos_name_124.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;"
+        )
         self.pos_name_124.setObjectName("pos_name_124")
         self.verticalLayout_2.addWidget(self.pos_name_124)
         self.checkBox_3 = QtWidgets.QCheckBox(self.frame_6)
@@ -2128,13 +2302,15 @@ class Ui_AdminDashBoard(object):
         self.checkBox_4.setObjectName("checkBox_4")
         self.parentarea_cmbx_6 = QtWidgets.QComboBox(self.frame_6)
         self.parentarea_cmbx_6.setGeometry(QtCore.QRect(190, 420, 321, 31))
-        self.parentarea_cmbx_6.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;")
+        self.parentarea_cmbx_6.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;"
+        )
         self.parentarea_cmbx_6.setObjectName("parentarea_cmbx_6")
         self.parentarea_cmbx_7 = QtWidgets.QComboBox(self.frame_6)
         self.parentarea_cmbx_7.setGeometry(QtCore.QRect(190, 380, 321, 31))
-        self.parentarea_cmbx_7.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;")
+        self.parentarea_cmbx_7.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;"
+        )
         self.parentarea_cmbx_7.setObjectName("parentarea_cmbx_7")
         self.horizontalLayoutWidget_64 = QtWidgets.QWidget(self.frame_6)
         self.horizontalLayoutWidget_64.setGeometry(QtCore.QRect(40, 480, 511, 80))
@@ -2149,11 +2325,13 @@ class Ui_AdminDashBoard(object):
         font.setBold(True)
         font.setWeight(75)
         self.dep_saveandnwbtn_15.setFont(font)
-        self.dep_saveandnwbtn_15.setStyleSheet("background-color:#fff;\n"
-"color:#0076bd;\n"
-"border-top:1px solid #fff;\n"
-"border-bottom:1px solid #0076bd;\n"
-"padding-bottom:0px")
+        self.dep_saveandnwbtn_15.setStyleSheet(
+            "background-color:#fff;\n"
+            "color:#0076bd;\n"
+            "border-top:1px solid #fff;\n"
+            "border-bottom:1px solid #0076bd;\n"
+            "padding-bottom:0px"
+        )
         self.dep_saveandnwbtn_15.setObjectName("dep_saveandnwbtn_15")
         self.horizontalLayout_64.addWidget(self.dep_saveandnwbtn_15)
         self.dep_okbtn_15 = QtWidgets.QPushButton(self.horizontalLayoutWidget_64)
@@ -2163,11 +2341,13 @@ class Ui_AdminDashBoard(object):
         font.setBold(True)
         font.setWeight(75)
         self.dep_okbtn_15.setFont(font)
-        self.dep_okbtn_15.setStyleSheet("background-color:#fff;\n"
-"color:#0076bd;\n"
-"border-top:1px solid #fff;\n"
-"border-bottom:1px solid #0076bd;\n"
-"padding-bottom:0px")
+        self.dep_okbtn_15.setStyleSheet(
+            "background-color:#fff;\n"
+            "color:#0076bd;\n"
+            "border-top:1px solid #fff;\n"
+            "border-bottom:1px solid #0076bd;\n"
+            "padding-bottom:0px"
+        )
         self.dep_okbtn_15.setObjectName("dep_okbtn_15")
         self.horizontalLayout_64.addWidget(self.dep_okbtn_15)
         self.cancel_depbtn_29 = QtWidgets.QPushButton(self.horizontalLayoutWidget_64)
@@ -2176,11 +2356,13 @@ class Ui_AdminDashBoard(object):
         font.setBold(True)
         font.setWeight(75)
         self.cancel_depbtn_29.setFont(font)
-        self.cancel_depbtn_29.setStyleSheet("background-color:#fff;\n"
-"color:#ff0000;\n"
-"border-top:1px solid #fff;\n"
-"border-bottom:1px solid #0076bd;\n"
-"padding-bottom:0px")
+        self.cancel_depbtn_29.setStyleSheet(
+            "background-color:#fff;\n"
+            "color:#ff0000;\n"
+            "border-top:1px solid #fff;\n"
+            "border-bottom:1px solid #0076bd;\n"
+            "padding-bottom:0px"
+        )
         self.cancel_depbtn_29.setObjectName("cancel_depbtn_29")
         self.horizontalLayout_64.addWidget(self.cancel_depbtn_29)
         self.Shiftmngmt.addWidget(self.addShift)
@@ -2288,39 +2470,51 @@ class Ui_AdminDashBoard(object):
         self.formLayout_7.setWidget(5, QtWidgets.QFormLayout.LabelRole, self.label_168)
         self.parentarea_cmbx_23 = QtWidgets.QComboBox(self.formLayoutWidget_7)
         self.parentarea_cmbx_23.setMinimumSize(QtCore.QSize(0, 30))
-        self.parentarea_cmbx_23.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;")
+        self.parentarea_cmbx_23.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;"
+        )
         self.parentarea_cmbx_23.setObjectName("parentarea_cmbx_23")
         self.parentarea_cmbx_23.addItem("")
         self.parentarea_cmbx_23.addItem("")
-        self.formLayout_7.setWidget(4, QtWidgets.QFormLayout.FieldRole, self.parentarea_cmbx_23)
+        self.formLayout_7.setWidget(
+            4, QtWidgets.QFormLayout.FieldRole, self.parentarea_cmbx_23
+        )
         self.parentarea_cmbx_24 = QtWidgets.QComboBox(self.formLayoutWidget_7)
         self.parentarea_cmbx_24.setMinimumSize(QtCore.QSize(0, 30))
-        self.parentarea_cmbx_24.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;")
+        self.parentarea_cmbx_24.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;"
+        )
         self.parentarea_cmbx_24.setObjectName("parentarea_cmbx_24")
-        self.formLayout_7.setWidget(3, QtWidgets.QFormLayout.FieldRole, self.parentarea_cmbx_24)
+        self.formLayout_7.setWidget(
+            3, QtWidgets.QFormLayout.FieldRole, self.parentarea_cmbx_24
+        )
         self.lineEdit_36 = QtWidgets.QLineEdit(self.formLayoutWidget_7)
         self.lineEdit_36.setMinimumSize(QtCore.QSize(20, 30))
-        self.lineEdit_36.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;\n"
-"")
+        self.lineEdit_36.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;\n" ""
+        )
         self.lineEdit_36.setObjectName("lineEdit_36")
-        self.formLayout_7.setWidget(1, QtWidgets.QFormLayout.FieldRole, self.lineEdit_36)
+        self.formLayout_7.setWidget(
+            1, QtWidgets.QFormLayout.FieldRole, self.lineEdit_36
+        )
         self.lineEdit_37 = QtWidgets.QLineEdit(self.formLayoutWidget_7)
         self.lineEdit_37.setMinimumSize(QtCore.QSize(20, 30))
-        self.lineEdit_37.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;\n"
-"")
+        self.lineEdit_37.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;\n" ""
+        )
         self.lineEdit_37.setObjectName("lineEdit_37")
-        self.formLayout_7.setWidget(2, QtWidgets.QFormLayout.FieldRole, self.lineEdit_37)
+        self.formLayout_7.setWidget(
+            2, QtWidgets.QFormLayout.FieldRole, self.lineEdit_37
+        )
         self.lineEdit_38 = QtWidgets.QLineEdit(self.formLayoutWidget_7)
         self.lineEdit_38.setMinimumSize(QtCore.QSize(20, 30))
-        self.lineEdit_38.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;\n"
-"")
+        self.lineEdit_38.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;\n" ""
+        )
         self.lineEdit_38.setObjectName("lineEdit_38")
-        self.formLayout_7.setWidget(5, QtWidgets.QFormLayout.FieldRole, self.lineEdit_38)
+        self.formLayout_7.setWidget(
+            5, QtWidgets.QFormLayout.FieldRole, self.lineEdit_38
+        )
         self.label_185 = QtWidgets.QLabel(self.formLayoutWidget_7)
         font = QtGui.QFont()
         font.setFamily("Yu Gothic UI Semibold")
@@ -2332,12 +2526,14 @@ class Ui_AdminDashBoard(object):
         self.formLayout_7.setWidget(0, QtWidgets.QFormLayout.LabelRole, self.label_185)
         self.lineEdit_52 = QtWidgets.QLineEdit(self.formLayoutWidget_7)
         self.lineEdit_52.setMinimumSize(QtCore.QSize(20, 30))
-        self.lineEdit_52.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;\n"
-"")
+        self.lineEdit_52.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;\n" ""
+        )
         self.lineEdit_52.setText("")
         self.lineEdit_52.setObjectName("lineEdit_52")
-        self.formLayout_7.setWidget(0, QtWidgets.QFormLayout.FieldRole, self.lineEdit_52)
+        self.formLayout_7.setWidget(
+            0, QtWidgets.QFormLayout.FieldRole, self.lineEdit_52
+        )
         self.area_okbtn_5 = QtWidgets.QPushButton(self.tab_76)
         self.area_okbtn_5.setGeometry(QtCore.QRect(198, 288, 165, 27))
         font = QtGui.QFont()
@@ -2346,11 +2542,13 @@ class Ui_AdminDashBoard(object):
         font.setBold(True)
         font.setWeight(75)
         self.area_okbtn_5.setFont(font)
-        self.area_okbtn_5.setStyleSheet("background-color:#fff;\n"
-"color:#0076bd;\n"
-"border-top:1px solid #fff;\n"
-"border-bottom:1px solid #0076bd;\n"
-"padding-bottom:0px")
+        self.area_okbtn_5.setStyleSheet(
+            "background-color:#fff;\n"
+            "color:#0076bd;\n"
+            "border-top:1px solid #fff;\n"
+            "border-bottom:1px solid #0076bd;\n"
+            "padding-bottom:0px"
+        )
         self.area_okbtn_5.setObjectName("area_okbtn_5")
         self.savearea_new_5 = QtWidgets.QPushButton(self.tab_76)
         self.savearea_new_5.setGeometry(QtCore.QRect(26, 288, 165, 27))
@@ -2360,11 +2558,13 @@ class Ui_AdminDashBoard(object):
         font.setBold(True)
         font.setWeight(75)
         self.savearea_new_5.setFont(font)
-        self.savearea_new_5.setStyleSheet("background-color:#fff;\n"
-"color:#0076bd;\n"
-"border-top:1px solid #fff;\n"
-"border-bottom:1px solid #0076bd;\n"
-"padding-bottom:0px")
+        self.savearea_new_5.setStyleSheet(
+            "background-color:#fff;\n"
+            "color:#0076bd;\n"
+            "border-top:1px solid #fff;\n"
+            "border-bottom:1px solid #0076bd;\n"
+            "padding-bottom:0px"
+        )
         self.savearea_new_5.setObjectName("savearea_new_5")
         self.cancel_areabtn_5 = QtWidgets.QPushButton(self.tab_76)
         self.cancel_areabtn_5.setGeometry(QtCore.QRect(370, 290, 165, 24))
@@ -2373,11 +2573,13 @@ class Ui_AdminDashBoard(object):
         font.setBold(True)
         font.setWeight(75)
         self.cancel_areabtn_5.setFont(font)
-        self.cancel_areabtn_5.setStyleSheet("background-color:#fff;\n"
-"color:#ff0000;\n"
-"border-top:1px solid #fff;\n"
-"border-bottom:1px solid #0076bd;\n"
-"padding-bottom:0px")
+        self.cancel_areabtn_5.setStyleSheet(
+            "background-color:#fff;\n"
+            "color:#ff0000;\n"
+            "border-top:1px solid #fff;\n"
+            "border-bottom:1px solid #0076bd;\n"
+            "padding-bottom:0px"
+        )
         self.cancel_areabtn_5.setObjectName("cancel_areabtn_5")
         self.label_170 = QtWidgets.QLabel(self.tab_76)
         self.label_170.setGeometry(QtCore.QRect(10, 10, 441, 41))
@@ -2563,11 +2765,13 @@ class Ui_AdminDashBoard(object):
         font.setBold(True)
         font.setWeight(75)
         self.cancel_depbtn_3.setFont(font)
-        self.cancel_depbtn_3.setStyleSheet("background-color:#fff;\n"
-"color:#ff0000;\n"
-"border-top:1px solid #fff;\n"
-"border-bottom:1px solid #0076bd;\n"
-"padding-bottom:0px")
+        self.cancel_depbtn_3.setStyleSheet(
+            "background-color:#fff;\n"
+            "color:#ff0000;\n"
+            "border-top:1px solid #fff;\n"
+            "border-bottom:1px solid #0076bd;\n"
+            "padding-bottom:0px"
+        )
         self.cancel_depbtn_3.setObjectName("cancel_depbtn_3")
         self.tableWidget_6 = QtWidgets.QTableWidget(self.AllowanaceView)
         self.tableWidget_6.setGeometry(QtCore.QRect(-10, 60, 1141, 741))
@@ -2600,19 +2804,22 @@ class Ui_AdminDashBoard(object):
         font.setBold(True)
         font.setWeight(75)
         self.basic_okbtn_2.setFont(font)
-        self.basic_okbtn_2.setStyleSheet("background-color:#fff;\n"
-"color:#0076bd;\n"
-"border-top:1px solid #fff;\n"
-"border-bottom:1px solid #0076bd;\n"
-"padding-bottom:0px")
+        self.basic_okbtn_2.setStyleSheet(
+            "background-color:#fff;\n"
+            "color:#0076bd;\n"
+            "border-top:1px solid #fff;\n"
+            "border-bottom:1px solid #0076bd;\n"
+            "padding-bottom:0px"
+        )
         self.basic_okbtn_2.setObjectName("basic_okbtn_2")
         self.stackedWidget_2.addWidget(self.AllowanaceView)
         self.Addallowance = QtWidgets.QWidget()
         self.Addallowance.setObjectName("Addallowance")
         self.remarkbx_2 = QtWidgets.QPlainTextEdit(self.Addallowance)
         self.remarkbx_2.setGeometry(QtCore.QRect(880, 1740, 321, 31))
-        self.remarkbx_2.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;")
+        self.remarkbx_2.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;"
+        )
         self.remarkbx_2.setObjectName("remarkbx_2")
         self.listWidget_3 = QtWidgets.QListWidget(self.Addallowance)
         self.listWidget_3.setGeometry(QtCore.QRect(1430, 1110, 441, 471))
@@ -2634,7 +2841,9 @@ class Ui_AdminDashBoard(object):
         self.horizontalLayout_18 = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget_17)
         self.horizontalLayout_18.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_18.setObjectName("horizontalLayout_18")
-        self.search_personel_alownc_2 = QtWidgets.QRadioButton(self.horizontalLayoutWidget_17)
+        self.search_personel_alownc_2 = QtWidgets.QRadioButton(
+            self.horizontalLayoutWidget_17
+        )
         font = QtGui.QFont()
         font.setFamily("Yu Gothic UI Semibold")
         font.setPointSize(10)
@@ -2654,13 +2863,15 @@ class Ui_AdminDashBoard(object):
         self.horizontalLayout_18.addWidget(self.searchdepalc_2)
         self.amountbx_2 = QtWidgets.QPlainTextEdit(self.Addallowance)
         self.amountbx_2.setGeometry(QtCore.QRect(880, 1660, 321, 31))
-        self.amountbx_2.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;")
+        self.amountbx_2.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;"
+        )
         self.amountbx_2.setObjectName("amountbx_2")
         self.allowanceissuedate_2 = QtWidgets.QPlainTextEdit(self.Addallowance)
         self.allowanceissuedate_2.setGeometry(QtCore.QRect(880, 1700, 321, 31))
-        self.allowanceissuedate_2.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;")
+        self.allowanceissuedate_2.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;"
+        )
         self.allowanceissuedate_2.setObjectName("allowanceissuedate_2")
         self.label_208 = QtWidgets.QLabel(self.Addallowance)
         self.label_208.setGeometry(QtCore.QRect(750, 1690, 121, 41))
@@ -2673,8 +2884,9 @@ class Ui_AdminDashBoard(object):
         self.label_208.setObjectName("label_208")
         self.allowance_cmb_2 = QtWidgets.QComboBox(self.Addallowance)
         self.allowance_cmb_2.setGeometry(QtCore.QRect(760, 1070, 251, 31))
-        self.allowance_cmb_2.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;")
+        self.allowance_cmb_2.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;"
+        )
         self.allowance_cmb_2.setObjectName("allowance_cmb_2")
         self.label_209 = QtWidgets.QLabel(self.Addallowance)
         self.label_209.setGeometry(QtCore.QRect(750, 1650, 121, 41))
@@ -2687,8 +2899,9 @@ class Ui_AdminDashBoard(object):
         self.label_209.setObjectName("label_209")
         self.allowancedesc_2 = QtWidgets.QComboBox(self.Addallowance)
         self.allowancedesc_2.setGeometry(QtCore.QRect(880, 1610, 341, 31))
-        self.allowancedesc_2.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;")
+        self.allowancedesc_2.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;"
+        )
         self.allowancedesc_2.setObjectName("allowancedesc_2")
         self.allowancedesc_2.addItem("")
         self.label_210 = QtWidgets.QLabel(self.Addallowance)
@@ -2739,11 +2952,13 @@ class Ui_AdminDashBoard(object):
         font.setBold(True)
         font.setWeight(75)
         self.alwnc_okbtn.setFont(font)
-        self.alwnc_okbtn.setStyleSheet("background-color:#fff;\n"
-"color:#0076bd;\n"
-"border-top:1px solid #fff;\n"
-"border-bottom:1px solid #0076bd;\n"
-"padding-bottom:0px")
+        self.alwnc_okbtn.setStyleSheet(
+            "background-color:#fff;\n"
+            "color:#0076bd;\n"
+            "border-top:1px solid #fff;\n"
+            "border-bottom:1px solid #0076bd;\n"
+            "padding-bottom:0px"
+        )
         self.alwnc_okbtn.setObjectName("alwnc_okbtn")
         self.horizontalLayoutWidget_13 = QtWidgets.QWidget(self.tab_88)
         self.horizontalLayoutWidget_13.setGeometry(QtCore.QRect(50, 10, 561, 80))
@@ -2751,7 +2966,9 @@ class Ui_AdminDashBoard(object):
         self.horizontalLayout_13 = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget_13)
         self.horizontalLayout_13.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_13.setObjectName("horizontalLayout_13")
-        self.search_personel_alownc = QtWidgets.QRadioButton(self.horizontalLayoutWidget_13)
+        self.search_personel_alownc = QtWidgets.QRadioButton(
+            self.horizontalLayoutWidget_13
+        )
         font = QtGui.QFont()
         font.setFamily("Yu Gothic UI Semibold")
         font.setPointSize(10)
@@ -2771,13 +2988,15 @@ class Ui_AdminDashBoard(object):
         self.horizontalLayout_13.addWidget(self.searchdepalc)
         self.amountbx = QtWidgets.QPlainTextEdit(self.tab_88)
         self.amountbx.setGeometry(QtCore.QRect(180, 700, 321, 31))
-        self.amountbx.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;")
+        self.amountbx.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;"
+        )
         self.amountbx.setObjectName("amountbx")
         self.allowanceissuedate = QtWidgets.QPlainTextEdit(self.tab_88)
         self.allowanceissuedate.setGeometry(QtCore.QRect(180, 740, 321, 31))
-        self.allowanceissuedate.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;")
+        self.allowanceissuedate.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;"
+        )
         self.allowanceissuedate.setObjectName("allowanceissuedate")
         self.label_202 = QtWidgets.QLabel(self.tab_88)
         self.label_202.setGeometry(QtCore.QRect(50, 730, 121, 41))
@@ -2790,13 +3009,15 @@ class Ui_AdminDashBoard(object):
         self.label_202.setObjectName("label_202")
         self.allowance_cmb = QtWidgets.QComboBox(self.tab_88)
         self.allowance_cmb.setGeometry(QtCore.QRect(60, 110, 251, 31))
-        self.allowance_cmb.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;")
+        self.allowance_cmb.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;"
+        )
         self.allowance_cmb.setObjectName("allowance_cmb")
         self.remarkbx = QtWidgets.QPlainTextEdit(self.tab_88)
         self.remarkbx.setGeometry(QtCore.QRect(180, 780, 321, 31))
-        self.remarkbx.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;")
+        self.remarkbx.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;"
+        )
         self.remarkbx.setObjectName("remarkbx")
         self.label_201 = QtWidgets.QLabel(self.tab_88)
         self.label_201.setGeometry(QtCore.QRect(50, 690, 121, 41))
@@ -2814,16 +3035,19 @@ class Ui_AdminDashBoard(object):
         font.setBold(True)
         font.setWeight(75)
         self.cnl_alownace_btn.setFont(font)
-        self.cnl_alownace_btn.setStyleSheet("background-color:#fff;\n"
-"color:#ff0000;\n"
-"border-top:1px solid #fff;\n"
-"border-bottom:1px solid #0076bd;\n"
-"padding-bottom:0px")
+        self.cnl_alownace_btn.setStyleSheet(
+            "background-color:#fff;\n"
+            "color:#ff0000;\n"
+            "border-top:1px solid #fff;\n"
+            "border-bottom:1px solid #0076bd;\n"
+            "padding-bottom:0px"
+        )
         self.cnl_alownace_btn.setObjectName("cnl_alownace_btn")
         self.allowancedesc = QtWidgets.QComboBox(self.tab_88)
         self.allowancedesc.setGeometry(QtCore.QRect(180, 650, 341, 31))
-        self.allowancedesc.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;")
+        self.allowancedesc.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;"
+        )
         self.allowancedesc.setObjectName("allowancedesc")
         self.allowancedesc.addItem("")
         self.label_203 = QtWidgets.QLabel(self.tab_88)
@@ -2864,11 +3088,13 @@ class Ui_AdminDashBoard(object):
         font.setBold(True)
         font.setWeight(75)
         self.cancel_exp_btn_27.setFont(font)
-        self.cancel_exp_btn_27.setStyleSheet("background-color:#fff;\n"
-"color:#ff0000;\n"
-"border-top:1px solid #fff;\n"
-"border-bottom:1px solid #0076bd;\n"
-"padding-bottom:0px")
+        self.cancel_exp_btn_27.setStyleSheet(
+            "background-color:#fff;\n"
+            "color:#ff0000;\n"
+            "border-top:1px solid #fff;\n"
+            "border-bottom:1px solid #0076bd;\n"
+            "padding-bottom:0px"
+        )
         self.cancel_exp_btn_27.setObjectName("cancel_exp_btn_27")
         self.addexp_btn_25 = QtWidgets.QPushButton(self.DeducitonDetail)
         self.addexp_btn_25.setGeometry(QtCore.QRect(310, 20, 165, 27))
@@ -2878,11 +3104,13 @@ class Ui_AdminDashBoard(object):
         font.setBold(True)
         font.setWeight(75)
         self.addexp_btn_25.setFont(font)
-        self.addexp_btn_25.setStyleSheet("background-color:#fff;\n"
-"color:#0076bd;\n"
-"border-top:1px solid #fff;\n"
-"border-bottom:1px solid #0076bd;\n"
-"padding-bottom:0px")
+        self.addexp_btn_25.setStyleSheet(
+            "background-color:#fff;\n"
+            "color:#0076bd;\n"
+            "border-top:1px solid #fff;\n"
+            "border-bottom:1px solid #0076bd;\n"
+            "padding-bottom:0px"
+        )
         self.addexp_btn_25.setObjectName("addexp_btn_25")
         self.tableWidget_48 = QtWidgets.QTableWidget(self.DeducitonDetail)
         self.tableWidget_48.setGeometry(QtCore.QRect(10, 70, 1141, 741))
@@ -2917,11 +3145,13 @@ class Ui_AdminDashBoard(object):
         font.setBold(True)
         font.setWeight(75)
         self.cnl_deduction_btn.setFont(font)
-        self.cnl_deduction_btn.setStyleSheet("background-color:#fff;\n"
-"color:#ff0000;\n"
-"border-top:1px solid #fff;\n"
-"border-bottom:1px solid #0076bd;\n"
-"padding-bottom:0px")
+        self.cnl_deduction_btn.setStyleSheet(
+            "background-color:#fff;\n"
+            "color:#ff0000;\n"
+            "border-top:1px solid #fff;\n"
+            "border-bottom:1px solid #0076bd;\n"
+            "padding-bottom:0px"
+        )
         self.cnl_deduction_btn.setObjectName("cnl_deduction_btn")
         self.listWidget_21 = QtWidgets.QListWidget(self.AddDiduction)
         self.listWidget_21.setGeometry(QtCore.QRect(700, 140, 441, 471))
@@ -2934,7 +3164,9 @@ class Ui_AdminDashBoard(object):
         self.horizontalLayout_53 = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget_53)
         self.horizontalLayout_53.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_53.setObjectName("horizontalLayout_53")
-        self.search_personel_alownc_ded = QtWidgets.QRadioButton(self.horizontalLayoutWidget_53)
+        self.search_personel_alownc_ded = QtWidgets.QRadioButton(
+            self.horizontalLayoutWidget_53
+        )
         font = QtGui.QFont()
         font.setFamily("Yu Gothic UI Semibold")
         font.setPointSize(10)
@@ -2963,13 +3195,15 @@ class Ui_AdminDashBoard(object):
         self.label_298.setObjectName("label_298")
         self.deductionrmrk = QtWidgets.QPlainTextEdit(self.AddDiduction)
         self.deductionrmrk.setGeometry(QtCore.QRect(150, 770, 321, 31))
-        self.deductionrmrk.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;")
+        self.deductionrmrk.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;"
+        )
         self.deductionrmrk.setObjectName("deductionrmrk")
         self.deduction_cmb = QtWidgets.QComboBox(self.AddDiduction)
         self.deduction_cmb.setGeometry(QtCore.QRect(30, 100, 251, 31))
-        self.deduction_cmb.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;")
+        self.deduction_cmb.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;"
+        )
         self.deduction_cmb.setObjectName("deduction_cmb")
         self.select_deduciton_all_chbx_all = QtWidgets.QCheckBox(self.AddDiduction)
         self.select_deduciton_all_chbx_all.setGeometry(QtCore.QRect(330, 90, 351, 41))
@@ -2979,11 +3213,14 @@ class Ui_AdminDashBoard(object):
         font.setBold(True)
         font.setWeight(75)
         self.select_deduciton_all_chbx_all.setFont(font)
-        self.select_deduciton_all_chbx_all.setObjectName("select_deduciton_all_chbx_all")
+        self.select_deduciton_all_chbx_all.setObjectName(
+            "select_deduciton_all_chbx_all"
+        )
         self.deductiontype_cbx = QtWidgets.QComboBox(self.AddDiduction)
         self.deductiontype_cbx.setGeometry(QtCore.QRect(190, 640, 341, 31))
-        self.deductiontype_cbx.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;")
+        self.deductiontype_cbx.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;"
+        )
         self.deductiontype_cbx.setObjectName("deductiontype_cbx")
         self.deductiontype_cbx.addItem("")
         self.tableView_18 = QtWidgets.QTableView(self.AddDiduction)
@@ -2991,13 +3228,15 @@ class Ui_AdminDashBoard(object):
         self.tableView_18.setObjectName("tableView_18")
         self.deductionissuedt = QtWidgets.QPlainTextEdit(self.AddDiduction)
         self.deductionissuedt.setGeometry(QtCore.QRect(150, 730, 321, 31))
-        self.deductionissuedt.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;")
+        self.deductionissuedt.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;"
+        )
         self.deductionissuedt.setObjectName("deductionissuedt")
         self.deduction_amnt = QtWidgets.QPlainTextEdit(self.AddDiduction)
         self.deduction_amnt.setGeometry(QtCore.QRect(150, 690, 321, 31))
-        self.deduction_amnt.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;")
+        self.deduction_amnt.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;"
+        )
         self.deduction_amnt.setObjectName("deduction_amnt")
         self.label_301 = QtWidgets.QLabel(self.AddDiduction)
         self.label_301.setGeometry(QtCore.QRect(20, 640, 151, 41))
@@ -3034,11 +3273,13 @@ class Ui_AdminDashBoard(object):
         font.setBold(True)
         font.setWeight(75)
         self.deduction_okbtn.setFont(font)
-        self.deduction_okbtn.setStyleSheet("background-color:#fff;\n"
-"color:#0076bd;\n"
-"border-top:1px solid #fff;\n"
-"border-bottom:1px solid #0076bd;\n"
-"padding-bottom:0px")
+        self.deduction_okbtn.setStyleSheet(
+            "background-color:#fff;\n"
+            "color:#0076bd;\n"
+            "border-top:1px solid #fff;\n"
+            "border-bottom:1px solid #0076bd;\n"
+            "padding-bottom:0px"
+        )
         self.deduction_okbtn.setObjectName("deduction_okbtn")
         self.Deductionwidget.addWidget(self.AddDiduction)
         self.tabWidget_5.addTab(self.Deduction, "")
@@ -3057,11 +3298,13 @@ class Ui_AdminDashBoard(object):
         font.setBold(True)
         font.setWeight(75)
         self.addexp_btn_24.setFont(font)
-        self.addexp_btn_24.setStyleSheet("background-color:#fff;\n"
-"color:#0076bd;\n"
-"border-top:1px solid #fff;\n"
-"border-bottom:1px solid #0076bd;\n"
-"padding-bottom:0px")
+        self.addexp_btn_24.setStyleSheet(
+            "background-color:#fff;\n"
+            "color:#0076bd;\n"
+            "border-top:1px solid #fff;\n"
+            "border-bottom:1px solid #0076bd;\n"
+            "padding-bottom:0px"
+        )
         self.addexp_btn_24.setObjectName("addexp_btn_24")
         self.cancel_exp_btn_26 = QtWidgets.QPushButton(self.Expesnsedetail)
         self.cancel_exp_btn_26.setGeometry(QtCore.QRect(60, 40, 165, 24))
@@ -3070,11 +3313,13 @@ class Ui_AdminDashBoard(object):
         font.setBold(True)
         font.setWeight(75)
         self.cancel_exp_btn_26.setFont(font)
-        self.cancel_exp_btn_26.setStyleSheet("background-color:#fff;\n"
-"color:#ff0000;\n"
-"border-top:1px solid #fff;\n"
-"border-bottom:1px solid #0076bd;\n"
-"padding-bottom:0px")
+        self.cancel_exp_btn_26.setStyleSheet(
+            "background-color:#fff;\n"
+            "color:#ff0000;\n"
+            "border-top:1px solid #fff;\n"
+            "border-bottom:1px solid #0076bd;\n"
+            "padding-bottom:0px"
+        )
         self.cancel_exp_btn_26.setObjectName("cancel_exp_btn_26")
         self.tableWidget_46 = QtWidgets.QTableWidget(self.Expesnsedetail)
         self.tableWidget_46.setGeometry(QtCore.QRect(0, 90, 1141, 741))
@@ -3109,11 +3354,13 @@ class Ui_AdminDashBoard(object):
         font.setBold(True)
         font.setWeight(75)
         self.cnl_exp_btn.setFont(font)
-        self.cnl_exp_btn.setStyleSheet("background-color:#fff;\n"
-"color:#ff0000;\n"
-"border-top:1px solid #fff;\n"
-"border-bottom:1px solid #0076bd;\n"
-"padding-bottom:0px")
+        self.cnl_exp_btn.setStyleSheet(
+            "background-color:#fff;\n"
+            "color:#ff0000;\n"
+            "border-top:1px solid #fff;\n"
+            "border-bottom:1px solid #0076bd;\n"
+            "padding-bottom:0px"
+        )
         self.cnl_exp_btn.setObjectName("cnl_exp_btn")
         self.listWidget_20 = QtWidgets.QListWidget(self.Addexpense)
         self.listWidget_20.setGeometry(QtCore.QRect(760, 160, 441, 471))
@@ -3126,7 +3373,9 @@ class Ui_AdminDashBoard(object):
         self.horizontalLayout_52 = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget_52)
         self.horizontalLayout_52.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_52.setObjectName("horizontalLayout_52")
-        self.search_personel_expense = QtWidgets.QRadioButton(self.horizontalLayoutWidget_52)
+        self.search_personel_expense = QtWidgets.QRadioButton(
+            self.horizontalLayoutWidget_52
+        )
         font = QtGui.QFont()
         font.setFamily("Yu Gothic UI Semibold")
         font.setPointSize(10)
@@ -3155,13 +3404,15 @@ class Ui_AdminDashBoard(object):
         self.label_297.setObjectName("label_297")
         self.expremarkbx = QtWidgets.QPlainTextEdit(self.Addexpense)
         self.expremarkbx.setGeometry(QtCore.QRect(200, 760, 321, 31))
-        self.expremarkbx.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;")
+        self.expremarkbx.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;"
+        )
         self.expremarkbx.setObjectName("expremarkbx")
         self.allowance_cmb_18 = QtWidgets.QComboBox(self.Addexpense)
         self.allowance_cmb_18.setGeometry(QtCore.QRect(90, 120, 251, 31))
-        self.allowance_cmb_18.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;")
+        self.allowance_cmb_18.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;"
+        )
         self.allowance_cmb_18.setObjectName("allowance_cmb_18")
         self.select_exp_chbx_all = QtWidgets.QCheckBox(self.Addexpense)
         self.select_exp_chbx_all.setGeometry(QtCore.QRect(390, 110, 351, 41))
@@ -3174,13 +3425,15 @@ class Ui_AdminDashBoard(object):
         self.select_exp_chbx_all.setObjectName("select_exp_chbx_all")
         self.expissuedate = QtWidgets.QPlainTextEdit(self.Addexpense)
         self.expissuedate.setGeometry(QtCore.QRect(200, 710, 321, 31))
-        self.expissuedate.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;")
+        self.expissuedate.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;"
+        )
         self.expissuedate.setObjectName("expissuedate")
         self.expamountbx_7 = QtWidgets.QPlainTextEdit(self.Addexpense)
         self.expamountbx_7.setGeometry(QtCore.QRect(200, 660, 321, 31))
-        self.expamountbx_7.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;")
+        self.expamountbx_7.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;"
+        )
         self.expamountbx_7.setObjectName("expamountbx_7")
         self.label_299 = QtWidgets.QLabel(self.Addexpense)
         self.label_299.setGeometry(QtCore.QRect(70, 750, 121, 41))
@@ -3208,11 +3461,13 @@ class Ui_AdminDashBoard(object):
         font.setBold(True)
         font.setWeight(75)
         self.exp_okbtn_5.setFont(font)
-        self.exp_okbtn_5.setStyleSheet("background-color:#fff;\n"
-"color:#0076bd;\n"
-"border-top:1px solid #fff;\n"
-"border-bottom:1px solid #0076bd;\n"
-"padding-bottom:0px")
+        self.exp_okbtn_5.setStyleSheet(
+            "background-color:#fff;\n"
+            "color:#0076bd;\n"
+            "border-top:1px solid #fff;\n"
+            "border-bottom:1px solid #0076bd;\n"
+            "padding-bottom:0px"
+        )
         self.exp_okbtn_5.setObjectName("exp_okbtn_5")
         self.tableWidget_47 = QtWidgets.QTableWidget(self.Addexpense)
         self.tableWidget_47.setGeometry(QtCore.QRect(80, 170, 661, 461))
@@ -3272,16 +3527,19 @@ class Ui_AdminDashBoard(object):
         font.setBold(True)
         font.setWeight(75)
         self.cashadv_okbtn_4.setFont(font)
-        self.cashadv_okbtn_4.setStyleSheet("background-color:#fff;\n"
-"color:#0076bd;\n"
-"border-top:1px solid #fff;\n"
-"border-bottom:1px solid #0076bd;\n"
-"padding-bottom:0px")
+        self.cashadv_okbtn_4.setStyleSheet(
+            "background-color:#fff;\n"
+            "color:#0076bd;\n"
+            "border-top:1px solid #fff;\n"
+            "border-bottom:1px solid #0076bd;\n"
+            "padding-bottom:0px"
+        )
         self.cashadv_okbtn_4.setObjectName("cashadv_okbtn_4")
         self.cashadv_amountbx_6 = QtWidgets.QPlainTextEdit(self.page_2)
         self.cashadv_amountbx_6.setGeometry(QtCore.QRect(210, 660, 321, 31))
-        self.cashadv_amountbx_6.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;")
+        self.cashadv_amountbx_6.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;"
+        )
         self.cashadv_amountbx_6.setObjectName("cashadv_amountbx_6")
         self.horizontalLayoutWidget_49 = QtWidgets.QWidget(self.page_2)
         self.horizontalLayoutWidget_49.setGeometry(QtCore.QRect(90, 50, 551, 61))
@@ -3289,7 +3547,9 @@ class Ui_AdminDashBoard(object):
         self.horizontalLayout_49 = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget_49)
         self.horizontalLayout_49.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_49.setObjectName("horizontalLayout_49")
-        self.search_personel_cashadv = QtWidgets.QRadioButton(self.horizontalLayoutWidget_49)
+        self.search_personel_cashadv = QtWidgets.QRadioButton(
+            self.horizontalLayoutWidget_49
+        )
         font = QtGui.QFont()
         font.setFamily("Yu Gothic UI Semibold")
         font.setPointSize(10)
@@ -3323,16 +3583,19 @@ class Ui_AdminDashBoard(object):
         font.setBold(True)
         font.setWeight(75)
         self.cnl_cashadv_btn.setFont(font)
-        self.cnl_cashadv_btn.setStyleSheet("background-color:#fff;\n"
-"color:#ff0000;\n"
-"border-top:1px solid #fff;\n"
-"border-bottom:1px solid #0076bd;\n"
-"padding-bottom:0px")
+        self.cnl_cashadv_btn.setStyleSheet(
+            "background-color:#fff;\n"
+            "color:#ff0000;\n"
+            "border-top:1px solid #fff;\n"
+            "border-bottom:1px solid #0076bd;\n"
+            "padding-bottom:0px"
+        )
         self.cnl_cashadv_btn.setObjectName("cnl_cashadv_btn")
         self.cashadv_issuedate_6 = QtWidgets.QPlainTextEdit(self.page_2)
         self.cashadv_issuedate_6.setGeometry(QtCore.QRect(210, 700, 321, 31))
-        self.cashadv_issuedate_6.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;")
+        self.cashadv_issuedate_6.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;"
+        )
         self.cashadv_issuedate_6.setObjectName("cashadv_issuedate_6")
         self.label_289 = QtWidgets.QLabel(self.page_2)
         self.label_289.setGeometry(QtCore.QRect(80, 750, 121, 41))
@@ -3345,13 +3608,15 @@ class Ui_AdminDashBoard(object):
         self.label_289.setObjectName("label_289")
         self.cash_adv_issuebx = QtWidgets.QPlainTextEdit(self.page_2)
         self.cash_adv_issuebx.setGeometry(QtCore.QRect(210, 750, 321, 31))
-        self.cash_adv_issuebx.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;")
+        self.cash_adv_issuebx.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;"
+        )
         self.cash_adv_issuebx.setObjectName("cash_adv_issuebx")
         self.cashadv_cmb = QtWidgets.QComboBox(self.page_2)
         self.cashadv_cmb.setGeometry(QtCore.QRect(90, 120, 251, 31))
-        self.cashadv_cmb.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;")
+        self.cashadv_cmb.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;"
+        )
         self.cashadv_cmb.setObjectName("cashadv_cmb")
         self.listWidget_17 = QtWidgets.QListWidget(self.page_2)
         self.listWidget_17.setGeometry(QtCore.QRect(760, 160, 441, 471))
@@ -3415,8 +3680,7 @@ class Ui_AdminDashBoard(object):
         self.SystemSettings.setObjectName("SystemSettings")
         self.tabWidget_6 = QtWidgets.QTabWidget(self.SystemSettings)
         self.tabWidget_6.setGeometry(QtCore.QRect(0, 0, 1920, 1031))
-        self.tabWidget_6.setStyleSheet("Background-color:#fff\n"
-"")
+        self.tabWidget_6.setStyleSheet("Background-color:#fff\n" "")
         self.tabWidget_6.setObjectName("tabWidget_6")
         self.tab_73 = QtWidgets.QWidget()
         self.tab_73.setObjectName("tab_73")
@@ -3445,11 +3709,13 @@ class Ui_AdminDashBoard(object):
         font.setBold(True)
         font.setWeight(75)
         self.dep_saveandnwbtn_13.setFont(font)
-        self.dep_saveandnwbtn_13.setStyleSheet("background-color:#fff;\n"
-"color:#0076bd;\n"
-"border-top:1px solid #fff;\n"
-"border-bottom:1px solid #0076bd;\n"
-"padding-bottom:0px")
+        self.dep_saveandnwbtn_13.setStyleSheet(
+            "background-color:#fff;\n"
+            "color:#0076bd;\n"
+            "border-top:1px solid #fff;\n"
+            "border-bottom:1px solid #0076bd;\n"
+            "padding-bottom:0px"
+        )
         self.dep_saveandnwbtn_13.setObjectName("dep_saveandnwbtn_13")
         self.horizontalLayout_54.addWidget(self.dep_saveandnwbtn_13)
         self.dep_okbtn_13 = QtWidgets.QPushButton(self.horizontalLayoutWidget_54)
@@ -3459,11 +3725,13 @@ class Ui_AdminDashBoard(object):
         font.setBold(True)
         font.setWeight(75)
         self.dep_okbtn_13.setFont(font)
-        self.dep_okbtn_13.setStyleSheet("background-color:#fff;\n"
-"color:#0076bd;\n"
-"border-top:1px solid #fff;\n"
-"border-bottom:1px solid #0076bd;\n"
-"padding-bottom:0px")
+        self.dep_okbtn_13.setStyleSheet(
+            "background-color:#fff;\n"
+            "color:#0076bd;\n"
+            "border-top:1px solid #fff;\n"
+            "border-bottom:1px solid #0076bd;\n"
+            "padding-bottom:0px"
+        )
         self.dep_okbtn_13.setObjectName("dep_okbtn_13")
         self.horizontalLayout_54.addWidget(self.dep_okbtn_13)
         self.cancel_depbtn_26 = QtWidgets.QPushButton(self.horizontalLayoutWidget_54)
@@ -3472,11 +3740,13 @@ class Ui_AdminDashBoard(object):
         font.setBold(True)
         font.setWeight(75)
         self.cancel_depbtn_26.setFont(font)
-        self.cancel_depbtn_26.setStyleSheet("background-color:#fff;\n"
-"color:#ff0000;\n"
-"border-top:1px solid #fff;\n"
-"border-bottom:1px solid #0076bd;\n"
-"padding-bottom:0px")
+        self.cancel_depbtn_26.setStyleSheet(
+            "background-color:#fff;\n"
+            "color:#ff0000;\n"
+            "border-top:1px solid #fff;\n"
+            "border-bottom:1px solid #0076bd;\n"
+            "padding-bottom:0px"
+        )
         self.cancel_depbtn_26.setObjectName("cancel_depbtn_26")
         self.horizontalLayout_54.addWidget(self.cancel_depbtn_26)
         self.label_59 = QtWidgets.QLabel(self.tab_75)
@@ -3545,16 +3815,22 @@ class Ui_AdminDashBoard(object):
         self.formLayout_6.setWidget(4, QtWidgets.QFormLayout.LabelRole, self.label_57)
         self.parentarea_cmbx_2 = QtWidgets.QComboBox(self.formLayoutWidget_6)
         self.parentarea_cmbx_2.setMinimumSize(QtCore.QSize(0, 30))
-        self.parentarea_cmbx_2.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;")
+        self.parentarea_cmbx_2.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;"
+        )
         self.parentarea_cmbx_2.setObjectName("parentarea_cmbx_2")
-        self.formLayout_6.setWidget(3, QtWidgets.QFormLayout.FieldRole, self.parentarea_cmbx_2)
+        self.formLayout_6.setWidget(
+            3, QtWidgets.QFormLayout.FieldRole, self.parentarea_cmbx_2
+        )
         self.parentarea_cmbx_3 = QtWidgets.QComboBox(self.formLayoutWidget_6)
         self.parentarea_cmbx_3.setMinimumSize(QtCore.QSize(0, 30))
-        self.parentarea_cmbx_3.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;")
+        self.parentarea_cmbx_3.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;"
+        )
         self.parentarea_cmbx_3.setObjectName("parentarea_cmbx_3")
-        self.formLayout_6.setWidget(4, QtWidgets.QFormLayout.FieldRole, self.parentarea_cmbx_3)
+        self.formLayout_6.setWidget(
+            4, QtWidgets.QFormLayout.FieldRole, self.parentarea_cmbx_3
+        )
         self.label_53 = QtWidgets.QLabel(self.formLayoutWidget_6)
         font = QtGui.QFont()
         font.setFamily("Yu Gothic UI Semibold")
@@ -3590,46 +3866,58 @@ class Ui_AdminDashBoard(object):
         self.formLayout_6.setWidget(8, QtWidgets.QFormLayout.FieldRole, self.checkBox_2)
         self.lineEdit_33 = QtWidgets.QLineEdit(self.formLayoutWidget_6)
         self.lineEdit_33.setMinimumSize(QtCore.QSize(20, 30))
-        self.lineEdit_33.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;\n"
-"")
+        self.lineEdit_33.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;\n" ""
+        )
         self.lineEdit_33.setObjectName("lineEdit_33")
-        self.formLayout_6.setWidget(0, QtWidgets.QFormLayout.FieldRole, self.lineEdit_33)
+        self.formLayout_6.setWidget(
+            0, QtWidgets.QFormLayout.FieldRole, self.lineEdit_33
+        )
         self.lineEdit_31 = QtWidgets.QLineEdit(self.formLayoutWidget_6)
         self.lineEdit_31.setMinimumSize(QtCore.QSize(20, 30))
-        self.lineEdit_31.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;\n"
-"")
+        self.lineEdit_31.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;\n" ""
+        )
         self.lineEdit_31.setObjectName("lineEdit_31")
-        self.formLayout_6.setWidget(1, QtWidgets.QFormLayout.FieldRole, self.lineEdit_31)
+        self.formLayout_6.setWidget(
+            1, QtWidgets.QFormLayout.FieldRole, self.lineEdit_31
+        )
         self.lineEdit_30 = QtWidgets.QLineEdit(self.formLayoutWidget_6)
         self.lineEdit_30.setMinimumSize(QtCore.QSize(20, 30))
-        self.lineEdit_30.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;\n"
-"")
+        self.lineEdit_30.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;\n" ""
+        )
         self.lineEdit_30.setObjectName("lineEdit_30")
-        self.formLayout_6.setWidget(2, QtWidgets.QFormLayout.FieldRole, self.lineEdit_30)
+        self.formLayout_6.setWidget(
+            2, QtWidgets.QFormLayout.FieldRole, self.lineEdit_30
+        )
         self.lineEdit_32 = QtWidgets.QLineEdit(self.formLayoutWidget_6)
         self.lineEdit_32.setMinimumSize(QtCore.QSize(20, 30))
-        self.lineEdit_32.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;\n"
-"")
+        self.lineEdit_32.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;\n" ""
+        )
         self.lineEdit_32.setObjectName("lineEdit_32")
-        self.formLayout_6.setWidget(5, QtWidgets.QFormLayout.FieldRole, self.lineEdit_32)
+        self.formLayout_6.setWidget(
+            5, QtWidgets.QFormLayout.FieldRole, self.lineEdit_32
+        )
         self.lineEdit_35 = QtWidgets.QLineEdit(self.formLayoutWidget_6)
         self.lineEdit_35.setMinimumSize(QtCore.QSize(20, 30))
-        self.lineEdit_35.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;\n"
-"")
+        self.lineEdit_35.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;\n" ""
+        )
         self.lineEdit_35.setObjectName("lineEdit_35")
-        self.formLayout_6.setWidget(6, QtWidgets.QFormLayout.FieldRole, self.lineEdit_35)
+        self.formLayout_6.setWidget(
+            6, QtWidgets.QFormLayout.FieldRole, self.lineEdit_35
+        )
         self.lineEdit_34 = QtWidgets.QLineEdit(self.formLayoutWidget_6)
         self.lineEdit_34.setMinimumSize(QtCore.QSize(20, 30))
-        self.lineEdit_34.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;\n"
-"")
+        self.lineEdit_34.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;\n" ""
+        )
         self.lineEdit_34.setObjectName("lineEdit_34")
-        self.formLayout_6.setWidget(7, QtWidgets.QFormLayout.FieldRole, self.lineEdit_34)
+        self.formLayout_6.setWidget(
+            7, QtWidgets.QFormLayout.FieldRole, self.lineEdit_34
+        )
         self.tabWidget_17.addTab(self.tab_75, "")
         self.tabWidget_6.addTab(self.tab_19, "")
         self.tab_20 = QtWidgets.QWidget()
@@ -3651,11 +3939,13 @@ class Ui_AdminDashBoard(object):
         font.setBold(True)
         font.setWeight(75)
         self.basic_okbtn_42.setFont(font)
-        self.basic_okbtn_42.setStyleSheet("background-color:#fff;\n"
-"color:#0076bd;\n"
-"border-top:1px solid #fff;\n"
-"border-bottom:1px solid #0076bd;\n"
-"padding-bottom:0px")
+        self.basic_okbtn_42.setStyleSheet(
+            "background-color:#fff;\n"
+            "color:#0076bd;\n"
+            "border-top:1px solid #fff;\n"
+            "border-bottom:1px solid #0076bd;\n"
+            "padding-bottom:0px"
+        )
         self.basic_okbtn_42.setObjectName("basic_okbtn_42")
         self.basic_okbtn_43 = QtWidgets.QPushButton(self.tab_20)
         self.basic_okbtn_43.setGeometry(QtCore.QRect(420, 170, 165, 27))
@@ -3665,11 +3955,13 @@ class Ui_AdminDashBoard(object):
         font.setBold(True)
         font.setWeight(75)
         self.basic_okbtn_43.setFont(font)
-        self.basic_okbtn_43.setStyleSheet("background-color:#fff;\n"
-"color:#0076bd;\n"
-"border-top:1px solid #fff;\n"
-"border-bottom:1px solid #0076bd;\n"
-"padding-bottom:0px")
+        self.basic_okbtn_43.setStyleSheet(
+            "background-color:#fff;\n"
+            "color:#0076bd;\n"
+            "border-top:1px solid #fff;\n"
+            "border-bottom:1px solid #0076bd;\n"
+            "padding-bottom:0px"
+        )
         self.basic_okbtn_43.setObjectName("basic_okbtn_43")
         self.checkBox_11 = QtWidgets.QCheckBox(self.tab_20)
         self.checkBox_11.setGeometry(QtCore.QRect(740, 89, 251, 51))
@@ -3707,12 +3999,15 @@ class Ui_AdminDashBoard(object):
         self.selectposbx_3 = QtWidgets.QComboBox(self.formLayoutWidget_8)
         self.selectposbx_3.setMinimumSize(QtCore.QSize(0, 30))
         self.selectposbx_3.setMaximumSize(QtCore.QSize(16777215, 30))
-        self.selectposbx_3.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;")
+        self.selectposbx_3.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;"
+        )
         self.selectposbx_3.setObjectName("selectposbx_3")
         self.selectposbx_3.addItem("")
         self.selectposbx_3.addItem("")
-        self.formLayout_8.setWidget(1, QtWidgets.QFormLayout.FieldRole, self.selectposbx_3)
+        self.formLayout_8.setWidget(
+            1, QtWidgets.QFormLayout.FieldRole, self.selectposbx_3
+        )
         self.label_222 = QtWidgets.QLabel(self.formLayoutWidget_8)
         font = QtGui.QFont()
         font.setFamily("Yu Gothic UI Semibold")
@@ -3770,53 +4065,67 @@ class Ui_AdminDashBoard(object):
         self.lineEdit_25 = QtWidgets.QLineEdit(self.formLayoutWidget_8)
         self.lineEdit_25.setMinimumSize(QtCore.QSize(30, 30))
         self.lineEdit_25.setMaximumSize(QtCore.QSize(500, 16777215))
-        self.lineEdit_25.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;\n"
-"")
+        self.lineEdit_25.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;\n" ""
+        )
         self.lineEdit_25.setObjectName("lineEdit_25")
-        self.formLayout_8.setWidget(0, QtWidgets.QFormLayout.FieldRole, self.lineEdit_25)
+        self.formLayout_8.setWidget(
+            0, QtWidgets.QFormLayout.FieldRole, self.lineEdit_25
+        )
         self.lineEdit_24 = QtWidgets.QLineEdit(self.formLayoutWidget_8)
         self.lineEdit_24.setMinimumSize(QtCore.QSize(20, 30))
-        self.lineEdit_24.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;\n"
-"")
+        self.lineEdit_24.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;\n" ""
+        )
         self.lineEdit_24.setObjectName("lineEdit_24")
-        self.formLayout_8.setWidget(2, QtWidgets.QFormLayout.FieldRole, self.lineEdit_24)
+        self.formLayout_8.setWidget(
+            2, QtWidgets.QFormLayout.FieldRole, self.lineEdit_24
+        )
         self.lineEdit_23 = QtWidgets.QLineEdit(self.formLayoutWidget_8)
         self.lineEdit_23.setMinimumSize(QtCore.QSize(20, 30))
-        self.lineEdit_23.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;\n"
-"")
+        self.lineEdit_23.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;\n" ""
+        )
         self.lineEdit_23.setObjectName("lineEdit_23")
-        self.formLayout_8.setWidget(3, QtWidgets.QFormLayout.FieldRole, self.lineEdit_23)
+        self.formLayout_8.setWidget(
+            3, QtWidgets.QFormLayout.FieldRole, self.lineEdit_23
+        )
         self.lineEdit_40 = QtWidgets.QLineEdit(self.formLayoutWidget_8)
         self.lineEdit_40.setMinimumSize(QtCore.QSize(20, 30))
-        self.lineEdit_40.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;\n"
-"")
+        self.lineEdit_40.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;\n" ""
+        )
         self.lineEdit_40.setObjectName("lineEdit_40")
-        self.formLayout_8.setWidget(4, QtWidgets.QFormLayout.FieldRole, self.lineEdit_40)
+        self.formLayout_8.setWidget(
+            4, QtWidgets.QFormLayout.FieldRole, self.lineEdit_40
+        )
         self.lineEdit_39 = QtWidgets.QLineEdit(self.formLayoutWidget_8)
         self.lineEdit_39.setMinimumSize(QtCore.QSize(20, 30))
-        self.lineEdit_39.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;\n"
-"")
+        self.lineEdit_39.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;\n" ""
+        )
         self.lineEdit_39.setObjectName("lineEdit_39")
-        self.formLayout_8.setWidget(5, QtWidgets.QFormLayout.FieldRole, self.lineEdit_39)
+        self.formLayout_8.setWidget(
+            5, QtWidgets.QFormLayout.FieldRole, self.lineEdit_39
+        )
         self.lineEdit_42 = QtWidgets.QLineEdit(self.formLayoutWidget_8)
         self.lineEdit_42.setMinimumSize(QtCore.QSize(20, 30))
-        self.lineEdit_42.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;\n"
-"")
+        self.lineEdit_42.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;\n" ""
+        )
         self.lineEdit_42.setObjectName("lineEdit_42")
-        self.formLayout_8.setWidget(6, QtWidgets.QFormLayout.FieldRole, self.lineEdit_42)
+        self.formLayout_8.setWidget(
+            6, QtWidgets.QFormLayout.FieldRole, self.lineEdit_42
+        )
         self.lineEdit_41 = QtWidgets.QLineEdit(self.formLayoutWidget_8)
         self.lineEdit_41.setMinimumSize(QtCore.QSize(20, 30))
-        self.lineEdit_41.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;\n"
-"")
+        self.lineEdit_41.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;\n" ""
+        )
         self.lineEdit_41.setObjectName("lineEdit_41")
-        self.formLayout_8.setWidget(7, QtWidgets.QFormLayout.FieldRole, self.lineEdit_41)
+        self.formLayout_8.setWidget(
+            7, QtWidgets.QFormLayout.FieldRole, self.lineEdit_41
+        )
         self.tabWidget_6.addTab(self.tab_20, "")
         self.tab_32 = QtWidgets.QWidget()
         self.tab_32.setObjectName("tab_32")
@@ -3876,26 +4185,32 @@ class Ui_AdminDashBoard(object):
         font.setBold(True)
         font.setWeight(75)
         self.basic_okbtn_44.setFont(font)
-        self.basic_okbtn_44.setStyleSheet("background-color:#fff;\n"
-"color:#0076bd;\n"
-"border-top:1px solid #fff;\n"
-"border-bottom:1px solid #0076bd;\n"
-"padding-bottom:0px")
+        self.basic_okbtn_44.setStyleSheet(
+            "background-color:#fff;\n"
+            "color:#0076bd;\n"
+            "border-top:1px solid #fff;\n"
+            "border-bottom:1px solid #0076bd;\n"
+            "padding-bottom:0px"
+        )
         self.basic_okbtn_44.setObjectName("basic_okbtn_44")
         self.formLayoutWidget_5 = QtWidgets.QWidget(self.tab_32)
         self.formLayoutWidget_5.setGeometry(QtCore.QRect(30, 340, 881, 232))
         self.formLayoutWidget_5.setObjectName("formLayoutWidget_5")
         self.formLayout_5 = QtWidgets.QFormLayout(self.formLayoutWidget_5)
-        self.formLayout_5.setFieldGrowthPolicy(QtWidgets.QFormLayout.AllNonFixedFieldsGrow)
+        self.formLayout_5.setFieldGrowthPolicy(
+            QtWidgets.QFormLayout.AllNonFixedFieldsGrow
+        )
         self.formLayout_5.setContentsMargins(0, 0, 0, 0)
         self.formLayout_5.setObjectName("formLayout_5")
         self.lineEdit_27 = QtWidgets.QLineEdit(self.formLayoutWidget_5)
         self.lineEdit_27.setMinimumSize(QtCore.QSize(20, 40))
-        self.lineEdit_27.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;\n"
-"")
+        self.lineEdit_27.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;\n" ""
+        )
         self.lineEdit_27.setObjectName("lineEdit_27")
-        self.formLayout_5.setWidget(0, QtWidgets.QFormLayout.FieldRole, self.lineEdit_27)
+        self.formLayout_5.setWidget(
+            0, QtWidgets.QFormLayout.FieldRole, self.lineEdit_27
+        )
         self.label_180 = QtWidgets.QLabel(self.formLayoutWidget_5)
         font = QtGui.QFont()
         font.setFamily("Yu Gothic UI Semibold")
@@ -3907,11 +4222,13 @@ class Ui_AdminDashBoard(object):
         self.formLayout_5.setWidget(1, QtWidgets.QFormLayout.LabelRole, self.label_180)
         self.lineEdit_28 = QtWidgets.QLineEdit(self.formLayoutWidget_5)
         self.lineEdit_28.setMinimumSize(QtCore.QSize(20, 40))
-        self.lineEdit_28.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;\n"
-"")
+        self.lineEdit_28.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;\n" ""
+        )
         self.lineEdit_28.setObjectName("lineEdit_28")
-        self.formLayout_5.setWidget(1, QtWidgets.QFormLayout.FieldRole, self.lineEdit_28)
+        self.formLayout_5.setWidget(
+            1, QtWidgets.QFormLayout.FieldRole, self.lineEdit_28
+        )
         self.label_181 = QtWidgets.QLabel(self.formLayoutWidget_5)
         font = QtGui.QFont()
         font.setFamily("Yu Gothic UI Semibold")
@@ -3923,11 +4240,13 @@ class Ui_AdminDashBoard(object):
         self.formLayout_5.setWidget(2, QtWidgets.QFormLayout.LabelRole, self.label_181)
         self.lineEdit_29 = QtWidgets.QLineEdit(self.formLayoutWidget_5)
         self.lineEdit_29.setMinimumSize(QtCore.QSize(20, 40))
-        self.lineEdit_29.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;\n"
-"")
+        self.lineEdit_29.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;\n" ""
+        )
         self.lineEdit_29.setObjectName("lineEdit_29")
-        self.formLayout_5.setWidget(2, QtWidgets.QFormLayout.FieldRole, self.lineEdit_29)
+        self.formLayout_5.setWidget(
+            2, QtWidgets.QFormLayout.FieldRole, self.lineEdit_29
+        )
         self.label_182 = QtWidgets.QLabel(self.formLayoutWidget_5)
         font = QtGui.QFont()
         font.setFamily("Yu Gothic UI Semibold")
@@ -3939,11 +4258,14 @@ class Ui_AdminDashBoard(object):
         self.formLayout_5.setWidget(3, QtWidgets.QFormLayout.LabelRole, self.label_182)
         self.selectposbx_5 = QtWidgets.QComboBox(self.formLayoutWidget_5)
         self.selectposbx_5.setMinimumSize(QtCore.QSize(0, 40))
-        self.selectposbx_5.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;")
+        self.selectposbx_5.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;"
+        )
         self.selectposbx_5.setObjectName("selectposbx_5")
         self.selectposbx_5.addItem("")
-        self.formLayout_5.setWidget(3, QtWidgets.QFormLayout.FieldRole, self.selectposbx_5)
+        self.formLayout_5.setWidget(
+            3, QtWidgets.QFormLayout.FieldRole, self.selectposbx_5
+        )
         self.label_183 = QtWidgets.QLabel(self.formLayoutWidget_5)
         font = QtGui.QFont()
         font.setFamily("Yu Gothic UI Semibold")
@@ -3955,12 +4277,15 @@ class Ui_AdminDashBoard(object):
         self.formLayout_5.setWidget(4, QtWidgets.QFormLayout.LabelRole, self.label_183)
         self.selectposbx_4 = QtWidgets.QComboBox(self.formLayoutWidget_5)
         self.selectposbx_4.setMinimumSize(QtCore.QSize(0, 40))
-        self.selectposbx_4.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;")
+        self.selectposbx_4.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;"
+        )
         self.selectposbx_4.setObjectName("selectposbx_4")
         self.selectposbx_4.addItem("")
         self.selectposbx_4.addItem("")
-        self.formLayout_5.setWidget(4, QtWidgets.QFormLayout.FieldRole, self.selectposbx_4)
+        self.formLayout_5.setWidget(
+            4, QtWidgets.QFormLayout.FieldRole, self.selectposbx_4
+        )
         self.label_179 = QtWidgets.QLabel(self.formLayoutWidget_5)
         font = QtGui.QFont()
         font.setFamily("Yu Gothic UI Semibold")
@@ -4023,39 +4348,49 @@ class Ui_AdminDashBoard(object):
         self.formLayout_12.setWidget(4, QtWidgets.QFormLayout.LabelRole, self.label_172)
         self.lineEdit_44 = QtWidgets.QLineEdit(self.formLayoutWidget_12)
         self.lineEdit_44.setMinimumSize(QtCore.QSize(20, 40))
-        self.lineEdit_44.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;\n"
-"")
+        self.lineEdit_44.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;\n" ""
+        )
         self.lineEdit_44.setObjectName("lineEdit_44")
-        self.formLayout_12.setWidget(0, QtWidgets.QFormLayout.FieldRole, self.lineEdit_44)
+        self.formLayout_12.setWidget(
+            0, QtWidgets.QFormLayout.FieldRole, self.lineEdit_44
+        )
         self.lineEdit_43 = QtWidgets.QLineEdit(self.formLayoutWidget_12)
         self.lineEdit_43.setMinimumSize(QtCore.QSize(20, 40))
-        self.lineEdit_43.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;\n"
-"")
+        self.lineEdit_43.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;\n" ""
+        )
         self.lineEdit_43.setObjectName("lineEdit_43")
-        self.formLayout_12.setWidget(1, QtWidgets.QFormLayout.FieldRole, self.lineEdit_43)
+        self.formLayout_12.setWidget(
+            1, QtWidgets.QFormLayout.FieldRole, self.lineEdit_43
+        )
         self.lineEdit_46 = QtWidgets.QLineEdit(self.formLayoutWidget_12)
         self.lineEdit_46.setMinimumSize(QtCore.QSize(20, 40))
-        self.lineEdit_46.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;\n"
-"")
+        self.lineEdit_46.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;\n" ""
+        )
         self.lineEdit_46.setObjectName("lineEdit_46")
-        self.formLayout_12.setWidget(2, QtWidgets.QFormLayout.FieldRole, self.lineEdit_46)
+        self.formLayout_12.setWidget(
+            2, QtWidgets.QFormLayout.FieldRole, self.lineEdit_46
+        )
         self.lineEdit_45 = QtWidgets.QLineEdit(self.formLayoutWidget_12)
         self.lineEdit_45.setMinimumSize(QtCore.QSize(20, 40))
-        self.lineEdit_45.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;\n"
-"")
+        self.lineEdit_45.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;\n" ""
+        )
         self.lineEdit_45.setObjectName("lineEdit_45")
-        self.formLayout_12.setWidget(3, QtWidgets.QFormLayout.FieldRole, self.lineEdit_45)
+        self.formLayout_12.setWidget(
+            3, QtWidgets.QFormLayout.FieldRole, self.lineEdit_45
+        )
         self.lineEdit_47 = QtWidgets.QLineEdit(self.formLayoutWidget_12)
         self.lineEdit_47.setMinimumSize(QtCore.QSize(20, 40))
-        self.lineEdit_47.setStyleSheet("border :1px solid #0076bd;\n"
-"border-radius:10px;\n"
-"")
+        self.lineEdit_47.setStyleSheet(
+            "border :1px solid #0076bd;\n" "border-radius:10px;\n" ""
+        )
         self.lineEdit_47.setObjectName("lineEdit_47")
-        self.formLayout_12.setWidget(4, QtWidgets.QFormLayout.FieldRole, self.lineEdit_47)
+        self.formLayout_12.setWidget(
+            4, QtWidgets.QFormLayout.FieldRole, self.lineEdit_47
+        )
         self.tabWidget_6.addTab(self.tab_32, "")
         self.tab_72 = QtWidgets.QWidget()
         self.tab_72.setObjectName("tab_72")
@@ -4157,23 +4492,29 @@ class Ui_AdminDashBoard(object):
         self.tabWidget_6.setCurrentIndex(0)
         self.tabWidget_17.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(AdminDashBoard)
-        #button events
-        self.okbtn.clicked.connect(lambda x:self.get_personel_added())    
-        self.area_okbtn.clicked.connect(lambda x:self.add_area())
-        self.dep_okbtn.clicked.connect(lambda x:self.add_department())
-        self.area_okbtn_5.clicked.connect(lambda x:self.add_holiday())
-        self.dev_okbtn.clicked.connect(lambda x:self.add_device())
-        self.pushButton_2.clicked.connect(lambda x:self.dialog())
-        self.okbtn_3.clicked.connect(lambda x:self.get_department())    
-        self.okbtn_10.clicked.connect(lambda x:self.Add)
+        # button events
+        self.okbtn.clicked.connect(lambda x: self.get_personel_added())
+        self.area_okbtn.clicked.connect(lambda x: self.add_area())
+        self.dep_okbtn.clicked.connect(lambda x: self.add_department())
+        self.area_okbtn_5.clicked.connect(lambda x: self.add_holiday())
+        self.dev_okbtn.clicked.connect(lambda x: self.add_device())
+        self.pushButton_2.clicked.connect(lambda x: self.dialog())
+        self.okbtn_3.clicked.connect(lambda x: self.get_department())
+        self.okbtn_10.clicked.connect(lambda x: self.AddUserToDevice())
+        self.pushButton_3.clicked.connect(lambda x: self.shutdownDevice())
+        self.pushButton_3.clicked.connect(lambda x: self.rebootDevice())
+        self.tabWidget_11.currentChanged.connect(lambda x: self.DisplayDeviceInfo())
+        self.AddArea.currentChanged.connect(lambda x: self.getDeviceUsers())
 
     def retranslateUi(self, AdminDashBoard):
         _translate = QtCore.QCoreApplication.translate
         AdminDashBoard.setWindowTitle(_translate("AdminDashBoard", "G!ze"))
         self.label.setText(_translate("AdminDashBoard", "HomePage"))
-        self.tabWidget_2.setTabText(self.tabWidget_2.indexOf(self.Homepage), _translate("AdminDashBoard", "Home"))
+        self.tabWidget_2.setTabText(
+            self.tabWidget_2.indexOf(self.Homepage),
+            _translate("AdminDashBoard", "Home"),
+        )
         self.label_7.setText(_translate("AdminDashBoard", "Personel ID"))
-        self.label_8.setText(_translate("AdminDashBoard", "gender"))
         self.Gendercmb.setItemText(0, _translate("AdminDashBoard", "Gender"))
         self.Gendercmb.setItemText(1, _translate("AdminDashBoard", "Male"))
         self.Gendercmb.setItemText(2, _translate("AdminDashBoard", "Female"))
@@ -4182,14 +4523,21 @@ class Ui_AdminDashBoard(object):
         self.dep_cmbx.setItemText(1, _translate("AdminDashBoard", "Dep1"))
         self.dep_cmbx.setItemText(2, _translate("AdminDashBoard", "Dep2"))
         self.label_10.setText(_translate("AdminDashBoard", "Employeement type"))
-        self.Empment_cmbx.setItemText(0, _translate("AdminDashBoard", "Choose Employement Type"))
+        self.Empment_cmbx.setItemText(
+            0, _translate("AdminDashBoard", "Choose Employement Type")
+        )
         self.Empment_cmbx.setItemText(1, _translate("AdminDashBoard", "type1"))
         self.Empment_cmbx.setItemText(2, _translate("AdminDashBoard", "Type2"))
         self.Empment_cmbx.setItemText(3, _translate("AdminDashBoard", "Type 3"))
         self.label_11.setText(_translate("AdminDashBoard", "Employeement Date"))
         self.label_12.setText(_translate("AdminDashBoard", "Set password"))
         self.pushButton.setText(_translate("AdminDashBoard", "Browse"))
-        self.label_18.setText(_translate("AdminDashBoard", "<html><head/><body><p><img src=\"iconmonstr-user-14-240.png\"/></p></body></html>"))
+        self.label_18.setText(
+            _translate(
+                "AdminDashBoard",
+                '<html><head/><body><p><img src="iconmonstr-user-14-240.png"/></p></body></html>',
+            )
+        )
         self.label_17.setText(_translate("AdminDashBoard", "Add personel"))
         self.label_13.setText(_translate("AdminDashBoard", "First Name"))
         self.label_14.setText(_translate("AdminDashBoard", "Last Name"))
@@ -4197,33 +4545,74 @@ class Ui_AdminDashBoard(object):
         self.label_16.setText(_translate("AdminDashBoard", "Pay Grade"))
         self.okbtn.setText(_translate("AdminDashBoard", "Ok"))
         self.cnclbtn.setText(_translate("AdminDashBoard", "Cancel"))
-        self.label_19.setText(_translate("AdminDashBoard", "<html><head/><body><p><img src=\"iconmonstr-user-14-240.png\"/></p></body></html>"))
+        self.label_19.setText(
+            _translate(
+                "AdminDashBoard",
+                '<html><head/><body><p><img src="iconmonstr-user-14-240.png"/></p></body></html>',
+            )
+        )
         self.pushButton_2.setText(_translate("AdminDashBoard", "Browse"))
-        self.tabWidget_3.setTabText(self.tabWidget_3.indexOf(self.tab_6), _translate("AdminDashBoard", "Add personel"))
+        self.tabWidget_3.setTabText(
+            self.tabWidget_3.indexOf(self.tab_6),
+            _translate("AdminDashBoard", "Add personel"),
+        )
         self.label_41.setText(_translate("AdminDashBoard", "Search personel"))
         self.okbtn_2.setText(_translate("AdminDashBoard", "Search"))
-        self.tabWidget_3.setTabText(self.tabWidget_3.indexOf(self.tab_8), _translate("AdminDashBoard", "view/Delete"))
-        self.tabWidget_3.setTabText(self.tabWidget_3.indexOf(self.tab_7), _translate("AdminDashBoard", "Resynchronizing information to device"))
-        self.tabWidget_3.setTabText(self.tabWidget_3.indexOf(self.tab_9), _translate("AdminDashBoard", "Delete Finger print templet"))
-        self.tabWidget_3.setTabText(self.tabWidget_3.indexOf(self.tab_10), _translate("AdminDashBoard", "Deleting a face template"))
-        self.tabWidget_3.setTabText(self.tabWidget_3.indexOf(self.tab_11), _translate("AdminDashBoard", "Adjusting Face Template"))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.personel1), _translate("AdminDashBoard", "personel"))
+        self.tabWidget_3.setTabText(
+            self.tabWidget_3.indexOf(self.tab_8),
+            _translate("AdminDashBoard", "view/Delete"),
+        )
+        self.tabWidget_3.setTabText(
+            self.tabWidget_3.indexOf(self.tab_7),
+            _translate("AdminDashBoard", "Resynchronizing information to device"),
+        )
+        self.tabWidget_3.setTabText(
+            self.tabWidget_3.indexOf(self.tab_9),
+            _translate("AdminDashBoard", "Delete Finger print templet"),
+        )
+        self.tabWidget_3.setTabText(
+            self.tabWidget_3.indexOf(self.tab_10),
+            _translate("AdminDashBoard", "Deleting a face template"),
+        )
+        self.tabWidget_3.setTabText(
+            self.tabWidget_3.indexOf(self.tab_11),
+            _translate("AdminDashBoard", "Adjusting Face Template"),
+        )
+        self.tabWidget.setTabText(
+            self.tabWidget.indexOf(self.personel1),
+            _translate("AdminDashBoard", "personel"),
+        )
         self.label_2.setText(_translate("AdminDashBoard", "Add Department"))
         self.label_42.setText(_translate("AdminDashBoard", "Department Id"))
         self.label_43.setText(_translate("AdminDashBoard", "Department Name"))
         self.label_44.setText(_translate("AdminDashBoard", "parent Department"))
-        self.dep_cmbx_6.setItemText(0, _translate("AdminDashBoard", "Choose Department"))
+        self.dep_cmbx_6.setItemText(
+            0, _translate("AdminDashBoard", "Choose Department")
+        )
         self.dep_cmbx_6.setItemText(1, _translate("AdminDashBoard", "Dep1"))
         self.dep_cmbx_6.setItemText(2, _translate("AdminDashBoard", "Dep2"))
         self.dep_okbtn.setText(_translate("AdminDashBoard", "ok"))
         self.dep_saveandnwbtn.setText(_translate("AdminDashBoard", "save and new"))
         self.cancel_depbtn.setText(_translate("AdminDashBoard", "cancel"))
-        self.Departmentwidget.setTabText(self.Departmentwidget.indexOf(self.DepartmentwidgetPage1), _translate("AdminDashBoard", "Add Department"))
-        self.Departmentwidget.setTabText(self.Departmentwidget.indexOf(self.DepartmentwidgetPage2), _translate("AdminDashBoard", "Edit"))
-        self.Departmentwidget.setTabText(self.Departmentwidget.indexOf(self.DepartmentwidgetPage3), _translate("AdminDashBoard", "Cancelling"))
-        self.search_personel_rb.setText(_translate("AdminDashBoard", "Search by personel no"))
+        self.Departmentwidget.setTabText(
+            self.Departmentwidget.indexOf(self.DepartmentwidgetPage1),
+            _translate("AdminDashBoard", "Add Department"),
+        )
+        self.Departmentwidget.setTabText(
+            self.Departmentwidget.indexOf(self.DepartmentwidgetPage2),
+            _translate("AdminDashBoard", "Edit"),
+        )
+        self.Departmentwidget.setTabText(
+            self.Departmentwidget.indexOf(self.DepartmentwidgetPage3),
+            _translate("AdminDashBoard", "Cancelling"),
+        )
+        self.search_personel_rb.setText(
+            _translate("AdminDashBoard", "Search by personel no")
+        )
         self.search_dep_rb.setText(_translate("AdminDashBoard", "search by department"))
-        self.select_all_chbx.setText(_translate("AdminDashBoard", "Select all personel in the department"))
+        self.select_all_chbx.setText(
+            _translate("AdminDashBoard", "Select all personel in the department")
+        )
         self.label_32.setText(_translate("AdminDashBoard", "Select New Position"))
         self.approve_updt.setText(_translate("AdminDashBoard", "Ok"))
         self.cncl_depupt.setText(_translate("AdminDashBoard", "Cancel"))
@@ -4237,17 +4626,25 @@ class Ui_AdminDashBoard(object):
         self.label_33.setText(_translate("AdminDashBoard", "Selected Personel"))
         self.clrselected.setText(_translate("AdminDashBoard", "clear"))
         self.label_31.setText(_translate("AdminDashBoard", "Select new Department"))
-        self.Departmentwidget.setTabText(self.Departmentwidget.indexOf(self.tab_4), _translate("AdminDashBoard", "Setting a Department"))
+        self.Departmentwidget.setTabText(
+            self.Departmentwidget.indexOf(self.tab_4),
+            _translate("AdminDashBoard", "Setting a Department"),
+        )
         self.label_35.setText(_translate("AdminDashBoard", "Approver"))
         self.add_aprrover.setText(_translate("AdminDashBoard", "Ok"))
         self.cancel_approver.setText(_translate("AdminDashBoard", "Cancel"))
         self.label_34.setText(_translate("AdminDashBoard", "Approve Type:"))
         self.comboBox_4.setItemText(0, _translate("AdminDashBoard", "Select Approval"))
         self.comboBox_4.setItemText(1, _translate("AdminDashBoard", "Single Approval"))
-        self.comboBox_4.setItemText(2, _translate("AdminDashBoard", "Multi level Approval"))
+        self.comboBox_4.setItemText(
+            2, _translate("AdminDashBoard", "Multi level Approval")
+        )
         self.label_5.setText(_translate("AdminDashBoard", "Approval"))
         self.label_20.setText(_translate("AdminDashBoard", "Approver ID"))
-        self.Departmentwidget.setTabText(self.Departmentwidget.indexOf(self.tab_5), _translate("AdminDashBoard", "setting approval"))
+        self.Departmentwidget.setTabText(
+            self.Departmentwidget.indexOf(self.tab_5),
+            _translate("AdminDashBoard", "setting approval"),
+        )
         item = self.tableWidget_4.horizontalHeaderItem(0)
         item.setText(_translate("AdminDashBoard", "Department ID"))
         item = self.tableWidget_4.horizontalHeaderItem(1)
@@ -4255,13 +4652,21 @@ class Ui_AdminDashBoard(object):
         item = self.tableWidget_4.horizontalHeaderItem(2)
         item.setText(_translate("AdminDashBoard", "Parent Department"))
         self.okbtn_3.setText(_translate("AdminDashBoard", "Ok"))
-        self.Departmentwidget.setTabText(self.Departmentwidget.indexOf(self.tab_111), _translate("AdminDashBoard", "Active Departments"))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.Department), _translate("AdminDashBoard", "Department"))
+        self.Departmentwidget.setTabText(
+            self.Departmentwidget.indexOf(self.tab_111),
+            _translate("AdminDashBoard", "Active Departments"),
+        )
+        self.tabWidget.setTabText(
+            self.tabWidget.indexOf(self.Department),
+            _translate("AdminDashBoard", "Department"),
+        )
         self.label_24.setText(_translate("AdminDashBoard", "Position"))
         self.SearchBtn.setText(_translate("AdminDashBoard", "Search"))
         self.clrbtn.setText(_translate("AdminDashBoard", "Clear"))
         item = self.tableWidget.horizontalHeaderItem(0)
-        item.setText(_translate("AdminDashBoard", "            Deparmtent Number            "))
+        item.setText(
+            _translate("AdminDashBoard", "            Deparmtent Number            ")
+        )
         item = self.tableWidget.horizontalHeaderItem(1)
         item.setText(_translate("AdminDashBoard", "Deparment Name"))
         item = self.tableWidget.horizontalHeaderItem(2)
@@ -4278,7 +4683,10 @@ class Ui_AdminDashBoard(object):
         self.label_22.setText(_translate("AdminDashBoard", "Search"))
         self.label_23.setText(_translate("AdminDashBoard", "position No"))
         self.label_40.setText(_translate("AdminDashBoard", "position"))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.Positionmangement), _translate("AdminDashBoard", "Position Mangement"))
+        self.tabWidget.setTabText(
+            self.tabWidget.indexOf(self.Positionmangement),
+            _translate("AdminDashBoard", "Position Mangement"),
+        )
         self.saveandnwbtn.setText(_translate("AdminDashBoard", "save and new"))
         self.pos_okbtn.setText(_translate("AdminDashBoard", "ok"))
         self.cancel_posbtn.setText(_translate("AdminDashBoard", "cancel"))
@@ -4289,40 +4697,88 @@ class Ui_AdminDashBoard(object):
         self.label_27.setText(_translate("AdminDashBoard", "Position"))
         self.label_28.setText(_translate("AdminDashBoard", "Position No"))
         self.label_29.setText(_translate("AdminDashBoard", "Approved"))
-        self.selectDepbx.setItemText(0, _translate("AdminDashBoard", "select Department"))
-        self.selectposbx.setItemText(0, _translate("AdminDashBoard", "select parent position"))
+        self.selectDepbx.setItemText(
+            0, _translate("AdminDashBoard", "select Department")
+        )
+        self.selectposbx.setItemText(
+            0, _translate("AdminDashBoard", "select parent position")
+        )
         self.aprrovedbx.setItemText(0, _translate("AdminDashBoard", "No"))
         self.aprrovedbx.setItemText(1, _translate("AdminDashBoard", "yes"))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.Addposition), _translate("AdminDashBoard", "Add Position"))
-        self.tabWidget_7.setTabText(self.tabWidget_7.indexOf(self.tab_12), _translate("AdminDashBoard", "Add Employee for resgination"))
-        self.tabWidget_7.setTabText(self.tabWidget_7.indexOf(self.tab_13), _translate("AdminDashBoard", "Disabling Attendance"))
-        self.tabWidget_7.setTabText(self.tabWidget_7.indexOf(self.tab_14), _translate("AdminDashBoard", "Reinstating Employee from resgination"))
-        self.tabWidget_7.setTabText(self.tabWidget_7.indexOf(self.tab_15), _translate("AdminDashBoard", "Adjusting Personel"))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), _translate("AdminDashBoard", "Resignation"))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), _translate("AdminDashBoard", "Issue Card"))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_3), _translate("AdminDashBoard", "Document Setup"))
-        self.tabWidget_2.setTabText(self.tabWidget_2.indexOf(self.personel), _translate("AdminDashBoard", "Personel"))
-        self.tabWidget_9.setTabText(self.tabWidget_9.indexOf(self.tab_36), _translate("AdminDashBoard", "Add work code"))
-        self.AddArea.setTabText(self.AddArea.indexOf(self.tab_28), _translate("AdminDashBoard", "Work Code"))
+        self.tabWidget.setTabText(
+            self.tabWidget.indexOf(self.Addposition),
+            _translate("AdminDashBoard", "Add Position"),
+        )
+        self.tabWidget_7.setTabText(
+            self.tabWidget_7.indexOf(self.tab_12),
+            _translate("AdminDashBoard", "Add Employee for resgination"),
+        )
+        self.tabWidget_7.setTabText(
+            self.tabWidget_7.indexOf(self.tab_13),
+            _translate("AdminDashBoard", "Disabling Attendance"),
+        )
+        self.tabWidget_7.setTabText(
+            self.tabWidget_7.indexOf(self.tab_14),
+            _translate("AdminDashBoard", "Reinstating Employee from resgination"),
+        )
+        self.tabWidget_7.setTabText(
+            self.tabWidget_7.indexOf(self.tab_15),
+            _translate("AdminDashBoard", "Adjusting Personel"),
+        )
+        self.tabWidget.setTabText(
+            self.tabWidget.indexOf(self.tab),
+            _translate("AdminDashBoard", "Resignation"),
+        )
+        self.tabWidget.setTabText(
+            self.tabWidget.indexOf(self.tab_2),
+            _translate("AdminDashBoard", "Issue Card"),
+        )
+        self.tabWidget.setTabText(
+            self.tabWidget.indexOf(self.tab_3),
+            _translate("AdminDashBoard", "Document Setup"),
+        )
+        self.tabWidget_2.setTabText(
+            self.tabWidget_2.indexOf(self.personel),
+            _translate("AdminDashBoard", "Personel"),
+        )
+        self.tabWidget_9.setTabText(
+            self.tabWidget_9.indexOf(self.tab_36),
+            _translate("AdminDashBoard", "Add work code"),
+        )
+        self.AddArea.setTabText(
+            self.AddArea.indexOf(self.tab_28), _translate("AdminDashBoard", "Work Code")
+        )
         self.label_436.setText(_translate("AdminDashBoard", "Personel ID"))
         self.label_437.setText(_translate("AdminDashBoard", "First Name"))
         self.label_438.setText(_translate("AdminDashBoard", "Set password"))
         self.okbtn_10.setText(_translate("AdminDashBoard", "Ok"))
-        self.label_439.setText(_translate("AdminDashBoard", "Enroll Employee to device "))
+        self.label_439.setText(
+            _translate("AdminDashBoard", "Enroll Employee to device ")
+        )
         item = self.tableWidget_28.horizontalHeaderItem(0)
         item.setText(_translate("AdminDashBoard", "Id"))
         item = self.tableWidget_28.horizontalHeaderItem(1)
         item.setText(_translate("AdminDashBoard", "Full Name"))
         item = self.tableWidget_28.horizontalHeaderItem(2)
-        item.setText(_translate("AdminDashBoard", "Password(will be hashed and encrypted)"))
-        self.label_440.setText(_translate("AdminDashBoard", "List of Employees on device "))
-        self.AddArea.setTabText(self.AddArea.indexOf(self.tab_16), _translate("AdminDashBoard", "Add employee to device"))
+        item.setText(
+            _translate("AdminDashBoard", "Password(will be hashed and encrypted)")
+        )
+        self.label_440.setText(
+            _translate("AdminDashBoard", "List of Employees on device ")
+        )
+        self.AddArea.setTabText(
+            self.AddArea.indexOf(self.tab_16),
+            _translate("AdminDashBoard", "Add employee to device"),
+        )
         item = self.tableWidget_29.horizontalHeaderItem(0)
         item.setText(_translate("AdminDashBoard", "Name"))
         self.okbtn_11.setText(_translate("AdminDashBoard", "Import"))
         self.label_442.setText(_translate("AdminDashBoard", "Import from File"))
         self.okbtn_12.setText(_translate("AdminDashBoard", "Select file"))
-        self.AddArea.setTabText(self.AddArea.indexOf(self.tab_21), _translate("AdminDashBoard", "Import from CSV "))
+        self.AddArea.setTabText(
+            self.AddArea.indexOf(self.tab_21),
+            _translate("AdminDashBoard", "Import from CSV "),
+        )
         self.savearea_new.setText(_translate("AdminDashBoard", "save and new"))
         self.area_okbtn.setText(_translate("AdminDashBoard", "ok"))
         self.cancel_areabtn.setText(_translate("AdminDashBoard", "cancel"))
@@ -4332,10 +4788,22 @@ class Ui_AdminDashBoard(object):
         self.label_37.setText(_translate("AdminDashBoard", "Area Name"))
         self.label_38.setText(_translate("AdminDashBoard", "Parent Area"))
         self.label_39.setText(_translate("AdminDashBoard", "Remarks"))
-        self.tabWidget_10.setTabText(self.tabWidget_10.indexOf(self.tab_38), _translate("AdminDashBoard", "Add Area"))
-        self.tabWidget_10.setTabText(self.tabWidget_10.indexOf(self.tab_39), _translate("AdminDashBoard", "Delete Area"))
-        self.tabWidget_10.setTabText(self.tabWidget_10.indexOf(self.tab_40), _translate("AdminDashBoard", "Editing an area"))
-        self.tabWidget_10.setTabText(self.tabWidget_10.indexOf(self.tab_41), _translate("AdminDashBoard", "Sychronizing device data"))
+        self.tabWidget_10.setTabText(
+            self.tabWidget_10.indexOf(self.tab_38),
+            _translate("AdminDashBoard", "Add Area"),
+        )
+        self.tabWidget_10.setTabText(
+            self.tabWidget_10.indexOf(self.tab_39),
+            _translate("AdminDashBoard", "Delete Area"),
+        )
+        self.tabWidget_10.setTabText(
+            self.tabWidget_10.indexOf(self.tab_40),
+            _translate("AdminDashBoard", "Editing an area"),
+        )
+        self.tabWidget_10.setTabText(
+            self.tabWidget_10.indexOf(self.tab_41),
+            _translate("AdminDashBoard", "Sychronizing device data"),
+        )
         self.label_113.setText(_translate("AdminDashBoard", "Area Settings"))
         __sortingEnabled = self.listWidget.isSortingEnabled()
         self.listWidget.setSortingEnabled(False)
@@ -4357,8 +4825,13 @@ class Ui_AdminDashBoard(object):
         self.label_114.setText(_translate("AdminDashBoard", "Area Code"))
         self.Searchareabtn.setText(_translate("AdminDashBoard", "Search"))
         self.clrareabtn.setText(_translate("AdminDashBoard", "Clear"))
-        self.tabWidget_10.setTabText(self.tabWidget_10.indexOf(self.tab_42), _translate("AdminDashBoard", "Area setting"))
-        self.AddArea.setTabText(self.AddArea.indexOf(self.tab_37), _translate("AdminDashBoard", "Area"))
+        self.tabWidget_10.setTabText(
+            self.tabWidget_10.indexOf(self.tab_42),
+            _translate("AdminDashBoard", "Area setting"),
+        )
+        self.AddArea.setTabText(
+            self.AddArea.indexOf(self.tab_37), _translate("AdminDashBoard", "Area")
+        )
         self.save_new_device.setText(_translate("AdminDashBoard", "save and new"))
         self.dev_okbtn.setText(_translate("AdminDashBoard", "ok"))
         self.cancel_devbtn.setText(_translate("AdminDashBoard", "cancel"))
@@ -4369,20 +4842,61 @@ class Ui_AdminDashBoard(object):
         self.label_120.setText(_translate("AdminDashBoard", "Port Number"))
         self.label_121.setText(_translate("AdminDashBoard", "Area"))
         self.label_122.setText(_translate("AdminDashBoard", "Area id"))
-        self.AddArea.setTabText(self.AddArea.indexOf(self.Adddevice), _translate("AdminDashBoard", "Add device"))
-        self.tabWidget_11.setTabText(self.tabWidget_11.indexOf(self.tab_43), _translate("AdminDashBoard", "Adding a T & A Device"))
-        self.tabWidget_11.setTabText(self.tabWidget_11.indexOf(self.tab_44), _translate("AdminDashBoard", "Editing A device"))
-        self.tabWidget_11.setTabText(self.tabWidget_11.indexOf(self.tab_45), _translate("AdminDashBoard", "Deleting a device"))
-        self.tabWidget_11.setTabText(self.tabWidget_11.indexOf(self.tab_46), _translate("AdminDashBoard", "Clearing an attendance photo"))
-        self.tabWidget_11.setTabText(self.tabWidget_11.indexOf(self.tab_47), _translate("AdminDashBoard", "Clearing Records"))
-        self.tabWidget_11.setTabText(self.tabWidget_11.indexOf(self.tab_48), _translate("AdminDashBoard", "Clearing a Device command"))
-        self.tabWidget_11.setTabText(self.tabWidget_11.indexOf(self.tab_49), _translate("AdminDashBoard", "Matching attendance data"))
-        self.tabWidget_11.setTabText(self.tabWidget_11.indexOf(self.tab_50), _translate("AdminDashBoard", "Uploading Data Again"))
-        self.label_77.setText(_translate("AdminDashBoard", "restarting device may result in loss of unsaved work !"))
+        self.AddArea.setTabText(
+            self.AddArea.indexOf(self.Adddevice),
+            _translate("AdminDashBoard", "Add device"),
+        )
+        self.tabWidget_11.setTabText(
+            self.tabWidget_11.indexOf(self.tab_43),
+            _translate("AdminDashBoard", "Adding a T & A Device"),
+        )
+        self.tabWidget_11.setTabText(
+            self.tabWidget_11.indexOf(self.tab_44),
+            _translate("AdminDashBoard", "Editing A device"),
+        )
+        self.tabWidget_11.setTabText(
+            self.tabWidget_11.indexOf(self.tab_45),
+            _translate("AdminDashBoard", "Deleting a device"),
+        )
+        self.tabWidget_11.setTabText(
+            self.tabWidget_11.indexOf(self.tab_46),
+            _translate("AdminDashBoard", "Clearing an attendance photo"),
+        )
+        self.tabWidget_11.setTabText(
+            self.tabWidget_11.indexOf(self.tab_47),
+            _translate("AdminDashBoard", "Clearing Records"),
+        )
+        self.tabWidget_11.setTabText(
+            self.tabWidget_11.indexOf(self.tab_48),
+            _translate("AdminDashBoard", "Clearing a Device command"),
+        )
+        self.tabWidget_11.setTabText(
+            self.tabWidget_11.indexOf(self.tab_49),
+            _translate("AdminDashBoard", "Matching attendance data"),
+        )
+        self.tabWidget_11.setTabText(
+            self.tabWidget_11.indexOf(self.tab_50),
+            _translate("AdminDashBoard", "Uploading Data Again"),
+        )
+        self.label_77.setText(
+            _translate(
+                "AdminDashBoard",
+                "restarting device may result in loss of unsaved work !",
+            )
+        )
         self.pushButton_3.setText(_translate("AdminDashBoard", "restart"))
         self.pushButton_10.setText(_translate("AdminDashBoard", "Shutdown"))
-        self.label_441.setText(_translate("AdminDashBoard", "Once shutdown , device related operations may not be performed"))
-        self.tabWidget_11.setTabText(self.tabWidget_11.indexOf(self.tab_51), _translate("AdminDashBoard", "shutdown/reboot device"))
+
+        self.label_441.setText(
+            _translate(
+                "AdminDashBoard",
+                "Once shutdown , device related operations may not be performed",
+            )
+        )
+        self.tabWidget_11.setTabText(
+            self.tabWidget_11.indexOf(self.tab_51),
+            _translate("AdminDashBoard", "shutdown/reboot device"),
+        )
         self.label_21.setText(_translate("AdminDashBoard", "Device Time"))
         self.label_76.setText(_translate("AdminDashBoard", "Build Version"))
         self.label_75.setText(_translate("AdminDashBoard", "Camera Open"))
@@ -4395,62 +4909,154 @@ class Ui_AdminDashBoard(object):
         self.label_68.setText(_translate("AdminDashBoard", "Serial Number"))
         self.label_67.setText(_translate("AdminDashBoard", "Platform"))
         self.label_65.setText(_translate("AdminDashBoard", "Vendor"))
-        self.label_63.setText(_translate("AdminDashBoard", "TextLabel"))
-        self.label_62.setText(_translate("AdminDashBoard", "TextLabel"))
-        self.label_61.setText(_translate("AdminDashBoard", "TextLabel"))
-        self.label_60.setText(_translate("AdminDashBoard", "TextLabel"))
-        self.label_49.setText(_translate("AdminDashBoard", "TextLabel"))
-        self.label_48.setText(_translate("AdminDashBoard", "TextLabel"))
-        self.label_47.setText(_translate("AdminDashBoard", "TextLabel"))
-        self.label_64.setText(_translate("AdminDashBoard", "TextLabel"))
-        self.label_82.setText(_translate("AdminDashBoard", "TextLabel"))
-        self.label_81.setText(_translate("AdminDashBoard", "TextLabel"))
-        self.label_80.setText(_translate("AdminDashBoard", "TextLabel"))
-        self.label_79.setText(_translate("AdminDashBoard", "TextLabel"))
-        self.label_78.setText(_translate("AdminDashBoard", "TextLabel"))
+        self.label_63.setText(_translate("AdminDashBoard", ""))
+        self.label_62.setText(_translate("AdminDashBoard", ""))
+        self.label_61.setText(_translate("AdminDashBoard", ""))
+        self.label_60.setText(_translate("AdminDashBoard", ""))
+        self.label_49.setText(_translate("AdminDashBoard", ""))
+        self.label_48.setText(_translate("AdminDashBoard", ""))
+        self.label_47.setText(_translate("AdminDashBoard", ""))
+        self.label_64.setText(_translate("AdminDashBoard", ""))
+        self.label_82.setText(_translate("AdminDashBoard", ""))
+        self.label_81.setText(_translate("AdminDashBoard", ""))
+        self.label_80.setText(_translate("AdminDashBoard", ""))
+        self.label_79.setText(_translate("AdminDashBoard", ""))
+        self.label_78.setText(_translate("AdminDashBoard", ""))
         self.label_66.setText(_translate("AdminDashBoard", "Software Version"))
         self.label_123.setText(_translate("AdminDashBoard", "Device Settings"))
-        self.tabWidget_11.setTabText(self.tabWidget_11.indexOf(self.tab_52), _translate("AdminDashBoard", "Device Information"))
-        self.tabWidget_11.setTabText(self.tabWidget_11.indexOf(self.tab_53), _translate("AdminDashBoard", "Sychronizing Software Data To Device"))
-        self.AddArea.setTabText(self.AddArea.indexOf(self.Devicemanagement), _translate("AdminDashBoard", "Device Management"))
-        self.AddArea.setTabText(self.AddArea.indexOf(self.tab_33), _translate("AdminDashBoard", "Device Operations Log"))
-        self.AddArea.setTabText(self.AddArea.indexOf(self.tab_34), _translate("AdminDashBoard", "Real Time Monitoring"))
-        self.tabWidget_2.setTabText(self.tabWidget_2.indexOf(self.Device), _translate("AdminDashBoard", "Device"))
-        self.tabWidget_4.setTabText(self.tabWidget_4.indexOf(self.AttendanceParameter), _translate("AdminDashBoard", "Attendance Parameters"))
-        self.tabWidget_13.setTabText(self.tabWidget_13.indexOf(self.tab_57), _translate("AdminDashBoard", "Adding a normal timetable"))
-        self.tabWidget_13.setTabText(self.tabWidget_13.indexOf(self.tab_58), _translate("AdminDashBoard", "Adding a flexible timetable"))
-        self.tabWidget_13.setTabText(self.tabWidget_13.indexOf(self.tab_59), _translate("AdminDashBoard", "Editing a timetable"))
-        self.tabWidget_13.setTabText(self.tabWidget_13.indexOf(self.tab_60), _translate("AdminDashBoard", "Deleting a timetable"))
-        self.tabWidget_4.setTabText(self.tabWidget_4.indexOf(self.tab_56), _translate("AdminDashBoard", "Shift timetable"))
-        self.tabWidget_12.setTabText(self.tabWidget_12.indexOf(self.tab_54), _translate("AdminDashBoard", "Adding A shift"))
-        self.tabWidget_12.setTabText(self.tabWidget_12.indexOf(self.tab_55), _translate("AdminDashBoard", "Maintaing a shift"))
+        self.tabWidget_11.setTabText(
+            self.tabWidget_11.indexOf(self.tab_52),
+            _translate("AdminDashBoard", "Device Information"),
+        )
+        self.tabWidget_11.setTabText(
+            self.tabWidget_11.indexOf(self.tab_53),
+            _translate("AdminDashBoard", "Sychronizing Software Data To Device"),
+        )
+        self.AddArea.setTabText(
+            self.AddArea.indexOf(self.Devicemanagement),
+            _translate("AdminDashBoard", "Device Management"),
+        )
+        self.AddArea.setTabText(
+            self.AddArea.indexOf(self.tab_33),
+            _translate("AdminDashBoard", "Device Operations Log"),
+        )
+        self.AddArea.setTabText(
+            self.AddArea.indexOf(self.tab_34),
+            _translate("AdminDashBoard", "Real Time Monitoring"),
+        )
+        self.tabWidget_2.setTabText(
+            self.tabWidget_2.indexOf(self.Device),
+            _translate("AdminDashBoard", "Device"),
+        )
+        self.tabWidget_4.setTabText(
+            self.tabWidget_4.indexOf(self.AttendanceParameter),
+            _translate("AdminDashBoard", "Attendance Parameters"),
+        )
+        self.tabWidget_13.setTabText(
+            self.tabWidget_13.indexOf(self.tab_57),
+            _translate("AdminDashBoard", "Adding a normal timetable"),
+        )
+        self.tabWidget_13.setTabText(
+            self.tabWidget_13.indexOf(self.tab_58),
+            _translate("AdminDashBoard", "Adding a flexible timetable"),
+        )
+        self.tabWidget_13.setTabText(
+            self.tabWidget_13.indexOf(self.tab_59),
+            _translate("AdminDashBoard", "Editing a timetable"),
+        )
+        self.tabWidget_13.setTabText(
+            self.tabWidget_13.indexOf(self.tab_60),
+            _translate("AdminDashBoard", "Deleting a timetable"),
+        )
+        self.tabWidget_4.setTabText(
+            self.tabWidget_4.indexOf(self.tab_56),
+            _translate("AdminDashBoard", "Shift timetable"),
+        )
+        self.tabWidget_12.setTabText(
+            self.tabWidget_12.indexOf(self.tab_54),
+            _translate("AdminDashBoard", "Adding A shift"),
+        )
+        self.tabWidget_12.setTabText(
+            self.tabWidget_12.indexOf(self.tab_55),
+            _translate("AdminDashBoard", "Maintaing a shift"),
+        )
         self.label_93.setText(_translate("AdminDashBoard", "Shift Name"))
         self.label_94.setText(_translate("AdminDashBoard", "unit of cycle"))
         self.label_95.setText(_translate("AdminDashBoard", "Number of Cycles"))
-        self.search_personel_alownc_ded_2.setText(_translate("AdminDashBoard", "sunday"))
-        self.search_personel_alownc_ded_3.setText(_translate("AdminDashBoard", "Monday"))
-        self.search_personel_alownc_ded_4.setText(_translate("AdminDashBoard", "Tuesday"))
-        self.search_personel_alownc_ded_5.setText(_translate("AdminDashBoard", "Wednesday"))
-        self.search_personel_alownc_ded_6.setText(_translate("AdminDashBoard", "Thursday"))
-        self.search_personel_alownc_ded_7.setText(_translate("AdminDashBoard", "Friday"))
-        self.search_personel_alownc_ded_8.setText(_translate("AdminDashBoard", "saturday"))
+        self.search_personel_alownc_ded_2.setText(
+            _translate("AdminDashBoard", "sunday")
+        )
+        self.search_personel_alownc_ded_3.setText(
+            _translate("AdminDashBoard", "Monday")
+        )
+        self.search_personel_alownc_ded_4.setText(
+            _translate("AdminDashBoard", "Tuesday")
+        )
+        self.search_personel_alownc_ded_5.setText(
+            _translate("AdminDashBoard", "Wednesday")
+        )
+        self.search_personel_alownc_ded_6.setText(
+            _translate("AdminDashBoard", "Thursday")
+        )
+        self.search_personel_alownc_ded_7.setText(
+            _translate("AdminDashBoard", "Friday")
+        )
+        self.search_personel_alownc_ded_8.setText(
+            _translate("AdminDashBoard", "saturday")
+        )
         self.checkBox_3.setText(_translate("AdminDashBoard", "Count day off as"))
         self.checkBox_4.setText(_translate("AdminDashBoard", "Count Weekend as"))
         self.dep_saveandnwbtn_15.setText(_translate("AdminDashBoard", "save and new"))
         self.dep_okbtn_15.setText(_translate("AdminDashBoard", "ok"))
         self.cancel_depbtn_29.setText(_translate("AdminDashBoard", "cancel"))
-        self.tabWidget_4.setTabText(self.tabWidget_4.indexOf(self.staffmanagemeent), _translate("AdminDashBoard", "shift management"))
-        self.tabWidget_14.setTabText(self.tabWidget_14.indexOf(self.tab_61), _translate("AdminDashBoard", "personel sheduling "))
-        self.tabWidget_14.setTabText(self.tabWidget_14.indexOf(self.tab_62), _translate("AdminDashBoard", "quering Schedule detail"))
-        self.tabWidget_14.setTabText(self.tabWidget_14.indexOf(self.tab_63), _translate("AdminDashBoard", "Clearing Schedule details"))
-        self.tabWidget_4.setTabText(self.tabWidget_4.indexOf(self.staffscheduling), _translate("AdminDashBoard", "Staff scheduling"))
-        self.tabWidget_15.setTabText(self.tabWidget_15.indexOf(self.tab_66), _translate("AdminDashBoard", "Leave"))
-        self.tabWidget_15.setTabText(self.tabWidget_15.indexOf(self.tab_67), _translate("AdminDashBoard", "Manual Punch"))
-        self.tabWidget_15.setTabText(self.tabWidget_15.indexOf(self.tab_68), _translate("AdminDashBoard", "Overtime"))
-        self.tabWidget_4.setTabText(self.tabWidget_4.indexOf(self.tab_65), _translate("AdminDashBoard", "Approval"))
-        self.tabWidget_16.setTabText(self.tabWidget_16.indexOf(self.tab_69), _translate("AdminDashBoard", "U disk Import"))
-        self.tabWidget_16.setTabText(self.tabWidget_16.indexOf(self.tab_70), _translate("AdminDashBoard", "Auto-Export"))
-        self.tabWidget_4.setTabText(self.tabWidget_4.indexOf(self.tab_23), _translate("AdminDashBoard", "Transaction"))
+        self.tabWidget_4.setTabText(
+            self.tabWidget_4.indexOf(self.staffmanagemeent),
+            _translate("AdminDashBoard", "shift management"),
+        )
+        self.tabWidget_14.setTabText(
+            self.tabWidget_14.indexOf(self.tab_61),
+            _translate("AdminDashBoard", "personel sheduling "),
+        )
+        self.tabWidget_14.setTabText(
+            self.tabWidget_14.indexOf(self.tab_62),
+            _translate("AdminDashBoard", "quering Schedule detail"),
+        )
+        self.tabWidget_14.setTabText(
+            self.tabWidget_14.indexOf(self.tab_63),
+            _translate("AdminDashBoard", "Clearing Schedule details"),
+        )
+        self.tabWidget_4.setTabText(
+            self.tabWidget_4.indexOf(self.staffscheduling),
+            _translate("AdminDashBoard", "Staff scheduling"),
+        )
+        self.tabWidget_15.setTabText(
+            self.tabWidget_15.indexOf(self.tab_66),
+            _translate("AdminDashBoard", "Leave"),
+        )
+        self.tabWidget_15.setTabText(
+            self.tabWidget_15.indexOf(self.tab_67),
+            _translate("AdminDashBoard", "Manual Punch"),
+        )
+        self.tabWidget_15.setTabText(
+            self.tabWidget_15.indexOf(self.tab_68),
+            _translate("AdminDashBoard", "Overtime"),
+        )
+        self.tabWidget_4.setTabText(
+            self.tabWidget_4.indexOf(self.tab_65),
+            _translate("AdminDashBoard", "Approval"),
+        )
+        self.tabWidget_16.setTabText(
+            self.tabWidget_16.indexOf(self.tab_69),
+            _translate("AdminDashBoard", "U disk Import"),
+        )
+        self.tabWidget_16.setTabText(
+            self.tabWidget_16.indexOf(self.tab_70),
+            _translate("AdminDashBoard", "Auto-Export"),
+        )
+        self.tabWidget_4.setTabText(
+            self.tabWidget_4.indexOf(self.tab_23),
+            _translate("AdminDashBoard", "Transaction"),
+        )
         self.label_166.setText(_translate("AdminDashBoard", "name of Holiday"))
         self.label_167.setText(_translate("AdminDashBoard", "min.unit"))
         self.label_169.setText(_translate("AdminDashBoard", "Unit"))
@@ -4463,48 +5069,154 @@ class Ui_AdminDashBoard(object):
         self.savearea_new_5.setText(_translate("AdminDashBoard", "save and new"))
         self.cancel_areabtn_5.setText(_translate("AdminDashBoard", "cancel"))
         self.label_170.setText(_translate("AdminDashBoard", "add holiday"))
-        self.tabWidget_18.setTabText(self.tabWidget_18.indexOf(self.tab_76), _translate("AdminDashBoard", "Adding a holiday"))
-        self.tabWidget_18.setTabText(self.tabWidget_18.indexOf(self.tab_77), _translate("AdminDashBoard", "Editing a holiday for attendance"))
-        self.tabWidget_18.setTabText(self.tabWidget_18.indexOf(self.tab_78), _translate("AdminDashBoard", "Deleting a holiday for attendance"))
-        self.tabWidget_4.setTabText(self.tabWidget_4.indexOf(self.Attendanceonholidays), _translate("AdminDashBoard", "Attendance on holidays"))
-        self.tabWidget_26.setTabText(self.tabWidget_26.indexOf(self.tab_103), _translate("AdminDashBoard", "schedule report "))
-        self.tabWidget_26.setTabText(self.tabWidget_26.indexOf(self.tab_104), _translate("AdminDashBoard", "Daily attendance report"))
-        self.tabWidget_26.setTabText(self.tabWidget_26.indexOf(self.tab_105), _translate("AdminDashBoard", "Total Time Card"))
-        self.tabWidget_26.setTabText(self.tabWidget_26.indexOf(self.tab_106), _translate("AdminDashBoard", "Attendance Summary"))
-        self.tabWidget_26.setTabText(self.tabWidget_26.indexOf(self.tab_107), _translate("AdminDashBoard", "First in last out"))
-        self.tabWidget_26.setTabText(self.tabWidget_26.indexOf(self.tab_108), _translate("AdminDashBoard", "Exception"))
-        self.tabWidget_26.setTabText(self.tabWidget_26.indexOf(self.tab_109), _translate("AdminDashBoard", "Summary sector"))
-        self.tabWidget_26.setTabText(self.tabWidget_26.indexOf(self.tab_110), _translate("AdminDashBoard", "Time card"))
-        self.tabWidget_24.setTabText(self.tabWidget_24.indexOf(self.tab_93), _translate("AdminDashBoard", "Attendance statstics"))
-        self.tabWidget_25.setTabText(self.tabWidget_25.indexOf(self.tab_95), _translate("AdminDashBoard", "schedule report "))
-        self.tabWidget_25.setTabText(self.tabWidget_25.indexOf(self.tab_96), _translate("AdminDashBoard", "Daily attendance report"))
-        self.tabWidget_25.setTabText(self.tabWidget_25.indexOf(self.tab_97), _translate("AdminDashBoard", "Total Time Card"))
-        self.tabWidget_25.setTabText(self.tabWidget_25.indexOf(self.tab_98), _translate("AdminDashBoard", "Attendance Summary"))
-        self.tabWidget_25.setTabText(self.tabWidget_25.indexOf(self.tab_99), _translate("AdminDashBoard", "First in last out"))
-        self.tabWidget_25.setTabText(self.tabWidget_25.indexOf(self.tab_100), _translate("AdminDashBoard", "Exception"))
-        self.tabWidget_25.setTabText(self.tabWidget_25.indexOf(self.tab_101), _translate("AdminDashBoard", "Summary sector"))
-        self.tabWidget_25.setTabText(self.tabWidget_25.indexOf(self.tab_102), _translate("AdminDashBoard", "Time card"))
-        self.tabWidget_24.setTabText(self.tabWidget_24.indexOf(self.tab_94), _translate("AdminDashBoard", "Attendance report"))
-        self.tabWidget_4.setTabText(self.tabWidget_4.indexOf(self.tab_24), _translate("AdminDashBoard", "Attendance Report"))
-        self.tabWidget_4.setTabText(self.tabWidget_4.indexOf(self.tab_64), _translate("AdminDashBoard", "Zone"))
-        self.tabWidget_2.setTabText(self.tabWidget_2.indexOf(self.Attendacetab), _translate("AdminDashBoard", "Attendance"))
-        self.tabWidget_19.setTabText(self.tabWidget_19.indexOf(self.tab_79), _translate("AdminDashBoard", "Formula Sign"))
-        self.tabWidget_19.setTabText(self.tabWidget_19.indexOf(self.tab_80), _translate("AdminDashBoard", "Currency "))
-        self.tabWidget_19.setTabText(self.tabWidget_19.indexOf(self.tab_82), _translate("AdminDashBoard", "Deduction Type"))
-        self.tabWidget_19.setTabText(self.tabWidget_19.indexOf(self.tab_81), _translate("AdminDashBoard", "Allowance type"))
-        self.tabWidget_5.setTabText(self.tabWidget_5.indexOf(self.tab_17), _translate("AdminDashBoard", "Basic Setting"))
-        self.tabWidget_23.setTabText(self.tabWidget_23.indexOf(self.tab_92), _translate("AdminDashBoard", "Add"))
-        self.tabWidget_22.setTabText(self.tabWidget_22.indexOf(self.tab_89), _translate("AdminDashBoard", "OT formula"))
-        self.tabWidget_22.setTabText(self.tabWidget_22.indexOf(self.tab_90), _translate("AdminDashBoard", "Exception Formula"))
-        self.tabWidget_22.setTabText(self.tabWidget_22.indexOf(self.tab_91), _translate("AdminDashBoard", "Leave Formula"))
-        self.tabWidget_5.setTabText(self.tabWidget_5.indexOf(self.tab_18), _translate("AdminDashBoard", "Formula"))
+        self.tabWidget_18.setTabText(
+            self.tabWidget_18.indexOf(self.tab_76),
+            _translate("AdminDashBoard", "Adding a holiday"),
+        )
+        self.tabWidget_18.setTabText(
+            self.tabWidget_18.indexOf(self.tab_77),
+            _translate("AdminDashBoard", "Editing a holiday for attendance"),
+        )
+        self.tabWidget_18.setTabText(
+            self.tabWidget_18.indexOf(self.tab_78),
+            _translate("AdminDashBoard", "Deleting a holiday for attendance"),
+        )
+        self.tabWidget_4.setTabText(
+            self.tabWidget_4.indexOf(self.Attendanceonholidays),
+            _translate("AdminDashBoard", "Attendance on holidays"),
+        )
+        self.tabWidget_26.setTabText(
+            self.tabWidget_26.indexOf(self.tab_103),
+            _translate("AdminDashBoard", "schedule report "),
+        )
+        self.tabWidget_26.setTabText(
+            self.tabWidget_26.indexOf(self.tab_104),
+            _translate("AdminDashBoard", "Daily attendance report"),
+        )
+        self.tabWidget_26.setTabText(
+            self.tabWidget_26.indexOf(self.tab_105),
+            _translate("AdminDashBoard", "Total Time Card"),
+        )
+        self.tabWidget_26.setTabText(
+            self.tabWidget_26.indexOf(self.tab_106),
+            _translate("AdminDashBoard", "Attendance Summary"),
+        )
+        self.tabWidget_26.setTabText(
+            self.tabWidget_26.indexOf(self.tab_107),
+            _translate("AdminDashBoard", "First in last out"),
+        )
+        self.tabWidget_26.setTabText(
+            self.tabWidget_26.indexOf(self.tab_108),
+            _translate("AdminDashBoard", "Exception"),
+        )
+        self.tabWidget_26.setTabText(
+            self.tabWidget_26.indexOf(self.tab_109),
+            _translate("AdminDashBoard", "Summary sector"),
+        )
+        self.tabWidget_26.setTabText(
+            self.tabWidget_26.indexOf(self.tab_110),
+            _translate("AdminDashBoard", "Time card"),
+        )
+        self.tabWidget_24.setTabText(
+            self.tabWidget_24.indexOf(self.tab_93),
+            _translate("AdminDashBoard", "Attendance statstics"),
+        )
+        self.tabWidget_25.setTabText(
+            self.tabWidget_25.indexOf(self.tab_95),
+            _translate("AdminDashBoard", "schedule report "),
+        )
+        self.tabWidget_25.setTabText(
+            self.tabWidget_25.indexOf(self.tab_96),
+            _translate("AdminDashBoard", "Daily attendance report"),
+        )
+        self.tabWidget_25.setTabText(
+            self.tabWidget_25.indexOf(self.tab_97),
+            _translate("AdminDashBoard", "Total Time Card"),
+        )
+        self.tabWidget_25.setTabText(
+            self.tabWidget_25.indexOf(self.tab_98),
+            _translate("AdminDashBoard", "Attendance Summary"),
+        )
+        self.tabWidget_25.setTabText(
+            self.tabWidget_25.indexOf(self.tab_99),
+            _translate("AdminDashBoard", "First in last out"),
+        )
+        self.tabWidget_25.setTabText(
+            self.tabWidget_25.indexOf(self.tab_100),
+            _translate("AdminDashBoard", "Exception"),
+        )
+        self.tabWidget_25.setTabText(
+            self.tabWidget_25.indexOf(self.tab_101),
+            _translate("AdminDashBoard", "Summary sector"),
+        )
+        self.tabWidget_25.setTabText(
+            self.tabWidget_25.indexOf(self.tab_102),
+            _translate("AdminDashBoard", "Time card"),
+        )
+        self.tabWidget_24.setTabText(
+            self.tabWidget_24.indexOf(self.tab_94),
+            _translate("AdminDashBoard", "Attendance report"),
+        )
+        self.tabWidget_4.setTabText(
+            self.tabWidget_4.indexOf(self.tab_24),
+            _translate("AdminDashBoard", "Attendance Report"),
+        )
+        self.tabWidget_4.setTabText(
+            self.tabWidget_4.indexOf(self.tab_64), _translate("AdminDashBoard", "Zone")
+        )
+        self.tabWidget_2.setTabText(
+            self.tabWidget_2.indexOf(self.Attendacetab),
+            _translate("AdminDashBoard", "Attendance"),
+        )
+        self.tabWidget_19.setTabText(
+            self.tabWidget_19.indexOf(self.tab_79),
+            _translate("AdminDashBoard", "Formula Sign"),
+        )
+        self.tabWidget_19.setTabText(
+            self.tabWidget_19.indexOf(self.tab_80),
+            _translate("AdminDashBoard", "Currency "),
+        )
+        self.tabWidget_19.setTabText(
+            self.tabWidget_19.indexOf(self.tab_82),
+            _translate("AdminDashBoard", "Deduction Type"),
+        )
+        self.tabWidget_19.setTabText(
+            self.tabWidget_19.indexOf(self.tab_81),
+            _translate("AdminDashBoard", "Allowance type"),
+        )
+        self.tabWidget_5.setTabText(
+            self.tabWidget_5.indexOf(self.tab_17),
+            _translate("AdminDashBoard", "Basic Setting"),
+        )
+        self.tabWidget_23.setTabText(
+            self.tabWidget_23.indexOf(self.tab_92), _translate("AdminDashBoard", "Add")
+        )
+        self.tabWidget_22.setTabText(
+            self.tabWidget_22.indexOf(self.tab_89),
+            _translate("AdminDashBoard", "OT formula"),
+        )
+        self.tabWidget_22.setTabText(
+            self.tabWidget_22.indexOf(self.tab_90),
+            _translate("AdminDashBoard", "Exception Formula"),
+        )
+        self.tabWidget_22.setTabText(
+            self.tabWidget_22.indexOf(self.tab_91),
+            _translate("AdminDashBoard", "Leave Formula"),
+        )
+        self.tabWidget_5.setTabText(
+            self.tabWidget_5.indexOf(self.tab_18),
+            _translate("AdminDashBoard", "Formula"),
+        )
         item = self.tableWidget_5.horizontalHeaderItem(0)
         item.setText(_translate("AdminDashBoard", "Personel id"))
         item = self.tableWidget_5.horizontalHeaderItem(1)
         item.setText(_translate("AdminDashBoard", "First name"))
         item = self.tableWidget_5.horizontalHeaderItem(2)
         item.setText(_translate("AdminDashBoard", "Date"))
-        self.tabWidget_5.setTabText(self.tabWidget_5.indexOf(self.tab_25), _translate("AdminDashBoard", "Salary Structure"))
+        self.tabWidget_5.setTabText(
+            self.tabWidget_5.indexOf(self.tab_25),
+            _translate("AdminDashBoard", "Salary Structure"),
+        )
         item = self.tableWidget_24.horizontalHeaderItem(0)
         item.setText(_translate("AdminDashBoard", "Personel Number"))
         item = self.tableWidget_24.horizontalHeaderItem(1)
@@ -4521,7 +5233,10 @@ class Ui_AdminDashBoard(object):
         item.setText(_translate("AdminDashBoard", "Position"))
         item = self.tableWidget_24.horizontalHeaderItem(7)
         item.setText(_translate("AdminDashBoard", "Original Salary"))
-        self.tabWidget_5.setTabText(self.tabWidget_5.indexOf(self.tab_26), _translate("AdminDashBoard", "Salary Change"))
+        self.tabWidget_5.setTabText(
+            self.tabWidget_5.indexOf(self.tab_26),
+            _translate("AdminDashBoard", "Salary Change"),
+        )
         self.cancel_depbtn_3.setText(_translate("AdminDashBoard", "Delete"))
         item = self.tableWidget_6.horizontalHeaderItem(0)
         item.setText(_translate("AdminDashBoard", "+"))
@@ -4547,9 +5262,15 @@ class Ui_AdminDashBoard(object):
         item = self.listWidget_3.item(0)
         item.setText(_translate("AdminDashBoard", "selected Employee"))
         self.listWidget_3.setSortingEnabled(__sortingEnabled)
-        self.select_all_chbx_all_2.setText(_translate("AdminDashBoard", "Select all personel in the department"))
-        self.search_personel_alownc_2.setText(_translate("AdminDashBoard", "Search by personel no"))
-        self.searchdepalc_2.setText(_translate("AdminDashBoard", "search by department"))
+        self.select_all_chbx_all_2.setText(
+            _translate("AdminDashBoard", "Select all personel in the department")
+        )
+        self.search_personel_alownc_2.setText(
+            _translate("AdminDashBoard", "Search by personel no")
+        )
+        self.searchdepalc_2.setText(
+            _translate("AdminDashBoard", "search by department")
+        )
         self.label_208.setText(_translate("AdminDashBoard", "Issue Date"))
         self.label_209.setText(_translate("AdminDashBoard", "Amount"))
         self.allowancedesc_2.setItemText(0, _translate("AdminDashBoard", "Increment"))
@@ -4560,9 +5281,13 @@ class Ui_AdminDashBoard(object):
         item = self.listWidget_2.item(0)
         item.setText(_translate("AdminDashBoard", "selected Employee"))
         self.listWidget_2.setSortingEnabled(__sortingEnabled)
-        self.select_all_chbx_all.setText(_translate("AdminDashBoard", "Select all personel in the department"))
+        self.select_all_chbx_all.setText(
+            _translate("AdminDashBoard", "Select all personel in the department")
+        )
         self.alwnc_okbtn.setText(_translate("AdminDashBoard", "ok"))
-        self.search_personel_alownc.setText(_translate("AdminDashBoard", "Search by personel no"))
+        self.search_personel_alownc.setText(
+            _translate("AdminDashBoard", "Search by personel no")
+        )
         self.searchdepalc.setText(_translate("AdminDashBoard", "search by department"))
         self.label_202.setText(_translate("AdminDashBoard", "Issue Date"))
         self.label_201.setText(_translate("AdminDashBoard", "Amount"))
@@ -4570,8 +5295,13 @@ class Ui_AdminDashBoard(object):
         self.allowancedesc.setItemText(0, _translate("AdminDashBoard", "Increment"))
         self.label_203.setText(_translate("AdminDashBoard", "Remark"))
         self.label_207.setText(_translate("AdminDashBoard", "Description"))
-        self.tabWidget_21.setTabText(self.tabWidget_21.indexOf(self.tab_88), _translate("AdminDashBoard", "Add"))
-        self.tabWidget_5.setTabText(self.tabWidget_5.indexOf(self.tab_27), _translate("AdminDashBoard", "Allowance"))
+        self.tabWidget_21.setTabText(
+            self.tabWidget_21.indexOf(self.tab_88), _translate("AdminDashBoard", "Add")
+        )
+        self.tabWidget_5.setTabText(
+            self.tabWidget_5.indexOf(self.tab_27),
+            _translate("AdminDashBoard", "Allowance"),
+        )
         self.cancel_exp_btn_27.setText(_translate("AdminDashBoard", "Delete"))
         self.addexp_btn_25.setText(_translate("AdminDashBoard", "Add"))
         item = self.tableWidget_48.horizontalHeaderItem(0)
@@ -4598,16 +5328,27 @@ class Ui_AdminDashBoard(object):
         item = self.listWidget_21.item(0)
         item.setText(_translate("AdminDashBoard", "selected Employee"))
         self.listWidget_21.setSortingEnabled(__sortingEnabled)
-        self.search_personel_alownc_ded.setText(_translate("AdminDashBoard", "Search by personel no"))
-        self.searchdepalc_de.setText(_translate("AdminDashBoard", "search by department"))
+        self.search_personel_alownc_ded.setText(
+            _translate("AdminDashBoard", "Search by personel no")
+        )
+        self.searchdepalc_de.setText(
+            _translate("AdminDashBoard", "search by department")
+        )
         self.label_298.setText(_translate("AdminDashBoard", "Issue Date"))
-        self.select_deduciton_all_chbx_all.setText(_translate("AdminDashBoard", "Select all personel in the department"))
-        self.deductiontype_cbx.setItemText(0, _translate("AdminDashBoard", "----------------"))
+        self.select_deduciton_all_chbx_all.setText(
+            _translate("AdminDashBoard", "Select all personel in the department")
+        )
+        self.deductiontype_cbx.setItemText(
+            0, _translate("AdminDashBoard", "----------------")
+        )
         self.label_301.setText(_translate("AdminDashBoard", "Deduction Type"))
         self.label_302.setText(_translate("AdminDashBoard", "Remark"))
         self.label_303.setText(_translate("AdminDashBoard", "Amount"))
         self.deduction_okbtn.setText(_translate("AdminDashBoard", "ok"))
-        self.tabWidget_5.setTabText(self.tabWidget_5.indexOf(self.Deduction), _translate("AdminDashBoard", "Deduction"))
+        self.tabWidget_5.setTabText(
+            self.tabWidget_5.indexOf(self.Deduction),
+            _translate("AdminDashBoard", "Deduction"),
+        )
         self.addexp_btn_24.setText(_translate("AdminDashBoard", "Add"))
         self.cancel_exp_btn_26.setText(_translate("AdminDashBoard", "Delete"))
         item = self.tableWidget_46.horizontalHeaderItem(0)
@@ -4634,10 +5375,16 @@ class Ui_AdminDashBoard(object):
         item = self.listWidget_20.item(0)
         item.setText(_translate("AdminDashBoard", "selected Employee"))
         self.listWidget_20.setSortingEnabled(__sortingEnabled)
-        self.search_personel_expense.setText(_translate("AdminDashBoard", "Search by personel no"))
-        self.searchexpnsechbx.setText(_translate("AdminDashBoard", "search by department"))
+        self.search_personel_expense.setText(
+            _translate("AdminDashBoard", "Search by personel no")
+        )
+        self.searchexpnsechbx.setText(
+            _translate("AdminDashBoard", "search by department")
+        )
         self.label_297.setText(_translate("AdminDashBoard", "Issue Date"))
-        self.select_exp_chbx_all.setText(_translate("AdminDashBoard", "Select all personel in the department"))
+        self.select_exp_chbx_all.setText(
+            _translate("AdminDashBoard", "Select all personel in the department")
+        )
         self.label_299.setText(_translate("AdminDashBoard", "Remark"))
         self.label_300.setText(_translate("AdminDashBoard", "Amount"))
         self.exp_okbtn_5.setText(_translate("AdminDashBoard", "ok"))
@@ -4647,7 +5394,10 @@ class Ui_AdminDashBoard(object):
         item.setText(_translate("AdminDashBoard", "First Name"))
         item = self.tableWidget_47.horizontalHeaderItem(2)
         item.setText(_translate("AdminDashBoard", "Department"))
-        self.tabWidget_5.setTabText(self.tabWidget_5.indexOf(self.tab_29), _translate("AdminDashBoard", "Expense"))
+        self.tabWidget_5.setTabText(
+            self.tabWidget_5.indexOf(self.tab_29),
+            _translate("AdminDashBoard", "Expense"),
+        )
         item = self.tableWidget_33.horizontalHeaderItem(0)
         item.setText(_translate("AdminDashBoard", "+"))
         item = self.tableWidget_33.horizontalHeaderItem(1)
@@ -4662,8 +5412,12 @@ class Ui_AdminDashBoard(object):
         item.setText(_translate("AdminDashBoard", "Related operation"))
         self.label_246.setText(_translate("AdminDashBoard", "Delete"))
         self.cashadv_okbtn_4.setText(_translate("AdminDashBoard", "ok"))
-        self.search_personel_cashadv.setText(_translate("AdminDashBoard", "Search by personel no"))
-        self.searchdepcasadv.setText(_translate("AdminDashBoard", "search by department"))
+        self.search_personel_cashadv.setText(
+            _translate("AdminDashBoard", "Search by personel no")
+        )
+        self.searchdepcasadv.setText(
+            _translate("AdminDashBoard", "search by department")
+        )
         self.label_290.setText(_translate("AdminDashBoard", "Amount"))
         self.cnl_cashadv_btn.setText(_translate("AdminDashBoard", "cancel"))
         self.label_289.setText(_translate("AdminDashBoard", "Remark"))
@@ -4672,7 +5426,9 @@ class Ui_AdminDashBoard(object):
         item = self.listWidget_17.item(0)
         item.setText(_translate("AdminDashBoard", "selected Employee"))
         self.listWidget_17.setSortingEnabled(__sortingEnabled)
-        self.select_all_chbx_all_16.setText(_translate("AdminDashBoard", "Select all personel in the department"))
+        self.select_all_chbx_all_16.setText(
+            _translate("AdminDashBoard", "Select all personel in the department")
+        )
         self.label_287.setText(_translate("AdminDashBoard", "Issue Date"))
         item = self.tableWidget_44.horizontalHeaderItem(0)
         item.setText(_translate("AdminDashBoard", "Personel no"))
@@ -4680,16 +5436,45 @@ class Ui_AdminDashBoard(object):
         item.setText(_translate("AdminDashBoard", "First Name"))
         item = self.tableWidget_44.horizontalHeaderItem(2)
         item.setText(_translate("AdminDashBoard", "department"))
-        self.tabWidget_5.setTabText(self.tabWidget_5.indexOf(self.tab_30), _translate("AdminDashBoard", "Cash Advance "))
-        self.tabWidget_20.setTabText(self.tabWidget_20.indexOf(self.tab_83), _translate("AdminDashBoard", "salary formula"))
-        self.tabWidget_20.setTabText(self.tabWidget_20.indexOf(self.tab_84), _translate("AdminDashBoard", "Salary change report"))
-        self.tabWidget_20.setTabText(self.tabWidget_20.indexOf(self.tab_85), _translate("AdminDashBoard", "Salary detail report"))
-        self.tabWidget_20.setTabText(self.tabWidget_20.indexOf(self.tab_86), _translate("AdminDashBoard", "Monthly salary report"))
-        self.tabWidget_20.setTabText(self.tabWidget_20.indexOf(self.tab_87), _translate("AdminDashBoard", "WPS Report"))
-        self.tabWidget_5.setTabText(self.tabWidget_5.indexOf(self.tab_31), _translate("AdminDashBoard", "Payroll"))
-        self.tabWidget_2.setTabText(self.tabWidget_2.indexOf(self.Payrollfucntion), _translate("AdminDashBoard", "payroll function"))
-        self.tabWidget_6.setTabText(self.tabWidget_6.indexOf(self.tab_73), _translate("AdminDashBoard", "Role"))
-        self.tabWidget_17.setTabText(self.tabWidget_17.indexOf(self.tab_74), _translate("AdminDashBoard", "Role management"))
+        self.tabWidget_5.setTabText(
+            self.tabWidget_5.indexOf(self.tab_30),
+            _translate("AdminDashBoard", "Cash Advance "),
+        )
+        self.tabWidget_20.setTabText(
+            self.tabWidget_20.indexOf(self.tab_83),
+            _translate("AdminDashBoard", "salary formula"),
+        )
+        self.tabWidget_20.setTabText(
+            self.tabWidget_20.indexOf(self.tab_84),
+            _translate("AdminDashBoard", "Salary change report"),
+        )
+        self.tabWidget_20.setTabText(
+            self.tabWidget_20.indexOf(self.tab_85),
+            _translate("AdminDashBoard", "Salary detail report"),
+        )
+        self.tabWidget_20.setTabText(
+            self.tabWidget_20.indexOf(self.tab_86),
+            _translate("AdminDashBoard", "Monthly salary report"),
+        )
+        self.tabWidget_20.setTabText(
+            self.tabWidget_20.indexOf(self.tab_87),
+            _translate("AdminDashBoard", "WPS Report"),
+        )
+        self.tabWidget_5.setTabText(
+            self.tabWidget_5.indexOf(self.tab_31),
+            _translate("AdminDashBoard", "Payroll"),
+        )
+        self.tabWidget_2.setTabText(
+            self.tabWidget_2.indexOf(self.Payrollfucntion),
+            _translate("AdminDashBoard", "payroll function"),
+        )
+        self.tabWidget_6.setTabText(
+            self.tabWidget_6.indexOf(self.tab_73), _translate("AdminDashBoard", "Role")
+        )
+        self.tabWidget_17.setTabText(
+            self.tabWidget_17.indexOf(self.tab_74),
+            _translate("AdminDashBoard", "Role management"),
+        )
         self.dep_saveandnwbtn_13.setText(_translate("AdminDashBoard", "save and new"))
         self.dep_okbtn_13.setText(_translate("AdminDashBoard", "ok"))
         self.cancel_depbtn_26.setText(_translate("AdminDashBoard", "cancel"))
@@ -4704,8 +5489,13 @@ class Ui_AdminDashBoard(object):
         self.label_55.setText(_translate("AdminDashBoard", "Email"))
         self.checkBox.setText(_translate("AdminDashBoard", "Staff status"))
         self.checkBox_2.setText(_translate("AdminDashBoard", "Super status"))
-        self.tabWidget_17.setTabText(self.tabWidget_17.indexOf(self.tab_75), _translate("AdminDashBoard", "User management"))
-        self.tabWidget_6.setTabText(self.tabWidget_6.indexOf(self.tab_19), _translate("AdminDashBoard", "User"))
+        self.tabWidget_17.setTabText(
+            self.tabWidget_17.indexOf(self.tab_75),
+            _translate("AdminDashBoard", "User management"),
+        )
+        self.tabWidget_6.setTabText(
+            self.tabWidget_6.indexOf(self.tab_19), _translate("AdminDashBoard", "User")
+        )
         self.label_216.setText(_translate("AdminDashBoard", "Company logo"))
         self.basic_okbtn_42.setText(_translate("AdminDashBoard", "Ok"))
         self.basic_okbtn_43.setText(_translate("AdminDashBoard", "Browse"))
@@ -4720,18 +5510,25 @@ class Ui_AdminDashBoard(object):
         self.label_219.setText(_translate("AdminDashBoard", "email"))
         self.label_217.setText(_translate("AdminDashBoard", "phone number"))
         self.label_223.setText(_translate("AdminDashBoard", "Nationality"))
-        self.tabWidget_6.setTabText(self.tabWidget_6.indexOf(self.tab_20), _translate("AdminDashBoard", "Company Settings"))
+        self.tabWidget_6.setTabText(
+            self.tabWidget_6.indexOf(self.tab_20),
+            _translate("AdminDashBoard", "Company Settings"),
+        )
         self.label_177.setText(_translate("AdminDashBoard", "Mail Setting"))
         self.label_178.setText(_translate("AdminDashBoard", "Alarm Setting"))
         self.label_184.setText(_translate("AdminDashBoard", "Approval Alert"))
         self.checkBox_12.setText(_translate("AdminDashBoard", "Email Alert"))
         self.checkBox_13.setText(_translate("AdminDashBoard", "Pop alert"))
-        self.basic_okbtn_44.setText(_translate("AdminDashBoard", "Ok\'"))
-        self.label_180.setText(_translate("AdminDashBoard", "when no of early leave exceeds"))
+        self.basic_okbtn_44.setText(_translate("AdminDashBoard", "Ok'"))
+        self.label_180.setText(
+            _translate("AdminDashBoard", "when no of early leave exceeds")
+        )
         self.label_181.setText(_translate("AdminDashBoard", "when no absent exceeds"))
         self.label_182.setText(_translate("AdminDashBoard", "email sending frequency"))
         self.selectposbx_5.setItemText(0, _translate("AdminDashBoard", "Daily"))
-        self.label_183.setText(_translate("AdminDashBoard", "Email Alert for suspected attendance result"))
+        self.label_183.setText(
+            _translate("AdminDashBoard", "Email Alert for suspected attendance result")
+        )
         self.selectposbx_4.setItemText(0, _translate("AdminDashBoard", "yes"))
         self.selectposbx_4.setItemText(1, _translate("AdminDashBoard", "no"))
         self.label_179.setText(_translate("AdminDashBoard", "When no of late exceeds"))
@@ -4740,68 +5537,126 @@ class Ui_AdminDashBoard(object):
         self.label_174.setText(_translate("AdminDashBoard", "Email Account"))
         self.label_173.setText(_translate("AdminDashBoard", "password"))
         self.label_172.setText(_translate("AdminDashBoard", "Email address"))
-        self.tabWidget_6.setTabText(self.tabWidget_6.indexOf(self.tab_32), _translate("AdminDashBoard", "Alert Settings"))
-        self.tabWidget_6.setTabText(self.tabWidget_6.indexOf(self.tab_72), _translate("AdminDashBoard", "Log Record"))
-        self.tabWidget_6.setTabText(self.tabWidget_6.indexOf(self.tab_71), _translate("AdminDashBoard", "Data cleaning"))
-        self.tabWidget_2.setTabText(self.tabWidget_2.indexOf(self.SystemSettings), _translate("AdminDashBoard", "System Setting"))
+        self.tabWidget_6.setTabText(
+            self.tabWidget_6.indexOf(self.tab_32),
+            _translate("AdminDashBoard", "Alert Settings"),
+        )
+        self.tabWidget_6.setTabText(
+            self.tabWidget_6.indexOf(self.tab_72),
+            _translate("AdminDashBoard", "Log Record"),
+        )
+        self.tabWidget_6.setTabText(
+            self.tabWidget_6.indexOf(self.tab_71),
+            _translate("AdminDashBoard", "Data cleaning"),
+        )
+        self.tabWidget_2.setTabText(
+            self.tabWidget_2.indexOf(self.SystemSettings),
+            _translate("AdminDashBoard", "System Setting"),
+        )
         self.department.setText(_translate("AdminDashBoard", "Department"))
         self.actionPosition.setText(_translate("AdminDashBoard", "Position"))
         self.actionPersonnel.setText(_translate("AdminDashBoard", "Personnel"))
         self.actionResignation.setText(_translate("AdminDashBoard", "Resignation"))
         self.AreaSettingsmenu.setText(_translate("AdminDashBoard", "Area Settings"))
-        self.actionDevice_Management.setText(_translate("AdminDashBoard", "Device Management"))
+        self.actionDevice_Management.setText(
+            _translate("AdminDashBoard", "Device Management")
+        )
         self.actionParameters.setText(_translate("AdminDashBoard", "Parameters"))
-        self.actionShift_Management.setText(_translate("AdminDashBoard", "Shift Management"))
-        self.actionStaff_Scheduling.setText(_translate("AdminDashBoard", "Staff Scheduling"))
-        self.actionAttendance_on_holidays.setText(_translate("AdminDashBoard", "Attendance on holidays"))
-        self.actionAttendance_report.setText(_translate("AdminDashBoard", "Attendance Approvals"))
-        self.actionAttendance_Report.setText(_translate("AdminDashBoard", "Attendance Report"))
-        self.actionBasic_Settings.setText(_translate("AdminDashBoard", "Basic Settings"))
+        self.actionShift_Management.setText(
+            _translate("AdminDashBoard", "Shift Management")
+        )
+        self.actionStaff_Scheduling.setText(
+            _translate("AdminDashBoard", "Staff Scheduling")
+        )
+        self.actionAttendance_on_holidays.setText(
+            _translate("AdminDashBoard", "Attendance on holidays")
+        )
+        self.actionAttendance_report.setText(
+            _translate("AdminDashBoard", "Attendance Approvals")
+        )
+        self.actionAttendance_Report.setText(
+            _translate("AdminDashBoard", "Attendance Report")
+        )
+        self.actionBasic_Settings.setText(
+            _translate("AdminDashBoard", "Basic Settings")
+        )
         self.actionFormula.setText(_translate("AdminDashBoard", "Formula"))
-        self.actionSalary_Structure.setText(_translate("AdminDashBoard", "Salary Structure "))
+        self.actionSalary_Structure.setText(
+            _translate("AdminDashBoard", "Salary Structure ")
+        )
         self.actionSalary_Change.setText(_translate("AdminDashBoard", "Salary Change"))
         self.actionAllowance.setText(_translate("AdminDashBoard", "Allowance"))
         self.actionDeduction.setText(_translate("AdminDashBoard", "Deduction"))
         self.actionExpenses.setText(_translate("AdminDashBoard", "Expenses"))
         self.actionCash_Advance.setText(_translate("AdminDashBoard", "Cash Advance"))
-        self.actionPayroll_report.setText(_translate("AdminDashBoard", "Payroll report"))
-        self.actionSystem_User_Management.setText(_translate("AdminDashBoard", "System User Management"))
-        self.actionCompany_Settings.setText(_translate("AdminDashBoard", "Company Settings"))
-        self.actionAlert_Settings.setText(_translate("AdminDashBoard", "Alert Settings"))
+        self.actionPayroll_report.setText(
+            _translate("AdminDashBoard", "Payroll report")
+        )
+        self.actionSystem_User_Management.setText(
+            _translate("AdminDashBoard", "System User Management")
+        )
+        self.actionCompany_Settings.setText(
+            _translate("AdminDashBoard", "Company Settings")
+        )
+        self.actionAlert_Settings.setText(
+            _translate("AdminDashBoard", "Alert Settings")
+        )
         self.actionAdd_Personel.setText(_translate("AdminDashBoard", "Add Personel"))
-        self.actionSetting_Approver.setText(_translate("AdminDashBoard", "setting Approver"))
-        self.actionAdd_department.setText(_translate("AdminDashBoard", "add department"))
-        self.actionPosition_managemnent.setText(_translate("AdminDashBoard", "position managemnent"))
+        self.actionSetting_Approver.setText(
+            _translate("AdminDashBoard", "setting Approver")
+        )
+        self.actionAdd_department.setText(
+            _translate("AdminDashBoard", "add department")
+        )
+        self.actionPosition_managemnent.setText(
+            _translate("AdminDashBoard", "position managemnent")
+        )
         self.actionAdd_position.setText(_translate("AdminDashBoard", "add position"))
-        self.actionSetting_Department.setText(_translate("AdminDashBoard", "setting Department"))
-        self.actionSetting_Approver_2.setText(_translate("AdminDashBoard", "Setting Approver"))
-        
+        self.actionSetting_Department.setText(
+            _translate("AdminDashBoard", "setting Department")
+        )
+        self.actionSetting_Approver_2.setText(
+            _translate("AdminDashBoard", "Setting Approver")
+        )
+
         image_file = ""
+
     def get_personel_added(self):
-         personel_id = self.lineEdit_7.text()
-         gender = self.Gendercmb.currentText()
-         department = self.dep_cmbx.currentText()
-         employement = self.Empment_cmbx.currentText()
-         date_of_employeement = self.DateCmbx.date().toPyDate()
-         password = self.lineEdit.text()
-         first_name = self.lineEdit_8.text()
-         last_name = self.lineEdit_9.text()
-         job_title = self.lineEdit_10.text()
-         pay_grade = self.lineEdit_11.text()
-         print(self.image_file)
-         con.addPersonel(personel_id=personel_id,Gender=gender,Department=department,
-         Employee_type=employement,Employemnet_date=date_of_employeement,pasword=password,first_name=first_name,last_name=last_name,job_title=job_title,paygrade=pay_grade,image=self.image_file)
-         print("connection succesful")
-         
+        personel_id = self.lineEdit_7.text()
+        gender = self.Gendercmb.currentText()
+        department = self.dep_cmbx.currentText()
+        employement = self.Empment_cmbx.currentText()
+        date_of_employeement = self.DateCmbx.date().toPyDate()
+        password = self.lineEdit.text()
+        first_name = self.lineEdit_8.text()
+        last_name = self.lineEdit_9.text()
+        job_title = self.lineEdit_10.text()
+        pay_grade = self.lineEdit_11.text()
+        print(self.image_file)
+        con.addPersonel(
+            personel_id=personel_id,
+            Gender=gender,
+            Department=department,
+            Employee_type=employement,
+            Employemnet_date=date_of_employeement,
+            pasword=password,
+            first_name=first_name,
+            last_name=last_name,
+            job_title=job_title,
+            paygrade=pay_grade,
+            image=self.image_file,
+        )
+        print("connection succesful")
+
     def add_area(self):
-        area_id = self.lineEdit_48.text()    
+        area_id = self.lineEdit_48.text()
         area_code = self.lineEdit_16.text()
         area_name = self.lineEdit_18.text()
         parent_area = self.parentarea_cmbx.currentText()
         remarks = self.lineEdit_17.text()
-        con.addAreas(area_id,area_code,area_name,parent_area,remarks)
-        print ("Area Added Successfully! !")
-        
+        con.addAreas(area_id, area_code, area_name, parent_area, remarks)
+        print("Area Added Successfully! !")
+
     def add_device(self):
         device_id = self.lineEdit_49.text()
         device_name = self.lineEdit_21.text()
@@ -4809,14 +5664,14 @@ class Ui_AdminDashBoard(object):
         ip_add = self.lineEdit_20.text()
         port = 4370
         Area = self.areacmbx.currentText()
-        con.addDevice(device_id,device_name,serial_number,ip_add,port,1)
-    
+        con.addDevice(device_id, device_name, serial_number, ip_add, port, 1)
+
     def add_department(self):
-            dep_id = self.lineEdit_15.text()
-            dep_name = self.lineEdit_3.text()
-            par_dep = self.dep_cmbx_6.currentText()
-            con.addDepartment(dep_id,dep_name,par_dep)
-            
+        dep_id = self.lineEdit_15.text()
+        dep_name = self.lineEdit_3.text()
+        par_dep = self.dep_cmbx_6.currentText()
+        con.addDepartment(dep_id, dep_name, par_dep)
+
     def add_holiday(self):
         holiday_id = self.lineEdit_52.text()
         holiday_name = self.lineEdit_36.text()
@@ -4824,32 +5679,72 @@ class Ui_AdminDashBoard(object):
         unit = self.parentarea_cmbx_24.currentText()
         round_off = self.parentarea_cmbx_23.currentText()
         symbol_in_report = self.lineEdit_38.text()
-        con.add_holiday(holiday_id,holiday_name,min_unit,1,True,symbol_in_report)
-   
-    def ConvertToBinary(self,file):
-         with open(file,"rb") as fl:
-                    binary_data = fl.read()
-                    self.image_file = binary_data
-           
-        
-    def dialog(self):
-         file , check = QFileDialog.getOpenFileName(None, "QFileDialog.getOpenFileName()", "", "All Files (*);;Python Files (*.py);;Text Files (*.txt)")
-         if check:
-                 self.label_19.setPixmap(QtGui.QPixmap(file))
-                 self.ConvertToBinary(file)
+        con.add_holiday(holiday_id, holiday_name, min_unit, 1, True, symbol_in_report)
 
+    def ConvertToBinary(self, file):
+        with open(file, "rb") as fl:
+            binary_data = fl.read()
+            self.image_file = binary_data
+
+    def dialog(self):
+        file, check = QFileDialog.getOpenFileName(
+            None,
+            "QFileDialog.getOpenFileName()",
+            "",
+            "All Files (*);;Python Files (*.py);;Text Files (*.txt)",
+        )
+        if check:
+            self.label_19.setPixmap(QtGui.QPixmap(file))
+            self.ConvertToBinary(file)
 
     def get_department(self):
-            tblData = con.viewDepartment()
-            print ("\n")
-            self.tableWidget_4.setRowCount(0)
-            for row_num, row_data in enumerate(tblData):
-                    self.tableWidget_4.insertRow(row_num)
-                    for column_num, data in enumerate(row_data):
-                        self.tableWidget_4.setItem(row_num, column_num, QTableWidgetItem(str(data)))
-    
+        tblData = con.viewDepartment()
+        print("\n")
+        self.tableWidget_4.setRowCount(0)
+        for row_num, row_data in enumerate(tblData):
+            self.tableWidget_4.insertRow(row_num)
+            for column_num, data in enumerate(row_data):
+                self.tableWidget_4.setItem(
+                    row_num, column_num, QTableWidgetItem(str(data))
+                )
+
+    def getDeviceUsers(self):
+        tblData = dev.get_users()
+        print("\n")
+        self.tableWidget_28.setRowCount(0)
+        for row_num, row_data in enumerate(tblData):
+            self.tableWidget_28.insertRow(row_num)
+            for column_num, data in enumerate(row_data):
+                self.tableWidget_28.setItem(
+                    row_num, column_num, QTableWidgetItem(str(data))
+                )
+
     def AddUserToDevice(self):
-            dev.add_user(FullName=self.lineEdit_162,password=self.lineEdit_160,id=self.lineEdit_161)                    
-   
+        dev.add_user(
+            FullName=self.lineEdit_162, password=self.lineEdit_160, id=self.lineEdit_161
+        )
+        self.getDeviceUsers()
 
+    def rebootDevice(self):
+        dev.restartDevice()
 
+    def shutdownDevice(self):
+        dev.shutdownDevice()
+
+    def DisplayDeviceInfo(self):
+        dev.con()
+        tempListInfo = dev.device_info()
+
+        self.label_63.setText(str(tempListInfo[0]))
+        self.label_62.setText(str(tempListInfo[1]))
+        self.label_61.setText(str(tempListInfo[2]))
+        self.label_60.setText(str(tempListInfo[3]))
+        self.label_49.setText(str(tempListInfo[4]))
+        self.label_48.setText(str(tempListInfo[5]))
+        self.label_47.setText(str(tempListInfo[6]))
+        self.label_64.setText(str(tempListInfo[7]))
+        self.label_82.setText(str(tempListInfo[8]))
+        self.label_81.setText(str(tempListInfo[9]))
+        self.label_80.setText(str(tempListInfo[10]))
+        self.label_79.setText(str(tempListInfo[11]))
+        self.label_78.setText(str(tempListInfo[12]))

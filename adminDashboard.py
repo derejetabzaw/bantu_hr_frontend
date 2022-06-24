@@ -4881,10 +4881,10 @@ class Ui_AdminDashBoard(object):
         self.label_77.setText(
             _translate(
                 "AdminDashBoard",
-                "restarting device may result in loss of unsaved work !",
+                "Restarting device may result in loss of unsaved work !",
             )
         )
-        self.pushButton_3.setText(_translate("AdminDashBoard", "restart"))
+        self.pushButton_3.setText(_translate("AdminDashBoard", "Restart"))
         self.pushButton_10.setText(_translate("AdminDashBoard", "Shutdown"))
 
         self.label_441.setText(
@@ -4895,7 +4895,7 @@ class Ui_AdminDashBoard(object):
         )
         self.tabWidget_11.setTabText(
             self.tabWidget_11.indexOf(self.tab_51),
-            _translate("AdminDashBoard", "shutdown/reboot device"),
+            _translate("AdminDashBoard", "Shutdown/Reboot device"),
         )
         self.label_21.setText(_translate("AdminDashBoard", "Device Time"))
         self.label_76.setText(_translate("AdminDashBoard", "Build Version"))

@@ -1,4 +1,4 @@
-from cv2 import add
+
 from fpmachine.devices import ZMM220_TFT
 from fpmachine.models import UserInfo
 
@@ -15,6 +15,7 @@ def conn(ip):
     print("connected")
     
 def add_user(**kwargs):
+    con()
     new_user = UserInfo("latin-1")
     new_user.name = kwargs['FullName']
     new_user.password = kwargs['password']
@@ -50,4 +51,24 @@ def device_info(ip):
     print("Vendor: ", dev.vendor)
     
 
-# device_info(ip)
+def get_users():
+    con()
+    userdata = {}
+    username = {}
+    id = []
+    
+    users = dev.get_users()
+    for usr in users:
+        userdata[usr.person_id] = [usr.name,usr.password]
+    return userdata
+    # user_data = []
+    
+    # id = []
+    # users = dev.get_users()
+    # for usr in users:
+    #     user_data.append(usr.person_id)
+    #     user_data.append(usr.name)
+    #     user_data.append(usr.password)
+
+get_users()
+        

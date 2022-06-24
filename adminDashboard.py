@@ -4165,7 +4165,8 @@ class Ui_AdminDashBoard(object):
         self.dev_okbtn.clicked.connect(lambda x:self.add_device())
         self.pushButton_2.clicked.connect(lambda x:self.dialog())
         self.okbtn_3.clicked.connect(lambda x:self.get_department())    
-        self.okbtn_10.clicked.connect(lambda x:self.Add)
+        self.okbtn_10.clicked.connect(lambda x:self.AddUserToDevice())
+        self.AddArea.currentChanged.connect(lambda x:self.testfunc())
 
     def retranslateUi(self, AdminDashBoard):
         _translate = QtCore.QCoreApplication.translate
@@ -4849,7 +4850,11 @@ class Ui_AdminDashBoard(object):
                         self.tableWidget_4.setItem(row_num, column_num, QTableWidgetItem(str(data)))
     
     def AddUserToDevice(self):
-            dev.add_user(FullName=self.lineEdit_162,password=self.lineEdit_160,id=self.lineEdit_161)                    
-   
+            dev.add_user(FullName=self.lineEdit_162.text(),password=self.lineEdit_160.text(),id=self.lineEdit_161.text())
+                                
+    def testfunc(self):
+            pass
+            
+                   
 
 

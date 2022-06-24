@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="shutdown">
+    <file>iconmonstr-power-on-off-8-240.png</file>
+  </qresource>
+</RCC>

@@ -25,4 +25,4 @@ for item in users:
 # print((dev.get_user_face(str(id))).decode())
 # # print(list(users))
 
-dev.reboot()
+

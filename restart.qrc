@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="restarticon">
+    <file>iconmonstr-power-on-off-10-240.png</file>
+  </qresource>
+</RCC>

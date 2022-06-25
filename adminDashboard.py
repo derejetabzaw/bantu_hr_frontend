@@ -11,6 +11,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import *
+from pymysql import NULL
 import connection as con
 import zktecotest as dev
 from PyQt5.QtWidgets import QFileDialog
@@ -5236,22 +5237,23 @@ class Ui_AdminDashBoard(object):
         date_of_employeement = self.DateCmbx.date().toPyDate()
         password = self.lineEdit.text()
         first_name = self.lineEdit_8.text()
-        last_name = self.lineEdit_9.text()
         job_title = self.lineEdit_10.text()
         pay_grade = self.lineEdit_11.text()
-        print(self.image_file)
+        device_pid = dev.get_user_id()
+
         con.addPersonel(
             personel_id=personel_id,
+            devicePersonel_id=device_pid,
             Gender=gender,
             Department=department,
             Employee_type=employement,
-            Employemnet_date=date_of_employeement,
+            Employment_date=date_of_employeement,
             pasword=password,
-            first_name=first_name,
-            last_name=last_name,
+            full_name=first_name,
             job_title=job_title,
             paygrade=pay_grade,
             image=self.image_file,
+            fingerprint=0
         )
         print("connection succesful")
 

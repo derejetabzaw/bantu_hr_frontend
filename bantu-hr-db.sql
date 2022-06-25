@@ -25,25 +25,26 @@ create table device
     PRIMARY KEY (deviceID),
     FOREIGN KEY (areaId) REFERENCES areas (areaId)
 );
-insert into device values
-(1,"bio_scanner","ap619","192.168.1.1",80,1);
-select *from personel;
+
 create table personel
 (
-	personel_id int primary key,
-    Gender varchar(6),
-    Department varchar(45),
-    Employee_type varchar(45),
-    Employemnet_date date,
-    pasword varchar(255),
-    first_name varchar(45),
-    last_name varchar(45),
-    job_title varchar(45),
-    paygrade double,
-    image longblob
+	personel_id varchar(10) primary key,
+    devicePersonel_id int,
+    Gender varchar(6) null,
+    Department varchar(45) null,
+    Employee_type varchar(45) null,
+    Employment_date date null,
+    full_name varchar(45) null,
+    job_title varchar(45) null,
+    paygrade double null,
+    image longblob null,
+    fingerprint int default 0
 );
-drop table personel;
-select * from personel;
+
+insert into personel values
+(1,"bio_scanner","ap619","192.168.1.1",80,1);
+select *from personel;
+
 select current_date();
 create table Department
 (
@@ -75,11 +76,10 @@ holiday_id int primary key,
 hoiday_name varchar(60),
 min_unit int, 
 unit int,
-round_off int, 
+round_off boolean, 
 symbol_in_report varchar(25)
 );
-alter table holiday 
-modify column round_off boolean;
+
 create table MailAlertSetting
 (
 	alert_id int primary key auto_increment,

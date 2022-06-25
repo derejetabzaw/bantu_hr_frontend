@@ -1,5 +1,5 @@
 from fpmachine.devices import ZMM220_TFT
-from fpmachine.models import UserInfo
+from fpmachine.models import UserInfo, MachineState
 import pandas as pd
 import numpy as np
 
@@ -89,11 +89,17 @@ def get_users():
 
 def get_user_id():
     con()
-    users = dev.get_users()
+    device_user_count = 0
     id = []
-    for user in users:
-        id.append(user.person_id)
-    return int(id[len(id)-1])
+    if MachineState().user_count == 0:
+        return device_user_count
+    else:
+        users = dev.get_users()
+        for user in users:
+            id.append(user.person_id)
+        return int(id[len(id)-1])
+
+        #users = dev.get_users()
 
 
 def handleCSV_Import(data_path):
@@ -105,13 +111,13 @@ def handleCSV_Import(data_path):
         add_user(FullName=data, password='', id=str(index))
 
 
-def get_finger_print(user_id=1):
+def get_finger_print(user_id):
     con()
     fps = dev.get_fps()
     for fp in fps:
-        if(int(fp.user_id) == 1):
-            print(fp.finger_id)
-            print(fp.user_id)
+        if(int(fp.user_id) == user_id):
+            pass
 
 
-get_finger_print()
+# get_finger_print()
+print(get_user_id())

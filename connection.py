@@ -9,8 +9,8 @@ config = {
       "host": 'localhost',
       "user": 'root',
       "database": 'bantu-hr-db',
-       "password": 'wutangclan',
-      # "password": 'Sa@654321',
+      #  "password": 'wutangclan',
+      "password": 'Sa@654321',
       "port": 3306,
       "auth_plugin":  'mysql_native_password'
 }
@@ -69,12 +69,39 @@ try:
                   viewAreas()
 
             def addPersonel(**personel):
-                  mycursor.execute( """INSERT INTO personel (personel_id,Gender,Department,Employee_type,Employemnet_date,pasword,first_name,last_name,job_title,paygrade,image)
-                              VALUES (%s, %s, %s, %s, %s,%s, %s, %s, %s, %s,%s)""",
-                              (personel["personel_id"],personel["Gender"],personel["Department"],personel["Employee_type"],personel["Employemnet_date"],personel["pasword"],personel["first_name"],personel["last_name"],personel["job_title"],personel["paygrade"],personel["image"]))
+                  mycursor.execute( """INSERT INTO personel 
+                  (personel_id,devicePersonel_id,Gender,Department,Employee_type,Employment_date,full_name,job_title,paygrade,image,fingerprint)
+                              VALUES (%s, %s, %s, %s, %s,%s, %s, %s, %s, %s, %s)""",
+                              (personel["personel_id"],personel["devicePersonel_id"],personel["Gender"],personel["Department"],personel["Employee_type"],personel["Employment_date"],personel["full_name"],personel["job_title"],personel["paygrade"],personel["image"],personel["fingerprint"]))
                   bantudb.commit()
                   print("Personnel Added Successfully!")
 
+            def viewPersonel():
+                  mycursor.execute("SELECT * FROM personel;")
+                  for temp in mycursor:
+                        print(temp)
+
+            def editPersonel(personel_id, Department, Employee_type, fingerprint, job_title, paygrade, image):
+                  mycursor.execute( """UPDATE personel
+                                          SET Department=%s, Employee_type=%s, fingerprint=%s, job_title=%s, paygrade=%s, image=%s
+                                          WHERE personel_id=%s""", (Department, Employee_type, fingerprint, job_title, paygrade, image, personel_id))
+                  bantudb.commit()
+                  print("Personel Updated Successfully!")
+                  viewPersonel()
+
+            def editPersonelFingerprint(**personel):
+                  mycursor.execute( """UPDATE personel
+                                          SET fingerprint=%s
+                                          WHERE personel_id=%s""", ( personel["fingerprint"], personel["personel_id"]))
+                  bantudb.commit()
+                  print("Fingerprint Updated Successfully!")
+                  viewPersonel()
+
+            def deletePersonel(personel_id):
+                  mycursor.execute( "DELETE FROM personel WHERE personel_id=%s", (personel_id,))
+                  bantudb.commit()
+                  print("Personel Deleted Successfully!")
+                  viewPersonel()
 
             def editAreas(area_id, area_name, par_area, remark):
                   mycursor.execute( """UPDATE areas
@@ -116,25 +143,6 @@ try:
                   bantudb.commit()
                   print("Device Deleted Successfully!")
                   viewDevices()
-
-            def viewPersonel():
-                  mycursor.execute("SELECT * FROM personel;")
-                  for temp in mycursor:
-                        print(temp)
-
-            def editPersonel(personel_id, Department, Employee_type, pasword, job_title, paygrade, image, deviceId):
-                  mycursor.execute( """UPDATE personel
-                                          SET Department=%s, Employee_type=%s, pasword=%s, job_title=%s, paygrade=%s, image=%s, deviceId=%s
-                                          WHERE personel_id=%s""", (Department, Employee_type, pasword, job_title, paygrade, image, deviceId, personel_id))
-                  bantudb.commit()
-                  print("Personel Updated Successfully!")
-                  viewPersonel()
-
-            def deletePersonel(personel_id):
-                  mycursor.execute( "DELETE FROM personel WHERE personel_id=%s", (personel_id,))
-                  bantudb.commit()
-                  print("Personel Deleted Successfully!")
-                  viewPersonel()
 
             def add_holiday(*args):
                   mycursor.execute( """INSERT INTO holiday (holiday_id, hoiday_name, min_unit, unit, round_off, symbol_in_report)

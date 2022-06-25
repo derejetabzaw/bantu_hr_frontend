@@ -1,6 +1,7 @@
 from fpmachine.devices import ZMM220_TFT
 from fpmachine.models import UserInfo
-
+import pandas as pd
+import numpy as np
 
 
 ip = "192.168.1.105"
@@ -19,9 +20,8 @@ def add_user(**kwargs):
     new_user = UserInfo("latin-1")
     new_user.name = kwargs["FullName"]
     new_user.password = kwargs["password"]
-    new_user.person_id = kwargs[
-        "id"
-    ]  # need to sync with database  , one or more checks need to be made and photo and the fingerprint record is not required
+    new_user.person_id = kwargs["id"]
+
     dev.set_user(new_user)
 
 
@@ -85,3 +85,33 @@ def get_users():
         userList.append(temp)
 
     return userList
+
+
+def get_user_id():
+    con()
+    users = dev.get_users()
+    id = []
+    for user in users:
+        id.append(user.person_id)
+    return int(id[len(id)-1])
+
+
+def handleCSV_Import(data_path):
+    index = get_user_id()
+    full_data = pd.read_csv(data_path)
+    isolated_data = full_data['name'].to_list()
+    for data in isolated_data:
+        index += 1
+        add_user(FullName=data, password='', id=str(index))
+
+
+def get_finger_print(user_id=1):
+    con()
+    fps = dev.get_fps()
+    for fp in fps:
+        if(int(fp.user_id) == 1):
+            print(fp.finger_id)
+            print(fp.user_id)
+
+
+get_finger_print()

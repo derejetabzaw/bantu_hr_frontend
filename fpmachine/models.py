@@ -75,8 +75,7 @@ class FPInfo:
     def from_bytes(data):
         model = FPInfo()
         if data:
-            model.user_id, model.finger_id, model.enabled = struct.unpack(
-                "<HBB", data[:4])
+            model.user_id, model.finger_id, model.enabled = struct.unpack("<HBB", data[:4])
             model.data = data[4:]
         return model
 
@@ -104,7 +103,7 @@ class MachineState:
         self.record_rem = 0
 
     # machine_id = Column(Integer, ForeignKey(Machine.id), primary_key=True)
-   # user_count = Column(Integer)
+    # user_count = Column(Integer)
     # finger_count = Column(Integer)
     # face_count = Column(Integer)
     # record_count = Column(Integer)
@@ -124,21 +123,20 @@ class MachineState:
     def from_bytes(data):
         model = MachineState()
         model.user_count, \
-            model.finger_count, \
-            model.record_count, \
-            model.op_record_count, \
-            model.admin_count, \
-            model.password_count, \
-            model.finger_max, \
-            model.user_max, \
-            model.record_max, \
-            model.finger_rem, \
-            model.user_rem, \
-            model.record_rem, \
-            model.face_count, \
-            model.face_rem, \
-            model.face_max = struct.unpack(
-                "<16xI4xI4xI4xI4x11I", data[:23 * 4])
+        model.finger_count, \
+        model.record_count, \
+        model.op_record_count, \
+        model.admin_count, \
+        model.password_count, \
+        model.finger_max, \
+        model.user_max, \
+        model.record_max, \
+        model.finger_rem, \
+        model.user_rem, \
+        model.record_rem, \
+        model.face_count, \
+        model.face_rem, \
+        model.face_max = struct.unpack("<16xI4xI4xI4xI4x11I", data[:23 * 4])
         return model
 
     def __bytes__(self):
@@ -177,8 +175,7 @@ class AttLog:
         if data:
             model.serial = struct.unpack("<H", data[:2])[0]
             model.person_id = get_null_term_str(data, 2, 26, encoding)
-            model.verify_mode, date, model.in_out, model.work_code = struct.unpack(
-                "<BIBH", data[26:34])
+            model.verify_mode, date, model.in_out, model.work_code = struct.unpack("<BIBH", data[26:34])
             model.att_time = number_to_datetime(date)
             model.encoding = encoding
         return model
@@ -209,6 +206,6 @@ class OpLog:
         model = OpLog()
         if data:
             model.admin, model.op_id, date, model.param_1, model.param_2, model.param_3, model.param_4 \
-                = struct.unpack("<HHIHHHH", data[:16])
+                 = struct.unpack("<HHIHHHH", data[:16])
             model.op_time = number_to_datetime(date)
         return model

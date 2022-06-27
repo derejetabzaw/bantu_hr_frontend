@@ -13,5 +13,6 @@
                   "password": "Sa@654321",
                   "name": "Bantu"
             }
-      ]
+      ],
+      "python.formatting.provider": "black"
 }

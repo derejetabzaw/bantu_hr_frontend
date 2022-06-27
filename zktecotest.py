@@ -1,19 +1,29 @@
 from fpmachine.devices import ZMM220_TFT
 from fpmachine.models import UserInfo, MachineState
 import pandas as pd
-import numpy as np
-import connection as db
+import connection as dbcon
 
 
-ip = "192.168.1.105"
-dev = ZMM220_TFT(ip, 4370, "latin-1")
+# ip = "192.168.1.105"
+# dev = ZMM220_TFT(ip, 4370, "latin-1")
 
 
 def con():
     # create a device with ip, port and encoding
+    dev = ZMM220_TFT("192.168.1.105", 4370, "latin-1")
     dev.disconnect()
     dev.connect(0)
     print("connected")
+
+
+def connectByIp(ip):
+    # create a device with ip, port and encoding
+    dev = ZMM220_TFT(ip, 4370, "latin-1")
+    dev.disconnect()
+    dev.connect(0)
+    print("Connected to: ", ip)
+
+    return dev
 
 
 def add_user(**kwargs):
@@ -55,20 +65,15 @@ def device_info():
     return listInfo
 
 
-# device_info()
+def addMachine(ip):
+    con()
+    port = 4370
+    dbcon.addMachine(dev.platform, dev.serial_number, ip, port)
 
 
 def restartDevice():
     con()
     dev.reboot()
-
-
-# restartDevice()
-
-
-def shutdownDevice():
-    con()
-    dev.shutdown()
 
 
 def get_users():
@@ -96,10 +101,12 @@ def get_user_id():
         users = dev.get_users()
         for user in users:
             id.append(user.person_id)
+
         return int(id[(int(len(id)))-1])
 
     except:
         return 0
+
 
         # users = dev.get_users()
 
@@ -107,22 +114,21 @@ def get_user_id():
 def handleCSV_Import(data_path):
     index = get_user_id()
     full_data = pd.read_csv(data_path)
-    isolated_data = full_data['name'].to_list()
+    isolated_data = full_data["name"].to_list()
     for data in isolated_data:
         index += 1
-        add_user(FullName=data, password='', id=str(index))
+        add_user(FullName=data, password="", id=str(index))
+
 
 # use get_fps() to get  information about all the finger prints on the device
-
-
 def sync_finger_print():
     con()
     print("in callback")
-    unregistered_finger_prints = db.fingerprint_device_id()
+    unregistered_finger_prints = dbcon.fingerprint_device_id()
     list_user = dev.get_fps()
     for data in list_user:
         for device_fp in unregistered_finger_prints:
             if(data.user_id == device_fp):
-                db.editPersonelFingerprint(
+                dbcon.editPersonelFingerprint(
                     fingerprint=1, devicePersonel_id=data.user_id)
                 print("match found at ", data.user_id)

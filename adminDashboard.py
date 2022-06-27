@@ -12,7 +12,6 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import *
-from pymysql import NULL
 import connection as con
 import zktecotest as dev
 from PyQt5.QtWidgets import QFileDialog

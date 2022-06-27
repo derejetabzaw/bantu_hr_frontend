@@ -23,8 +23,7 @@ try:
         mycursor.execute("use `bantu-hr-db`;")
 
         def viewDepartment():
-            mycursor.execute(
-                  "SELECT * FROM Department ORDER BY Department_Id;")
+            mycursor.execute("SELECT * FROM Department ORDER BY Department_Id;")
             # Get all records
             records = mycursor.fetchall()
             # REMOVE LINE 29 - 34, Later while cleaning code
@@ -42,15 +41,21 @@ try:
             return records
 
         def addDepartment(dep_id, dep_name, par_dep):
-            mycursor.execute("""INSERT INTO Department (Department_id, Department_name, Parent_Department)
-                                    VALUES (%s, %s, %s)""", (dep_id, dep_name, par_dep))
+            mycursor.execute(
+                """INSERT INTO Department (Department_id, Department_name, Parent_Department)
+                                    VALUES (%s, %s, %s)""",
+                (dep_id, dep_name, par_dep),
+            )
             bantudb.commit()
             print("Department Added Successfully!")
             viewDepartment()
 
         def editDepartment(dep_id, dep_name, par_dep):
-            mycursor.execute("""UPDATE Department SET Department_name=%s, Parent_Department=%s
-                                          WHERE Department_id=%s""", (dep_name, par_dep, dep_id))
+            mycursor.execute(
+                """UPDATE Department SET Department_name=%s, Parent_Department=%s
+                                          WHERE Department_id=%s""",
+                (dep_name, par_dep, dep_id),
+            )
             bantudb.commit()
             print("Department Updated Successfully!")
             viewDepartment()
@@ -103,6 +108,16 @@ try:
             for temp in mycursor:
                 print(temp)
 
+        def fingerprint_device_id():
+            finger_print = {}
+            mycursor.execute(
+                "SELECT devicePersonel_id ,fingerprint FROM personel where fingerprint = 0;"
+            )
+            for temp in mycursor:
+                finger_print[temp[0]] = temp[1]
+
+            return finger_print
+
         def editPersonel(
             personel_id,
             Department,
@@ -131,12 +146,10 @@ try:
             viewPersonel()
 
         def editPersonelFingerprint(**personel):
-            mycursor.execute(
-                """UPDATE personel
-                                          SET fingerprint=%s
-                                          WHERE personel_id=%s""",
-                (personel["fingerprint"], personel["personel_id"]),
-            )
+            fp = personel["fingerprint"]
+            deviceid = personel["devicePersonel_id"]
+            sql = f"UPDATE personel SET fingerprint = {fp} WHERE devicePersonel_id = {deviceid}"
+            mycursor.execute(sql)
             bantudb.commit()
             print("Fingerprint Updated Successfully!")
             viewPersonel()

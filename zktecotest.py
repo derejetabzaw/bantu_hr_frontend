@@ -30,7 +30,6 @@ def add_user(**kwargs):
     con()
     new_user = UserInfo("latin-1")
     new_user.name = kwargs["FullName"]
-    new_user.password = kwargs["password"]
     new_user.person_id = kwargs["id"]
 
     dev.set_user(new_user)
@@ -89,21 +88,25 @@ def get_users():
         temp.append(user.password)
 
         userList.append(temp)
-
     return userList
+
+# this only returns the last taken ID be sure to increment at addition of new user
 
 
 def get_user_id():
     con()
-    device_user_count = 0
+    inc = 0
     id = []
-    if MachineState().user_count == 0:
-        return device_user_count
-    else:
+    try:
         users = dev.get_users()
         for user in users:
             id.append(user.person_id)
-        return int(id[len(id) - 1])
+
+        return int(id[(int(len(id)))-1])
+
+    except:
+        return 0
+
 
         # users = dev.get_users()
 
@@ -117,9 +120,15 @@ def handleCSV_Import(data_path):
         add_user(FullName=data, password="", id=str(index))
 
 
-def get_finger_print(user_id):
+# use get_fps() to get  information about all the finger prints on the device
+def sync_finger_print():
     con()
-    fps = dev.get_fps()
-    for fp in fps:
-        if int(fp.user_id) == user_id:
-            pass
+    print("in callback")
+    unregistered_finger_prints = dbcon.fingerprint_device_id()
+    list_user = dev.get_fps()
+    for data in list_user:
+        for device_fp in unregistered_finger_prints:
+            if(data.user_id == device_fp):
+                dbcon.editPersonelFingerprint(
+                    fingerprint=1, devicePersonel_id=data.user_id)
+                print("match found at ", data.user_id)

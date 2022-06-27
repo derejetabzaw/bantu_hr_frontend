@@ -84,6 +84,15 @@ try:
             for temp in mycursor:
                 print(temp)
 
+        def fingerprint_device_id():
+            finger_print = {}
+            mycursor.execute(
+                "SELECT devicePersonel_id ,fingerprint FROM personel where fingerprint = 0;")
+            for temp in mycursor:
+                finger_print[temp[0]] = temp[1]
+
+            return finger_print
+
         def editPersonel(personel_id, Department, Employee_type, fingerprint, job_title, paygrade, image):
             mycursor.execute("""UPDATE personel
                                           SET Department=%s, Employee_type=%s, fingerprint=%s, job_title=%s, paygrade=%s, image=%s
@@ -93,9 +102,10 @@ try:
             viewPersonel()
 
         def editPersonelFingerprint(**personel):
-            mycursor.execute("""UPDATE personel
-                                          SET fingerprint=%s
-                                          WHERE personel_id=%s""", (personel["fingerprint"], personel["personel_id"]))
+            fp = personel["fingerprint"]
+            deviceid = personel["devicePersonel_id"]
+            sql = f"UPDATE personel SET fingerprint = {fp} WHERE devicePersonel_id = {deviceid}"
+            mycursor.execute(sql)
             bantudb.commit()
             print("Fingerprint Updated Successfully!")
             viewPersonel()

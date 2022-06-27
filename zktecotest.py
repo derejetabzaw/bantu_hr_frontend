@@ -1,18 +1,29 @@
 from fpmachine.devices import ZMM220_TFT
 from fpmachine.models import UserInfo, MachineState
 import pandas as pd
-import numpy as np
+import connection as dbcon
 
 
-ip = "192.168.1.105"
-dev = ZMM220_TFT(ip, 4370, "latin-1")
+# ip = "192.168.1.105"
+# dev = ZMM220_TFT(ip, 4370, "latin-1")
 
 
 def con():
     # create a device with ip, port and encoding
+    dev = ZMM220_TFT("192.168.1.105", 4370, "latin-1")
     dev.disconnect()
     dev.connect(0)
     print("connected")
+
+
+def connectByIp(ip):
+    # create a device with ip, port and encoding
+    dev = ZMM220_TFT(ip, 4370, "latin-1")
+    dev.disconnect()
+    dev.connect(0)
+    print("Connected to: ", ip)
+
+    return dev
 
 
 def add_user(**kwargs):
@@ -55,20 +66,15 @@ def device_info():
     return listInfo
 
 
-# device_info()
+def addMachine(ip):
+    con()
+    port = 4370
+    dbcon.addMachine(dev.platform, dev.serial_number, ip, port)
 
 
 def restartDevice():
     con()
     dev.reboot()
-
-
-# restartDevice()
-
-
-def shutdownDevice():
-    con()
-    dev.shutdown()
 
 
 def get_users():
@@ -97,27 +103,23 @@ def get_user_id():
         users = dev.get_users()
         for user in users:
             id.append(user.person_id)
-        return int(id[len(id)-1])
+        return int(id[len(id) - 1])
 
-        #users = dev.get_users()
+        # users = dev.get_users()
 
 
 def handleCSV_Import(data_path):
     index = get_user_id()
     full_data = pd.read_csv(data_path)
-    isolated_data = full_data['name'].to_list()
+    isolated_data = full_data["name"].to_list()
     for data in isolated_data:
         index += 1
-        add_user(FullName=data, password='', id=str(index))
+        add_user(FullName=data, password="", id=str(index))
 
 
 def get_finger_print(user_id):
     con()
     fps = dev.get_fps()
     for fp in fps:
-        if(int(fp.user_id) == user_id):
+        if int(fp.user_id) == user_id:
             pass
-
-
-# get_finger_print()
-print(get_user_id())

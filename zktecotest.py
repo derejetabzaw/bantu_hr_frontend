@@ -4,13 +4,13 @@ import pandas as pd
 import connection as dbcon
 
 
-# ip = "192.168.1.105"
-# dev = ZMM220_TFT(ip, 4370, "latin-1")
+ip = "192.168.1.105"
+dev = ZMM220_TFT(ip, 4370, "latin-1")
 
 
 def con():
     # create a device with ip, port and encoding
-    dev = ZMM220_TFT("192.168.1.105", 4370, "latin-1")
+    # dev = ZMM220_TFT("192.168.1.105", 4370, "latin-1")
     dev.disconnect()
     dev.connect(0)
     print("connected")
@@ -132,3 +132,4 @@ def sync_finger_print():
                 dbcon.editPersonelFingerprint(
                     fingerprint=1, devicePersonel_id=data.user_id)
                 print("match found at ", data.user_id)
+sync_finger_print()

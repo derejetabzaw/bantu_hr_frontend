@@ -9,8 +9,8 @@ config = {
     "host": "localhost",
     "user": "root",
     "database": "bantu-hr-db",
-    #     "password": 'wutangclan',
-    "password": "Sa@654321",
+     "password": 'wutangclan',
+    #"password": "Sa@654321",
     "port": 3306,
     "auth_plugin": "mysql_native_password",
 }

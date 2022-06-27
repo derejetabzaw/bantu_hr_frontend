@@ -4599,6 +4599,7 @@ class Ui_AdminDashBoard(object):
         self.AddArea.currentChanged.connect(lambda x: self.getDeviceUsers())
         self.okbtn_12.clicked.connect(lambda x: self.get_csv())
         self.dev_okbtn_2.clicked.connect(lambda x: self.addMachine())
+        self.syncFP.clicked.connect(lambda x: self.sync_finger_print())
 
     def retranslateUi(self, AdminDashBoard):
         _translate = QtCore.QCoreApplication.translate
@@ -5882,4 +5883,6 @@ class Ui_AdminDashBoard(object):
             dev.connectByIp(ip)
 
         self.get_Machines()
-
+        
+    def sync_finger_print(self):
+        dev.sync_finger_print()

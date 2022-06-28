@@ -26,6 +26,17 @@ create table device
     FOREIGN KEY (areaId) REFERENCES areas (areaId)
 );
 
+create table machine
+(
+	machineNumber int NOT NULL auto_increment,
+	deviceName varchar(45),
+    serialNumber varchar(15),
+    ipAddress varchar(17),
+    portNumber int,
+    macAddress varchar(17),
+    PRIMARY KEY (machineNumber)
+);
+
 create table personel
 (
 	personel_id varchar(10) primary key,

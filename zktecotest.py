@@ -18,7 +18,7 @@ def con():
 
 def disconnect():
     dev.disconnect()
-    print("Disconnected")
+    print("Disconnected from: ", ip)
 
 
 def connectByIp(ip):
@@ -73,7 +73,8 @@ def device_info():
 def addMachine(ip):
     con()
     port = 4370
-    dbcon.addMachine(dev.platform, dev.serial_number, ip, port)
+    dbcon.addMachine(dev.platform, dev.serial_number,
+                     ip, port, dev.mac_address)
 
 
 def restartDevice():
@@ -133,7 +134,7 @@ def sync_finger_print():
     list_user = dev.get_fps()
     for data in list_user:
         for device_fp in unregistered_finger_prints:
-            if data.user_id == device_fp:
+            if (data.user_id == device_fp):
                 dbcon.editPersonelFingerprint(
                     fingerprint=1, devicePersonel_id=data.user_id
                 )

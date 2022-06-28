@@ -44,7 +44,7 @@ class Ui_AdminDashBoard(object):
         self.tableWidget_9 = QtWidgets.QTableWidget(self.frame_3)
         self.tableWidget_9.setGeometry(QtCore.QRect(390, 130, 881, 311))
         self.tableWidget_9.setObjectName("tableWidget_9")
-        self.tableWidget_9.setColumnCount(5)
+        self.tableWidget_9.setColumnCount(6)
         self.tableWidget_9.setRowCount(0)
         item = QtWidgets.QTableWidgetItem()
         self.tableWidget_9.setHorizontalHeaderItem(0, item)
@@ -56,6 +56,8 @@ class Ui_AdminDashBoard(object):
         self.tableWidget_9.setHorizontalHeaderItem(3, item)
         item = QtWidgets.QTableWidgetItem()
         self.tableWidget_9.setHorizontalHeaderItem(4, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget_9.setHorizontalHeaderItem(5, item)
         self.tableWidget_11 = QtWidgets.QTableWidget(self.frame_3)
         self.tableWidget_11.setGeometry(QtCore.QRect(10, 540, 1261, 261))
         self.tableWidget_11.setObjectName("tableWidget_11")
@@ -424,7 +426,7 @@ class Ui_AdminDashBoard(object):
         self.pushButton_2.setObjectName("pushButton_2")
         self.horizontalLayoutWidget_2 = QtWidgets.QWidget(self.tab_6)
         self.horizontalLayoutWidget_2.setGeometry(
-            QtCore.QRect(30, 590, 731, 61))
+            QtCore.QRect(30, 590, 721, 61))
         self.horizontalLayoutWidget_2.setObjectName("horizontalLayoutWidget_2")
         self.horizontalLayout_14 = QtWidgets.QHBoxLayout(
             self.horizontalLayoutWidget_2)
@@ -483,8 +485,14 @@ class Ui_AdminDashBoard(object):
         self.tableWidget_8 = QtWidgets.QTableWidget(self.tab_6)
         self.tableWidget_8.setGeometry(QtCore.QRect(780, 0, 571, 761))
         self.tableWidget_8.setObjectName("tableWidget_8")
-        self.tableWidget_8.setColumnCount(0)
+        self.tableWidget_8.setColumnCount(3)
         self.tableWidget_8.setRowCount(0)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget_8.setHorizontalHeaderItem(0, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget_8.setHorizontalHeaderItem(1, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget_8.setHorizontalHeaderItem(2, item)
         self.tabWidget_3.addTab(self.tab_6, "")
         self.tab_8 = QtWidgets.QWidget()
         self.tab_8.setObjectName("tab_8")
@@ -4539,6 +4547,8 @@ class Ui_AdminDashBoard(object):
         self.pushButton_3.clicked.connect(lambda x: self.rebootDevice())
         self.tabWidget_11.currentChanged.connect(
             lambda x: self.DisplayDeviceInfo())
+        self.tabWidget_3.currentChanged.connect(
+            lambda x: self.get_Personel())
         self.tabWidget_9.currentChanged.connect(lambda x: self.get_Machines())
         self.AddArea.currentChanged.connect(lambda x: self.getDeviceUsers())
         self.okbtn_12.clicked.connect(lambda x: self.get_csv())
@@ -4555,11 +4565,13 @@ class Ui_AdminDashBoard(object):
         item = self.tableWidget_9.horizontalHeaderItem(1)
         item.setText(_translate("AdminDashBoard", "Device Name"))
         item = self.tableWidget_9.horizontalHeaderItem(2)
-        item.setText(_translate("AdminDashBoard", "IP"))
-        item = self.tableWidget_9.horizontalHeaderItem(3)
         item.setText(_translate("AdminDashBoard", "Serial Number"))
+        item = self.tableWidget_9.horizontalHeaderItem(3)
+        item.setText(_translate("AdminDashBoard", "IP Address"))
         item = self.tableWidget_9.horizontalHeaderItem(4)
-        item.setText(_translate("AdminDashBoard", "MAC"))
+        item.setText(_translate("AdminDashBoard", "Port Number"))
+        item = self.tableWidget_9.horizontalHeaderItem(5)
+        item.setText(_translate("AdminDashBoard", "MAC Address"))
         item = self.tableWidget_11.horizontalHeaderItem(0)
         item.setText(_translate("AdminDashBoard", "Device Status"))
         item = self.tableWidget_11.horizontalHeaderItem(1)
@@ -4606,6 +4618,12 @@ class Ui_AdminDashBoard(object):
         self.okbtn_12.setText(_translate(
             "AdminDashBoard", "Import from Excel"))
         self.syncFP.setText(_translate("AdminDashBoard", "Sync Fingerprint"))
+        item = self.tableWidget_8.horizontalHeaderItem(0)
+        item.setText(_translate("AdminDashBoard", "Personel Id"))
+        item = self.tableWidget_8.horizontalHeaderItem(1)
+        item.setText(_translate("AdminDashBoard", "Full Name"))
+        item = self.tableWidget_8.horizontalHeaderItem(2)
+        item.setText(_translate("AdminDashBoard", "Fingerprint Status"))
         self.tabWidget_3.setTabText(self.tabWidget_3.indexOf(
             self.tab_6), _translate("AdminDashBoard", "Add Personel"))
         self.label_41.setText(_translate("AdminDashBoard", "Search personel"))
@@ -5400,11 +5418,10 @@ class Ui_AdminDashBoard(object):
         department = self.dep_cmbx.currentText()
         employement = self.Empment_cmbx.currentText()
         date_of_employeement = self.DateCmbx.date().toPyDate()
-        password = self.lineEdit.text()
-        first_name = self.lineEdit_8.text()
+        full_name = self.lineEdit_8.text()
         job_title = self.lineEdit_10.text()
         pay_grade = self.lineEdit_11.text()
-        device_pid = dev.get_user_id()
+        device_pid = dev.get_user_id() + 1
 
         con.addPersonel(
             personel_id=personel_id,
@@ -5413,14 +5430,16 @@ class Ui_AdminDashBoard(object):
             Department=department,
             Employee_type=employement,
             Employment_date=date_of_employeement,
-            pasword=password,
-            full_name=first_name,
+            full_name=full_name,
             job_title=job_title,
             paygrade=pay_grade,
             image=self.image_file,
             fingerprint=0,
         )
         print("Connection succesfull")
+        dev.add_user(FullName=full_name, id=str(device_pid))
+        self.get_Personel()
+        self.clearPersonel()
 
     def add_area(self):
         area_id = self.lineEdit_48.text()
@@ -5494,6 +5513,16 @@ class Ui_AdminDashBoard(object):
                     row_num, column_num, QTableWidgetItem(str(data))
                 )
 
+    def get_Personel(self):
+        tblData = con.viewPersonel()
+        self.tableWidget_8.setRowCount(0)
+        for row_num, row_data in enumerate(tblData):
+            self.tableWidget_8.insertRow(row_num)
+            for column_num, data in enumerate(row_data):
+                self.tableWidget_8.setItem(
+                    row_num, column_num, QTableWidgetItem(str(data))
+                )
+
     def getDeviceUsers(self):
         tblData = dev.get_users()
         print("\n")
@@ -5553,18 +5582,30 @@ class Ui_AdminDashBoard(object):
 
     def clearIp(self):
         self.lineEdit_56.setText("")
+        self.lineEdit_57.setText("")
 
     def connectMachine(self):
         machineId = self.lineEdit_57.text()
         ip = con.viewMachinesByIP(machineId)
-
         if ip:
             dev.connectByIp(ip)
 
         self.get_Machines()
+        self.clearIp()
 
     def sync_finger_print(self):
         dev.sync_finger_print()
+        self.get_Personel()
 
-    def disconnect():
+    def disconnect(self):
         dev.disconnect()
+        self.clearIp()
+
+    def clearPersonel(self):
+        self.Gendercmb.setCurrentText("Gender")
+        self.dep_cmbx.setCurrentText("Choose Department")
+        self.Empment_cmbx.setCurrentText("Choose Employement Type")
+        self.lineEdit_7.setText("")
+        self.lineEdit_8.setText("")
+        self.lineEdit_10.setText("")
+        self.lineEdit_11.setText("")

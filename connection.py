@@ -1,7 +1,7 @@
 import mysql.connector as mysql
 from datetime import date
 from pymysql import MySQLError
-from tabulate import tabulate
+# from tabulate import tabulate
 
 # Change the below config code to make it connect with your database
 # Change the user and password with your mysql configuration
@@ -9,8 +9,8 @@ config = {
     "host": "localhost",
     "user": "root",
     "database": "bantu-hr-db",
-     "password": 'wutangclan',
-    #"password": "Sa@654321",
+    #      "password": 'wutangclan',
+    "password": "Sa@654321",
     "port": 3306,
     "auth_plugin": "mysql_native_password",
 }
@@ -23,10 +23,11 @@ try:
         mycursor.execute("use `bantu-hr-db`;")
 
         def viewDepartment():
-            mycursor.execute("SELECT * FROM Department ORDER BY Department_Id;")
+            mycursor.execute(
+                "SELECT * FROM Department ORDER BY Department_Id;")
             # Get all records
             records = mycursor.fetchall()
-            # REMOVE LINE 29 - 34, Later while cleaning code
+            # REMOVE LINE 30 - 41, Later while cleaning code
             # Print the number of Rows
             # count = mycursor.rowcount
             # print("Number of Rows: ", count)
@@ -61,7 +62,8 @@ try:
             viewDepartment()
 
         def deleteDepartment(dep_id):
-            mycursor.execute("DELETE FROM Department WHERE Department_id=%s", (dep_id,))
+            mycursor.execute(
+                "DELETE FROM Department WHERE Department_id=%s", (dep_id,))
             bantudb.commit()
             print("Department Deleted Successfully!")
             viewDepartment()
@@ -83,7 +85,7 @@ try:
 
         def addPersonel(**personel):
             mycursor.execute(
-                """INSERT INTO personel 
+                """INSERT INTO personel
                   (personel_id,devicePersonel_id,Gender,Department,Employee_type,Employment_date,full_name,job_title,paygrade,image,fingerprint)
                               VALUES (%s, %s, %s, %s, %s,%s, %s, %s, %s, %s, %s)""",
                 (
@@ -104,9 +106,12 @@ try:
             print("Personnel Added Successfully!")
 
         def viewPersonel():
-            mycursor.execute("SELECT * FROM personel;")
-            for temp in mycursor:
-                print(temp)
+            mycursor.execute(
+                "SELECT personel_id, full_name, fingerprint FROM personel;")
+            # Get all records
+            records = mycursor.fetchall()
+
+            return records
 
         def fingerprint_device_id():
             finger_print = {}
@@ -191,7 +196,8 @@ try:
             mycursor.execute(
                 """INSERT INTO device (deviceId, deviceName, serialNumber, ipAddress, portNumber, areaId)
                                     VALUES (%s, %s, %s, %s, %s, %s)""",
-                (deviceId, deviceName, serialNumber, ipAddress, portNumber, area_id),
+                (deviceId, deviceName, serialNumber,
+                 ipAddress, portNumber, area_id),
             )
             bantudb.commit()
             print("Device Added Successfully!")
@@ -209,7 +215,8 @@ try:
             viewDevices()
 
         def deleteDevice(deviceId):
-            mycursor.execute("DELETE FROM device WHERE deviceId=%s", (deviceId,))
+            mycursor.execute(
+                "DELETE FROM device WHERE deviceId=%s", (deviceId,))
             bantudb.commit()
             print("Device Deleted Successfully!")
             viewDevices()
@@ -239,12 +246,12 @@ try:
 
             return record[0]
 
-        def addMachine(deviceName, serialNumber, ipAddress, portNumber):
+        def addMachine(deviceName, serialNumber, ipAddress, portNumber, macAddress):
             # insert into machine (deviceName, serialNumber, ipAddress, portNumber) values ("Zkteco", "AZ76890Y", "192.168.1.200", 4370);
             mycursor.execute(
-                """INSERT INTO machine (deviceName, serialNumber, ipAddress, portNumber)
-                                    VALUES (%s, %s, %s, %s)""",
-                (deviceName, serialNumber, ipAddress, portNumber),
+                """INSERT INTO machine (deviceName, serialNumber, ipAddress, portNumber, macAddress)
+                                    VALUES (%s, %s, %s, %s, %s)""",
+                (deviceName, serialNumber, ipAddress, portNumber, macAddress),
             )
             bantudb.commit()
             print("Machine Added Successfully!")

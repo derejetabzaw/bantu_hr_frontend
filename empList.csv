@@ -1,6 +1,6 @@
-name,password
-john Kebede,23
-beke Kebedech,567
-Jimmy Belay,567
-Sipho Tasew,567
-set Maru,567
+name,id
+john Kebede,CSV1
+beke Kebedech,CSV2
+Jimmy Belay,CSV3
+Sipho Tasew,CSV4
+set Maru,CSV5

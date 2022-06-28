@@ -107,7 +107,6 @@ def get_user_id():
     except:
         return 0
 
-
         # users = dev.get_users()
 
 
@@ -115,9 +114,27 @@ def handleCSV_Import(data_path):
     index = get_user_id()
     full_data = pd.read_csv(data_path)
     isolated_data = full_data["name"].to_list()
+    isoalted_id_col = full_data["id"].tolist()
+    itr = 0
     for data in isolated_data:
         index += 1
         add_user(FullName=data, password="", id=str(index))
+        # dbcon.addPersonel(
+        #     personel_id=isoalted_id_col[itr], devicePersonel_id=isoalted_id_col[itr], devicePersonel_id=index, Gender='Gender',)
+        dbcon.addPersonel(
+            personel_id=isoalted_id_col[itr],
+            devicePersonel_id=index,
+            Gender=None,
+            Department=None,
+            Employee_type=None,
+            Employment_date=None,
+            full_name=isolated_data[itr],
+            job_title=None,
+            paygrade=None,
+            image=None,
+            fingerprint=0,
+        )
+        itr += 1
 
 
 # use get_fps() to get  information about all the finger prints on the device
@@ -132,4 +149,3 @@ def sync_finger_print():
                 dbcon.editPersonelFingerprint(
                     fingerprint=1, devicePersonel_id=data.user_id)
                 print("match found at ", data.user_id)
-sync_finger_print()

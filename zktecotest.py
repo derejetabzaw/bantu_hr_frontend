@@ -1,5 +1,5 @@
 from fpmachine.devices import ZMM220_TFT
-from fpmachine.models import UserInfo, MachineState
+from fpmachine.models import UserInfo
 import pandas as pd
 import connection as dbcon
 
@@ -13,7 +13,12 @@ def con():
     # dev = ZMM220_TFT("192.168.1.105", 4370, "latin-1")
     dev.disconnect()
     dev.connect(0)
-    print("connected")
+    print("Connected")
+
+
+def disconnect():
+    dev.disconnect()
+    print("Disconnected")
 
 
 def connectByIp(ip):
@@ -90,6 +95,7 @@ def get_users():
         userList.append(temp)
     return userList
 
+
 # this only returns the last taken ID be sure to increment at addition of new user
 
 
@@ -102,11 +108,10 @@ def get_user_id():
         for user in users:
             id.append(user.person_id)
 
-        return int(id[(int(len(id)))-1])
+        return int(id[(int(len(id))) - 1])
 
     except:
         return 0
-
 
         # users = dev.get_users()
 
@@ -128,8 +133,8 @@ def sync_finger_print():
     list_user = dev.get_fps()
     for data in list_user:
         for device_fp in unregistered_finger_prints:
-            if(data.user_id == device_fp):
+            if data.user_id == device_fp:
                 dbcon.editPersonelFingerprint(
-                    fingerprint=1, devicePersonel_id=data.user_id)
+                    fingerprint=1, devicePersonel_id=data.user_id
+                )
                 print("match found at ", data.user_id)
-sync_finger_print()

@@ -160,19 +160,5 @@ def sync_finger_print():
                 print("match found at ", data.user_id)
 
 
-def get_att_logs():
-    con()
-    att = []
-    att_logs = dev.get_att_logs()
-    temp = {}
-    for data in att_logs:
-        temp[data.id]
-
-    return att
-
-
-check_out = []
-check_in = []
-attendance = get_att_logs()
-for data in attendance:
-    print(data.att_time)
+def getAttendanceLog():
+    # Write the code here

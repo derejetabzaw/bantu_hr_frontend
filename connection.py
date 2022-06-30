@@ -1,5 +1,6 @@
 import mysql.connector as mysql
 from datetime import date
+from numpy import full
 from pymysql import MySQLError
 # from tabulate import tabulate
 
@@ -256,6 +257,32 @@ try:
             bantudb.commit()
             print("Machine Added Successfully!")
             viewMachines()
+
+        def viewAttendance():
+            mycursor.execute("SELECT * FROM attendance_log;")
+            # Get all records
+            records = mycursor.fetchall()
+
+            for temp in records:
+                print(temp)
+
+            return records
+
+        def attendance(devicePersonel_id, check_date, check_in, check_out, worked_hours):
+            mycursor.execute(
+                f"SELECT full_name FROM personel WHERE devicePersonel_id = {devicePersonel_id} "
+            )
+            full_name = mycursor.fetchone()
+
+            mycursor.execute(
+
+                """INSERT INTO attendance_log (devicepersonel, full_name, check_date, check_in, check_out, worked_hours)
+                                    VALUES (%s, %s, %s, %s, %s, %s)""",
+                (devicePersonel_id, full_name, check_date,
+                 check_in, check_out, worked_hours),
+            )
+            bantudb.commit()
+            viewAttendance()
 
     except Exception as e:
         print("MySQL Query Error!")

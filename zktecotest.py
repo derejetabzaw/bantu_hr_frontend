@@ -1,3 +1,4 @@
+from fpmachine import models
 from fpmachine.devices import ZMM220_TFT
 from fpmachine.models import UserInfo
 import pandas as pd
@@ -157,3 +158,21 @@ def sync_finger_print():
                     fingerprint=1, devicePersonel_id=data.user_id
                 )
                 print("match found at ", data.user_id)
+
+
+def get_att_logs():
+    con()
+    att = []
+    att_logs = dev.get_att_logs()
+    temp = {}
+    for data in att_logs:
+        temp[data.id]
+
+    return att
+
+
+check_out = []
+check_in = []
+attendance = get_att_logs()
+for data in attendance:
+    print(data.att_time)

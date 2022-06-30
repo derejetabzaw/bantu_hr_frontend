@@ -157,3 +157,6 @@ def sync_finger_print():
                     fingerprint=1, devicePersonel_id=data.user_id
                 )
                 print("match found at ", data.user_id)
+
+def getAttendanceLog():
+    #Write the code here

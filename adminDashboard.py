@@ -5276,6 +5276,17 @@ class Ui_AdminDashBoard(object):
                 self.tableWidget_28.setItem(
                     row_num, column_num, QTableWidgetItem(str(data))
                 )
+    
+    def getAttedanceLog(self):
+        tblData = dev.getAttendanceLog()
+        print("\n")
+        self.tableWidget_28.setRowCount(0) # Change table names only
+        for row_num, row_data in enumerate(tblData):
+            self.tableWidget_28.insertRow(row_num)
+            for column_num, data in enumerate(row_data):
+                self.tableWidget_28.setItem(
+                    row_num, column_num, QTableWidgetItem(str(data))
+                )
 
     def AddUserToDevice(self):
         dev.add_user(

@@ -52,8 +52,7 @@ create table personel
     fingerprint int default 0
 );
 
-insert into personel values
-(1,"bio_scanner","ap619","192.168.1.1",80,1);
+
 select *from personel;
 
 select current_date();
@@ -111,5 +110,15 @@ create table alarmSetting
  approval_alert boolean,
  pop_alert boolean
 );
-select * from Department;
-select * from Holiday
+create table attendance_log
+(
+	attendance_id int primary key auto_increment,
+    devicepersonel int,
+    full_name varchar(50),
+    check_date date,
+    check_in time,
+    check_out time,
+    worked_hours time
+);
+
+

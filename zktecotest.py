@@ -1,3 +1,4 @@
+from fpmachine import models
 from fpmachine.devices import ZMM220_TFT
 from fpmachine.models import UserInfo
 import pandas as pd
@@ -158,5 +159,6 @@ def sync_finger_print():
                 )
                 print("match found at ", data.user_id)
 
+
 def getAttendanceLog():
-    #Write the code here
+    # Write the code here

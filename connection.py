@@ -268,7 +268,7 @@ try:
 
             return records
 
-        def attendance(devicePersonel_id, check_date, check_in, check_out, worked_hours):
+        def attendance(devicePersonel_id, check_date, check_in, check_out, worked_hours): 
             mycursor.execute(
                 f"SELECT full_name FROM personel WHERE devicePersonel_id = {devicePersonel_id} "
             )

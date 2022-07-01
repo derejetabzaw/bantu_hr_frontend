@@ -281,6 +281,7 @@ try:
                 (devicePersonel_id, full_name, check_date,
                  check_in, check_out, worked_hours),
             )
+            
             bantudb.commit()
             viewAttendance()
 

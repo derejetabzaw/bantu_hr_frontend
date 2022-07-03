@@ -1,8 +1,9 @@
-from fpmachine import models
+from calendar import c
 from fpmachine.devices import ZMM220_TFT
 from fpmachine.models import UserInfo
 import pandas as pd
 import connection as dbcon
+import datetime
 
 
 ip = "192.168.1.105"
@@ -160,5 +161,32 @@ def sync_finger_print():
                 print("match found at ", data.user_id)
 
 
-def getAttendanceLog():
-    # Write the code here
+def get_date(date):
+    pass
+# this function is resource demanding
+
+
+def attendance_logs(id):
+    con()
+    att = dev.get_att_logs()
+    attendance_data = []
+    for data in att:
+        if(int(data.person_id) == id):
+            attendance_data.append(data.att_time)
+    return attendance_data
+
+
+# def Sychronizing_attendance():
+#     registed_users = dbcon.get_registered_users()
+#     attendace_data = []
+#     for id in registed_users:
+#         print(id)
+#         attendace_data.append(attendance_logs(id))
+#         date = attendace_data[0].date()
+#         check_in = attendace_data[0].time()
+#         check_out = attendace_data[1].time()
+#         print("success")
+#         # dbcon.attendance(id, date, check_in, check_out, 0)
+
+
+# Sychronizing_attendance()

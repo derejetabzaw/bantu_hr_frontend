@@ -50,11 +50,7 @@ create table personel
     paygrade double null,
     image longblob null,
     fingerprint int default 0
-);
-
-
-select *from personel;
-
+)
 select current_date();
 create table Department
 (
@@ -120,5 +116,8 @@ create table attendance_log
     check_out time,
     worked_hours time
 );
+drop table attendance_log;
+select *from attendance_log;
 
+	
 

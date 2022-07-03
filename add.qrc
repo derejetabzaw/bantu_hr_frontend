@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="addimgae">
+    <file>add_dive.png</file>
+  </qresource>
+</RCC>

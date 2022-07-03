@@ -68,7 +68,7 @@ class Ui_AdminDashBoard(object):
         item = QtWidgets.QTableWidgetItem()
         self.tableWidget_11.setHorizontalHeaderItem(1, item)
         self.label_18 = QtWidgets.QLabel(self.frame_3)
-        self.label_18.setGeometry(QtCore.QRect(10, 500, 161, 28))
+        self.label_18.setGeometry(QtCore.QRect(10, 500, 281, 28))
         font = QtGui.QFont()
         font.setFamily("Yu Gothic UI Semibold")
         font.setPointSize(14)
@@ -257,7 +257,6 @@ class Ui_AdminDashBoard(object):
         self.Empment_cmbx.setStyleSheet("border :1px solid #0076bd;\n"
                                         "border-radius:10px;")
         self.Empment_cmbx.setObjectName("Empment_cmbx")
-        self.Empment_cmbx.addItem("")
         self.Empment_cmbx.addItem("")
         self.Empment_cmbx.addItem("")
         self.Empment_cmbx.addItem("")
@@ -908,7 +907,7 @@ class Ui_AdminDashBoard(object):
         self.horizontalLayoutWidget_16 = QtWidgets.QWidget(
             self.DepartmentwidgetPage1)
         self.horizontalLayoutWidget_16.setGeometry(
-            QtCore.QRect(40, 230, 791, 80))
+            QtCore.QRect(40, 230, 531, 80))
         self.horizontalLayoutWidget_16.setObjectName(
             "horizontalLayoutWidget_16")
         self.horizontalLayout_17 = QtWidgets.QHBoxLayout(
@@ -959,9 +958,9 @@ class Ui_AdminDashBoard(object):
         self.cancel_depbtn.setObjectName("cancel_depbtn")
         self.horizontalLayout_17.addWidget(self.cancel_depbtn)
         self.treeWidget = QtWidgets.QTreeWidget(self.DepartmentwidgetPage1)
-        self.treeWidget.setGeometry(QtCore.QRect(470, 440, 256, 192))
+        self.treeWidget.setGeometry(QtCore.QRect(160, 330, 831, 371))
         self.treeWidget.setObjectName("treeWidget")
-        self.treeWidget.headerItem().setText(0, "1")
+        self.treeWidget.headerItem().setText(0, "company")
         self.Departmentwidget.addTab(self.DepartmentwidgetPage1, "")
         self.DepartmentwidgetPage2 = QtWidgets.QWidget()
         self.DepartmentwidgetPage2.setObjectName("DepartmentwidgetPage2")
@@ -1542,44 +1541,112 @@ class Ui_AdminDashBoard(object):
         self.tab_43 = QtWidgets.QWidget()
         self.tab_43.setObjectName("tab_43")
         self.stackedWidget = QtWidgets.QStackedWidget(self.tab_43)
-        self.stackedWidget.setGeometry(QtCore.QRect(140, 0, 1920, 1000))
+        self.stackedWidget.setGeometry(QtCore.QRect(160, 0, 1920, 1000))
         self.stackedWidget.setObjectName("stackedWidget")
-        self.page_4 = QtWidgets.QWidget()
-        self.page_4.setObjectName("page_4")
-        self.label_85 = QtWidgets.QLabel(self.page_4)
-        self.label_85.setGeometry(QtCore.QRect(320, 30, 681, 201))
+        self.homepage = QtWidgets.QWidget()
+        self.homepage.setObjectName("homepage")
+        self.pushButton = QtWidgets.QPushButton(self.homepage)
+        self.pushButton.setGeometry(QtCore.QRect(170, 290, 351, 191))
+        self.pushButton.setStyleSheet("")
+        self.pushButton.setText("")
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap("add_dive.png"),
+                       QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.pushButton.setIcon(icon)
+        self.pushButton.setIconSize(QtCore.QSize(160, 160))
+        self.pushButton.setObjectName("pushButton")
+        self.pushButton_4 = QtWidgets.QPushButton(self.homepage)
+        self.pushButton_4.setGeometry(QtCore.QRect(540, 290, 351, 191))
+        self.pushButton_4.setText("")
+        icon1 = QtGui.QIcon()
+        icon1.addPixmap(QtGui.QPixmap("Delete user.png"),
+                        QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.pushButton_4.setIcon(icon1)
+        self.pushButton_4.setIconSize(QtCore.QSize(150, 150))
+        self.pushButton_4.setObjectName("pushButton_4")
+        self.pushButton_5 = QtWidgets.QPushButton(self.homepage)
+        self.pushButton_5.setGeometry(QtCore.QRect(910, 280, 351, 201))
+        self.pushButton_5.setText("")
+        icon2 = QtGui.QIcon()
+        icon2.addPixmap(QtGui.QPixmap(
+            "iconmonstr-id-card-thin-240.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.pushButton_5.setIcon(icon2)
+        self.pushButton_5.setIconSize(QtCore.QSize(150, 150))
+        self.pushButton_5.setObjectName("pushButton_5")
+        self.label_14 = QtWidgets.QLabel(self.homepage)
+        self.label_14.setGeometry(QtCore.QRect(280, 500, 141, 31))
         font = QtGui.QFont()
         font.setFamily("Yu Gothic UI Semibold")
-        font.setPointSize(12)
+        font.setPointSize(14)
         font.setBold(True)
         font.setWeight(75)
-        self.label_85.setFont(font)
-        self.label_85.setObjectName("label_85")
-        self.horizontalLayoutWidget_12 = QtWidgets.QWidget(self.page_4)
-        self.horizontalLayoutWidget_12.setGeometry(
-            QtCore.QRect(210, 370, 911, 231))
-        self.horizontalLayoutWidget_12.setObjectName(
-            "horizontalLayoutWidget_12")
-        self.horizontalLayout_2 = QtWidgets.QHBoxLayout(
-            self.horizontalLayoutWidget_12)
-        self.horizontalLayout_2.setContentsMargins(0, 0, 0, 0)
-        self.horizontalLayout_2.setObjectName("horizontalLayout_2")
-        self.pushButton = QtWidgets.QPushButton(self.horizontalLayoutWidget_12)
-        self.pushButton.setObjectName("pushButton")
-        self.horizontalLayout_2.addWidget(self.pushButton)
-        self.pushButton_4 = QtWidgets.QPushButton(
-            self.horizontalLayoutWidget_12)
-        self.pushButton_4.setObjectName("pushButton_4")
-        self.horizontalLayout_2.addWidget(self.pushButton_4)
-        self.pushButton_5 = QtWidgets.QPushButton(
-            self.horizontalLayoutWidget_12)
-        self.pushButton_5.setObjectName("pushButton_5")
-        self.horizontalLayout_2.addWidget(self.pushButton_5)
-        self.stackedWidget.addWidget(self.page_4)
-        self.page = QtWidgets.QWidget()
-        self.page.setObjectName("page")
-        self.tableWidget_12 = QtWidgets.QTableWidget(self.page)
-        self.tableWidget_12.setGeometry(QtCore.QRect(220, 60, 881, 311))
+        self.label_14.setFont(font)
+        self.label_14.setObjectName("label_14")
+        self.label_34 = QtWidgets.QLabel(self.homepage)
+        self.label_34.setGeometry(QtCore.QRect(580, 500, 171, 31))
+        font = QtGui.QFont()
+        font.setFamily("Yu Gothic UI Semibold")
+        font.setPointSize(14)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_34.setFont(font)
+        self.label_34.setObjectName("label_34")
+        self.label_35 = QtWidgets.QLabel(self.homepage)
+        self.label_35.setGeometry(QtCore.QRect(980, 490, 181, 31))
+        font = QtGui.QFont()
+        font.setFamily("Yu Gothic UI Semibold")
+        font.setPointSize(14)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_35.setFont(font)
+        self.label_35.setObjectName("label_35")
+        self.stackedWidget.addWidget(self.homepage)
+        self.AddDevice = QtWidgets.QWidget()
+        self.AddDevice.setObjectName("AddDevice")
+        self.label_86 = QtWidgets.QLabel(self.AddDevice)
+        self.label_86.setGeometry(QtCore.QRect(370, 40, 161, 28))
+        font = QtGui.QFont()
+        font.setFamily("Yu Gothic UI Semibold")
+        font.setPointSize(14)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_86.setFont(font)
+        self.label_86.setObjectName("label_86")
+        self.formLayoutWidget_16 = QtWidgets.QWidget(self.AddDevice)
+        self.formLayoutWidget_16.setGeometry(QtCore.QRect(10, 110, 321, 61))
+        self.formLayoutWidget_16.setObjectName("formLayoutWidget_16")
+        self.formLayout_18 = QtWidgets.QFormLayout(self.formLayoutWidget_16)
+        self.formLayout_18.setContentsMargins(0, 0, 0, 0)
+        self.formLayout_18.setObjectName("formLayout_18")
+        self.label_128 = QtWidgets.QLabel(self.formLayoutWidget_16)
+        font = QtGui.QFont()
+        font.setFamily("Yu Gothic UI Semibold")
+        font.setPointSize(11)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_128.setFont(font)
+        self.label_128.setObjectName("label_128")
+        self.formLayout_18.setWidget(
+            2, QtWidgets.QFormLayout.LabelRole, self.label_128)
+        self.lineEdit_58 = QtWidgets.QLineEdit(self.formLayoutWidget_16)
+        self.lineEdit_58.setMinimumSize(QtCore.QSize(20, 30))
+        self.lineEdit_58.setStyleSheet("border :1px solid #0076bd;\n"
+                                       "border-radius:10px;\n"
+                                       "")
+        self.lineEdit_58.setObjectName("lineEdit_58")
+        self.formLayout_18.setWidget(
+            2, QtWidgets.QFormLayout.FieldRole, self.lineEdit_58)
+        self.label_12 = QtWidgets.QLabel(self.AddDevice)
+        self.label_12.setGeometry(QtCore.QRect(20, 70, 141, 28))
+        font = QtGui.QFont()
+        font.setFamily("Yu Gothic UI Semibold")
+        font.setPointSize(14)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_12.setFont(font)
+        self.label_12.setObjectName("label_12")
+        self.tableWidget_12 = QtWidgets.QTableWidget(self.AddDevice)
+        self.tableWidget_12.setGeometry(QtCore.QRect(340, 90, 881, 311))
         self.tableWidget_12.setObjectName("tableWidget_12")
         self.tableWidget_12.setColumnCount(6)
         self.tableWidget_12.setRowCount(0)
@@ -1595,52 +1662,9 @@ class Ui_AdminDashBoard(object):
         self.tableWidget_12.setHorizontalHeaderItem(4, item)
         item = QtWidgets.QTableWidgetItem()
         self.tableWidget_12.setHorizontalHeaderItem(5, item)
-        self.label_86 = QtWidgets.QLabel(self.page)
-        self.label_86.setGeometry(QtCore.QRect(220, 30, 161, 28))
-        font = QtGui.QFont()
-        font.setFamily("Yu Gothic UI Semibold")
-        font.setPointSize(14)
-        font.setBold(True)
-        font.setWeight(75)
-        self.label_86.setFont(font)
-        self.label_86.setObjectName("label_86")
-        self.stackedWidget.addWidget(self.page)
-        self.page_3 = QtWidgets.QWidget()
-        self.page_3.setObjectName("page_3")
-        self.label_87 = QtWidgets.QLabel(self.page_3)
-        self.label_87.setGeometry(QtCore.QRect(870, 80, 231, 61))
-        font = QtGui.QFont()
-        font.setFamily("Yu Gothic UI Semibold")
-        font.setPointSize(12)
-        font.setBold(True)
-        font.setWeight(75)
-        self.label_87.setFont(font)
-        self.label_87.setObjectName("label_87")
-        self.stackedWidget.addWidget(self.page_3)
-        self.page_5 = QtWidgets.QWidget()
-        self.page_5.setObjectName("page_5")
-        self.label_88 = QtWidgets.QLabel(self.page_5)
-        self.label_88.setGeometry(QtCore.QRect(950, 80, 231, 61))
-        font = QtGui.QFont()
-        font.setFamily("Yu Gothic UI Semibold")
-        font.setPointSize(12)
-        font.setBold(True)
-        font.setWeight(75)
-        self.label_88.setFont(font)
-        self.label_88.setObjectName("label_88")
-        self.stackedWidget.addWidget(self.page_5)
-        self.label_12 = QtWidgets.QLabel(self.tab_43)
-        self.label_12.setGeometry(QtCore.QRect(10, 70, 111, 28))
-        font = QtGui.QFont()
-        font.setFamily("Yu Gothic UI Semibold")
-        font.setPointSize(14)
-        font.setBold(True)
-        font.setWeight(75)
-        self.label_12.setFont(font)
-        self.label_12.setObjectName("label_12")
-        self.horizontalLayoutWidget_31 = QtWidgets.QWidget(self.tab_43)
+        self.horizontalLayoutWidget_31 = QtWidgets.QWidget(self.AddDevice)
         self.horizontalLayoutWidget_31.setGeometry(
-            QtCore.QRect(10, 180, 311, 41))
+            QtCore.QRect(10, 170, 321, 41))
         self.horizontalLayoutWidget_31.setObjectName(
             "horizontalLayoutWidget_31")
         self.horizontalLayout_34 = QtWidgets.QHBoxLayout(
@@ -1676,30 +1700,31 @@ class Ui_AdminDashBoard(object):
                                            "padding-bottom:0px")
         self.cancel_devbtn_3.setObjectName("cancel_devbtn_3")
         self.horizontalLayout_34.addWidget(self.cancel_devbtn_3)
-        self.formLayoutWidget_16 = QtWidgets.QWidget(self.tab_43)
-        self.formLayoutWidget_16.setGeometry(QtCore.QRect(10, 120, 311, 61))
-        self.formLayoutWidget_16.setObjectName("formLayoutWidget_16")
-        self.formLayout_18 = QtWidgets.QFormLayout(self.formLayoutWidget_16)
-        self.formLayout_18.setContentsMargins(0, 0, 0, 0)
-        self.formLayout_18.setObjectName("formLayout_18")
-        self.label_128 = QtWidgets.QLabel(self.formLayoutWidget_16)
+        self.stackedWidget.addWidget(self.AddDevice)
+        self.Edit = QtWidgets.QWidget()
+        self.Edit.setObjectName("Edit")
+        self.label_36 = QtWidgets.QLabel(self.Edit)
+        self.label_36.setGeometry(QtCore.QRect(660, 110, 201, 41))
         font = QtGui.QFont()
         font.setFamily("Yu Gothic UI Semibold")
-        font.setPointSize(11)
+        font.setPointSize(14)
         font.setBold(True)
         font.setWeight(75)
-        self.label_128.setFont(font)
-        self.label_128.setObjectName("label_128")
-        self.formLayout_18.setWidget(
-            2, QtWidgets.QFormLayout.LabelRole, self.label_128)
-        self.lineEdit_58 = QtWidgets.QLineEdit(self.formLayoutWidget_16)
-        self.lineEdit_58.setMinimumSize(QtCore.QSize(20, 30))
-        self.lineEdit_58.setStyleSheet("border :1px solid #0076bd;\n"
-                                       "border-radius:10px;\n"
-                                       "")
-        self.lineEdit_58.setObjectName("lineEdit_58")
-        self.formLayout_18.setWidget(
-            2, QtWidgets.QFormLayout.FieldRole, self.lineEdit_58)
+        self.label_36.setFont(font)
+        self.label_36.setObjectName("label_36")
+        self.stackedWidget.addWidget(self.Edit)
+        self.delete_2 = QtWidgets.QWidget()
+        self.delete_2.setObjectName("delete_2")
+        self.label_37 = QtWidgets.QLabel(self.delete_2)
+        self.label_37.setGeometry(QtCore.QRect(770, 110, 211, 41))
+        font = QtGui.QFont()
+        font.setFamily("Yu Gothic UI Semibold")
+        font.setPointSize(14)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_37.setFont(font)
+        self.label_37.setObjectName("label_37")
+        self.stackedWidget.addWidget(self.delete_2)
         self.tabWidget_11.addTab(self.tab_43, "")
         self.tab_47 = QtWidgets.QWidget()
         self.tab_47.setObjectName("tab_47")
@@ -1738,10 +1763,10 @@ class Ui_AdminDashBoard(object):
                                         "color:#0076bd;\n"
                                         "font-family:monospace;\n"
                                         "font-size:20px")
-        icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap(
+        icon3 = QtGui.QIcon()
+        icon3.addPixmap(QtGui.QPixmap(
             "iconmonstr-power-on-off-10-240.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.pushButton_3.setIcon(icon)
+        self.pushButton_3.setIcon(icon3)
         self.pushButton_3.setIconSize(QtCore.QSize(50, 50))
         self.pushButton_3.setObjectName("pushButton_3")
         self.verticalLayout_7.addWidget(self.pushButton_3)
@@ -4258,17 +4283,16 @@ class Ui_AdminDashBoard(object):
         self.actionSetting_Approver_2.setObjectName("actionSetting_Approver_2")
 
         self.retranslateUi(AdminDashBoard)
-        self.tabWidget_2.setCurrentIndex(0)
+        self.tabWidget_2.setCurrentIndex(1)
         self.tabWidget.setCurrentIndex(0)
         self.tabWidget_3.setCurrentIndex(0)
         self.tabWidget_7.setCurrentIndex(0)
         self.Departmentwidget.setCurrentIndex(0)
-        self.AddArea.setCurrentIndex(0)
+        self.AddArea.setCurrentIndex(3)
         self.tabWidget_9.setCurrentIndex(0)
         self.tabWidget_10.setCurrentIndex(0)
         self.tabWidget_11.setCurrentIndex(0)
-        self.stackedWidget.setCurrentIndex(0)
-        self.tabWidget_4.setCurrentIndex(0)
+        self.tabWidget_4.setCurrentIndex(1)
         self.tabWidget_13.setCurrentIndex(0)
         self.tabWidget_12.setCurrentIndex(0)
         self.tabWidget_14.setCurrentIndex(0)
@@ -4287,7 +4311,6 @@ class Ui_AdminDashBoard(object):
         self.tabWidget_6.setCurrentIndex(0)
         self.tabWidget_17.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(AdminDashBoard)
-        # button events
         self.okbtn.clicked.connect(lambda x: self.get_personel_added())
         self.okbtn_4.clicked.connect(lambda x: self.connectMachine())
         #self.area_okbtn.clicked.connect(lambda x: self.add_area())
@@ -4304,12 +4327,23 @@ class Ui_AdminDashBoard(object):
         self.tabWidget_3.currentChanged.connect(
             lambda x: self.get_Personel())
         self.tabWidget_9.currentChanged.connect(lambda x: self.get_Machines())
+        self.tabWidget_4.currentChanged.connect(
+            lambda x: self.intialize_attedance())
         self.AddArea.currentChanged.connect(lambda x: self.getDeviceUsers())
         self.okbtn_12.clicked.connect(lambda x: self.get_csv())
        # self.dev_okbtn_2.clicked.connect(lambda x: self.addMachine())
         self.syncFP.clicked.connect(lambda x: self.sync_finger_print())
         self.cnclbtn_2.clicked.connect(lambda x: self.disconnect())
         #self.cancel_devbtn_2.clicked.connect(lambda x: self.clearIp())
+        self.pushButton.clicked.connect(
+            lambda x: self.display_add_devcie("add"))
+        self.pushButton_4.clicked.connect(
+            lambda x: self.display_add_devcie("delete"))
+        self.pushButton_5.clicked.connect(
+            lambda x: self.display_add_devcie("edit"))
+        self.dep_okbtn.clicked.connect(lambda x: self.add_to_tree())
+        self.treeWidget.itemSelectionChanged.connect(
+            lambda: self.load_from_database())
 
     def retranslateUi(self, AdminDashBoard):
         _translate = QtCore.QCoreApplication.translate
@@ -4351,10 +4385,10 @@ class Ui_AdminDashBoard(object):
         self.label_10.setText(_translate("AdminDashBoard", "Employement type"))
         self.Empment_cmbx.setItemText(0, _translate(
             "AdminDashBoard", "Choose Employement Type"))
-        self.Empment_cmbx.setItemText(1, _translate("AdminDashBoard", "type1"))
-        self.Empment_cmbx.setItemText(2, _translate("AdminDashBoard", "Type2"))
         self.Empment_cmbx.setItemText(
-            3, _translate("AdminDashBoard", "Type 3"))
+            1, _translate("AdminDashBoard", "Permanent"))
+        self.Empment_cmbx.setItemText(
+            2, _translate("AdminDashBoard", "Temporary"))
         self.label_11.setText(_translate("AdminDashBoard", "Employement Date"))
         self.label_13.setText(_translate("AdminDashBoard", "Full Name"))
         self.label_15.setText(_translate("AdminDashBoard", "Job title"))
@@ -4455,7 +4489,7 @@ class Ui_AdminDashBoard(object):
         self.label_44.setText(_translate(
             "AdminDashBoard", "parent Department"))
         self.dep_cmbx_6.setItemText(0, _translate(
-            "AdminDashBoard", "Choose Department"))
+            "AdminDashBoard", "set current as parent"))
         self.dep_cmbx_6.setItemText(1, _translate("AdminDashBoard", "Dep1"))
         self.dep_cmbx_6.setItemText(2, _translate("AdminDashBoard", "Dep2"))
         self.dep_okbtn.setText(_translate("AdminDashBoard", "ok"))
@@ -4555,12 +4589,12 @@ class Ui_AdminDashBoard(object):
         self.label_122.setText(_translate("AdminDashBoard", "Area id"))
         self.AddArea.setTabText(self.AddArea.indexOf(
             self.Adddevice), _translate("AdminDashBoard", "Add device"))
-        self.label_85.setText(_translate(
-            "AdminDashBoard", "Device Management"))
-        self.pushButton.setText(_translate("AdminDashBoard", "Add Device"))
-        self.pushButton_4.setText(_translate("AdminDashBoard", "Edit Device"))
-        self.pushButton_5.setText(_translate(
-            "AdminDashBoard", "Delete Device"))
+        self.label_14.setText(_translate("AdminDashBoard", "Add Device"))
+        self.label_34.setText(_translate("AdminDashBoard", "Delete Device"))
+        self.label_35.setText(_translate("AdminDashBoard", "Edit Device"))
+        self.label_86.setText(_translate("AdminDashBoard", "Device List"))
+        self.label_128.setText(_translate("AdminDashBoard", "Ip Address"))
+        self.label_12.setText(_translate("AdminDashBoard", "Add Device"))
         item = self.tableWidget_12.horizontalHeaderItem(0)
         item.setText(_translate("AdminDashBoard", "Device Id"))
         item = self.tableWidget_12.horizontalHeaderItem(1)
@@ -4573,13 +4607,10 @@ class Ui_AdminDashBoard(object):
         item.setText(_translate("AdminDashBoard", "Port Number"))
         item = self.tableWidget_12.horizontalHeaderItem(5)
         item.setText(_translate("AdminDashBoard", "MAC Address"))
-        self.label_86.setText(_translate("AdminDashBoard", "Device List"))
-        self.label_87.setText(_translate("AdminDashBoard", "Edit  personel"))
-        self.label_88.setText(_translate("AdminDashBoard", "Delete device"))
-        self.label_12.setText(_translate("AdminDashBoard", "Add Device"))
         self.dev_okbtn_3.setText(_translate("AdminDashBoard", "Save"))
         self.cancel_devbtn_3.setText(_translate("AdminDashBoard", "Cancel"))
-        self.label_128.setText(_translate("AdminDashBoard", "Ip Address"))
+        self.label_36.setText(_translate("AdminDashBoard", "Delete Devcie"))
+        self.label_37.setText(_translate("AdminDashBoard", "Edit Device"))
         self.tabWidget_11.setTabText(self.tabWidget_11.indexOf(
             self.tab_43), _translate("AdminDashBoard", "Device Operations"))
         self.tabWidget_11.setTabText(self.tabWidget_11.indexOf(
@@ -5152,7 +5183,6 @@ class Ui_AdminDashBoard(object):
             _translate("AdminDashBoard", "setting Department"))
         self.actionSetting_Approver_2.setText(
             _translate("AdminDashBoard", "Setting Approver"))
-
     image_file = ""
 
     def get_personel_added(self):
@@ -5206,7 +5236,8 @@ class Ui_AdminDashBoard(object):
         dep_id = self.lineEdit_15.text()
         dep_name = self.lineEdit_3.text()
         par_dep = self.dep_cmbx_6.currentText()
-        con.addDepartment(dep_id, dep_name, par_dep)
+
+        #con.addDepartment(dep_id, dep_name, par_dep)
 
     def add_holiday(self):
         holiday_id = self.lineEdit_52.text()
@@ -5276,11 +5307,11 @@ class Ui_AdminDashBoard(object):
                 self.tableWidget_28.setItem(
                     row_num, column_num, QTableWidgetItem(str(data))
                 )
-    
+
     def getAttedanceLog(self):
         tblData = dev.getAttendanceLog()
         print("\n")
-        self.tableWidget_28.setRowCount(0) # Change table names only
+        self.tableWidget_28.setRowCount(0)  # Change table names only
         for row_num, row_data in enumerate(tblData):
             self.tableWidget_28.insertRow(row_num)
             for column_num, data in enumerate(row_data):
@@ -5365,3 +5396,42 @@ class Ui_AdminDashBoard(object):
         self.lineEdit_8.setText("")
         self.lineEdit_10.setText("")
         self.lineEdit_11.setText("")
+
+    def intialize_attedance(self):
+        tblData = dev.Sychronizing_attendance()
+        print("\n")
+        self.tableWidget_13.setRowCount(0)  # Change table names only
+        for row_num, row_data in enumerate(tblData):
+            self.tableWidget_28.insertRow(row_num)
+            for column_num, data in enumerate(row_data):
+                self.tableWidget_13.setItem(
+                    row_num, column_num, QTableWidgetItem(str(data))
+                )
+
+    def display_add_devcie(self, status):
+        if status == "add":
+            self.stackedWidget.setCurrentIndex(1)
+        if status == "delete":
+            self.stackedWidget.setCurrentIndex(2)
+        if status == "edit":
+            self.stackedWidget.setCurrentIndex(3)
+
+    def add_to_tree(self):
+        index = self.dep_cmbx_6.currentIndex()
+        item = QTreeWidgetItem()
+        dep = self.lineEdit_3.text()
+        if index == 0:
+            self.treeWidget.setHeaderLabel(dep)
+            item.setText(0, dep)
+            self.treeWidget.addTopLevelItem(item)
+            self.lineEdit_3.setText("")
+            index += 1
+        elif index == 1:
+            header = self.dep_cmbx_6.currentText()
+            self.treeWidget.setHeaderLabel(header)
+            item.setText(0, dep)
+            self.treeWidget.addTopLevelItem(item)
+
+    def load_from_database(self):
+        # print([i.text(0) for i in self.treeWidget.selectedItems()][0])
+        pass

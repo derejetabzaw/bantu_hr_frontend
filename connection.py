@@ -1,7 +1,11 @@
+from xml.dom.domreg import registered
 import mysql.connector as mysql
 from datetime import date
+import datetime
 from numpy import full
 from pymysql import MySQLError
+import itertools
+
 # from tabulate import tabulate
 
 # Change the below config code to make it connect with your database
@@ -278,15 +282,23 @@ try:
 
                 """INSERT INTO attendance_log (devicepersonel, full_name, check_date, check_in, check_out, worked_hours)
                                     VALUES (%s, %s, %s, %s, %s, %s)""",
-                (devicePersonel_id, full_name, check_date,
+                (devicePersonel_id, full_name[0], check_date,
                  check_in, check_out, worked_hours),
             )
-            
+
             bantudb.commit()
             viewAttendance()
 
     except Exception as e:
         print("MySQL Query Error!")
+
+    def get_registered_users():
+        sql = 'select devicePersonel_id from personel where fingerprint = 1'
+        mycursor.execute(sql)
+        registeredusers = mycursor.fetchall()
+        bantudb.commit()
+        out = list(itertools.chain(*registeredusers))
+        return out
 
     # finally:
     #       if bantudb.is_connected():
@@ -295,3 +307,4 @@ try:
 
 except Exception as e:
     print("MySQL Error! Cannot Connect to the Database.")
+print(get_registered_users())

@@ -3,7 +3,7 @@ from fpmachine.devices import ZMM220_TFT
 from fpmachine.models import UserInfo
 import pandas as pd
 import connection as dbcon
-import datetime
+from datetime import datetime
 
 
 ip = "192.168.1.105"
@@ -152,20 +152,21 @@ def sync_finger_print():
     print("in callback")
     unregistered_finger_prints = dbcon.fingerprint_device_id()
     list_user = dev.get_fps()
+
     for data in list_user:
+        print("data:", data.user_id)
         for device_fp in unregistered_finger_prints:
+            print("data12:", data.user_id)
+            print("unreg", device_fp)
             if (data.user_id == device_fp):
+                print('list', device_fp)
                 dbcon.editPersonelFingerprint(
                     fingerprint=1, devicePersonel_id=data.user_id
                 )
                 print("match found at ", data.user_id)
 
 
-def get_date(date):
-    pass
 # this function is resource demanding
-
-
 def attendance_logs(id):
     con()
     att = dev.get_att_logs()
@@ -176,17 +177,25 @@ def attendance_logs(id):
     return attendance_data
 
 
-# def Sychronizing_attendance():
-#     registed_users = dbcon.get_registered_users()
-#     attendace_data = []
-#     for id in registed_users:
-#         print(id)
-#         attendace_data.append(attendance_logs(id))
-#         date = attendace_data[0].date()
-#         check_in = attendace_data[0].time()
-#         check_out = attendace_data[1].time()
-#         print("success")
-#         # dbcon.attendance(id, date, check_in, check_out, 0)
+def time_diffrence(start, end):
+    t1 = datetime.strptime(start, "%H:%M:%S")
+    t2 = datetime.strptime(end, "%H:%M:%S")
+    return t2-t1
 
 
-# Sychronizing_attendance()
+def Sychronizing_attendance():
+    registed_users = dbcon.get_registered_users()
+    for id in registed_users:
+        logs = attendance_logs(id)
+        check_in, check_out = str(logs[0]), str(logs[1])
+        check_in_time = check_in.split(" ")[1]
+        date = check_in.split(" ")[0]
+        check_out_time = check_out.split(" ")[1]
+
+        worked_hours = time_diffrence(check_in_time, check_out_time)
+
+       # print("success")
+        dbcon.attendance(id, date, check_in_time, check_out_time, worked_hours)
+
+
+Sychronizing_attendance()

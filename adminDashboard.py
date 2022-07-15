@@ -887,9 +887,7 @@ class Ui_AdminDashBoard(object):
         self.dep_cmbx_6.setStyleSheet("border :1px solid #0076bd;\n"
                                       "border-radius:10px;")
         self.dep_cmbx_6.setObjectName("dep_cmbx_6")
-        self.dep_cmbx_6.addItem("")
-        self.dep_cmbx_6.addItem("")
-        self.dep_cmbx_6.addItem("")
+        self.dep_cmbx_6.addItem("use current as parent")
         self.formLayout_4.setWidget(
             2, QtWidgets.QFormLayout.FieldRole, self.dep_cmbx_6)
         self.horizontalLayout_16 = QtWidgets.QHBoxLayout()
@@ -960,7 +958,7 @@ class Ui_AdminDashBoard(object):
         self.treeWidget = QtWidgets.QTreeWidget(self.DepartmentwidgetPage1)
         self.treeWidget.setGeometry(QtCore.QRect(160, 330, 831, 371))
         self.treeWidget.setObjectName("treeWidget")
-        self.treeWidget.headerItem().setText(0, "company")
+        self.treeWidget.headerItem().setText(0, "")
         self.Departmentwidget.addTab(self.DepartmentwidgetPage1, "")
         self.DepartmentwidgetPage2 = QtWidgets.QWidget()
         self.DepartmentwidgetPage2.setObjectName("DepartmentwidgetPage2")
@@ -4314,7 +4312,6 @@ class Ui_AdminDashBoard(object):
         self.okbtn.clicked.connect(lambda x: self.get_personel_added())
         self.okbtn_4.clicked.connect(lambda x: self.connectMachine())
         #self.area_okbtn.clicked.connect(lambda x: self.add_area())
-        self.dep_okbtn.clicked.connect(lambda x: self.add_department())
         self.area_okbtn_5.clicked.connect(lambda x: self.add_holiday())
         self.dev_okbtn.clicked.connect(lambda x: self.add_device())
         self.pushButton_2.clicked.connect(lambda x: self.dialog())
@@ -4330,6 +4327,8 @@ class Ui_AdminDashBoard(object):
         self.tabWidget_4.currentChanged.connect(
             lambda x: self.intialize_attedance())
         self.AddArea.currentChanged.connect(lambda x: self.getDeviceUsers())
+        self.tabWidget_2.currentChanged.connect(
+            lambda x: self.populate_cmbx())
         self.okbtn_12.clicked.connect(lambda x: self.get_csv())
        # self.dev_okbtn_2.clicked.connect(lambda x: self.addMachine())
         self.syncFP.clicked.connect(lambda x: self.sync_finger_print())
@@ -4342,8 +4341,8 @@ class Ui_AdminDashBoard(object):
         self.pushButton_5.clicked.connect(
             lambda x: self.display_add_devcie("edit"))
         self.dep_okbtn.clicked.connect(lambda x: self.add_to_tree())
-        self.treeWidget.itemSelectionChanged.connect(
-            lambda: self.load_from_database())
+        self.dep_cmbx_6.currentIndexChanged.connect(
+            lambda x: self.state_changed())
 
     def retranslateUi(self, AdminDashBoard):
         _translate = QtCore.QCoreApplication.translate
@@ -4490,8 +4489,6 @@ class Ui_AdminDashBoard(object):
             "AdminDashBoard", "parent Department"))
         self.dep_cmbx_6.setItemText(0, _translate(
             "AdminDashBoard", "set current as parent"))
-        self.dep_cmbx_6.setItemText(1, _translate("AdminDashBoard", "Dep1"))
-        self.dep_cmbx_6.setItemText(2, _translate("AdminDashBoard", "Dep2"))
         self.dep_okbtn.setText(_translate("AdminDashBoard", "ok"))
         self.dep_saveandnwbtn.setText(
             _translate("AdminDashBoard", "save and new"))
@@ -5232,12 +5229,11 @@ class Ui_AdminDashBoard(object):
         Area = self.areacmbx.currentText()
         con.addDevice(device_id, device_name, serial_number, ip_add, port, 1)
 
-    def add_department(self):
+    def add_department(self, par_dep):
         dep_id = self.lineEdit_15.text()
         dep_name = self.lineEdit_3.text()
-        par_dep = self.dep_cmbx_6.currentText()
-
-        #con.addDepartment(dep_id, dep_name, par_dep)
+        self.dep_cmbx_6.addItem(dep_name)
+        con.addDepartment(dep_id, dep_name, par_dep)
 
     def add_holiday(self):
         holiday_id = self.lineEdit_52.text()
@@ -5416,22 +5412,49 @@ class Ui_AdminDashBoard(object):
         if status == "edit":
             self.stackedWidget.setCurrentIndex(3)
 
+    def state_changed(self):
+        self.treeWidget.clear()
+        item = QTreeWidgetItem()
+        text = self.dep_cmbx_6.currentText()
+        if self.dep_cmbx_6.currentIndex() == 0:
+            text = ""
+        child_department = con.get_parent_departements(text)
+        self.treeWidget.setHeaderLabel(text)
+        if child_department.count != 0:
+            for child in child_department:
+                item.setText(0, child)
+                self.treeWidget.addTopLevelItem(item)
+
     def add_to_tree(self):
         index = self.dep_cmbx_6.currentIndex()
         item = QTreeWidgetItem()
         dep = self.lineEdit_3.text()
+        dep_name = self.lineEdit_3.text()
         if index == 0:
-            self.treeWidget.setHeaderLabel(dep)
-            item.setText(0, dep)
-            self.treeWidget.addTopLevelItem(item)
-            self.lineEdit_3.setText("")
-            index += 1
-        elif index == 1:
-            header = self.dep_cmbx_6.currentText()
-            self.treeWidget.setHeaderLabel(header)
-            item.setText(0, dep)
-            self.treeWidget.addTopLevelItem(item)
+            if self.treeWidget.headerItem().text(0) == "":
+                self.treeWidget.setHeaderLabel(dep)
+            elif self.treeWidget.headerItem().text(0):
+                item.setText(0, dep)
+                self.treeWidget.addTopLevelItem(item)
+            self.add_department(dep_name)
+        elif index != 0:
+            current = self.dep_cmbx_6.currentIndex()
+            if current != index:
+                header = self.dep_cmbx_6.currentText()
+                self.treeWidget.setHeaderLabel(header)
+                item.setText(0, dep)
+                self.treeWidget.addTopLevelItem(item)
+            else:
+                header = self.dep_cmbx_6.currentText()
+                self.treeWidget.setHeaderLabel(header)
+                item.setText(0, dep)
+                self.treeWidget.addTopLevelItem(item)
+            self.add_department(str(self.dep_cmbx_6.currentText()))
+        self.lineEdit_3.setText("")
 
-    def load_from_database(self):
-        # print([i.text(0) for i in self.treeWidget.selectedItems()][0])
-        pass
+    def populate_cmbx(self):
+        dep_list = con.get_departments()
+        if dep_list.count == 0:
+            pass
+        else:
+            self.dep_cmbx_6.addItems(dep_list)

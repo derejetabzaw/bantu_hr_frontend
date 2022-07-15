@@ -54,11 +54,15 @@ create table personel
 select current_date();
 create table Department
 (
-		Department_id int primary key,
+		Department_id int primary key auto_increment,
         Department_name varchar(60),
         Parent_Department varchar(60)
 );
-
+insert into Department values (1,"web dev","IT");
+select *from Department;
+select Department_name from Department;
+select Department_name from Department WHERE Parent_Department = "IT";
+drop table Department;
 create table Approver
 (
 	Approver_id int primary key,

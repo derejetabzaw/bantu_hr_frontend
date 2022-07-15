@@ -6,6 +6,8 @@ from numpy import full
 from pymysql import MySQLError
 import itertools
 
+#from zktecotest import sync_finger_print
+
 # from tabulate import tabulate
 
 # Change the below config code to make it connect with your database
@@ -73,6 +75,20 @@ try:
             print("Department Deleted Successfully!")
             viewDepartment()
 
+        def get_departments():
+            sql = "select Department_name from Department"
+            cursor = mycursor.execute(sql)
+            department_names = mycursor.fetchall()
+            bantudb.commit()
+            return list(itertools.chain(*department_names))
+
+        def get_parent_departements(dep):
+            sql = f"select Department_name from Department WHERE Parent_Department = '{dep}' "
+            mycursor.execute(sql)
+            department_names = mycursor.fetchall()
+            bantudb.commit()
+            return list(itertools.chain(*department_names))
+
         def viewAreas():
             mycursor.execute("SELECT * FROM Areas;")
             for temp in mycursor:
@@ -119,14 +135,15 @@ try:
             return records
 
         def fingerprint_device_id():
-            finger_print = {}
-            mycursor.execute(
-                "SELECT devicePersonel_id ,fingerprint FROM personel where fingerprint = 0;"
-            )
-            for temp in mycursor:
-                finger_print[temp[0]] = temp[1]
 
-            return finger_print
+            mycursor.execute(
+                "SELECT devicePersonel_id FROM personel where fingerprint = 0;"
+            )
+            registeredusers = mycursor.fetchall()
+            bantudb.commit()
+            fp = list(itertools.chain(*registeredusers))
+            print(fp)
+            return fp
 
         def editPersonel(
             personel_id,
@@ -307,4 +324,5 @@ try:
 
 except Exception as e:
     print("MySQL Error! Cannot Connect to the Database.")
-print(get_registered_users())
+
+fingerprint_device_id()

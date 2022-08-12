@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="edit">
+    <file>Edit.png</file>
+  </qresource>
+</RCC>

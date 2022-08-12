@@ -325,4 +325,4 @@ try:
 except Exception as e:
     print("MySQL Error! Cannot Connect to the Database.")
 
-fingerprint_device_id()
+

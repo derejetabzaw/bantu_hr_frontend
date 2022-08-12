@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="adu">
+    <file>Assets/iconmonstr-user-8-120.png</file>
+  </qresource>
+</RCC>

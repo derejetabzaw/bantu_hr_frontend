@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="type">
+    <file>leave.png</file>
+  </qresource>
+</RCC>

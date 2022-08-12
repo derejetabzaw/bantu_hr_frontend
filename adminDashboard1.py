@@ -9,11 +9,6 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtWidgets import *
-import connection as con
-import zktecotest as dev
-from PyQt5.QtWidgets import QFileDialog
-
 
 
 class Ui_AdminDashBoard(object):
@@ -155,9 +150,9 @@ class Ui_AdminDashBoard(object):
         self.stackedWidget.setStyleSheet("background-color:#fff\n"
 "")
         self.stackedWidget.setObjectName("stackedWidget")
-        self.adduser = QtWidgets.QWidget()
-        self.adduser.setObjectName("adduser")
-        self.frame = QtWidgets.QFrame(self.adduser)
+        self.stackedWidgetPage1 = QtWidgets.QWidget()
+        self.stackedWidgetPage1.setObjectName("stackedWidgetPage1")
+        self.frame = QtWidgets.QFrame(self.stackedWidgetPage1)
         self.frame.setGeometry(QtCore.QRect(0, 0, 1361, 821))
         self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
@@ -392,21 +387,21 @@ class Ui_AdminDashBoard(object):
         self.sent_users.setObjectName("sent_users")
         self.pushButton_11 = QtWidgets.QPushButton(self.addUser)
         self.pushButton_11.setGeometry(QtCore.QRect(10, 40, 158, 141))
-        self.pushButton_11.setStyleSheet("background:url(Assets/iconmonstr-user-8-120.png);\n"
+        self.pushButton_11.setStyleSheet("background:url(:/adu/Assets/iconmonstr-user-8-120.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
         self.pushButton_11.setObjectName("pushButton_11")
         self.pushButton_12 = QtWidgets.QPushButton(self.addUser)
         self.pushButton_12.setGeometry(QtCore.QRect(10, 350, 158, 141))
-        self.pushButton_12.setStyleSheet("background:url(Assets/iconmonstr-flag-3-120.png);\n"
+        self.pushButton_12.setStyleSheet("background:url(:/pos/iconmonstr-flag-3-120.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
         self.pushButton_12.setObjectName("pushButton_12")
         self.pushButton_13 = QtWidgets.QPushButton(self.addUser)
         self.pushButton_13.setGeometry(QtCore.QRect(10, 190, 158, 141))
-        self.pushButton_13.setStyleSheet("background-image: url(Assets/iconmonstr-list-lined-120.png);\n"
+        self.pushButton_13.setStyleSheet("background-image: url(:/list/iconmonstr-list-lined-120.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
@@ -424,7 +419,7 @@ class Ui_AdminDashBoard(object):
         self.tab_10.setObjectName("tab_10")
         self.pushButton_35 = QtWidgets.QPushButton(self.tab_10)
         self.pushButton_35.setGeometry(QtCore.QRect(0, 160, 158, 141))
-        self.pushButton_35.setStyleSheet("background-image: url(Assets/iconmonstr-list-lined-120.png);\n"
+        self.pushButton_35.setStyleSheet("background-image: url(:/list/iconmonstr-list-lined-120.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
@@ -440,14 +435,14 @@ class Ui_AdminDashBoard(object):
         self.line_10.setObjectName("line_10")
         self.pushButton_36 = QtWidgets.QPushButton(self.tab_10)
         self.pushButton_36.setGeometry(QtCore.QRect(0, 10, 158, 141))
-        self.pushButton_36.setStyleSheet("background:url(Assets/iconmonstr-user-8-120.png);\n"
+        self.pushButton_36.setStyleSheet("background:url(:/adu/Assets/iconmonstr-user-8-120.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
         self.pushButton_36.setObjectName("pushButton_36")
         self.pushButton_37 = QtWidgets.QPushButton(self.tab_10)
         self.pushButton_37.setGeometry(QtCore.QRect(0, 320, 158, 141))
-        self.pushButton_37.setStyleSheet("background:url(Assets/iconmonstr-flag-3-120.png);\n"
+        self.pushButton_37.setStyleSheet("background:url(:/pos/iconmonstr-flag-3-120.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
@@ -461,10 +456,10 @@ class Ui_AdminDashBoard(object):
         self.comboBox_12.addItem("")
         self.comboBox_12.addItem("")
         self.tabWidget_3.addTab(self.tab_10, "")
-        self.stackedWidget.addWidget(self.adduser)
-        self.positionmanagement = QtWidgets.QWidget()
-        self.positionmanagement.setObjectName("positionmanagement")
-        self.label_3 = QtWidgets.QLabel(self.positionmanagement)
+        self.stackedWidget.addWidget(self.stackedWidgetPage1)
+        self.stackedWidgetPage2 = QtWidgets.QWidget()
+        self.stackedWidgetPage2.setObjectName("stackedWidgetPage2")
+        self.label_3 = QtWidgets.QLabel(self.stackedWidgetPage2)
         self.label_3.setGeometry(QtCore.QRect(260, 20, 221, 31))
         font = QtGui.QFont()
         font.setFamily("Yu Gothic UI Semibold")
@@ -473,34 +468,34 @@ class Ui_AdminDashBoard(object):
         font.setWeight(75)
         self.label_3.setFont(font)
         self.label_3.setObjectName("label_3")
-        self.pushButton_29 = QtWidgets.QPushButton(self.positionmanagement)
+        self.pushButton_29 = QtWidgets.QPushButton(self.stackedWidgetPage2)
         self.pushButton_29.setGeometry(QtCore.QRect(0, 180, 158, 141))
-        self.pushButton_29.setStyleSheet("background-image: url(Assets/iconmonstr-list-lined-120.png);\n"
+        self.pushButton_29.setStyleSheet("background-image: url(:/list/iconmonstr-list-lined-120.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
         self.pushButton_29.setObjectName("pushButton_29")
-        self.line_8 = QtWidgets.QFrame(self.positionmanagement)
+        self.line_8 = QtWidgets.QFrame(self.stackedWidgetPage2)
         self.line_8.setGeometry(QtCore.QRect(160, 0, 21, 1001))
         self.line_8.setStyleSheet("")
         self.line_8.setFrameShape(QtWidgets.QFrame.VLine)
         self.line_8.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.line_8.setObjectName("line_8")
-        self.pushButton_30 = QtWidgets.QPushButton(self.positionmanagement)
+        self.pushButton_30 = QtWidgets.QPushButton(self.stackedWidgetPage2)
         self.pushButton_30.setGeometry(QtCore.QRect(0, 30, 158, 141))
-        self.pushButton_30.setStyleSheet("background:url(Assets/iconmonstr-user-8-120.png);\n"
+        self.pushButton_30.setStyleSheet("background:url(:/adu/Assets/iconmonstr-user-8-120.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
         self.pushButton_30.setObjectName("pushButton_30")
-        self.pushButton_31 = QtWidgets.QPushButton(self.positionmanagement)
+        self.pushButton_31 = QtWidgets.QPushButton(self.stackedWidgetPage2)
         self.pushButton_31.setGeometry(QtCore.QRect(0, 340, 158, 141))
-        self.pushButton_31.setStyleSheet("background:url(Assets/iconmonstr-flag-3-120.png);\n"
+        self.pushButton_31.setStyleSheet("background:url(:/pos/iconmonstr-flag-3-120.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
         self.pushButton_31.setObjectName("pushButton_31")
-        self.comboBox_10 = QtWidgets.QComboBox(self.positionmanagement)
+        self.comboBox_10 = QtWidgets.QComboBox(self.stackedWidgetPage2)
         self.comboBox_10.setGeometry(QtCore.QRect(0, 500, 161, 91))
         self.comboBox_10.setStyleSheet("")
         self.comboBox_10.setObjectName("comboBox_10")
@@ -508,10 +503,10 @@ class Ui_AdminDashBoard(object):
         self.comboBox_10.addItem("")
         self.comboBox_10.addItem("")
         self.comboBox_10.addItem("")
-        self.stackedWidget.addWidget(self.positionmanagement)
-        self.Addposition = QtWidgets.QWidget()
-        self.Addposition.setObjectName("Addposition")
-        self.horizontalLayoutWidget = QtWidgets.QWidget(self.Addposition)
+        self.stackedWidget.addWidget(self.stackedWidgetPage2)
+        self.stackedWidgetPage3 = QtWidgets.QWidget()
+        self.stackedWidgetPage3.setObjectName("stackedWidgetPage3")
+        self.horizontalLayoutWidget = QtWidgets.QWidget(self.stackedWidgetPage3)
         self.horizontalLayoutWidget.setGeometry(QtCore.QRect(280, 330, 461, 80))
         self.horizontalLayoutWidget.setObjectName("horizontalLayoutWidget")
         self.horizontalLayout = QtWidgets.QHBoxLayout(self.horizontalLayoutWidget)
@@ -558,7 +553,7 @@ class Ui_AdminDashBoard(object):
 "padding-bottom:0px")
         self.cancel_posbtn.setObjectName("cancel_posbtn")
         self.horizontalLayout.addWidget(self.cancel_posbtn)
-        self.label_30 = QtWidgets.QLabel(self.Addposition)
+        self.label_30 = QtWidgets.QLabel(self.stackedWidgetPage3)
         self.label_30.setGeometry(QtCore.QRect(340, 30, 161, 20))
         font = QtGui.QFont()
         font.setFamily("Yu Gothic UI Semibold")
@@ -567,7 +562,7 @@ class Ui_AdminDashBoard(object):
         font.setWeight(75)
         self.label_30.setFont(font)
         self.label_30.setObjectName("label_30")
-        self.formLayoutWidget_14 = QtWidgets.QWidget(self.Addposition)
+        self.formLayoutWidget_14 = QtWidgets.QWidget(self.stackedWidgetPage3)
         self.formLayoutWidget_14.setGeometry(QtCore.QRect(280, 100, 461, 221))
         self.formLayoutWidget_14.setObjectName("formLayoutWidget_14")
         self.formLayout_14 = QtWidgets.QFormLayout(self.formLayoutWidget_14)
@@ -670,34 +665,34 @@ class Ui_AdminDashBoard(object):
         self.aprrovedbx.addItem("")
         self.aprrovedbx.addItem("")
         self.formLayout_14.setWidget(5, QtWidgets.QFormLayout.FieldRole, self.aprrovedbx)
-        self.pushButton_32 = QtWidgets.QPushButton(self.Addposition)
+        self.pushButton_32 = QtWidgets.QPushButton(self.stackedWidgetPage3)
         self.pushButton_32.setGeometry(QtCore.QRect(0, 160, 158, 141))
-        self.pushButton_32.setStyleSheet("background-image: url(Assets/iconmonstr-list-lined-120.png);\n"
+        self.pushButton_32.setStyleSheet("background-image: url(:/list/iconmonstr-list-lined-120.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
         self.pushButton_32.setObjectName("pushButton_32")
-        self.line_9 = QtWidgets.QFrame(self.Addposition)
+        self.line_9 = QtWidgets.QFrame(self.stackedWidgetPage3)
         self.line_9.setGeometry(QtCore.QRect(160, -20, 21, 1001))
         self.line_9.setStyleSheet("")
         self.line_9.setFrameShape(QtWidgets.QFrame.VLine)
         self.line_9.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.line_9.setObjectName("line_9")
-        self.pushButton_33 = QtWidgets.QPushButton(self.Addposition)
+        self.pushButton_33 = QtWidgets.QPushButton(self.stackedWidgetPage3)
         self.pushButton_33.setGeometry(QtCore.QRect(0, 10, 158, 141))
-        self.pushButton_33.setStyleSheet("background:url(Assets/iconmonstr-user-8-120.png);\n"
+        self.pushButton_33.setStyleSheet("background:url(:/adu/Assets/iconmonstr-user-8-120.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
         self.pushButton_33.setObjectName("pushButton_33")
-        self.pushButton_34 = QtWidgets.QPushButton(self.Addposition)
+        self.pushButton_34 = QtWidgets.QPushButton(self.stackedWidgetPage3)
         self.pushButton_34.setGeometry(QtCore.QRect(0, 320, 158, 141))
-        self.pushButton_34.setStyleSheet("background:url(Assets/iconmonstr-flag-3-120.png);\n"
+        self.pushButton_34.setStyleSheet("background:url(:/pos/iconmonstr-flag-3-120.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
         self.pushButton_34.setObjectName("pushButton_34")
-        self.comboBox_11 = QtWidgets.QComboBox(self.Addposition)
+        self.comboBox_11 = QtWidgets.QComboBox(self.stackedWidgetPage3)
         self.comboBox_11.setGeometry(QtCore.QRect(0, 480, 161, 91))
         self.comboBox_11.setStyleSheet("")
         self.comboBox_11.setObjectName("comboBox_11")
@@ -705,17 +700,17 @@ class Ui_AdminDashBoard(object):
         self.comboBox_11.addItem("")
         self.comboBox_11.addItem("")
         self.comboBox_11.addItem("")
-        self.stackedWidget.addWidget(self.Addposition)
-        self.Resignation_2 = QtWidgets.QWidget()
-        self.Resignation_2.setObjectName("Resignation_2")
-        self.stackedWidget_7 = QtWidgets.QStackedWidget(self.Resignation_2)
+        self.stackedWidget.addWidget(self.stackedWidgetPage3)
+        self.stackedWidgetPage4 = QtWidgets.QWidget()
+        self.stackedWidgetPage4.setObjectName("stackedWidgetPage4")
+        self.stackedWidget_7 = QtWidgets.QStackedWidget(self.stackedWidgetPage4)
         self.stackedWidget_7.setGeometry(QtCore.QRect(0, 0, 1920, 1000))
         self.stackedWidget_7.setObjectName("stackedWidget_7")
         self.addEmployeeforResignation = QtWidgets.QWidget()
         self.addEmployeeforResignation.setObjectName("addEmployeeforResignation")
         self.pushButton_17 = QtWidgets.QPushButton(self.addEmployeeforResignation)
         self.pushButton_17.setGeometry(QtCore.QRect(0, 0, 158, 141))
-        self.pushButton_17.setStyleSheet("background:url(Assets/iconmonstr-user-8-120.png);\n"
+        self.pushButton_17.setStyleSheet("background:url(:/adu/Assets/iconmonstr-user-8-120.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
@@ -728,7 +723,7 @@ class Ui_AdminDashBoard(object):
         self.line_4.setObjectName("line_4")
         self.pushButton_18 = QtWidgets.QPushButton(self.addEmployeeforResignation)
         self.pushButton_18.setGeometry(QtCore.QRect(0, 150, 158, 141))
-        self.pushButton_18.setStyleSheet("background-image: url(Assets/iconmonstr-list-lined-120.png);\n"
+        self.pushButton_18.setStyleSheet("background-image: url(:/list/iconmonstr-list-lined-120.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
@@ -743,7 +738,7 @@ class Ui_AdminDashBoard(object):
         self.comboBox_6.addItem("")
         self.pushButton_19 = QtWidgets.QPushButton(self.addEmployeeforResignation)
         self.pushButton_19.setGeometry(QtCore.QRect(0, 310, 158, 141))
-        self.pushButton_19.setStyleSheet("background:url(Assets/iconmonstr-flag-3-120.png);\n"
+        self.pushButton_19.setStyleSheet("background:url(:/pos/iconmonstr-flag-3-120.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
@@ -756,7 +751,7 @@ class Ui_AdminDashBoard(object):
         self.ReinstateEmployee.setObjectName("ReinstateEmployee")
         self.pushButton_26 = QtWidgets.QPushButton(self.ReinstateEmployee)
         self.pushButton_26.setGeometry(QtCore.QRect(0, 160, 158, 141))
-        self.pushButton_26.setStyleSheet("background-image: url(Assets/iconmonstr-list-lined-120.png);\n"
+        self.pushButton_26.setStyleSheet("background-image: url(:/list/iconmonstr-list-lined-120.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
@@ -772,14 +767,14 @@ class Ui_AdminDashBoard(object):
         self.line_7.setObjectName("line_7")
         self.pushButton_27 = QtWidgets.QPushButton(self.ReinstateEmployee)
         self.pushButton_27.setGeometry(QtCore.QRect(0, 10, 158, 141))
-        self.pushButton_27.setStyleSheet("background:url(Assets/iconmonstr-user-8-120.png);\n"
+        self.pushButton_27.setStyleSheet("background:url(:/adu/Assets/iconmonstr-user-8-120.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
         self.pushButton_27.setObjectName("pushButton_27")
         self.pushButton_28 = QtWidgets.QPushButton(self.ReinstateEmployee)
         self.pushButton_28.setGeometry(QtCore.QRect(0, 320, 158, 141))
-        self.pushButton_28.setStyleSheet("background:url(Assets/iconmonstr-flag-3-120.png);\n"
+        self.pushButton_28.setStyleSheet("background:url(:/pos/iconmonstr-flag-3-120.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
@@ -797,7 +792,7 @@ class Ui_AdminDashBoard(object):
         self.DisableAttendance.setObjectName("DisableAttendance")
         self.pushButton_20 = QtWidgets.QPushButton(self.DisableAttendance)
         self.pushButton_20.setGeometry(QtCore.QRect(0, 0, 158, 141))
-        self.pushButton_20.setStyleSheet("background:url(Assets/iconmonstr-user-8-120.png);\n"
+        self.pushButton_20.setStyleSheet("background:url(:/adu/Assets/iconmonstr-user-8-120.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
@@ -810,7 +805,7 @@ class Ui_AdminDashBoard(object):
         self.line_5.setObjectName("line_5")
         self.pushButton_21 = QtWidgets.QPushButton(self.DisableAttendance)
         self.pushButton_21.setGeometry(QtCore.QRect(0, 150, 158, 141))
-        self.pushButton_21.setStyleSheet("background-image: url(Assets/iconmonstr-list-lined-120.png);\n"
+        self.pushButton_21.setStyleSheet("background-image: url(:/list/iconmonstr-list-lined-120.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
@@ -825,7 +820,7 @@ class Ui_AdminDashBoard(object):
         self.comboBox_7.addItem("")
         self.pushButton_22 = QtWidgets.QPushButton(self.DisableAttendance)
         self.pushButton_22.setGeometry(QtCore.QRect(0, 310, 158, 141))
-        self.pushButton_22.setStyleSheet("background:url(Assets/iconmonstr-flag-3-120.png);\n"
+        self.pushButton_22.setStyleSheet("background:url(:/pos/iconmonstr-flag-3-120.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
@@ -838,7 +833,7 @@ class Ui_AdminDashBoard(object):
         self.Resignation.setObjectName("Resignation")
         self.pushButton_23 = QtWidgets.QPushButton(self.Resignation)
         self.pushButton_23.setGeometry(QtCore.QRect(0, 0, 158, 141))
-        self.pushButton_23.setStyleSheet("background:url(Assets/iconmonstr-user-8-120.png);\n"
+        self.pushButton_23.setStyleSheet("background:url(:/adu/Assets/iconmonstr-user-8-120.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
@@ -851,7 +846,7 @@ class Ui_AdminDashBoard(object):
         self.line_6.setObjectName("line_6")
         self.pushButton_24 = QtWidgets.QPushButton(self.Resignation)
         self.pushButton_24.setGeometry(QtCore.QRect(0, 150, 158, 141))
-        self.pushButton_24.setStyleSheet("background-image: url(Assets/iconmonstr-list-lined-120.png);\n"
+        self.pushButton_24.setStyleSheet("background-image: url(:/list/iconmonstr-list-lined-120.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
@@ -866,7 +861,7 @@ class Ui_AdminDashBoard(object):
         self.comboBox_8.addItem("")
         self.pushButton_25 = QtWidgets.QPushButton(self.Resignation)
         self.pushButton_25.setGeometry(QtCore.QRect(0, 310, 158, 141))
-        self.pushButton_25.setStyleSheet("background:url(Assets/iconmonstr-flag-3-120.png);\n"
+        self.pushButton_25.setStyleSheet("background:url(:/pos/iconmonstr-flag-3-120.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
@@ -875,7 +870,7 @@ class Ui_AdminDashBoard(object):
         self.label.setGeometry(QtCore.QRect(310, 20, 181, 41))
         self.label.setObjectName("label")
         self.stackedWidget_7.addWidget(self.Resignation)
-        self.stackedWidget.addWidget(self.Resignation_2)
+        self.stackedWidget.addWidget(self.stackedWidgetPage4)
         self.tabWidget_2.addTab(self.personel, "")
         self.tab_2 = QtWidgets.QWidget()
         self.tab_2.setObjectName("tab_2")
@@ -1000,7 +995,7 @@ class Ui_AdminDashBoard(object):
         self.horizontalLayout_17.addWidget(self.cancel_depbtn)
         self.pushButton_14 = QtWidgets.QPushButton(self.adddepartment)
         self.pushButton_14.setGeometry(QtCore.QRect(20, 300, 131, 131))
-        self.pushButton_14.setStyleSheet("background:url(Assets/setting.png);\n"
+        self.pushButton_14.setStyleSheet("background:url(:/setting/setting.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
@@ -1013,14 +1008,14 @@ class Ui_AdminDashBoard(object):
         self.line_3.setObjectName("line_3")
         self.pushButton_15 = QtWidgets.QPushButton(self.adddepartment)
         self.pushButton_15.setGeometry(QtCore.QRect(20, 150, 131, 141))
-        self.pushButton_15.setStyleSheet("background-image:url(Assets/Edit.png);\n"
+        self.pushButton_15.setStyleSheet("background-image:url(:/edit/Edit.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
         self.pushButton_15.setObjectName("pushButton_15")
         self.pushButton_16 = QtWidgets.QPushButton(self.adddepartment)
         self.pushButton_16.setGeometry(QtCore.QRect(10, 20, 141, 131))
-        self.pushButton_16.setStyleSheet("background:url(Assets/staff.png);\n"
+        self.pushButton_16.setStyleSheet("background:url(:/staff/staff.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
@@ -1034,7 +1029,7 @@ class Ui_AdminDashBoard(object):
         self.pushButton_38.setObjectName("pushButton_38")
         self.pushButton_39 = QtWidgets.QPushButton(self.adddepartment)
         self.pushButton_39.setGeometry(QtCore.QRect(20, 590, 131, 131))
-        self.pushButton_39.setStyleSheet("background:url(Assets/Active.png);\n"
+        self.pushButton_39.setStyleSheet("background:url(:/act/Active.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
@@ -1044,35 +1039,35 @@ class Ui_AdminDashBoard(object):
         self.edit.setObjectName("edit")
         self.pushButton_40 = QtWidgets.QPushButton(self.edit)
         self.pushButton_40.setGeometry(QtCore.QRect(30, 470, 131, 141))
-        self.pushButton_40.setStyleSheet("background:url(Assets/delete.png);\n"
+        self.pushButton_40.setStyleSheet("background:url(:/del/delete.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
         self.pushButton_40.setObjectName("pushButton_40")
         self.pushButton_41 = QtWidgets.QPushButton(self.edit)
         self.pushButton_41.setGeometry(QtCore.QRect(30, 630, 131, 131))
-        self.pushButton_41.setStyleSheet("background:url(Assets/Active.png);\n"
+        self.pushButton_41.setStyleSheet("background:url(:/act/Active.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
         self.pushButton_41.setObjectName("pushButton_41")
         self.pushButton_42 = QtWidgets.QPushButton(self.edit)
         self.pushButton_42.setGeometry(QtCore.QRect(20, 150, 131, 141))
-        self.pushButton_42.setStyleSheet("background-image:url(Assets/Edit.png);\n"
+        self.pushButton_42.setStyleSheet("background-image:url(:/edit/Edit.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
         self.pushButton_42.setObjectName("pushButton_42")
         self.pushButton_43 = QtWidgets.QPushButton(self.edit)
         self.pushButton_43.setGeometry(QtCore.QRect(10, 20, 141, 131))
-        self.pushButton_43.setStyleSheet("background:url(Assets/staff.png);\n"
+        self.pushButton_43.setStyleSheet("background:url(:/staff/staff.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
         self.pushButton_43.setObjectName("pushButton_43")
         self.pushButton_44 = QtWidgets.QPushButton(self.edit)
         self.pushButton_44.setGeometry(QtCore.QRect(30, 320, 131, 131))
-        self.pushButton_44.setStyleSheet("background:url(Assets/setting.png);\n"
+        self.pushButton_44.setStyleSheet("background:url(:/setting/setting.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
@@ -1097,14 +1092,14 @@ class Ui_AdminDashBoard(object):
         self.Delete.setObjectName("Delete")
         self.pushButton_45 = QtWidgets.QPushButton(self.Delete)
         self.pushButton_45.setGeometry(QtCore.QRect(30, 580, 131, 131))
-        self.pushButton_45.setStyleSheet("background:url(Assets/Active.png);\n"
+        self.pushButton_45.setStyleSheet("background:url(:/act/Active.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
         self.pushButton_45.setObjectName("pushButton_45")
         self.pushButton_46 = QtWidgets.QPushButton(self.Delete)
         self.pushButton_46.setGeometry(QtCore.QRect(40, 290, 131, 131))
-        self.pushButton_46.setStyleSheet("background:url(Assets/setting.png);\n"
+        self.pushButton_46.setStyleSheet("background:url(:/setting/setting.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
@@ -1117,7 +1112,7 @@ class Ui_AdminDashBoard(object):
         self.line_12.setObjectName("line_12")
         self.pushButton_47 = QtWidgets.QPushButton(self.Delete)
         self.pushButton_47.setGeometry(QtCore.QRect(40, 140, 131, 141))
-        self.pushButton_47.setStyleSheet("background-image:url(Assets/Edit.png);\n"
+        self.pushButton_47.setStyleSheet("background-image:url(:/edit/Edit.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
@@ -1133,14 +1128,14 @@ class Ui_AdminDashBoard(object):
         self.label_24.setObjectName("label_24")
         self.pushButton_48 = QtWidgets.QPushButton(self.Delete)
         self.pushButton_48.setGeometry(QtCore.QRect(30, 430, 131, 141))
-        self.pushButton_48.setStyleSheet("background:url(Assets/delete.png);\n"
+        self.pushButton_48.setStyleSheet("background:url(:/del/delete.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
         self.pushButton_48.setObjectName("pushButton_48")
         self.pushButton_49 = QtWidgets.QPushButton(self.Delete)
         self.pushButton_49.setGeometry(QtCore.QRect(30, 10, 141, 131))
-        self.pushButton_49.setStyleSheet("background:url(Assets/staff.png);\n"
+        self.pushButton_49.setStyleSheet("background:url(:/staff/staff.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
@@ -1875,7 +1870,7 @@ class Ui_AdminDashBoard(object):
 "font-family:monospace;\n"
 "font-size:20px")
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("iconmonstr-power-on-off-10-240.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap(":/restarticon/iconmonstr-power-on-off-10-240.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.pushButton_3.setIcon(icon)
         self.pushButton_3.setIconSize(QtCore.QSize(50, 50))
         self.pushButton_3.setObjectName("pushButton_3")
@@ -2078,21 +2073,21 @@ class Ui_AdminDashBoard(object):
         self.gridLayout.addWidget(self.pushButton_105, 8, 2, 1, 1)
         self.pushButton_128 = QtWidgets.QPushButton(self.page_2)
         self.pushButton_128.setGeometry(QtCore.QRect(30, 310, 131, 121))
-        self.pushButton_128.setStyleSheet("background:url(Assets/approval.png);\n"
+        self.pushButton_128.setStyleSheet("background:url(:/approve/approval.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
         self.pushButton_128.setObjectName("pushButton_128")
         self.pushButton_129 = QtWidgets.QPushButton(self.page_2)
         self.pushButton_129.setGeometry(QtCore.QRect(40, 190, 121, 111))
-        self.pushButton_129.setStyleSheet("background:url(Assets/balance.png);\n"
+        self.pushButton_129.setStyleSheet("background:url(:/balance/balance.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
         self.pushButton_129.setObjectName("pushButton_129")
         self.pushButton_116 = QtWidgets.QPushButton(self.page_2)
         self.pushButton_116.setGeometry(QtCore.QRect(40, 60, 111, 121))
-        self.pushButton_116.setStyleSheet("background:url(Assets/leave.png);\n"
+        self.pushButton_116.setStyleSheet("background:url(:/type/leave.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
@@ -2247,21 +2242,21 @@ class Ui_AdminDashBoard(object):
         self.line_26.setObjectName("line_26")
         self.pushButton_115 = QtWidgets.QPushButton(self.page_6)
         self.pushButton_115.setGeometry(QtCore.QRect(40, 30, 111, 121))
-        self.pushButton_115.setStyleSheet("background:url(Assets/leave.png);\n"
+        self.pushButton_115.setStyleSheet("background:url(:/type/leave.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
         self.pushButton_115.setObjectName("pushButton_115")
         self.pushButton_126 = QtWidgets.QPushButton(self.page_6)
         self.pushButton_126.setGeometry(QtCore.QRect(40, 160, 121, 111))
-        self.pushButton_126.setStyleSheet("background:url(Assets/balance.png);\n"
+        self.pushButton_126.setStyleSheet("background:url(:/balance/balance.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
         self.pushButton_126.setObjectName("pushButton_126")
         self.pushButton_127 = QtWidgets.QPushButton(self.page_6)
         self.pushButton_127.setGeometry(QtCore.QRect(30, 280, 131, 121))
-        self.pushButton_127.setStyleSheet("background:url(Assets/approval.png);\n"
+        self.pushButton_127.setStyleSheet("background:url(:/approve/approval.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
@@ -2385,21 +2380,21 @@ class Ui_AdminDashBoard(object):
         self.gridLayout_7.addWidget(self.tableWidget, 0, 0, 3, 1)
         self.pushButton_130 = QtWidgets.QPushButton(self.page_13)
         self.pushButton_130.setGeometry(QtCore.QRect(40, 290, 131, 121))
-        self.pushButton_130.setStyleSheet("background:url(Assets/approval.png);\n"
+        self.pushButton_130.setStyleSheet("background:url(:/approve/approval.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
         self.pushButton_130.setObjectName("pushButton_130")
         self.pushButton_131 = QtWidgets.QPushButton(self.page_13)
         self.pushButton_131.setGeometry(QtCore.QRect(50, 170, 121, 111))
-        self.pushButton_131.setStyleSheet("background:url(Assets/balance.png);\n"
+        self.pushButton_131.setStyleSheet("background:url(:/balance/balance.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
         self.pushButton_131.setObjectName("pushButton_131")
         self.pushButton_117 = QtWidgets.QPushButton(self.page_13)
         self.pushButton_117.setGeometry(QtCore.QRect(50, 40, 111, 121))
-        self.pushButton_117.setStyleSheet("background:url(Assets/leave.png);\n"
+        self.pushButton_117.setStyleSheet("background:url(:/type/leave.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
@@ -3124,66 +3119,18 @@ class Ui_AdminDashBoard(object):
         self.actionSetting_Approver_2.setObjectName("actionSetting_Approver_2")
 
         self.retranslateUi(AdminDashBoard)
-        self.tabWidget_2.setCurrentIndex(1)
+        self.tabWidget_2.setCurrentIndex(4)
         self.stackedWidget.setCurrentIndex(0)
         self.tabWidget_3.setCurrentIndex(0)
-        self.stackedWidget_7.setCurrentIndex(0)
+        self.stackedWidget_7.setCurrentIndex(3)
         self.AddArea.setCurrentIndex(0)
         self.tabWidget_9.setCurrentIndex(0)
         self.tabWidget_10.setCurrentIndex(0)
         self.tabWidget_11.setCurrentIndex(0)
-        self.stackedWidget1.setCurrentIndex(0)
+        self.stackedWidget1.setCurrentIndex(1)
         self.tabWidget_6.setCurrentIndex(0)
         self.tabWidget_17.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(AdminDashBoard)
-        self.okbtn.clicked.connect(lambda x: self.get_personel_added())
-        self.okbtn_4.clicked.connect(lambda x: self.connectMachine())
-        #self.area_okbtn.clicked.connect(lambda x: self.add_area())
-        #self.area_okbtn_5.clicked.connect(lambda x: self.add_holiday())
-        self.dev_okbtn.clicked.connect(lambda x: self.add_device())
-        self.pushButton_2.clicked.connect(lambda x: self.dialog())
-        self.okbtn_3.clicked.connect(lambda x: self.get_department())
-        #self.okbtn_10.clicked.connect(lambda x: self.AddUserToDevice())
-        self.pushButton_3.clicked.connect(lambda x: self.shutdownDevice())
-        self.pushButton_3.clicked.connect(lambda x: self.rebootDevice())
-        self.tabWidget_11.currentChanged.connect(
-            lambda x: self.DisplayDeviceInfo())
-        self.tabWidget_3.currentChanged.connect(
-            lambda x: self.get_Personel())
-        self.tabWidget_9.currentChanged.connect(lambda x: self.get_Machines())
-       # self.tabWidget_4.currentChanged.connect( lambda x: self.intialize_attedance())
-        self.AddArea.currentChanged.connect(lambda x: self.getDeviceUsers())
-        #self.tabWidget_2.currentChanged.connect(lambda x: self.populate_cmbx())
-        self.okbtn_12.clicked.connect(lambda x: self.get_csv())
-       # self.dev_okbtn_2.clicked.connect(lambda x: self.addMachine())
-        self.syncFP.clicked.connect(lambda x: self.sync_finger_print())
-        self.cnclbtn_2.clicked.connect(lambda x: self.disconnect())
-        #self.cancel_devbtn_2.clicked.connect(lambda x: self.clearIp())
-        self.pushButton.clicked.connect(
-            lambda x: self.display_add_devcie("add"))
-        self.pushButton_4.clicked.connect(
-            lambda x: self.display_add_devcie("delete"))
-        self.pushButton_5.clicked.connect(
-            lambda x: self.display_add_devcie("edit"))
-        self.dep_okbtn.clicked.connect(lambda x: self.add_to_tree())
-        self.dep_cmbx_6.currentIndexChanged.connect(
-            lambda x: self.state_changed())
-        self.pushButton_11.clicked.connect(lambda x: self.stackedWidget.setCurrentIndex(0))
-        self.pushButton_12.clicked.connect(lambda x: self.stackedWidget.setCurrentIndex(1))
-        self.pushButton_17.clicked.connect(lambda x: self.stackedWidget.setCurrentIndex(0))
-        self.pushButton_18.clicked.connect(lambda x: self.stackedWidget.setCurrentIndex(1))
-        #self.pushButton_13.clicked.connect(lambda x: self.stackedWidget.setCurrentIndex(1)) page not handled
-        self.pushButton_30.clicked.connect(lambda x: self.stackedWidget.setCurrentIndex(0))
-        self.pushButton_31.clicked.connect(lambda x: self.stackedWidget.setCurrentIndex(1))
-        self.pushButton_34.clicked.connect(lambda x: self.stackedWidget.setCurrentIndex(0)) #this needs to be pacakaged and automated
-        self.pushButton_27.clicked.connect(lambda x: self.stackedWidget.setCurrentIndex(0))
-        self.pushButton_28.clicked.connect(lambda x: self.stackedWidget.setCurrentIndex(1))
-        self.pushButton_20.clicked.connect(lambda x: self.stackedWidget.setCurrentIndex(0))
-        self.pushButton_22.clicked.connect(lambda x: self.stackedWidget.setCurrentIndex(1))  
-        self.pushButton_23.clicked.connect(lambda x: self.stackedWidget.setCurrentIndex(0))
-        self.pushButton_25.clicked.connect(lambda x: self.stackedWidget.setCurrentIndex(1))      
-        
-        
 
     def retranslateUi(self, AdminDashBoard):
         _translate = QtCore.QCoreApplication.translate
@@ -3229,7 +3176,7 @@ class Ui_AdminDashBoard(object):
         self.label_15.setText(_translate("AdminDashBoard", "Job title"))
         self.label_16.setText(_translate("AdminDashBoard", "Pay Grade"))
         self.label_17.setText(_translate("AdminDashBoard", "Add personel"))
-        self.label_19.setText(_translate("AdminDashBoard", "<html><head/><body><p><img src=\"iconmonstr-user-14-240.png\"/></p></body></html>"))
+        self.label_19.setText(_translate("AdminDashBoard", "<html><head/><body><p><img src=\":/placeholder/iconmonstr-user-14-240.png\"/></p></body></html>"))
         self.pushButton_2.setText(_translate("AdminDashBoard", "Browse"))
         self.okbtn.setText(_translate("AdminDashBoard", "Ok"))
         self.cnclbtn.setText(_translate("AdminDashBoard", "Cancel"))
@@ -3698,126 +3645,13 @@ class Ui_AdminDashBoard(object):
         self.actionAdd_position.setText(_translate("AdminDashBoard", "add position"))
         self.actionSetting_Department.setText(_translate("AdminDashBoard", "setting Department"))
         self.actionSetting_Approver_2.setText(_translate("AdminDashBoard", "Setting Approver"))
-def get_csv(self):
 
-        file, check = QFileDialog.getOpenFileName(
-            None,
-            "QFileDialog.getOpenFileName()",
-            "",
-            "All Files (*);;Python Files (*.py);;Text Files (*.txt)",
-        )
-        if check:
-            dev.handleCSV_Import(file)
 
-        self.get_Personel()
-
-def addMachine(self):
-        dev.addMachine(
-            ip=self.lineEdit_56.text(),
-        )
-        self.clearIp()
-        self.get_Machines()
-
-def clearIp(self):
-        self.lineEdit_56.setText("")
-        self.lineEdit_57.setText("")
-
-def connectMachine(self):
-        machineId = self.lineEdit_57.text()
-        ip = con.viewMachinesByIP(machineId)
-        if ip:
-            dev.connectByIp(ip)
-
-        self.get_Machines()
-        self.clearIp()
-
-def sync_finger_print(self):
-        dev.sync_finger_print()
-        self.get_Personel()
-
-def disconnect(self):
-        dev.disconnect()
-        self.clearIp()
-
-def clearPersonel(self):
-        self.Gendercmb.setCurrentText("Gender")
-        self.dep_cmbx.setCurrentText("Choose Department")
-        self.Empment_cmbx.setCurrentText("Choose Employement Type")
-        self.lineEdit_7.setText("")
-        self.lineEdit_8.setText("")
-        self.lineEdit_10.setText("")
-        self.lineEdit_11.setText("")
-
-def intialize_attedance(self):
-        tblData = dev.Sychronizing_attendance()
-        print("\n")
-        self.tableWidget_13.setRowCount(0)  # Change table names only
-        for row_num, row_data in enumerate(tblData):
-            self.tableWidget_28.insertRow(row_num)
-            for column_num, data in enumerate(row_data):
-                self.tableWidget_13.setItem(
-                    row_num, column_num, QTableWidgetItem(str(data))
-                )
-
-def display_add_devcie(self, status):
-        if status == "add":
-            self.stackedWidget.setCurrentIndex(1)
-        if status == "delete":
-            self.stackedWidget.setCurrentIndex(2)
-        if status == "edit":
-            self.stackedWidget.setCurrentIndex(3)
-
-def state_changed(self):
-        self.treeWidget.clear()
-        item = QTreeWidgetItem()
-        text = self.dep_cmbx_6.currentText()
-        if self.dep_cmbx_6.currentIndex() == 0:
-            text = ""
-        child_department = con.get_parent_departements(text)
-        self.treeWidget.setHeaderLabel(text)
-        if child_department.count != 0:
-            for child in child_department:
-                item.setText(0, child)
-                self.treeWidget.addTopLevelItem(item)
-
-def add_to_tree(self):
-        index = self.dep_cmbx_6.currentIndex()
-        item = QTreeWidgetItem()
-        dep = self.lineEdit_3.text()
-        dep_name = self.lineEdit_3.text()
-        if index == 0:
-            if self.treeWidget.headerItem().text(0) == "":
-                self.treeWidget.setHeaderLabel(dep)
-            elif self.treeWidget.headerItem().text(0):
-                item.setText(0, dep)
-                self.treeWidget.addTopLevelItem(item)
-            self.add_department(dep_name)
-        elif index != 0:
-            current = self.dep_cmbx_6.currentIndex()
-            if current != index:
-                header = self.dep_cmbx_6.currentText()
-                self.treeWidget.setHeaderLabel(header)
-                item.setText(0, dep)
-                self.treeWidget.addTopLevelItem(item)
-            else:
-                header = self.dep_cmbx_6.currentText()
-                self.treeWidget.setHeaderLabel(header)
-                item.setText(0, dep)
-                self.treeWidget.addTopLevelItem(item)
-            self.add_department(str(self.dep_cmbx_6.currentText()))
-        self.lineEdit_3.setText("")
-
-def populate_cmbx(self):
-        dep_list = con.get_departments()
-        if dep_list.count == 0:
-            pass
-        else:
-         self.dep_cmbx_6.addItems(dep_list)
-#stacked widget controls 
-def add_user_sw(self):
-        self.stackedWidget.setCurrentIndex(0)
-        print("Clicked add user")
-def pos_management_sw(self):
-        self.stackedWidget.setCurrentIndex(1)
-        print("clicked")
-        
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    AdminDashBoard = QtWidgets.QMainWindow()
+    ui = Ui_AdminDashBoard()
+    ui.setupUi(AdminDashBoard)
+    AdminDashBoard.show()
+    sys.exit(app.exec_())

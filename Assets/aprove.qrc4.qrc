@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="approve">
+    <file>approval.png</file>
+  </qresource>
+</RCC>

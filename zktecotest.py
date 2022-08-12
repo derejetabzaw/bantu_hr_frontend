@@ -193,9 +193,9 @@ def Sychronizing_attendance():
         check_out_time = check_out.split(" ")[1]
 
         worked_hours = time_diffrence(check_in_time, check_out_time)
-
-       # print("success")
         dbcon.attendance(id, date, check_in_time, check_out_time, worked_hours)
 
+       # print("success")
+        
 
-Sychronizing_attendance()
+

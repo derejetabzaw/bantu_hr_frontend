@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="del">
+    <file>delete.png</file>
+  </qresource>
+</RCC>

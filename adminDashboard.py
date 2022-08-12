@@ -3168,6 +3168,35 @@ class Ui_AdminDashBoard(object):
         self.dep_okbtn.clicked.connect(lambda x: self.add_to_tree())
         self.dep_cmbx_6.currentIndexChanged.connect(
             lambda x: self.state_changed())
+        
+        
+        self.pushButton_15.clicked.connect(lambda x: self.Departmentwidget.setCurrentIndex(1))#edit
+        self.pushButton_16.clicked.connect(lambda x: self.Departmentwidget.setCurrentIndex(0))#add
+        self.pushButton_14.clicked.connect(lambda x: self.Departmentwidget.setCurrentIndex(3))#delete
+        self.pushButton_38.clicked.connect(lambda x: self.Departmentwidget.setCurrentIndex(2))#SETTING
+        self.pushButton_39.clicked.connect(lambda x: self.Departmentwidget.setCurrentIndex(4))#active 
+        
+        self.pushButton_42.clicked.connect(lambda x: self.Departmentwidget.setCurrentIndex(1))#edit
+        self.pushButton_43.clicked.connect(lambda x: self.Departmentwidget.setCurrentIndex(0))#add
+        self.pushButton_40.clicked.connect(lambda x: self.Departmentwidget.setCurrentIndex(3))#delete
+        self.pushButton_44.clicked.connect(lambda x: self.Departmentwidget.setCurrentIndex(2))#SETTING
+        self.pushButton_41.clicked.connect(lambda x: self.Departmentwidget.setCurrentIndex(4))#active 
+        
+        self.pushButton_47.clicked.connect(lambda x: self.Departmentwidget.setCurrentIndex(1))#edit
+        self.pushButton_49.clicked.connect(lambda x: self.Departmentwidget.setCurrentIndex(0))#add
+        self.pushButton_40.clicked.connect(lambda x: self.Departmentwidget.setCurrentIndex(3))#delete
+        self.pushButton_44.clicked.connect(lambda x: self.Departmentwidget.setCurrentIndex(2))#SETTING
+        self.pushButton_41.clicked.connect(lambda x: self.Departmentwidget.setCurrentIndex(4))#active
+        
+        self.pushButton_42.clicked.connect(lambda x: self.Departmentwidget.setCurrentIndex(1))#edit
+        self.pushButton_43.clicked.connect(lambda x: self.Departmentwidget.setCurrentIndex(0))#add
+        self.pushButton_48.clicked.connect(lambda x: self.Departmentwidget.setCurrentIndex(3))#delete
+        self.pushButton_46.clicked.connect(lambda x: self.Departmentwidget.setCurrentIndex(2))#SETTING
+        self.pushButton_45.clicked.connect(lambda x: self.Departmentwidget.setCurrentIndex(4))#active 
+
+
+        
+        
         self.pushButton_11.clicked.connect(lambda x: self.stackedWidget.setCurrentIndex(0))
         self.pushButton_12.clicked.connect(lambda x: self.stackedWidget.setCurrentIndex(1))
         self.pushButton_17.clicked.connect(lambda x: self.stackedWidget.setCurrentIndex(0))

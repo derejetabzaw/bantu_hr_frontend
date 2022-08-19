@@ -1,9 +1,7 @@
-from xml.dom.domreg import registered
 import mysql.connector as mysql
-from datetime import date
-import datetime
-from numpy import full
-from pymysql import MySQLError
+# from datetime import date
+# import datetime
+# from pymysql import MySQLError
 import itertools
 
 #from zktecotest import sync_finger_print
@@ -16,8 +14,8 @@ config = {
     "host": "localhost",
     "user": "root",
     "database": "bantu-hr-db",
-    "password": 'wutangclan',
-    # "password": "Sa@654321",
+    # "password": 'wutangclan',
+    "password": "Sa@654321",
     "port": 3306,
     "auth_plugin": "mysql_native_password",
 }
@@ -34,17 +32,6 @@ try:
                 "SELECT * FROM Department ORDER BY Department_Id;")
             # Get all records
             records = mycursor.fetchall()
-            # REMOVE LINE 30 - 41, Later while cleaning code
-            # Print the number of Rows
-            # count = mycursor.rowcount
-            # print("Number of Rows: ", count)
-            # # Print each row
-            # tableData = tabulate(
-            #     records,
-            #     headers=["Department_Id", "Department_name", "Parent_Department"],
-            #     tablefmt="fancy_grid",
-            # )
-            # print(tableData)
 
             return records
 
@@ -106,25 +93,48 @@ try:
 
         def addPersonel(**personel):
             mycursor.execute(
-                """INSERT INTO personel
-                  (personel_id,devicePersonel_id,Gender,Department,Employee_type,Employment_date,full_name,job_title,paygrade,image,fingerprint)
-                              VALUES (%s, %s, %s, %s, %s,%s, %s, %s, %s, %s, %s)""",
+                """INSERT INTO personelInfo
+                  (employeeCode, full_name, birthDate, birthPlace, bloodType, gender, religion, maritalStatus, employmentType, drivingLicenceGrade, remarks,image, hiredDate, payrollType, contractEndDate, position, _member, location, station, orgUnit, subOffice, supervisorPosition, supervisorName,sciGrade, salary, accountNumber, bankArea, natureOfAssignment, projectAttachement, taxCode, pensionCode, _status)
+                              VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s,
+                              %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s,
+                              %s, %s, %s, %s, %s, %s, %s, %s)""",
                 (
-                    personel["personel_id"],
-                    personel["devicePersonel_id"],
-                    personel["Gender"],
-                    personel["Department"],
-                    personel["Employee_type"],
-                    personel["Employment_date"],
+                    personel["employeeCode"],
                     personel["full_name"],
-                    personel["job_title"],
-                    personel["paygrade"],
+                    personel["birthDate"],
+                    personel["birthPlace"],
+                    personel["bloodType"],
+                    personel["gender"],
+                    personel["religion"],
+                    personel["maritalStatus"],
+                    personel["employmentType"],
+                    personel["drivingLicenceGrade"],
+                    personel["remarks"],
                     personel["image"],
-                    personel["fingerprint"],
+                    personel["hiredDate"],
+                    personel["payrollType"],
+                    personel["contractEndDate"],
+                    personel["position"],
+                    personel["_member"],
+                    personel["location"],
+                    personel["station"],
+                    personel["orgUnit"],
+                    personel["subOffice"],
+                    personel["supervisorPosition"],
+                    personel["supervisorName"],
+                    personel["sciGrade"],
+                    personel["salary"],
+                    personel["accountNumber"],
+                    personel["bankArea"],
+                    personel["natureOfAssignment"],
+                    personel["projectAttachement"],
+                    personel["taxCode"],
+                    personel["pensionCode"],
+                    personel["_status"]
                 ),
             )
             bantudb.commit()
-            print("Personnel Added Successfully!")
+            print("Personnel Info Added Successfully!")
 
         def viewPersonel():
             mycursor.execute(
@@ -324,5 +334,3 @@ try:
 
 except Exception as e:
     print("MySQL Error! Cannot Connect to the Database.")
-
-

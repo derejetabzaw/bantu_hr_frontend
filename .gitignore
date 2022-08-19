@@ -1,3 +1,4 @@
 *.qrc,
-*.ui
+# *.ui,
+*.cpython-38.pyc
 

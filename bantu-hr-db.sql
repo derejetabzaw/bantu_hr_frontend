@@ -37,20 +37,56 @@ create table machine
     PRIMARY KEY (machineNumber)
 );
 
-create table personel
+-- create table personel
+-- (
+-- 	personel_id varchar(10) primary key,
+--     devicePersonel_id int,
+--     Gender varchar(6) null,
+--     Department varchar(45) null,
+--     Employee_type varchar(45) null,
+--     Employment_date date null,
+--     full_name varchar(45) null,
+--     job_title varchar(45) null,
+--     paygrade double null,
+--     image longblob null,
+--     fingerprint int default 0
+-- )
+create table personelInfo
 (
-	personel_id varchar(10) primary key,
-    devicePersonel_id int,
-    Gender varchar(6) null,
-    Department varchar(45) null,
-    Employee_type varchar(45) null,
-    Employment_date date null,
+	employeeCode varchar(10) primary key,
     full_name varchar(45) null,
-    job_title varchar(45) null,
-    paygrade double null,
+    birthDate date null,
+    birthPlace varchar(45),
+    bloodType varchar(3),
+    gender varchar(6) null,
+	religion varchar(30) null,
+    maritalStatus varchar(20) null,
+    employmentType varchar(15) null,
+    drivingLicenceGrade varchar(15) null,
+    remarks varchar(45) null,
     image longblob null,
-    fingerprint int default 0
-)
+    hiredDate date null,
+    payrollType varchar(15) null,
+    contractEndDate date null,
+    position varchar(45) null,
+    _member varchar(45) null,
+    location varchar(45) null,
+    station varchar(45) null,
+    orgUnit varchar(45) null,
+    subOffice varchar(45) null,
+    supervisorPosition varchar(45) null,
+    supervisorName varchar(45) null,
+    sciGrade int null,
+    salary double null,
+    accountNumber varchar(45) null,
+    bankArea varchar(45) null,
+    natureOfAssignment varchar(45) null,
+    projectAttachement varchar(45) null,
+    taxCode varchar(20) null,
+    pensionCode varchar(20) null,
+    _status varchar(20) null
+);
+
 select current_date();
 create table Department
 (

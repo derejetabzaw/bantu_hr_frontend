@@ -13,7 +13,7 @@ from PyQt5.QtWidgets import *
 from numpy import double
 import connection as con
 import zktecotest as dev
-from PyQt5.QtWidgets import QFileDialog
+# from PyQt5.QtWidgets import QFileDialog
 
 
 class Ui_AdminDashBoard(object):
@@ -3117,6 +3117,7 @@ class Ui_AdminDashBoard(object):
         self.lineEdit_47.setStyleSheet("border :1px solid #0076bd;\n"
 "border-radius:10px;\n"
 "")
+
         self.lineEdit_47.setObjectName("lineEdit_47")
         self.formLayout_12.setWidget(4, QtWidgets.QFormLayout.FieldRole, self.lineEdit_47)
         self.tabWidget_6.addTab(self.tab_32, "")
@@ -3205,6 +3206,7 @@ class Ui_AdminDashBoard(object):
         self.tabWidget_17.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(AdminDashBoard)
 
+        #button events
         self.okbtn.clicked.connect(lambda x: self.get_personel_added())
         self.cnclbtn.clicked.connect(lambda x: self.clearPersonel())
         #self.okbtn_4.clicked.connect(lambda x: self.connectMachine())

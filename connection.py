@@ -335,7 +335,7 @@ try:
             return department_names
         
     def get_department_children(department):
-        sql_query = f"select DISTINCT Department_name from Department where Parent_Department = '{department}'"
+        sql_query = f"select Department_name from Department where Parent_Department = '{department}'"
         mycursor.execute(sql_query)
         child_departments = mycursor.fetchall()
         return list(itertools.chain(*child_departments))
@@ -350,4 +350,5 @@ try:
 
 except Exception as e:
     print("MySQL Error! Cannot Connect to the Database.")
-get_top_level_parents()
+
+print(get_top_level_parents())

@@ -4276,6 +4276,7 @@ class Ui_AdminDashBoard(object):
         dep_id = self.lineEdit_15.text()
         dep_name = self.lineEdit_3.text()
         con.addDepartment(dep_id, dep_name, self.clickedItem)
+        self.treeWidget.clear()
         self.load_department()
     
     # stacked widget controls
@@ -4342,17 +4343,22 @@ class Ui_AdminDashBoard(object):
             dep_loc = 0
             items=[]
             child_departments = []
+            department_structure={}
             if parent_department_list != 0:
                     for pdl in parent_department_list:
                         child_deps = con.get_department_children(pdl)
                         child_departments.append(child_deps)
-                    for parent_deps in parent_department_list:
-                            item=QTreeWidgetItem([parent_deps])
-                            child = QTreeWidgetItem(child_departments[dep_loc])
-                            item.addChild(child)
-                            items.append(item)
-                            dep_loc+=1
-                    self.treeWidget.insertTopLevelItems(0,items)
+                    department_structure=dict(zip(parent_department_list,child_departments))
+                   
+                    for key,values in department_structure.items():
+                        item=QTreeWidgetItem([key])
+                        for value in values:
+                                child = QTreeWidgetItem([value])
+                                item.addChild(child)
+                                items.append(item)
+                    result = [i for n, i in enumerate(items) if i not in items[:n]]                   
+                    self.treeWidget.insertTopLevelItems(0,result)
+                    
                     
     def onItemClicked(self, it, col):
         print(it, col, it.text(col))

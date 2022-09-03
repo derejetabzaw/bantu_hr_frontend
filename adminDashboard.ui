@@ -2757,7 +2757,7 @@ text-align:bottom;</string>
         <property name="geometry">
          <rect>
           <x>740</x>
-          <y>60</y>
+          <y>160</y>
           <width>421</width>
           <height>191</height>
          </rect>
@@ -2842,30 +2842,6 @@ border-radius:10px;
             </property>
            </widget>
           </item>
-          <item row="3" column="0">
-           <layout class="QHBoxLayout" name="horizontalLayout_17"/>
-          </item>
-          <item row="2" column="1">
-           <widget class="QPushButton" name="cancel_depbtn">
-            <property name="font">
-             <font>
-              <pointsize>11</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">background-color:#fff;
-color:#ff0000;
-border-top:1px solid #fff;
-border-bottom:1px solid #0076bd;
-padding-bottom:0px</string>
-            </property>
-            <property name="text">
-             <string>cancel</string>
-            </property>
-           </widget>
-          </item>
           <item row="2" column="0">
            <widget class="QPushButton" name="dep_okbtn">
             <property name="font">
@@ -2888,8 +2864,54 @@ padding-bottom:0px</string>
             </property>
            </widget>
           </item>
+          <item row="2" column="1">
+           <widget class="QPushButton" name="cancel_depbtn">
+            <property name="font">
+             <font>
+              <pointsize>11</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color:#fff;
+color:#ff0000;
+border-top:1px solid #fff;
+border-bottom:1px solid #0076bd;
+padding-bottom:0px</string>
+            </property>
+            <property name="text">
+             <string>cancel</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0">
+           <layout class="QHBoxLayout" name="horizontalLayout_17"/>
+          </item>
          </layout>
         </widget>
+       </widget>
+       <widget class="QPushButton" name="okbtn_2">
+        <property name="geometry">
+         <rect>
+          <x>790</x>
+          <y>100</y>
+          <width>171</width>
+          <height>26</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color:#fff;
+color:#0076bd;
+border: 1px solid #0076bd;
+border-radius:12px;
+font-family:monospace;
+font-size:20px
+</string>
+        </property>
+        <property name="text">
+         <string>Add Department</string>
+        </property>
        </widget>
       </widget>
       <widget class="QWidget" name="edit">
@@ -5122,8 +5144,8 @@ font-size:20px</string>
          <rect>
           <x>220</x>
           <y>60</y>
-          <width>296</width>
-          <height>247</height>
+          <width>353</width>
+          <height>285</height>
          </rect>
         </property>
         <layout class="QGridLayout" name="gridLayout">
@@ -5368,7 +5390,7 @@ text-align:bottom;</string>
          <rect>
           <x>190</x>
           <y>20</y>
-          <width>527</width>
+          <width>752</width>
           <height>231</height>
          </rect>
         </property>
@@ -6068,7 +6090,7 @@ text-align:bottom;</string>
         <x>260</x>
         <y>70</y>
         <width>331</width>
-        <height>22</height>
+        <height>27</height>
        </rect>
       </property>
       <layout class="QHBoxLayout" name="horizontalLayout_8">
@@ -6111,8 +6133,8 @@ text-align:bottom;</string>
        <rect>
         <x>260</x>
         <y>120</y>
-        <width>331</width>
-        <height>25</height>
+        <width>334</width>
+        <height>29</height>
        </rect>
       </property>
       <layout class="QHBoxLayout" name="horizontalLayout_9">

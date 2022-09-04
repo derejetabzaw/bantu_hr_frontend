@@ -3286,6 +3286,7 @@ class Ui_AdminDashBoard(object):
         self.tabWidget_6.setCurrentIndex(0)
         self.tabWidget_17.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(AdminDashBoard)
+        self.load_department()
         
                 #button events
         self.okbtn.clicked.connect(lambda x: self.get_personel_added())
@@ -3299,7 +3300,7 @@ class Ui_AdminDashBoard(object):
         #self.okbtn_10.clicked.connect(lambda x: self.AddUserToDevice())
         self.pushButton_3.clicked.connect(lambda x: self.shutdownDevice())
         self.pushButton_3.clicked.connect(lambda x: self.rebootDevice())
-        self.tabWidget_2.currentChanged.connect(lambda x:self.load_department())
+        #self.tabWidget_2.currentChanged.connect(lambda x:self.load_department())
         self.tabWidget_11.currentChanged.connect(
             lambda x: self.DisplayDeviceInfo())
         self.tabWidget_3.currentChanged.connect(

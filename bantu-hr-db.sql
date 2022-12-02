@@ -1,3 +1,5 @@
+-- sql queries to create table and other select operations.
+
 create database `bantu-hr-db`;
 
 use  `bantu-hr-db`;

@@ -14,8 +14,9 @@ config = {
     "host": "localhost",
     "user": "root",
     "database": "bantu-hr-db",
-     "password": 'wutangclan',
+     #"password": 'wutangclan',
     #"password": "Sa@654321",
+    # "password": 'Brightfuture22.',
     "port": 3306,
     "auth_plugin": "mysql_native_password",
 }
@@ -39,7 +40,10 @@ try:
         #     print("Department Updated Successfully!")
         #     viewDepartment()
 
+
+
         def deleteDepartment(dep_id):
+            #Delets department using department id
             mycursor.execute(
                 "DELETE FROM Department WHERE Department_id=%s", (dep_id,))
             bantudb.commit()
@@ -47,6 +51,7 @@ try:
             # viewDepartment()
 
         def get_departments():
+            #Displays all the department names
             sql = "select Department_name from Department"
             cursor = mycursor.execute(sql)
             department_names = mycursor.fetchall()
@@ -55,11 +60,13 @@ try:
 
 
         def viewAreas():
+            #Displays all the areas recorded
             mycursor.execute("SELECT * FROM Areas;")
             for temp in mycursor:
                 print(temp)
 
         def addAreas(area_id, area_code, area_name, par_area, remark):
+            #Adds new Area
             mycursor.execute(
                 """INSERT INTO areas (areaId, areaCode, areaName, parentArea, remarks)
                                     VALUES (%s, %s, %s, %s, %s)""",
@@ -70,6 +77,7 @@ try:
             viewAreas()
 
         def addPersonel(**personel):
+            #Adds new record to personel 
             mycursor.execute(
                 """INSERT INTO personelInfo
                   (employeeCode, full_name, birthDate, birthPlace, bloodType, gender, religion, maritalStatus, employmentType, drivingLicenceGrade, remarks,image, hiredDate, payrollType, contractEndDate, position, _member, location, station, orgUnit, subOffice, supervisorPosition, supervisorName,sciGrade, salary, accountNumber, bankArea, natureOfAssignment, projectAttachement, taxCode, pensionCode, _status)
@@ -115,6 +123,7 @@ try:
             print("Personnel Info Added Successfully!")
 
         def viewPersonel():
+            #displays all the personel records 
             mycursor.execute(
                 "SELECT personel_id, full_name, fingerprint FROM personel;")
             # Get all records
@@ -123,6 +132,7 @@ try:
             return records
 
         def fingerprint_device_id():
+            #displayes device id from personel using fingerprint matches
 
             mycursor.execute(
                 "SELECT devicePersonel_id FROM personel where fingerprint = 0;"
@@ -142,6 +152,7 @@ try:
             paygrade,
             image,
         ):
+        #Edits the information of the personel
             mycursor.execute(
                 """UPDATE personel
                                           SET Department=%s, Employee_type=%s, fingerprint=%s, job_title=%s, paygrade=%s, image=%s
@@ -161,6 +172,7 @@ try:
             viewPersonel()
 
         def editPersonelFingerprint(**personel):
+            #edits the fingerprints from personel table 
             fp = personel["fingerprint"]
             deviceid = personel["devicePersonel_id"]
             sql = f"UPDATE personel SET fingerprint = {fp} WHERE devicePersonel_id = {deviceid}"
@@ -170,6 +182,7 @@ try:
             viewPersonel()
 
         def deletePersonel(personel_id):
+            # Deletes the personel info using the personel id
             mycursor.execute(
                 "DELETE FROM personel WHERE personel_id=%s", (personel_id,)
             )
@@ -178,6 +191,7 @@ try:
             viewPersonel()
 
         def editAreas(area_id, area_name, par_area, remark):
+            #edits Area attributes
             mycursor.execute(
                 """UPDATE areas
                                           SET areaName=%s, parentArea=%s, remarks=%s
@@ -189,12 +203,14 @@ try:
             viewAreas()
 
         def deleteAreas(area_id):
+            #Deletes the area using the area id
             mycursor.execute("DELETE FROM areas WHERE areaId=%s", (area_id,))
             bantudb.commit()
             print("Area Deleted Successfully!")
             viewAreas()
 
         def viewDevices():
+            #Displays all the devices
             mycursor.execute("SELECT * FROM device;")
             for temp in mycursor:
                 print(temp)
@@ -214,6 +230,7 @@ try:
             viewDevices()
 
         def editDevice(deviceId, deviceName, ipAddress, portNumber, area_id):
+            #Edit the device information
             mycursor.execute(
                 """UPDATE device
                                           SET deviceName=%s, ipAddress=%s, portNumber=%s, areaId=%s
@@ -225,6 +242,7 @@ try:
             viewDevices()
 
         def deleteDevice(deviceId):
+            #Deletes the device from the table using device id
             mycursor.execute(
                 "DELETE FROM device WHERE deviceId=%s", (deviceId,))
             bantudb.commit()
@@ -232,6 +250,7 @@ try:
             viewDevices()
 
         def add_holiday(*args):
+            #adds a record to holiday table
             mycursor.execute(
                 """INSERT INTO holiday (holiday_id, hoiday_name, min_unit, unit, round_off, symbol_in_report)
                                     VALUES (%s, %s, %s, %s, %s, %s)""",
@@ -241,6 +260,7 @@ try:
             print("holiday Added Successfully!")
 
         def viewMachines():
+            #displays all the records on the machine table
             mycursor.execute("SELECT * FROM machine;")
             # Get all records
             records = mycursor.fetchall()
@@ -248,6 +268,7 @@ try:
             return records
 
         def viewMachinesByIP(machineId):
+            # displays a machine by taking id as an input
             mycursor.execute(
                 f"SELECT ipAddress FROM machine WHERE machineNumber = {machineId} "
             )
@@ -257,6 +278,7 @@ try:
             return record[0]
 
         def addMachine(deviceName, serialNumber, ipAddress, portNumber, macAddress):
+            #Adds machine to the machine table
             # insert into machine (deviceName, serialNumber, ipAddress, portNumber) values ("Zkteco", "AZ76890Y", "192.168.1.200", 4370);
             mycursor.execute(
                 """INSERT INTO machine (deviceName, serialNumber, ipAddress, portNumber, macAddress)
@@ -268,6 +290,7 @@ try:
             viewMachines()
 
         def viewAttendance():
+            #Displays Attendance records
             mycursor.execute("SELECT * FROM attendance_log;")
             # Get all records
             records = mycursor.fetchall()
@@ -315,6 +338,7 @@ try:
         return records
 
     def addDepartment(dep_id, dep_name, par_dep):
+        #adds new records to the department table
         mycursor.execute(
                 """INSERT INTO Department (Department_id, Department_name, Parent_Department)
                                     VALUES (%s, %s, %s)""",
@@ -335,6 +359,7 @@ try:
             return department_names
         
     def get_department_children(department):
+        #this module is for getting departments with parents
         sql_query = f"select Department_name from Department where Parent_Department = '{department}'"
         mycursor.execute(sql_query)
         child_departments = mycursor.fetchall()
@@ -351,4 +376,4 @@ try:
 except Exception as e:
     print("MySQL Error! Cannot Connect to the Database.")
 
-print(get_top_level_parents())
+#print(get_top_level_parents())

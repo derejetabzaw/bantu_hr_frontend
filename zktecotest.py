@@ -19,6 +19,7 @@ def con():
 
 
 def disconnect():
+    
     dev.disconnect()
     print("Disconnected from: ", ip)
 
@@ -34,6 +35,7 @@ def connectByIp(ip):
 
 
 def add_user(**kwargs):
+    #adds user
     con()
     new_user = UserInfo("latin-1")
     new_user.name = kwargs["FullName"]
@@ -43,15 +45,18 @@ def add_user(**kwargs):
 
 
 def delete_user(userId):
+    #deletes user
     con()
     dev.del_user(userId)
     print("User Deleted Successfully")
 
 
-# delete_user(ip, 1)
+
 
 
 def device_info():
+
+    #returns device information
     con()
 
     listInfo = [
@@ -73,6 +78,7 @@ def device_info():
 
 
 def addMachine(ip):
+    #adds machine
     con()
     port = 4370
     dbcon.addMachine(dev.platform, dev.serial_number,
@@ -80,11 +86,13 @@ def addMachine(ip):
 
 
 def restartDevice():
+    #restarts the device
     con()
     dev.reboot()
 
 
 def get_users():
+    #returns user list
     con()
     users = dev.get_users()
 
@@ -103,6 +111,7 @@ def get_users():
 
 
 def get_user_id():
+    #returns user id
     con()
     inc = 0
     id = []

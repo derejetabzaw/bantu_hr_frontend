@@ -9,6 +9,9 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from ExcelGeneration import *
+from PdfGeneration import *
+from connection import *
 
 
 class Ui_AdminDashBoard(object):
@@ -2531,14 +2534,14 @@ class Ui_AdminDashBoard(object):
         self.pushButton_9 = QtWidgets.QPushButton(self.tab_4)
         self.pushButton_9.setGeometry(QtCore.QRect(490, 60, 75, 23))
         self.pushButton_9.setObjectName("pushButton_9")
-        self.tableView = QtWidgets.QTableView(self.tab_4)
-        self.tableView.setGeometry(QtCore.QRect(20, 110, 621, 411))
-        self.tableView.setFrameShape(QtWidgets.QFrame.Box)
-        self.tableView.setFrameShadow(QtWidgets.QFrame.Plain)
-        self.tableView.setObjectName("tableView")
         self.lineEdit_7 = QtWidgets.QLineEdit(self.tab_4)
         self.lineEdit_7.setGeometry(QtCore.QRect(100, 60, 113, 20))
         self.lineEdit_7.setObjectName("lineEdit_7")
+        self.tableWidget_6 = QtWidgets.QTableWidget(self.tab_4)
+        self.tableWidget_6.setGeometry(QtCore.QRect(20, 100, 671, 391))
+        self.tableWidget_6.setObjectName("tableWidget_6")
+        self.tableWidget_6.setColumnCount(0)
+        self.tableWidget_6.setRowCount(0)
         self.Payrollregister.addTab(self.tab_4, "")
         self.tab_5 = QtWidgets.QWidget()
         self.tab_5.setObjectName("tab_5")
@@ -3371,7 +3374,7 @@ class Ui_AdminDashBoard(object):
         self.tabWidget_10.setCurrentIndex(0)
         self.tabWidget_11.setCurrentIndex(0)
         self.stackedWidget1.setCurrentIndex(1)
-        self.Payrollregister.setCurrentIndex(1)
+        self.Payrollregister.setCurrentIndex(0)
         self.tabWidget_6.setCurrentIndex(0)
         self.tabWidget_17.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(AdminDashBoard)
@@ -3831,7 +3834,14 @@ class Ui_AdminDashBoard(object):
         self.comboBox_5.setItemText(0, _translate("AdminDashBoard", "2022"))
         self.comboBox_14.setItemText(0, _translate("AdminDashBoard", "Bahirdar"))
         self.pushButton_8.setText(_translate("AdminDashBoard", "Generate Excel"))
+        #generates Excel file on button click
+        #self.pushButton_8.clicked.connect(ExcelGeneration)
+        #generating the excel file to the table
+        #self.pushButton_8.clicked.connect(lambda _, xl_path=excel_file_path, sheet_name=worksheet_name: self.loadExcelData(xl_path, sheet_name))
+      
         self.pushButton_9.setText(_translate("AdminDashBoard", "Generate PDF"))
+        #generate PDF file on button click
+        #self.pushButton_9.clicked.connect(PdfGeneration)
         self.Payrollregister.setTabText(self.Payrollregister.indexOf(self.tab_4), _translate("AdminDashBoard", "Payroll Generation"))
         self.label_44.setText(_translate("AdminDashBoard", "Payroll Year"))
         self.label_106.setText(_translate("AdminDashBoard", "Field Office"))
@@ -3989,9 +3999,22 @@ class Ui_AdminDashBoard(object):
         self.actionSetting_Department.setText(_translate("AdminDashBoard", "setting Department"))
         self.actionSetting_Approver_2.setText(_translate("AdminDashBoard", "Setting Approver"))
 
+        # def loadExcelData(self, excel_file_dir, worksheet_name):
+        #     df = pd.read_excel(excel_file_dir, worksheet_name)
+        # if df.size == 0:
+        #     return
+        #     df.fillna('', inplace=True)
+        # self.tableWidget_6.setRowCount(df.shape[0])
+        # self.tableWidget_6.setColumnCount(df.shape[1])
+        # self.tableWidget_6.setHorizontalHeaderLabels(df.columns)
+
+       
 
 if __name__ == "__main__":
     import sys
+
+#     excel_file_path = 'Attendance.xlsx'
+#     worksheet_name = 'Sheet1'
     app = QtWidgets.QApplication(sys.argv)
     AdminDashBoard = QtWidgets.QMainWindow()
     ui = Ui_AdminDashBoard()

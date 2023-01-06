@@ -16,7 +16,7 @@ config = {
     "database": "bantu-hr-db",
      #"password": 'wutangclan',
     #"password": "Sa@654321",
-    # "password": 'Brightfuture22.',
+    "password": 'Brightfuture22.',
     "port": 3306,
     "auth_plugin": "mysql_native_password",
 }
@@ -130,6 +130,16 @@ try:
             records = mycursor.fetchall()
 
             return records
+
+  #paroll table generation
+        # def viewPayroll():
+        #  mycursor.execute("select * FROM payroll"
+        #  )
+        #  results = mycursor.fetchall()
+        #  print(results) 
+         
+        
+
 
         def fingerprint_device_id():
             #displayes device id from personel using fingerprint matches

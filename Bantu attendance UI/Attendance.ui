@@ -1,0 +1,958 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>709</width>
+    <height>501</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QTabWidget" name="tabWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>721</width>
+      <height>561</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>4</number>
+    </property>
+    <widget class="QWidget" name="tab_5">
+     <attribute name="title">
+      <string>Home</string>
+     </attribute>
+    </widget>
+    <widget class="QWidget" name="tab_6">
+     <attribute name="title">
+      <string>Personel</string>
+     </attribute>
+    </widget>
+    <widget class="QWidget" name="tab_7">
+     <attribute name="title">
+      <string>Department</string>
+     </attribute>
+    </widget>
+    <widget class="QWidget" name="tab_8">
+     <attribute name="title">
+      <string>Device</string>
+     </attribute>
+    </widget>
+    <widget class="QWidget" name="tab_9">
+     <attribute name="title">
+      <string>Attendance</string>
+     </attribute>
+     <widget class="QTabWidget" name="tabWidget_2">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>721</width>
+        <height>471</height>
+       </rect>
+      </property>
+      <property name="currentIndex">
+       <number>1</number>
+      </property>
+      <widget class="QWidget" name="tab_12">
+       <attribute name="title">
+        <string>Clock In/Out</string>
+       </attribute>
+       <widget class="QLabel" name="label">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>10</y>
+          <width>81</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Search Member</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>30</y>
+          <width>211</width>
+          <height>20</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_2">
+        <property name="geometry">
+         <rect>
+          <x>290</x>
+          <y>10</y>
+          <width>31</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Date</string>
+        </property>
+       </widget>
+       <widget class="QDateEdit" name="dateEdit">
+        <property name="geometry">
+         <rect>
+          <x>290</x>
+          <y>30</y>
+          <width>110</width>
+          <height>21</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton">
+        <property name="geometry">
+         <rect>
+          <x>220</x>
+          <y>30</y>
+          <width>41</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Search</string>
+        </property>
+       </widget>
+       <widget class="QTableWidget" name="tableWidget">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>60</y>
+          <width>401</width>
+          <height>301</height>
+         </rect>
+        </property>
+        <column>
+         <property name="text">
+          <string>Employee Name</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Clock In</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Clock Out</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Time Worked</string>
+         </property>
+        </column>
+       </widget>
+       <widget class="QPushButton" name="pushButton_2">
+        <property name="geometry">
+         <rect>
+          <x>451</x>
+          <y>30</y>
+          <width>121</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <weight>50</weight>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>See Today's Report</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_13">
+       <attribute name="title">
+        <string> Report</string>
+       </attribute>
+       <widget class="QTabWidget" name="tabWidget_3">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>711</width>
+          <height>451</height>
+         </rect>
+        </property>
+        <property name="currentIndex">
+         <number>3</number>
+        </property>
+        <widget class="QWidget" name="tab_18">
+         <attribute name="title">
+          <string>Daily</string>
+         </attribute>
+         <widget class="QTreeWidget" name="treeWidget">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>50</y>
+            <width>231</width>
+            <height>311</height>
+           </rect>
+          </property>
+          <column>
+           <property name="text">
+            <string>Employees</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Toltal Hours</string>
+           </property>
+          </column>
+          <item>
+           <property name="text">
+            <string>Abebe</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Kebede</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Hirut</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Faba</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Nebil</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Mekonen</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Sara</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Abreham</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Dawit</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </item>
+         </widget>
+         <widget class="QDateEdit" name="dateEdit_2">
+          <property name="geometry">
+           <rect>
+            <x>120</x>
+            <y>20</y>
+            <width>110</width>
+            <height>22</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QComboBox" name="comboBox">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>20</y>
+            <width>69</width>
+            <height>22</height>
+           </rect>
+          </property>
+          <item>
+           <property name="text">
+            <string>Finance</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>HR</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Managment</string>
+           </property>
+          </item>
+         </widget>
+         <widget class="QLabel" name="label_4">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>71</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Department</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_6">
+          <property name="geometry">
+           <rect>
+            <x>120</x>
+            <y>0</y>
+            <width>61</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Select Date</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="pushButton_3">
+          <property name="geometry">
+           <rect>
+            <x>230</x>
+            <y>0</y>
+            <width>61</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Generate</string>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="tab_19">
+         <attribute name="title">
+          <string>Weekly</string>
+         </attribute>
+         <widget class="QTreeWidget" name="treeWidget_2">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>50</y>
+            <width>191</width>
+            <height>381</height>
+           </rect>
+          </property>
+          <column>
+           <property name="text">
+            <string>Employees</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Toltal Hours</string>
+           </property>
+          </column>
+          <item>
+           <property name="text">
+            <string>Abebe</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Kebede</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Hirut</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Faba</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Nebil</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Mekonen</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Sara</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Abreham</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Dawit</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </item>
+         </widget>
+         <widget class="QComboBox" name="comboBox_2">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>20</y>
+            <width>69</width>
+            <height>22</height>
+           </rect>
+          </property>
+          <item>
+           <property name="text">
+            <string>Finance</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>HR</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Managment</string>
+           </property>
+          </item>
+         </widget>
+         <widget class="QLabel" name="label_5">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>71</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Department</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_7">
+          <property name="geometry">
+           <rect>
+            <x>120</x>
+            <y>0</y>
+            <width>61</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Select Week</string>
+          </property>
+         </widget>
+         <widget class="QComboBox" name="comboBox_5">
+          <property name="geometry">
+           <rect>
+            <x>120</x>
+            <y>20</y>
+            <width>69</width>
+            <height>22</height>
+           </rect>
+          </property>
+          <item>
+           <property name="text">
+            <string>Mon</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Tue</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Wen</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>New Item</string>
+           </property>
+          </item>
+         </widget>
+         <widget class="QPushButton" name="pushButton_6">
+          <property name="geometry">
+           <rect>
+            <x>210</x>
+            <y>0</y>
+            <width>91</width>
+            <height>23</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Generate Report</string>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="tab_20">
+         <attribute name="title">
+          <string>Monthly</string>
+         </attribute>
+         <widget class="QTreeWidget" name="treeWidget_3">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>60</y>
+            <width>191</width>
+            <height>351</height>
+           </rect>
+          </property>
+          <column>
+           <property name="text">
+            <string>Employees</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Toltal Hours</string>
+           </property>
+          </column>
+          <item>
+           <property name="text">
+            <string>Abebe</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Kebede</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Hirut</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Faba</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Nebil</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Mekonen</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Sara</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Abreham</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Dawit</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </item>
+         </widget>
+         <widget class="QLabel" name="label_8">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>71</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Department</string>
+          </property>
+         </widget>
+         <widget class="QComboBox" name="comboBox_3">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>20</y>
+            <width>69</width>
+            <height>22</height>
+           </rect>
+          </property>
+          <item>
+           <property name="text">
+            <string>Finance</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>HR</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Managment</string>
+           </property>
+          </item>
+         </widget>
+         <widget class="QLabel" name="label_9">
+          <property name="geometry">
+           <rect>
+            <x>120</x>
+            <y>0</y>
+            <width>71</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Select Month</string>
+          </property>
+         </widget>
+         <widget class="QComboBox" name="comboBox_4">
+          <property name="geometry">
+           <rect>
+            <x>120</x>
+            <y>20</y>
+            <width>69</width>
+            <height>22</height>
+           </rect>
+          </property>
+          <item>
+           <property name="text">
+            <string>January</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>February</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>March</string>
+           </property>
+          </item>
+         </widget>
+         <widget class="QPushButton" name="pushButton_4">
+          <property name="geometry">
+           <rect>
+            <x>210</x>
+            <y>0</y>
+            <width>91</width>
+            <height>23</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Generate Report</string>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="tab_21">
+         <attribute name="title">
+          <string>Custom</string>
+         </attribute>
+         <widget class="QLabel" name="label_22">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>71</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Department</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_23">
+          <property name="geometry">
+           <rect>
+            <x>220</x>
+            <y>0</y>
+            <width>71</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Date Range</string>
+          </property>
+         </widget>
+         <widget class="QTreeWidget" name="treeWidget_10">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>50</y>
+            <width>231</width>
+            <height>381</height>
+           </rect>
+          </property>
+          <column>
+           <property name="text">
+            <string>Employees</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Total hours</string>
+           </property>
+          </column>
+          <item>
+           <property name="text">
+            <string>Abebe</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Kebede</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Hirut</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Faba</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Nebil</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Mekonen</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Sara</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Abreham</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Dawit</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </item>
+         </widget>
+         <widget class="QComboBox" name="comboBox_17">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>20</y>
+            <width>69</width>
+            <height>22</height>
+           </rect>
+          </property>
+          <item>
+           <property name="text">
+            <string>Finance</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>HR</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Managment</string>
+           </property>
+          </item>
+         </widget>
+         <widget class="QDateEdit" name="dateEdit_5">
+          <property name="geometry">
+           <rect>
+            <x>120</x>
+            <y>20</y>
+            <width>110</width>
+            <height>22</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QDateEdit" name="dateEdit_6">
+          <property name="geometry">
+           <rect>
+            <x>260</x>
+            <y>20</y>
+            <width>110</width>
+            <height>22</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_3">
+          <property name="geometry">
+           <rect>
+            <x>240</x>
+            <y>20</y>
+            <width>21</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>To</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="pushButton_5">
+          <property name="geometry">
+           <rect>
+            <x>420</x>
+            <y>20</y>
+            <width>111</width>
+            <height>23</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Generate Report</string>
+          </property>
+         </widget>
+        </widget>
+       </widget>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_10">
+     <attribute name="title">
+      <string>Payroll</string>
+     </attribute>
+    </widget>
+    <widget class="QWidget" name="tab_11">
+     <attribute name="title">
+      <string>System Setting</string>
+     </attribute>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources>
+  <include location="member.qrc"/>
+ </resources>
+ <connections/>
+</ui>

@@ -11,11 +11,28 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from ExcelGeneration import *
 from PdfGeneration import *
+#from tryy import *
 from connection import *
+from PyQt5 import QtCore, QtGui, QtWidgets
 
 
 class Ui_AdminDashBoard(object):
+   
+
     def setupUi(self, AdminDashBoard):
+
+#function to load data ...1
+        # def loadData(self):
+        #  query = "select * from payroll"
+        #  result = mycursor.execute(query)
+        #  self.tablewidget_5.setRowcount(0)
+        #  for row_number, row_data in enumerate(result):
+        #         self.tableWidget_5.insertRow(row_number)
+        #         for column_number, data in enumerate(row_data):
+        #                 self.tableWidget_5.insertRow(row_number)
+        #                 for column_number, data in enumerate(row_data):
+        #                         self.tablewidget_5.setItem(row_number, column_number, QtWidgets.QtableWidgetItem(str(data))) 
+
         AdminDashBoard.setObjectName("AdminDashBoard")
         AdminDashBoard.resize(1922, 1080)
         AdminDashBoard.setMaximumSize(QtCore.QSize(16777215, 16777215))
@@ -2573,9 +2590,12 @@ class Ui_AdminDashBoard(object):
         self.lineEdit_6 = QtWidgets.QLineEdit(self.tab_5)
         self.lineEdit_6.setGeometry(QtCore.QRect(410, 30, 111, 20))
         self.lineEdit_6.setObjectName("lineEdit_6")
+        #generate button from payroll registration. 
         self.pushButton_60 = QtWidgets.QPushButton(self.tab_5)
         self.pushButton_60.setGeometry(QtCore.QRect(220, 90, 75, 23))
         self.pushButton_60.setObjectName("pushButton_60")
+       
+
         self.tableWidget_5 = QtWidgets.QTableWidget(self.tab_5)
         self.tableWidget_5.setEnabled(True)
         self.tableWidget_5.setGeometry(QtCore.QRect(10, 130, 621, 311))
@@ -3852,6 +3872,8 @@ class Ui_AdminDashBoard(object):
         self.comboBox_34.setItemText(0, _translate("AdminDashBoard", "Regular"))
         self.comboBox_34.setItemText(1, _translate("AdminDashBoard", "Irregular"))
         self.pushButton_60.setText(_translate("AdminDashBoard", "Generate"))
+       #loaddata
+        self.pushButton_60.clicked.connect(self.loadData)
         item = self.tableWidget_5.verticalHeaderItem(0)
         item.setText(_translate("AdminDashBoard", "1"))
         item = self.tableWidget_5.verticalHeaderItem(1)
@@ -3888,27 +3910,9 @@ class Ui_AdminDashBoard(object):
         item.setText(_translate("AdminDashBoard", "Net Salary"))
         __sortingEnabled = self.tableWidget_5.isSortingEnabled()
         self.tableWidget_5.setSortingEnabled(False)
-        item = self.tableWidget_5.item(0, 0)
-        item.setText(_translate("AdminDashBoard", "Nardos Dagnachew"))
-        item = self.tableWidget_5.item(0, 1)
-        item.setText(_translate("AdminDashBoard", "Manager"))
-        item = self.tableWidget_5.item(0, 2)
-        item.setText(_translate("AdminDashBoard", "5"))
-        item = self.tableWidget_5.item(0, 3)
-        item.setText(_translate("AdminDashBoard", "300"))
-        item = self.tableWidget_5.item(0, 5)
-        item.setText(_translate("AdminDashBoard", "50"))
-        item = self.tableWidget_5.item(0, 6)
-        item.setText(_translate("AdminDashBoard", "2"))
-        item = self.tableWidget_5.item(0, 7)
-        item.setText(_translate("AdminDashBoard", "2-3-2020"))
-        item = self.tableWidget_5.item(0, 8)
-        item.setText(_translate("AdminDashBoard", "20%"))
-        item = self.tableWidget_5.item(0, 9)
-        item.setText(_translate("AdminDashBoard", "46000"))
-        item = self.tableWidget_5.item(0, 10)
-        item.setText(_translate("AdminDashBoard", "40000"))
+        
         self.tableWidget_5.setSortingEnabled(__sortingEnabled)
+       
         self.Payrollregister.setTabText(self.Payrollregister.indexOf(self.tab_5), _translate("AdminDashBoard", "Payroll Registeration"))
         self.tabWidget_2.setTabText(self.tabWidget_2.indexOf(self.tab_3), _translate("AdminDashBoard", "payroll"))
         self.tabWidget_6.setTabText(self.tabWidget_6.indexOf(self.tab_73), _translate("AdminDashBoard", "Role"))
@@ -3999,6 +4003,12 @@ class Ui_AdminDashBoard(object):
         self.actionSetting_Department.setText(_translate("AdminDashBoard", "setting Department"))
         self.actionSetting_Approver_2.setText(_translate("AdminDashBoard", "Setting Approver"))
 
+
+
+        
+       
+   
+       #Excel Loader function
         # def loadExcelData(self, excel_file_dir, worksheet_name):
         #     df = pd.read_excel(excel_file_dir, worksheet_name)
         # if df.size == 0:
@@ -4007,6 +4017,35 @@ class Ui_AdminDashBoard(object):
         # self.tableWidget_6.setRowCount(df.shape[0])
         # self.tableWidget_6.setColumnCount(df.shape[1])
         # self.tableWidget_6.setHorizontalHeaderLabels(df.columns)
+      
+  #load data function
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+
+    
+
 
        
 

@@ -1,8 +1,10 @@
 import mysql.connector as mysql
+from PyQt5 import QtCore, QtGui, QtWidgets
 # from datetime import date
 # import datetime
 # from pymysql import MySQLError
 import itertools
+import adminDashboard1
 
 #from zktecotest import sync_finger_print
 
@@ -24,10 +26,11 @@ config = {
 try:
     bantudb = mysql.connect(**config)
     print("Connection Opened Successfully!")
+ 
     try:
         mycursor = bantudb.cursor()
         mycursor.execute("use `bantu-hr-db`;")
-
+        
       
 
         # def editDepartment(dep_id, dep_name, par_dep):
@@ -40,7 +43,33 @@ try:
         #     print("Department Updated Successfully!")
         #     viewDepartment()
 
+    
+        def loaddata(self):
+                
+                sql_select_Query = "select * from payroll"
+                
+                mycursor.execute(sql_select_Query)
+                # get all records
+                records = mycursor.fetchall()
+                self.tableWidget_5.setRowCount(100)
+                tablerow = 0
+                for row in records:
+                  
 
+                        self.tableWidget_5.setItem(tablerow, 0, QtWidgets.QtableWodgetItem(row[0]))
+                        self.tableWidget_5.setItem(tablerow, 1, QtWidgets.QtableWodgetItem(row[1]))
+                        self.tableWidget_5.setItem(tablerow, 2, QtWidgets.QtableWodgetItem(row[2]))
+                        self.tableWidget_5.setItem(tablerow, 3, QtWidgets.QtableWodgetItem(row[3]))
+                        self.tableWidget_5.setItem(tablerow, 4, QtWidgets.QtableWodgetItem(row[4]))
+                        self.tableWidget_5.setItem(tablerow, 5, QtWidgets.QtableWodgetItem(row[5]))
+                        self.tableWidget_5.setItem(tablerow, 6, QtWidgets.QtableWodgetItem(row[6]))
+                        self.tableWidget_5.setItem(tablerow, 7, QtWidgets.QtableWodgetItem(row[7]))
+                        self.tableWidget_5.setItem(tablerow, 8, QtWidgets.QtableWodgetItem(row[8]))
+                        self.tableWidget_5.setItem(tablerow, 9, QtWidgets.QtableWodgetItem(row[9]))
+                        self.tableWidget_5.setItem(tablerow, 10, QtWidgets.QtableWodgetItem(row[10]))
+                        self.tableWidget_5.setItem(tablerow, 11, QtWidgets.QtableWodgetItem(row[11]))
+                        tablerow+=1
+                        # self.actionSalir.triggered.connect(self.close)
 
         def deleteDepartment(dep_id):
             #Delets department using department id
@@ -132,17 +161,15 @@ try:
             return records
 
   #paroll table generation
-        # def viewPayroll():
-        #  mycursor.execute("select * FROM payroll"
-        #  )
-        #  results = mycursor.fetchall()
-        #  print(results) 
+        def viewPayroll():
+         rows= mycursor.execute("select * FROM payroll")
+         records = mycursor.fetchall()
+         return records
          
         
 
-
         def fingerprint_device_id():
-            #displayes device id from personel using fingerprint matches
+            #displays device id from personel using fingerprint matches
 
             mycursor.execute(
                 "SELECT devicePersonel_id FROM personel where fingerprint = 0;"

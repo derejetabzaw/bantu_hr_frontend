@@ -3855,13 +3855,13 @@ class Ui_AdminDashBoard(object):
         self.comboBox_14.setItemText(0, _translate("AdminDashBoard", "Bahirdar"))
         self.pushButton_8.setText(_translate("AdminDashBoard", "Generate Excel"))
         #generates Excel file on button click
-        #self.pushButton_8.clicked.connect(ExcelGeneration)
+        self.pushButton_8.clicked.connect(ExcelGeneration)
         #generating the excel file to the table
         #self.pushButton_8.clicked.connect(lambda _, xl_path=excel_file_path, sheet_name=worksheet_name: self.loadExcelData(xl_path, sheet_name))
       
         self.pushButton_9.setText(_translate("AdminDashBoard", "Generate PDF"))
         #generate PDF file on button click
-        #self.pushButton_9.clicked.connect(PdfGeneration)
+        self.pushButton_9.clicked.connect(PdfGeneration)
         self.Payrollregister.setTabText(self.Payrollregister.indexOf(self.tab_4), _translate("AdminDashBoard", "Payroll Generation"))
         self.label_44.setText(_translate("AdminDashBoard", "Payroll Year"))
         self.label_106.setText(_translate("AdminDashBoard", "Field Office"))
@@ -3873,7 +3873,7 @@ class Ui_AdminDashBoard(object):
         self.comboBox_34.setItemText(1, _translate("AdminDashBoard", "Irregular"))
         self.pushButton_60.setText(_translate("AdminDashBoard", "Generate"))
        #loaddata
-        self.pushButton_60.clicked.connect(self.loadData)
+       # self.pushButton_60.clicked.connect(self.loadData)
         item = self.tableWidget_5.verticalHeaderItem(0)
         item.setText(_translate("AdminDashBoard", "1"))
         item = self.tableWidget_5.verticalHeaderItem(1)

@@ -10,16 +10,17 @@
 
 
 
+import time
 from PyQt5 import QtCore, QtGui, QtWidgets
-import ExcelGeneration
-import PdfGeneration
+from PyQt5.QtWidgets import QProgressBar
 from connection import *
 
 
 
 
 class Ui_AdminDashBoard(object):
-    def setupUi(self, AdminDashBoard):
+       
+     def setupUi(self, AdminDashBoard):
         #function to load data
         # def loadData(self):
         #         query= "select * from Payroll"
@@ -31,6 +32,7 @@ class Ui_AdminDashBoard(object):
         #                         self.tableWidget_5.insertRow(row_number)
         #                         for column_number. data in enumerate(row_data):
         #                                 self.tableWidget_5.setItem(row_number, column_number, QtWidgets.QtableWidgetItem(str(data)))
+       
         AdminDashBoard.setObjectName("AdminDashBoard")
         AdminDashBoard.resize(1922, 1080)
         AdminDashBoard.setMaximumSize(QtCore.QSize(16777215, 16777215))
@@ -2813,13 +2815,17 @@ class Ui_AdminDashBoard(object):
         self.lineEdit_7.setObjectName("lineEdit_7")
         self.progressBar = QtWidgets.QProgressBar(self.tab_4)
         self.progressBar.setGeometry(QtCore.QRect(20, 120, 241, 31))
+        self.progressBar.setMinimum(0)
+        self.progressBar.setMaximum(n)
+        self.progressBar.setRange(0, n)
         self.progressBar.setStyleSheet("\n"
 "\n"
 "#BlueProgressBar::chunk {\n"
 "    background-color: #2196F3;\n"
 "    ")
-        self.progressBar.setProperty("value", 24)
+        #self.progressBar.setProperty("value", 24)
         self.progressBar.setObjectName("progressBar")
+        self.progressBar.hide()
         self.Payrollregister.addTab(self.tab_4, "")
         self.tab_5 = QtWidgets.QWidget()
         self.tab_5.setObjectName("tab_5")
@@ -3658,7 +3664,7 @@ class Ui_AdminDashBoard(object):
         self.tabWidget_17.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(AdminDashBoard)
 
-    def retranslateUi(self, AdminDashBoard):
+     def retranslateUi(self, AdminDashBoard):
         _translate = QtCore.QCoreApplication.translate
         AdminDashBoard.setWindowTitle(_translate("AdminDashBoard", "G!ze"))
         item = self.tableWidget_11.horizontalHeaderItem(0)
@@ -3961,7 +3967,7 @@ class Ui_AdminDashBoard(object):
         self.tabWidget_11.setTabText(self.tabWidget_11.indexOf(self.tab_53), _translate("AdminDashBoard", "Sychronizing Software Data To Device"))
         self.AddArea.setTabText(self.AddArea.indexOf(self.Devicemanagement), _translate("AdminDashBoard", "Device Management"))
         self.tabWidget_2.setTabText(self.tabWidget_2.indexOf(self.Device), _translate("AdminDashBoard", "Device"))
-        self.label_109.setText(_translate("AdminDashBoard", "Search Mmeber"))
+        self.label_109.setText(_translate("AdminDashBoard", "Search Memeber"))
         self.pushButton_10.setText(_translate("AdminDashBoard", "Search"))
         self.label_110.setText(_translate("AdminDashBoard", "Date"))
         self.pushButton_61.setText(_translate("AdminDashBoard", "See Today\'s Report"))
@@ -4218,10 +4224,12 @@ class Ui_AdminDashBoard(object):
         self.comboBox_5.setItemText(0, _translate("AdminDashBoard", "2022"))
         self.comboBox_14.setItemText(0, _translate("AdminDashBoard", "Bahirdar"))
         self.pushButton_8.setText(_translate("AdminDashBoard", "Generate Excel"))
-        #self.pushButton_8.clicked.connect(ExcelGeneration)
+        
+        self.pushButton_8.clicked.connect(ExcelGeneration)
+        self.pushButton_8.clicked.connect(lambda status, n_size= n: self.run(n_size))
         self.pushButton_9.setText(_translate("AdminDashBoard", "Generate PDF"))
        # self.pushButton_9.clicked.connect(PdfGeneration)
-
+        self.pushButton_8.clicked.connect(lambda status, n_size= n: self.run(n_size)) 
         self.Payrollregister.setTabText(self.Payrollregister.indexOf(self.tab_4), _translate("AdminDashBoard", "Payroll Generation"))
         self.label_44.setText(_translate("AdminDashBoard", "Payroll Year"))
         self.label_106.setText(_translate("AdminDashBoard", "Field Office"))
@@ -4378,10 +4386,22 @@ class Ui_AdminDashBoard(object):
         self.actionAdd_position.setText(_translate("AdminDashBoard", "add position"))
         self.actionSetting_Department.setText(_translate("AdminDashBoard", "setting Department"))
         self.actionSetting_Approver_2.setText(_translate("AdminDashBoard", "Setting Approver"))
-
+     
+     
+     def run(self, n):
+        self.progressBar.show()
+        for i in range(n):
+             time.sleep(0.01)
+             self.progressBar.setValue(i+1) 
+        self.progressBar.hide() 
+                
 
 if __name__ == "__main__":
     import sys
+    from ExcelGeneration  import *
+    #import PdfGeneration
+
+    n = 500
     excel_file_path = 'Attendance.xlsx'
     worksheet_name = 'Sheet1'
 

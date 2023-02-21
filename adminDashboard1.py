@@ -9,8 +9,8 @@
 
 
 
-
-from PyQt5 import QtCore, QtGui, QtWidgets
+import os
+from PyQt5 import QtCore, QtGui , QtWidgets
 import ExcelGeneration
 import PdfGeneration
 from connection import *
@@ -4382,10 +4382,12 @@ class Ui_AdminDashBoard(object):
 
 if __name__ == "__main__":
     import sys
+    os.environ["QT_AUTO_SCREEN_SCALE_FACTOR"] = "1"
     excel_file_path = 'Attendance.xlsx'
     worksheet_name = 'Sheet1'
 
     app = QtWidgets.QApplication(sys.argv)
+    app.setAttribute(QtCore.Qt.AA_EnableHighDpiScaling)
     AdminDashBoard = QtWidgets.QMainWindow()
     ui = Ui_AdminDashBoard()
     ui.setupUi(AdminDashBoard)

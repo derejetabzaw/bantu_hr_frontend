@@ -10,6 +10,8 @@
 
 
 
+import os
+import time
 from PyQt5 import QtCore, QtGui, QtWidgets
 import ExcelGeneration
 import PdfGeneration
@@ -2813,19 +2815,18 @@ class Ui_AdminDashBoard(object):
         self.lineEdit_7 = QtWidgets.QLineEdit(self.tab_4)
         self.lineEdit_7.setGeometry(QtCore.QRect(100, 60, 113, 20))
         self.lineEdit_7.setObjectName("lineEdit_7")
-        self.progressBar = QtWidgets.QProgressBar(self.tab_4)
-        self.progressBar.setGeometry(QtCore.QRect(20, 120, 241, 31))
-        self.progressBar.setMinimum(0)
-        self.progressBar.setMaximum(n)
-        self.progressBar.setRange(0, n)
-        self.progressBar.setStyleSheet("\n"
-"\n"
-"#BlueProgressBar::chunk {\n"
-"    background-color: #2196F3;\n"
-"    ")
-        #self.progressBar.setProperty("value", 24)
-        self.progressBar.setObjectName("progressBar")
-        self.progressBar.hide()
+#         self.progressBar = QtWidgets.QProgressBar(self.tab_4)
+#         self.progressBar.setGeometry(QtCore.QRect(20, 120, 241, 31))
+#         self.progressBar.setMinimum(0)
+#         self.progressBar.setMaximum(n)
+#         self.progressBar.setRange(0, n)
+#         self.progressBar.setStyleSheet("\n"
+# "\n"
+# "#BlueProgressBar::chunk {\n"
+# "    background-color: #2196F3;\n"
+# "    ")
+       # self.progressBar.setObjectName("progressBar")
+       # self.progressBar.hide()
         self.Payrollregister.addTab(self.tab_4, "")
         self.tab_5 = QtWidgets.QWidget()
         self.tab_5.setObjectName("tab_5")
@@ -4225,7 +4226,7 @@ class Ui_AdminDashBoard(object):
         self.comboBox_14.setItemText(0, _translate("AdminDashBoard", "Bahirdar"))
         self.pushButton_8.setText(_translate("AdminDashBoard", "Generate Excel"))
         
-        self.pushButton_8.clicked.connect(ExcelGeneration)
+        #self.pushButton_8.clicked.connect(ExcelGeneration)
         self.pushButton_8.clicked.connect(lambda status, n_size= n: self.run(n_size))
         self.pushButton_9.setText(_translate("AdminDashBoard", "Generate PDF"))
        # self.pushButton_9.clicked.connect(PdfGeneration)
@@ -4388,16 +4389,17 @@ class Ui_AdminDashBoard(object):
         self.actionSetting_Approver_2.setText(_translate("AdminDashBoard", "Setting Approver"))
      
      
-     def run(self, n):
-        self.progressBar.show()
-        for i in range(n):
-             time.sleep(0.01)
-             self.progressBar.setValue(i+1) 
-        self.progressBar.hide() 
+#      def run(self, n):
+#         self.progressBar.show()
+#         for i in range(n):
+#              time.sleep(0.01)
+#              self.progressBar.setValue(i+1) 
+#         self.progressBar.hide() 
                 
 
 if __name__ == "__main__":
     import sys
+    n= 500
     os.environ["QT_AUTO_SCREEN_SCALE_FACTOR"] = "1"
     excel_file_path = 'Attendance.xlsx'
     worksheet_name = 'Sheet1'

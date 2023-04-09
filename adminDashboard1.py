@@ -13,9 +13,11 @@
 import os
 import time
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtWidgets import QTableWidgetItem 
 import ExcelGeneration
 import PdfGeneration
 from connection import *
+import mysql.connector as mc
 
 
 
@@ -2124,9 +2126,9 @@ class Ui_AdminDashBoard(object):
         self.tableWidget_6 = QtWidgets.QTableWidget(self.tab_9)
         self.tableWidget_6.setGeometry(QtCore.QRect(0, 60, 481, 421))
         self.tableWidget_6.setObjectName("tableWidget_6")
-        self.tableWidget_6.setColumnCount(4)
-        self.tableWidget_6.setRowCount(0)
-        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget_6.setColumnCount(5)
+        self.tableWidget_6.setRowCount(5)
+        item = QtWidgets.QTableWidgetItem()        
         self.tableWidget_6.setHorizontalHeaderItem(0, item)
         item = QtWidgets.QTableWidgetItem()
         self.tableWidget_6.setHorizontalHeaderItem(1, item)
@@ -2134,7 +2136,9 @@ class Ui_AdminDashBoard(object):
         self.tableWidget_6.setHorizontalHeaderItem(2, item)
         item = QtWidgets.QTableWidgetItem()
         self.tableWidget_6.setHorizontalHeaderItem(3, item)
-        self.tableWidget_6.horizontalHeader().setVisible(False)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget_6.setHorizontalHeaderItem(4, item)
+        self.tableWidget_6.horizontalHeader().setVisible(True)
         self.tableWidget_6.horizontalHeader().setCascadingSectionResizes(False)
         self.tableWidget_6.horizontalHeader().setHighlightSections(True)
         self.tableWidget_6.horizontalHeader().setStretchLastSection(True)
@@ -3664,7 +3668,24 @@ class Ui_AdminDashBoard(object):
         self.tabWidget_6.setCurrentIndex(0)
         self.tabWidget_17.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(AdminDashBoard)
-
+     def view_todayReport(self):
+         try:
+            mydb = mc.connect(
+                host= "localhost",
+                user= "root",
+                password= "Brightfuture22.",
+                database= "bantu-hr-db"
+                            )
+            mycursor = mydb.cursor()
+            mycursor.execute("SELECT full_name, check_date, check_in, check_out, worked_hours FROM attendance_log WHERE check_date= curdate()") 
+            result = mycursor.fetchall()
+            self.tableWidget_6.setRowCount(0)
+            for row_number, row_data in enumerate(result):
+                self.tableWidget_6.insertRow(row_number)
+                for column_number, data in enumerate(row_data):
+                    self.tableWidget_6.setItem(row_number, column_number, QTableWidgetItem(str(data)))    
+         except mc.Error as e:
+            print ("Error Occured")
      def retranslateUi(self, AdminDashBoard):
         _translate = QtCore.QCoreApplication.translate
         AdminDashBoard.setWindowTitle(_translate("AdminDashBoard", "G!ze"))
@@ -3972,14 +3993,18 @@ class Ui_AdminDashBoard(object):
         self.pushButton_10.setText(_translate("AdminDashBoard", "Search"))
         self.label_110.setText(_translate("AdminDashBoard", "Date"))
         self.pushButton_61.setText(_translate("AdminDashBoard", "See Today\'s Report"))
+        self.pushButton_61.clicked.connect(self.view_todayReport)
         item = self.tableWidget_6.horizontalHeaderItem(0)
         item.setText(_translate("AdminDashBoard", "Employee Name"))
         item = self.tableWidget_6.horizontalHeaderItem(1)
-        item.setText(_translate("AdminDashBoard", "Clock In"))
+        item.setText(_translate("AdminDashboard", "Date"))
         item = self.tableWidget_6.horizontalHeaderItem(2)
-        item.setText(_translate("AdminDashBoard", "Clock Out"))
+        item.setText(_translate("AdminDashBoard", "Clock In"))
         item = self.tableWidget_6.horizontalHeaderItem(3)
+        item.setText(_translate("AdminDashBoard", "Clock Out"))
+        item = self.tableWidget_6.horizontalHeaderItem(4)
         item.setText(_translate("AdminDashBoard", "Time Worked"))
+
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_9), _translate("AdminDashBoard", "Clock In/Out"))
         self.label_111.setText(_translate("AdminDashBoard", "Department"))
         self.comboBox_13.setItemText(0, _translate("AdminDashBoard", "Finance"))
@@ -4226,10 +4251,10 @@ class Ui_AdminDashBoard(object):
         self.comboBox_14.setItemText(0, _translate("AdminDashBoard", "Bahirdar"))
         self.pushButton_8.setText(_translate("AdminDashBoard", "Generate Excel"))
         
-        #self.pushButton_8.clicked.connect(ExcelGeneration)
+        self.pushButton_8.clicked.connect(ExcelGeneration)
         self.pushButton_8.clicked.connect(lambda status, n_size= n: self.run(n_size))
         self.pushButton_9.setText(_translate("AdminDashBoard", "Generate PDF"))
-       # self.pushButton_9.clicked.connect(PdfGeneration)
+        self.pushButton_9.clicked.connect(PdfGeneration)
         self.pushButton_8.clicked.connect(lambda status, n_size= n: self.run(n_size)) 
         self.Payrollregister.setTabText(self.Payrollregister.indexOf(self.tab_4), _translate("AdminDashBoard", "Payroll Generation"))
         self.label_44.setText(_translate("AdminDashBoard", "Payroll Year"))
@@ -4388,7 +4413,7 @@ class Ui_AdminDashBoard(object):
         self.actionSetting_Department.setText(_translate("AdminDashBoard", "setting Department"))
         self.actionSetting_Approver_2.setText(_translate("AdminDashBoard", "Setting Approver"))
      
-     
+
 #      def run(self, n):
 #         self.progressBar.show()
 #         for i in range(n):
@@ -4399,6 +4424,8 @@ class Ui_AdminDashBoard(object):
 
 if __name__ == "__main__":
     import sys
+    from PdfGeneration import *
+    from ExcelGeneration import *
     n= 500
     os.environ["QT_AUTO_SCREEN_SCALE_FACTOR"] = "1"
     excel_file_path = 'Attendance.xlsx'

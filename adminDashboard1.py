@@ -16,12 +16,12 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QTableWidgetItem 
 import ExcelGeneration
 import PdfGeneration
-from connection import *
+# from connection import *
 import mysql.connector as mc
 from datetime import datetime
 import calendar
 import array
-
+from onlineDb import *
 
 
 
@@ -3689,14 +3689,11 @@ class Ui_AdminDashBoard(object):
         QtCore.QMetaObject.connectSlotsByName(AdminDashBoard)
      def view_todayReport(self):
          try:
-            mydb = mc.connect(
-                host= "localhost",
-                user= "root",
-                password= "Brightfuture22.",
-                database= "bantu-hr-db"
-                            )
-            mycursor = mydb.cursor()
-            mycursor.execute("SELECT full_name, check_date, check_in, check_out, worked_hours FROM attendance_log WHERE check_date= curdate()") 
+            
+
+            mycursor = bantudb.cursor()
+            mycursor.execute("SELECT full_name, check_date, check_in, check_out, worked_hours FROM attendance_log where check_date= DATE_FORMAT(CURRENT_DATE(),'%Y-%m-%d')") 
+            print("hi")
             result = mycursor.fetchall()
             self.tableWidget_6.setRowCount(0)
             for row_number, row_data in enumerate(result):
@@ -3708,16 +3705,8 @@ class Ui_AdminDashBoard(object):
         
     
      def view_DailyReport(self):
-         try:
-              mydb = mc.connect(
-                host= "localhost",
-                user= "root",
-                password= "Brightfuture22.",
-                database= "bantu-hr-db"
-                            )
-              
-              
-              mycursor = mydb.cursor()
+         try: 
+              mycursor = bantudb.cursor()
               checkDate= self.dateEdit_7.text()
               #print(checkDate)
               mycursor.execute("SELECT full_name, worked_hours fROM attendance_log WHERE check_date =%s", (checkDate,))
@@ -3736,17 +3725,10 @@ class Ui_AdminDashBoard(object):
                 
      def view_customReport(self):
          try:
-              mydb = mc.connect(
-                host= "localhost",
-                user= "root",
-                password= "Brightfuture22.",
-                database= "bantu-hr-db"
-                            )
-              
               start= self.dateEdit_4.text()
               end= self.dateEdit_5.text()
-              mycursor = mydb.cursor()
-              mycursor.execute("select full_name, sum(worked_hours) from attendance_log where check_date between %s and %s group by devicepersonel", (start, end,))
+              mycursor = bantudb.cursor()
+              mycursor.execute("select ANY_VALUE(full_name), ANY_VALUE(sum(worked_hours)) from attendance_log where check_date between %s and %s group by devicepersonel", (start, end,))
               result = mycursor.fetchall()
               
               self.tableWidget_13.setRowCount(0)
@@ -3757,20 +3739,14 @@ class Ui_AdminDashBoard(object):
 
          except mc.Error as e:
             print ("Error Occured")
-            
+
              
      def view_monthlyReport(self):
          try:
-              mydb = mc.connect(
-                host= "localhost",
-                user= "root",
-                password= "Brightfuture22.",
-                database= "bantu-hr-db"
-                            )
               month_input = self.comboBox_39.currentText()
-              mycursor = mydb.cursor()
+              mycursor = bantudb.cursor()
               print(month_input)
-              mycursor.execute("select full_name, sum(worked_hours) from attendance_log where monthname(check_date) = %s  group by devicepersonel", (month_input,))
+              mycursor.execute("select ANY_VALUE(full_name), ANY_VALUE(sum(worked_hours)) from attendance_log where monthname(check_date) = %s  group by devicepersonel", (month_input,))
               result = mycursor.fetchall()
               
               self.tableWidget_9.setRowCount(0)
@@ -3782,38 +3758,31 @@ class Ui_AdminDashBoard(object):
          except mc.Error as e:
                 print("Error Occured")
 
-#      def view_weeklyReport(self):
-#           weeks=[]
-          
-#           try:
-#               mydb = mc.connect(
-#                 host= "localhost",
-#                 user= "root",
-#                 password= "Brightfuture22.",
-#                 database= "bantu-hr-db"
-#                             )
+     def view_weeklyReport(self):
+          weeks=[]
+          try:
              
-#               Mon_input= self.comboBox_38.currentText()
-#               Mon_input= datetime.strptime(Mon_input, '%B').month
-#               print(Mon_input)
-#               week_input= self.comboBox_40.currentIndex()
-#               obj= calendar.Calendar()
-#               for day in obj.monthdayscalendar(2023,Mon_input):
-#                 weeks.append(day)
-#               comp= weeks[week_input]
-#               print(comp)
+              Mon_input= self.comboBox_38.currentText()
+              Mon_input= datetime.strptime(Mon_input, '%B').month
+              print(Mon_input)
+              week_input= self.comboBox_40.currentIndex()
+              obj= calendar.Calendar()
+              for day in obj.monthdayscalendar(2023,Mon_input):
+                weeks.append(day)
+              comp= weeks[week_input]
+              print(comp)
               
-#               mycursor = mydb.cursor()
-#               mycursor.execute("select full_name, sum(worked_hours) from attendance_log where day(check_date) in {} and month(check_date)= %s", (comp, Mon_input,))
-#               result = mycursor.fetchall()
-#               self.tableWidget_8.setRowCount(0)
-#               for row_number, row_data in enumerate(result):
-#                 self.tableWidget_8.insertRow(row_number)
-#                 for column_number, data in enumerate(row_data):
-#                     self.tableWidget_8.setItem(row_number, column_number, QTableWidgetItem(str(data))) 
+              mycursor = bantudb.cursor()
+              mycursor.execute("select ANY_VALUE(full_name), ANY_VALUE(sum(worked_hours)) from attendance_log where day(check_date) in %s and month(check_date)= %s", (comp, Mon_input,))
+              result = mycursor.fetchall()
+              self.tableWidget_8.setRowCount(0)
+              for row_number, row_data in enumerate(result):
+                self.tableWidget_8.insertRow(row_number)
+                for column_number, data in enumerate(row_data):
+                    self.tableWidget_8.setItem(row_number, column_number, QTableWidgetItem(str(data))) 
           
-#           except mc.Error as e:
-#                 print("Error Occured")
+          except mc.Error as e:
+                print("Error Occured")
 
          
      def retranslateUi(self, AdminDashBoard):
@@ -4123,7 +4092,7 @@ class Ui_AdminDashBoard(object):
         self.pushButton_10.setText(_translate("AdminDashBoard", "Search"))
         self.label_110.setText(_translate("AdminDashBoard", "Date"))
         self.pushButton_61.setText(_translate("AdminDashBoard", "See Today\'s Report"))
-        # self.pushButton_61.clicked.connect(self.view_todayReport)
+        self.pushButton_61.clicked.connect(self.view_todayReport)
         item = self.tableWidget_6.horizontalHeaderItem(0)
         item.setText(_translate("AdminDashBoard", "Employee Name"))
         item = self.tableWidget_6.horizontalHeaderItem(1)

@@ -13,9 +13,15 @@
 import os
 import time
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtWidgets import QTableWidgetItem 
 import ExcelGeneration
 import PdfGeneration
-from connection import *
+# from connection import *
+import mysql.connector as mc
+from datetime import datetime
+import calendar
+import array
+from onlineDb import *
 
 
 
@@ -2124,9 +2130,9 @@ class Ui_AdminDashBoard(object):
         self.tableWidget_6 = QtWidgets.QTableWidget(self.tab_9)
         self.tableWidget_6.setGeometry(QtCore.QRect(0, 60, 481, 421))
         self.tableWidget_6.setObjectName("tableWidget_6")
-        self.tableWidget_6.setColumnCount(4)
-        self.tableWidget_6.setRowCount(0)
-        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget_6.setColumnCount(5)
+        self.tableWidget_6.setRowCount(5)
+        item = QtWidgets.QTableWidgetItem()        
         self.tableWidget_6.setHorizontalHeaderItem(0, item)
         item = QtWidgets.QTableWidgetItem()
         self.tableWidget_6.setHorizontalHeaderItem(1, item)
@@ -2134,7 +2140,9 @@ class Ui_AdminDashBoard(object):
         self.tableWidget_6.setHorizontalHeaderItem(2, item)
         item = QtWidgets.QTableWidgetItem()
         self.tableWidget_6.setHorizontalHeaderItem(3, item)
-        self.tableWidget_6.horizontalHeader().setVisible(False)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget_6.setHorizontalHeaderItem(4, item)
+        self.tableWidget_6.horizontalHeader().setVisible(True)
         self.tableWidget_6.horizontalHeader().setCascadingSectionResizes(False)
         self.tableWidget_6.horizontalHeader().setHighlightSections(True)
         self.tableWidget_6.horizontalHeader().setStretchLastSection(True)
@@ -2160,9 +2168,10 @@ class Ui_AdminDashBoard(object):
         self.label_124 = QtWidgets.QLabel(self.tab_12)
         self.label_124.setGeometry(QtCore.QRect(110, 10, 61, 16))
         self.label_124.setObjectName("label_124")
-        self.spinBox_2 = QtWidgets.QSpinBox(self.tab_12)
-        self.spinBox_2.setGeometry(QtCore.QRect(110, 30, 121, 16))
-        self.spinBox_2.setObjectName("spinBox_2")
+        self.dateEdit_7= QtWidgets.QDateEdit(self.tab_12)
+        self.dateEdit_7.setGeometry(QtCore.QRect(110, 30, 121, 16))
+        self.dateEdit_7.setDisplayFormat("yyyy-dd-MM")
+        self.dateEdit_7.setObjectName("dateEdit_7")
         self.pushButton_62 = QtWidgets.QPushButton(self.tab_12)
         self.pushButton_62.setGeometry(QtCore.QRect(240, 10, 75, 21))
         self.pushButton_62.setObjectName("pushButton_62")
@@ -2171,7 +2180,7 @@ class Ui_AdminDashBoard(object):
         self.tableWidget_7.setShowGrid(False)
         self.tableWidget_7.setObjectName("tableWidget_7")
         self.tableWidget_7.setColumnCount(2)
-        self.tableWidget_7.setRowCount(3)
+        self.tableWidget_7.setRowCount(4)
         item = QtWidgets.QTableWidgetItem()
         self.tableWidget_7.setVerticalHeaderItem(0, item)
         item = QtWidgets.QTableWidgetItem()
@@ -2231,11 +2240,14 @@ class Ui_AdminDashBoard(object):
         self.label_126 = QtWidgets.QLabel(self.tab_14)
         self.label_126.setGeometry(QtCore.QRect(110, 10, 61, 16))
         self.label_126.setObjectName("label_126")
+        self.label_133= QtWidgets.QLabel(self.tab_14)
+        self.label_133.setGeometry(QtCore.QRect(250, 10, 61, 16))
+        self.label_133.setObjectName("label_133")
         self.pushButton_63 = QtWidgets.QPushButton(self.tab_14)
-        self.pushButton_63.setGeometry(QtCore.QRect(240, 10, 75, 21))
+        self.pushButton_63.setGeometry(QtCore.QRect(380, 10, 75, 21))
         self.pushButton_63.setObjectName("pushButton_63")
         self.comboBox_38 = QtWidgets.QComboBox(self.tab_14)
-        self.comboBox_38.setGeometry(QtCore.QRect(110, 30, 111, 16))
+        self.comboBox_38.setGeometry(QtCore.QRect(110, 30, 71, 16))
         self.comboBox_38.setObjectName("comboBox_38")
         self.comboBox_38.addItem("")
         self.comboBox_38.addItem("")
@@ -2286,6 +2298,15 @@ class Ui_AdminDashBoard(object):
         self.pushButton_64 = QtWidgets.QPushButton(self.tab_13)
         self.pushButton_64.setGeometry(QtCore.QRect(240, 10, 75, 21))
         self.pushButton_64.setObjectName("pushButton_64")
+        self.comboBox_40 = QtWidgets.QComboBox(self.tab_14)
+        self.comboBox_40.setGeometry(QtCore.QRect(240, 30, 69, 16))
+        self.comboBox_40.setObjectName("comboBox_40")
+        self.comboBox_40.addItem("")
+        self.comboBox_40.addItem("")
+        self.comboBox_40.addItem("")
+        self.comboBox_40.addItem("")
+        self.comboBox_40.addItem("")
+        self.comboBox_40.addItem("")
         self.comboBox_39 = QtWidgets.QComboBox(self.tab_13)
         self.comboBox_39.setGeometry(QtCore.QRect(110, 30, 111, 16))
         self.comboBox_39.setObjectName("comboBox_39")
@@ -2352,9 +2373,11 @@ class Ui_AdminDashBoard(object):
         self.dateEdit_4 = QtWidgets.QDateEdit(self.tab_15)
         self.dateEdit_4.setGeometry(QtCore.QRect(120, 30, 110, 16))
         self.dateEdit_4.setObjectName("dateEdit_4")
+        self.dateEdit_4.setDisplayFormat("yyyy-dd-MM")
         self.dateEdit_5 = QtWidgets.QDateEdit(self.tab_15)
         self.dateEdit_5.setGeometry(QtCore.QRect(290, 30, 110, 16))
         self.dateEdit_5.setObjectName("dateEdit_5")
+        self.dateEdit_5.setDisplayFormat("yyyy-dd-MM")
         self.tabWidget_4.addTab(self.tab_15, "")
         self.tabWidget.addTab(self.tab_11, "")
         self.tabWidget_2.addTab(self.tab_8, "")
@@ -3664,7 +3687,104 @@ class Ui_AdminDashBoard(object):
         self.tabWidget_6.setCurrentIndex(0)
         self.tabWidget_17.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(AdminDashBoard)
+     def view_todayReport(self):
+         try:
+            
 
+            mycursor = bantudb.cursor()
+            mycursor.execute("SELECT full_name, check_date, check_in, check_out, worked_hours FROM attendance_log where check_date= DATE_FORMAT(CURRENT_DATE(),'%Y-%m-%d')") 
+            print("hi")
+            result = mycursor.fetchall()
+            self.tableWidget_6.setRowCount(0)
+            for row_number, row_data in enumerate(result):
+                self.tableWidget_6.insertRow(row_number)
+                for column_number, data in enumerate(row_data):
+                    self.tableWidget_6.setItem(row_number, column_number, QTableWidgetItem(str(data)))    
+         except mc.Error as e:
+            print ("Error Occured")
+        
+    
+     def view_DailyReport(self):
+         try: 
+              mycursor = bantudb.cursor()
+              checkDate= self.dateEdit_7.text()
+              #print(checkDate)
+              mycursor.execute("SELECT full_name, worked_hours fROM attendance_log WHERE check_date =%s", (checkDate,))
+             # print("connected")
+              result = mycursor.fetchall()
+              
+              self.tableWidget_7.setRowCount(0)
+              for row_number, row_data in enumerate(result):
+                self.tableWidget_7.insertRow(row_number)
+                for column_number, data in enumerate(row_data):
+                    self.tableWidget_7.setItem(row_number, column_number, QTableWidgetItem(str(data))) 
+         
+         except mc.Error as e:
+            print ("Error Occured")
+
+                
+     def view_customReport(self):
+         try:
+              start= self.dateEdit_4.text()
+              end= self.dateEdit_5.text()
+              mycursor = bantudb.cursor()
+              mycursor.execute("select ANY_VALUE(full_name), ANY_VALUE(sum(worked_hours)) from attendance_log where check_date between %s and %s group by devicepersonel", (start, end,))
+              result = mycursor.fetchall()
+              
+              self.tableWidget_13.setRowCount(0)
+              for row_number, row_data in enumerate(result):
+                self.tableWidget_13.insertRow(row_number)
+                for column_number, data in enumerate(row_data):
+                    self.tableWidget_13.setItem(row_number, column_number, QTableWidgetItem(str(data))) 
+
+         except mc.Error as e:
+            print ("Error Occured")
+
+             
+     def view_monthlyReport(self):
+         try:
+              month_input = self.comboBox_39.currentText()
+              mycursor = bantudb.cursor()
+              print(month_input)
+              mycursor.execute("select ANY_VALUE(full_name), ANY_VALUE(sum(worked_hours)) from attendance_log where monthname(check_date) = %s  group by devicepersonel", (month_input,))
+              result = mycursor.fetchall()
+              
+              self.tableWidget_9.setRowCount(0)
+              for row_number, row_data in enumerate(result):
+                self.tableWidget_9.insertRow(row_number)
+                for column_number, data in enumerate(row_data):
+                    self.tableWidget_9.setItem(row_number, column_number, QTableWidgetItem(str(data))) 
+
+         except mc.Error as e:
+                print("Error Occured")
+
+     def view_weeklyReport(self):
+          weeks=[]
+          try:
+             
+              Mon_input= self.comboBox_38.currentText()
+              Mon_input= datetime.strptime(Mon_input, '%B').month
+              print(Mon_input)
+              week_input= self.comboBox_40.currentIndex()
+              obj= calendar.Calendar()
+              for day in obj.monthdayscalendar(2023,Mon_input):
+                weeks.append(day)
+              comp= weeks[week_input]
+              print(comp)
+              
+              mycursor = bantudb.cursor()
+              mycursor.execute("select ANY_VALUE(full_name), ANY_VALUE(sum(worked_hours)) from attendance_log where day(check_date) in %s and month(check_date)= %s", (comp, Mon_input,))
+              result = mycursor.fetchall()
+              self.tableWidget_8.setRowCount(0)
+              for row_number, row_data in enumerate(result):
+                self.tableWidget_8.insertRow(row_number)
+                for column_number, data in enumerate(row_data):
+                    self.tableWidget_8.setItem(row_number, column_number, QTableWidgetItem(str(data))) 
+          
+          except mc.Error as e:
+                print("Error Occured")
+
+         
      def retranslateUi(self, AdminDashBoard):
         _translate = QtCore.QCoreApplication.translate
         AdminDashBoard.setWindowTitle(_translate("AdminDashBoard", "G!ze"))
@@ -3972,19 +4092,24 @@ class Ui_AdminDashBoard(object):
         self.pushButton_10.setText(_translate("AdminDashBoard", "Search"))
         self.label_110.setText(_translate("AdminDashBoard", "Date"))
         self.pushButton_61.setText(_translate("AdminDashBoard", "See Today\'s Report"))
+        self.pushButton_61.clicked.connect(self.view_todayReport)
         item = self.tableWidget_6.horizontalHeaderItem(0)
         item.setText(_translate("AdminDashBoard", "Employee Name"))
         item = self.tableWidget_6.horizontalHeaderItem(1)
-        item.setText(_translate("AdminDashBoard", "Clock In"))
+        item.setText(_translate("AdminDashboard", "Date"))
         item = self.tableWidget_6.horizontalHeaderItem(2)
-        item.setText(_translate("AdminDashBoard", "Clock Out"))
+        item.setText(_translate("AdminDashBoard", "Clock In"))
         item = self.tableWidget_6.horizontalHeaderItem(3)
+        item.setText(_translate("AdminDashBoard", "Clock Out"))
+        item = self.tableWidget_6.horizontalHeaderItem(4)
         item.setText(_translate("AdminDashBoard", "Time Worked"))
+
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_9), _translate("AdminDashBoard", "Clock In/Out"))
         self.label_111.setText(_translate("AdminDashBoard", "Department"))
         self.comboBox_13.setItemText(0, _translate("AdminDashBoard", "Finance"))
         self.label_124.setText(_translate("AdminDashBoard", "Select Date"))
         self.pushButton_62.setText(_translate("AdminDashBoard", "Generate"))
+        self.pushButton_62.clicked.connect(self.view_DailyReport)
         item = self.tableWidget_7.horizontalHeaderItem(0)
         item.setText(_translate("AdminDashBoard", "Employes "))
         item = self.tableWidget_7.horizontalHeaderItem(1)
@@ -3992,11 +4117,11 @@ class Ui_AdminDashBoard(object):
         __sortingEnabled = self.tableWidget_7.isSortingEnabled()
         self.tableWidget_7.setSortingEnabled(False)
         item = self.tableWidget_7.item(0, 0)
-        item.setText(_translate("AdminDashBoard", "abebe"))
-        item = self.tableWidget_7.item(1, 0)
-        item.setText(_translate("AdminDashBoard", "kebede"))
-        item = self.tableWidget_7.item(2, 0)
-        item.setText(_translate("AdminDashBoard", "sara"))
+        # item.setText(_translate("AdminDashBoard", "abebe"))
+        # item = self.tableWidget_7.item(1, 0)
+        # item.setText(_translate("AdminDashBoard", "kebede"))
+        # item = self.tableWidget_7.item(2, 0)
+        # item.setText(_translate("AdminDashBoard", "sara"))
         self.tableWidget_7.setSortingEnabled(__sortingEnabled)
         self.tabWidget_4.setTabText(self.tabWidget_4.indexOf(self.tab_12), _translate("AdminDashBoard", "Daily"))
         item = self.tableWidget_8.horizontalHeaderItem(0)
@@ -4006,23 +4131,32 @@ class Ui_AdminDashBoard(object):
         __sortingEnabled = self.tableWidget_8.isSortingEnabled()
         self.tableWidget_8.setSortingEnabled(False)
         item = self.tableWidget_8.item(0, 0)
-        item.setText(_translate("AdminDashBoard", "abebe"))
-        item = self.tableWidget_8.item(1, 0)
-        item.setText(_translate("AdminDashBoard", "kebede"))
-        item = self.tableWidget_8.item(2, 0)
-        item.setText(_translate("AdminDashBoard", "sara"))
         self.tableWidget_8.setSortingEnabled(__sortingEnabled)
         self.comboBox_35.setItemText(0, _translate("AdminDashBoard", "Finance"))
         self.label_125.setText(_translate("AdminDashBoard", "Department"))
-        self.label_126.setText(_translate("AdminDashBoard", "Select Week"))
+        self.label_126.setText(_translate("AdminDashBoard", "Select Month"))
+        self.label_133.setText(_translate("AdminDashBoard", "Select Week"))
         self.pushButton_63.setText(_translate("AdminDashBoard", "Generate"))
-        self.comboBox_38.setItemText(0, _translate("AdminDashBoard", "Monday"))
-        self.comboBox_38.setItemText(1, _translate("AdminDashBoard", "Tuesday"))
-        self.comboBox_38.setItemText(2, _translate("AdminDashBoard", "Wednsday"))
-        self.comboBox_38.setItemText(3, _translate("AdminDashBoard", "Thursday"))
-        self.comboBox_38.setItemText(4, _translate("AdminDashBoard", "Friday"))
-        self.comboBox_38.setItemText(5, _translate("AdminDashBoard", "Saturday"))
-        self.comboBox_38.setItemText(6, _translate("AdminDashBoard", "Sunday"))
+        self.pushButton_63.clicked.connect(self.view_weeklyReport)
+        self.comboBox_38.setItemText(0, _translate("AdminDashBoard", "January"))
+        self.comboBox_38.setItemText(1, _translate("AdminDashBoard", "February"))
+        self.comboBox_38.setItemText(2, _translate("AdminDashBoard", "March"))
+        self.comboBox_38.setItemText(3, _translate("AdminDashBoard", "April"))
+        self.comboBox_38.setItemText(4, _translate("AdminDashBoard", "May"))
+        self.comboBox_38.setItemText(5, _translate("AdminDashBoard", "June"))
+        self.comboBox_38.setItemText(6, _translate("AdminDashBoard", "July"))
+        self.comboBox_38.setItemText(7, _translate("AdminDashBoard", "August"))
+        self.comboBox_38.setItemText(8, _translate("AdminDashBoard", "September"))
+        self.comboBox_38.setItemText(9, _translate("AdminDashBoard", "October"))
+        self.comboBox_38.setItemText(10, _translate("AdminDashBoard", "November"))
+        self.comboBox_38.setItemText(11, _translate("AdminDashBoard", "December"))
+
+        self.comboBox_40.setItemText(0, _translate("AdminDashBoard", "1"))
+        self.comboBox_40.setItemText(1, _translate("AdminDashBoard", "2"))
+        self.comboBox_40.setItemText(2, _translate("AdminDashBoard", "3"))
+        self.comboBox_40.setItemText(3, _translate("AdminDashBoard", "4"))
+        self.comboBox_40.setItemText(4, _translate("AdminDashBoard", "5"))
+        
         self.tabWidget_4.setTabText(self.tabWidget_4.indexOf(self.tab_14), _translate("AdminDashBoard", "Weekly"))
         self.label_127.setText(_translate("AdminDashBoard", "Department"))
         self.label_131.setText(_translate("AdminDashBoard", "Select Month"))
@@ -4034,13 +4168,9 @@ class Ui_AdminDashBoard(object):
         __sortingEnabled = self.tableWidget_9.isSortingEnabled()
         self.tableWidget_9.setSortingEnabled(False)
         item = self.tableWidget_9.item(0, 0)
-        item.setText(_translate("AdminDashBoard", "abebe"))
-        item = self.tableWidget_9.item(1, 0)
-        item.setText(_translate("AdminDashBoard", "kebede"))
-        item = self.tableWidget_9.item(2, 0)
-        item.setText(_translate("AdminDashBoard", "sara"))
         self.tableWidget_9.setSortingEnabled(__sortingEnabled)
         self.pushButton_64.setText(_translate("AdminDashBoard", "Generate"))
+        self.pushButton_64.clicked.connect(self.view_monthlyReport)
         self.comboBox_39.setItemText(0, _translate("AdminDashBoard", "January"))
         self.comboBox_39.setItemText(1, _translate("AdminDashBoard", "February"))
         self.comboBox_39.setItemText(2, _translate("AdminDashBoard", "March"))
@@ -4063,14 +4193,10 @@ class Ui_AdminDashBoard(object):
         item.setText(_translate("AdminDashBoard", "Total Hours"))
         __sortingEnabled = self.tableWidget_13.isSortingEnabled()
         self.tableWidget_13.setSortingEnabled(False)
-        item = self.tableWidget_13.item(0, 0)
-        item.setText(_translate("AdminDashBoard", "abebe"))
-        item = self.tableWidget_13.item(1, 0)
-        item.setText(_translate("AdminDashBoard", "kebede"))
-        item = self.tableWidget_13.item(2, 0)
-        item.setText(_translate("AdminDashBoard", "sara"))
+        
         self.tableWidget_13.setSortingEnabled(__sortingEnabled)
         self.pushButton_65.setText(_translate("AdminDashBoard", "Generate Report"))
+        self.pushButton_65.clicked.connect(self.view_customReport)
         self.label_132.setText(_translate("AdminDashBoard", "to"))
         self.tabWidget_4.setTabText(self.tabWidget_4.indexOf(self.tab_15), _translate("AdminDashBoard", "Custom"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_11), _translate("AdminDashBoard", "Report"))
@@ -4226,10 +4352,10 @@ class Ui_AdminDashBoard(object):
         self.comboBox_14.setItemText(0, _translate("AdminDashBoard", "Bahirdar"))
         self.pushButton_8.setText(_translate("AdminDashBoard", "Generate Excel"))
         
-        #self.pushButton_8.clicked.connect(ExcelGeneration)
+        self.pushButton_8.clicked.connect(ExcelGeneration)
         self.pushButton_8.clicked.connect(lambda status, n_size= n: self.run(n_size))
         self.pushButton_9.setText(_translate("AdminDashBoard", "Generate PDF"))
-       # self.pushButton_9.clicked.connect(PdfGeneration)
+        self.pushButton_9.clicked.connect(PdfGeneration)
         self.pushButton_8.clicked.connect(lambda status, n_size= n: self.run(n_size)) 
         self.Payrollregister.setTabText(self.Payrollregister.indexOf(self.tab_4), _translate("AdminDashBoard", "Payroll Generation"))
         self.label_44.setText(_translate("AdminDashBoard", "Payroll Year"))
@@ -4388,7 +4514,7 @@ class Ui_AdminDashBoard(object):
         self.actionSetting_Department.setText(_translate("AdminDashBoard", "setting Department"))
         self.actionSetting_Approver_2.setText(_translate("AdminDashBoard", "Setting Approver"))
      
-     
+
 #      def run(self, n):
 #         self.progressBar.show()
 #         for i in range(n):
@@ -4399,6 +4525,8 @@ class Ui_AdminDashBoard(object):
 
 if __name__ == "__main__":
     import sys
+    from PdfGeneration import *
+    from ExcelGeneration import *
     n= 500
     os.environ["QT_AUTO_SCREEN_SCALE_FACTOR"] = "1"
     excel_file_path = 'Attendance.xlsx'

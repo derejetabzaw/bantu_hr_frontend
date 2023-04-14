@@ -3689,8 +3689,6 @@ class Ui_AdminDashBoard(object):
         QtCore.QMetaObject.connectSlotsByName(AdminDashBoard)
      def view_todayReport(self):
          try:
-            
-
             mycursor = bantudb.cursor()
             mycursor.execute("SELECT full_name, check_date, check_in, check_out, worked_hours FROM attendance_log where check_date= DATE_FORMAT(CURRENT_DATE(),'%Y-%m-%d')") 
             print("hi")

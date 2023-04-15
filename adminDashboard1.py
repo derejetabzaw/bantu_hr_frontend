@@ -18,7 +18,7 @@ import ExcelGeneration
 import PdfGeneration
 # from connection import *
 import mysql.connector as mc
-from datetime import datetime
+from datetime import *
 import calendar
 import array
 from onlineDb import *
@@ -2149,6 +2149,8 @@ class Ui_AdminDashBoard(object):
         self.tableWidget_6.verticalHeader().setVisible(False)
         self.dateEdit_6 = QtWidgets.QDateEdit(self.tab_9)
         self.dateEdit_6.setGeometry(QtCore.QRect(380, 30, 110, 16))
+        self.dateEdit_6.setDisplayFormat("yyyy-dd-MM")
+        self.dateEdit_6.setDateTime(QtCore.QDateTime.currentDateTime())
         self.dateEdit_6.setObjectName("dateEdit_6")
         self.tabWidget.addTab(self.tab_9, "")
         self.tab_11 = QtWidgets.QWidget()
@@ -2171,6 +2173,7 @@ class Ui_AdminDashBoard(object):
         self.dateEdit_7= QtWidgets.QDateEdit(self.tab_12)
         self.dateEdit_7.setGeometry(QtCore.QRect(110, 30, 121, 16))
         self.dateEdit_7.setDisplayFormat("yyyy-dd-MM")
+        self.dateEdit_7.setDateTime(QtCore.QDateTime.currentDateTime())
         self.dateEdit_7.setObjectName("dateEdit_7")
         self.pushButton_62 = QtWidgets.QPushButton(self.tab_12)
         self.pushButton_62.setGeometry(QtCore.QRect(240, 10, 75, 21))
@@ -2374,10 +2377,12 @@ class Ui_AdminDashBoard(object):
         self.dateEdit_4.setGeometry(QtCore.QRect(120, 30, 110, 16))
         self.dateEdit_4.setObjectName("dateEdit_4")
         self.dateEdit_4.setDisplayFormat("yyyy-dd-MM")
+        self.dateEdit_4.setDateTime(QtCore.QDateTime.currentDateTime())
         self.dateEdit_5 = QtWidgets.QDateEdit(self.tab_15)
         self.dateEdit_5.setGeometry(QtCore.QRect(290, 30, 110, 16))
         self.dateEdit_5.setObjectName("dateEdit_5")
         self.dateEdit_5.setDisplayFormat("yyyy-dd-MM")
+        self.dateEdit_5.setDateTime(QtCore.QDateTime.currentDateTime())
         self.tabWidget_4.addTab(self.tab_15, "")
         self.tabWidget.addTab(self.tab_11, "")
         self.tabWidget_2.addTab(self.tab_8, "")
@@ -3782,6 +3787,21 @@ class Ui_AdminDashBoard(object):
           except mc.Error as e:
                 print("Error Occured")
 
+     def view_ReportDateandName(self):
+         try:
+             Name_input= self.lineEdit_8.text()
+             Date_input= self.dateEdit_6.text()
+             mycursor= bantudb.cursor()
+             mycursor.execute("SELECT full_name, check_date, check_in, check_out, worked_hours FROM attendance_log where full_name= %s and check_date= %s", (Name_input, Date_input,))
+             result= mycursor.fetchall()
+             self.tableWidget_6.setRowCount(0)
+             for row_number, row_data in enumerate(result):
+                self.tableWidget_6.insertRow(row_number)
+                for column_number, data in enumerate(row_data):
+                    self.tableWidget_6.setItem(row_number, column_number, QTableWidgetItem(str(data)))
+         except mc.Error as e:
+                print("Error Occured")
+             
          
      def retranslateUi(self, AdminDashBoard):
         _translate = QtCore.QCoreApplication.translate
@@ -4088,6 +4108,7 @@ class Ui_AdminDashBoard(object):
         self.tabWidget_2.setTabText(self.tabWidget_2.indexOf(self.Device), _translate("AdminDashBoard", "Device"))
         self.label_109.setText(_translate("AdminDashBoard", "Search Memeber"))
         self.pushButton_10.setText(_translate("AdminDashBoard", "Search"))
+        self.pushButton_10.clicked.connect(self.view_ReportDateandName)
         self.label_110.setText(_translate("AdminDashBoard", "Date"))
         self.pushButton_61.setText(_translate("AdminDashBoard", "See Today\'s Report"))
         self.pushButton_61.clicked.connect(self.view_todayReport)
@@ -4148,13 +4169,12 @@ class Ui_AdminDashBoard(object):
         self.comboBox_38.setItemText(9, _translate("AdminDashBoard", "October"))
         self.comboBox_38.setItemText(10, _translate("AdminDashBoard", "November"))
         self.comboBox_38.setItemText(11, _translate("AdminDashBoard", "December"))
-
+        self.comboBox_38.setCurrentText(today_date.strftime('%B'))
         self.comboBox_40.setItemText(0, _translate("AdminDashBoard", "1"))
         self.comboBox_40.setItemText(1, _translate("AdminDashBoard", "2"))
         self.comboBox_40.setItemText(2, _translate("AdminDashBoard", "3"))
         self.comboBox_40.setItemText(3, _translate("AdminDashBoard", "4"))
         self.comboBox_40.setItemText(4, _translate("AdminDashBoard", "5"))
-        
         self.tabWidget_4.setTabText(self.tabWidget_4.indexOf(self.tab_14), _translate("AdminDashBoard", "Weekly"))
         self.label_127.setText(_translate("AdminDashBoard", "Department"))
         self.label_131.setText(_translate("AdminDashBoard", "Select Month"))
@@ -4181,6 +4201,7 @@ class Ui_AdminDashBoard(object):
         self.comboBox_39.setItemText(9, _translate("AdminDashBoard", "October"))
         self.comboBox_39.setItemText(10, _translate("AdminDashBoard", "November"))
         self.comboBox_39.setItemText(11, _translate("AdminDashBoard", "December"))
+        self.comboBox_39.setCurrentText(today_date.strftime('%B'))
         self.tabWidget_4.setTabText(self.tabWidget_4.indexOf(self.tab_13), _translate("AdminDashBoard", "Monthly"))
         self.label_129.setText(_translate("AdminDashBoard", "Department"))
         self.label_130.setText(_translate("AdminDashBoard", "Date Range"))
@@ -4525,6 +4546,7 @@ if __name__ == "__main__":
     import sys
     from PdfGeneration import *
     from ExcelGeneration import *
+    today_date= datetime.now()
     n= 500
     os.environ["QT_AUTO_SCREEN_SCALE_FACTOR"] = "1"
     excel_file_path = 'Attendance.xlsx'

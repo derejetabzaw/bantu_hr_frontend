@@ -14,8 +14,7 @@ import os
 import time
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QTableWidgetItem 
-import ExcelGeneration
-import PdfGeneration
+from  generator_functions import * 
 # from connection import *
 import mysql.connector as mc
 from datetime import *
@@ -4371,10 +4370,10 @@ class Ui_AdminDashBoard(object):
         self.comboBox_14.setItemText(0, _translate("AdminDashBoard", "Bahirdar"))
         self.pushButton_8.setText(_translate("AdminDashBoard", "Generate Excel"))
         
-        self.pushButton_8.clicked.connect(ExcelGeneration)
+        self.pushButton_8.clicked.connect(excel_generator)
         self.pushButton_8.clicked.connect(lambda status, n_size= n: self.run(n_size))
         self.pushButton_9.setText(_translate("AdminDashBoard", "Generate PDF"))
-        self.pushButton_9.clicked.connect(PdfGeneration)
+        self.pushButton_9.clicked.connect(pdf_generator)
         self.pushButton_8.clicked.connect(lambda status, n_size= n: self.run(n_size)) 
         self.Payrollregister.setTabText(self.Payrollregister.indexOf(self.tab_4), _translate("AdminDashBoard", "Payroll Generation"))
         self.label_44.setText(_translate("AdminDashBoard", "Payroll Year"))
@@ -4544,8 +4543,8 @@ class Ui_AdminDashBoard(object):
 
 if __name__ == "__main__":
     import sys
-    from PdfGeneration import *
-    from ExcelGeneration import *
+#     from PdfGeneration import *
+#     from ExcelGeneration import *
     today_date= datetime.now()
     n= 500
     os.environ["QT_AUTO_SCREEN_SCALE_FACTOR"] = "1"

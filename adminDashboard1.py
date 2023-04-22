@@ -3832,7 +3832,7 @@ class Ui_AdminDashBoard(object):
                 print("Error Occured")
 
      def generator_thread(self,execution_type):
-        self.thread = Thread(execution_type)
+        self.thread = Thread(execution_type,self.progressBar)
         
         if execution_type == "EXCEL":
             self.thread._signal.connect(self.signal_accept)
@@ -4593,28 +4593,26 @@ class Ui_AdminDashBoard(object):
 
      
 
-#      def run(self, n):
-#         self.progressBar.show()
-#         for i in range(n):
-#              time.sleep(0.01)
-#              self.progressBar.setValue(i+1) 
-#         self.progressBar.hide() 
+
 
 
 
 class Thread(QThread):
     _signal = pyqtSignal(int)
-    def __init__(self,execution_type):
+    def __init__(self,execution_type,progressBar):
         super(Thread, self).__init__()
         self.execution_type = execution_type
+        self.progressBar = progressBar
 
     def run(self):
         if self.execution_type == "PDF":
             number_of_executions = 6
-            for i in range(number_of_executions):
+            for i in range(number_of_executions + 1):
                 if i==0:
+                    self.progressBar.setFormat('Accepting CSV input')
                     df = pd.read_csv('emplist.csv', encoding = "ISO-8859-1") 
                 if i==1:
+                    self.progressBar.setFormat('Converting to HTML')
                     f = open('exp.html','w', encoding = "ISO-8859-1")
                 if i==2:
                     a = df.to_html()
@@ -4623,34 +4621,40 @@ class Thread(QThread):
                 if i==4:
                     f.close()
                 if i==5:
+                    self.progressBar.setFormat("Converting to PDF")
                     pdfkit.from_file('exp.html', 'Attendance.pdf')
 
                 c = int(i * (chunk_size / number_of_executions) * 100)
-                #sys.stdout.write(f"\r{round(c, 4)}%")
+                self._signal.emit(c * 5)
+                sys.stdout.write(f"\r{round(c, 4)}%")
                 time.sleep(.1)
-                print ("c:" , c)
-                self._signal.emit(c)
+                
+            self.progressBar.setFormat("Done")
+            time.sleep(2)
+            self.progressBar.setValue(99)
+            self.progressBar.hide()
         if self.execution_type == "EXCEL":
-
             number_of_executions = 2
-            for i in range(number_of_executions):
+            for i in range(number_of_executions + 1):
                 if i==0:
                     df = pd.read_csv('emplist.csv', encoding = "ISO-8859-1") 
-
+                    self.progressBar.setFormat("Accepting CSV Input")
                 if i==1:
+                    self.progressBar.setFormat("Exporting")
                     df.to_excel('Attendance.xlsx')
-
                 c = int(i * (chunk_size / number_of_executions) * 100)
-                # sys.stdout.write(f"\r{round(c, 4)}%")
+                self._signal.emit(c * 5)
+                sys.stdout.write(f"\r{round(c, 4)}%")
                 time.sleep(.1)
-                print ("c:" , c)
-                self._signal.emit(c)
+                
+            time.sleep(2)
+            self.progressBar.setFormat("Done")
+            self.progressBar.setValue(99)
+            self.progressBar.hide()
                 
 
 if __name__ == "__main__":
     import sys
-#     from PdfGeneration import *
-#     from ExcelGeneration import *
     today_date= datetime.now()
     n= 500
     os.environ["QT_AUTO_SCREEN_SCALE_FACTOR"] = "1"

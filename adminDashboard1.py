@@ -14,15 +14,21 @@ import os
 import time
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QTableWidgetItem 
-from  generator_functions import * 
 # from connection import *
 import mysql.connector as mc
 from datetime import *
 import calendar
 import array
 from onlineDb import *
+from PyQt5.QtCore import QThread, pyqtSignal
+import pandas as pd
+import numpy as np
+import os
+import pdfkit
+import time
 
 
+chunk_size = 1
 
 
 class Ui_AdminDashBoard(object):
@@ -2865,18 +2871,18 @@ class Ui_AdminDashBoard(object):
         self.lineEdit_7 = QtWidgets.QLineEdit(self.tab_4)
         self.lineEdit_7.setGeometry(QtCore.QRect(100, 60, 113, 20))
         self.lineEdit_7.setObjectName("lineEdit_7")
-#         self.progressBar = QtWidgets.QProgressBar(self.tab_4)
-#         self.progressBar.setGeometry(QtCore.QRect(20, 120, 241, 31))
-#         self.progressBar.setMinimum(0)
-#         self.progressBar.setMaximum(n)
-#         self.progressBar.setRange(0, n)
-#         self.progressBar.setStyleSheet("\n"
-# "\n"
-# "#BlueProgressBar::chunk {\n"
-# "    background-color: #2196F3;\n"
-# "    ")
-       # self.progressBar.setObjectName("progressBar")
-       # self.progressBar.hide()
+        self.progressBar = QtWidgets.QProgressBar(self.tab_4)
+        self.progressBar.setGeometry(QtCore.QRect(20, 120, 241, 31))
+        self.progressBar.setMinimum(0)
+        self.progressBar.setMaximum(n)
+        self.progressBar.setRange(0, n)
+        self.progressBar.setStyleSheet("\n"
+        "\n"
+        "#BlueProgressBar::chunk {\n"
+        "    background-color: #2196F3;\n"
+        "    ")
+        self.progressBar.setObjectName("progressBar")
+        self.progressBar.hide()
         self.Payrollregister.addTab(self.tab_4, "")
         self.tab_5 = QtWidgets.QWidget()
         self.tab_5.setObjectName("tab_5")
@@ -3763,6 +3769,7 @@ class Ui_AdminDashBoard(object):
                     self.tableWidget_13.setItem(row_number, column_number, QTableWidgetItem(str(data))) 
 
          except mc.Error as e:
+            print (e)
             print ("Error Occured")
 
              
@@ -3823,6 +3830,28 @@ class Ui_AdminDashBoard(object):
                     self.tableWidget_6.setItem(row_number, column_number, QTableWidgetItem(str(data)))
          except mc.Error as e:
                 print("Error Occured")
+
+     def generator_thread(self,execution_type):
+        self.thread = Thread(execution_type,self.progressBar)
+        
+        if execution_type == "EXCEL":
+            self.thread._signal.connect(self.signal_accept)
+            self.thread.start()
+        #     self.pushButton_8.setEnabled(False)
+        else:
+            self.thread._signal.connect(self.signal_accept)
+            self.thread.start()
+        #     self.pushButton_9.setEnabled(False)
+        # self.thread._signal.connect(self.signal_accept(pushButton_option))
+        # self.thread.start()
+        # pushButton_option.setEnabled(False)
+     def signal_accept(self,msg):
+        self.progressBar.show()
+        self.progressBar.setValue(int(msg))
+        if self.progressBar.value() == 99:
+            self.progressBar.setValue(0)
+        #     self.pushButton_8.setEnabled(True)
+        #     self.pushButton_9.setEnabled(True)
              
          
      def retranslateUi(self, AdminDashBoard):
@@ -4399,11 +4428,11 @@ class Ui_AdminDashBoard(object):
         self.comboBox_14.setItemText(0, _translate("AdminDashBoard", "Bahirdar"))
         self.pushButton_8.setText(_translate("AdminDashBoard", "Generate Excel"))
         
-        self.pushButton_8.clicked.connect(excel_generator)
-        self.pushButton_8.clicked.connect(lambda status, n_size= n: self.run(n_size))
+        self.pushButton_8.clicked.connect(lambda x: self.generator_thread("EXCEL"))
+        # self.pushButton_8.clicked.connect(lambda status, n_size= n: self.run(n_size))
         self.pushButton_9.setText(_translate("AdminDashBoard", "Generate PDF"))
-        self.pushButton_9.clicked.connect(pdf_generator)
-        self.pushButton_8.clicked.connect(lambda status, n_size= n: self.run(n_size)) 
+        self.pushButton_9.clicked.connect(lambda x: self.generator_thread("PDF"))
+        # self.pushButton_8.clicked.connect(lambda status, n_size= n: self.run(n_size)) 
         self.Payrollregister.setTabText(self.Payrollregister.indexOf(self.tab_4), _translate("AdminDashBoard", "Payroll Generation"))
         self.label_44.setText(_translate("AdminDashBoard", "Payroll Year"))
         self.label_106.setText(_translate("AdminDashBoard", "Field Office"))
@@ -4560,20 +4589,72 @@ class Ui_AdminDashBoard(object):
         self.actionAdd_position.setText(_translate("AdminDashBoard", "add position"))
         self.actionSetting_Department.setText(_translate("AdminDashBoard", "setting Department"))
         self.actionSetting_Approver_2.setText(_translate("AdminDashBoard", "Setting Approver"))
+    
+
      
 
-#      def run(self, n):
-#         self.progressBar.show()
-#         for i in range(n):
-#              time.sleep(0.01)
-#              self.progressBar.setValue(i+1) 
-#         self.progressBar.hide() 
+
+
+
+
+class Thread(QThread):
+    _signal = pyqtSignal(int)
+    def __init__(self,execution_type,progressBar):
+        super(Thread, self).__init__()
+        self.execution_type = execution_type
+        self.progressBar = progressBar
+
+    def run(self):
+        if self.execution_type == "PDF":
+            number_of_executions = 6
+            for i in range(number_of_executions + 1):
+                if i==0:
+                    self.progressBar.setFormat('Accepting CSV input')
+                    df = pd.read_csv('emplist.csv', encoding = "ISO-8859-1") 
+                if i==1:
+                    self.progressBar.setFormat('Converting to HTML')
+                    f = open('exp.html','w', encoding = "ISO-8859-1")
+                if i==2:
+                    a = df.to_html()
+                if i==3:
+                    f.write(a)
+                if i==4:
+                    f.close()
+                if i==5:
+                    self.progressBar.setFormat("Converting to PDF")
+                    pdfkit.from_file('exp.html', 'Attendance.pdf')
+
+                c = int(i * (chunk_size / number_of_executions) * 100)
+                self._signal.emit(c * 5)
+                sys.stdout.write(f"\r{round(c, 4)}%")
+                time.sleep(.1)
+                
+            self.progressBar.setFormat("Done")
+            time.sleep(2)
+            self.progressBar.setValue(99)
+            self.progressBar.hide()
+        if self.execution_type == "EXCEL":
+            number_of_executions = 2
+            for i in range(number_of_executions + 1):
+                if i==0:
+                    df = pd.read_csv('emplist.csv', encoding = "ISO-8859-1") 
+                    self.progressBar.setFormat("Accepting CSV Input")
+                if i==1:
+                    self.progressBar.setFormat("Exporting")
+                    df.to_excel('Attendance.xlsx')
+                c = int(i * (chunk_size / number_of_executions) * 100)
+                self._signal.emit(c * 5)
+                sys.stdout.write(f"\r{round(c, 4)}%")
+                time.sleep(.1)
+                
+            time.sleep(2)
+            self.progressBar.setFormat("Done")
+            self.progressBar.setValue(99)
+            self.progressBar.hide()
                 
 
 if __name__ == "__main__":
     import sys
-#     from PdfGeneration import *
-#     from ExcelGeneration import *
     today_date= datetime.now()
     n= 500
     os.environ["QT_AUTO_SCREEN_SCALE_FACTOR"] = "1"

@@ -27,8 +27,15 @@ import os
 import pdfkit
 import time
 
-
+import os 
 chunk_size = 1
+
+# current_assets_directory = os.getcwd().replace("\\","/") + "/Assets/"
+
+# background_url = "background:url("  + current_assets_directory + "background.png" + ");"
+
+# def background(image_file_name):
+#     return background_url.replace("background.png", image_file_name)
 
 
 class Ui_AdminDashBoard(object):
@@ -45,11 +52,11 @@ class Ui_AdminDashBoard(object):
         #                         self.tableWidget_5.insertRow(row_number)
         #                         for column_number. data in enumerate(row_data):
         #                                 self.tableWidget_5.setItem(row_number, column_number, QtWidgets.QtableWidgetItem(str(data)))
-       
+        
         AdminDashBoard.setObjectName("AdminDashBoard")
         AdminDashBoard.resize(1922, 1080)
         AdminDashBoard.setMaximumSize(QtCore.QSize(16777215, 16777215))
-        AdminDashBoard.setStyleSheet("bacground-color:#fff")
+        AdminDashBoard.setStyleSheet("background-color:#fff")
         self.centralwidget = QtWidgets.QWidget(AdminDashBoard)
         self.centralwidget.setObjectName("centralwidget")
         self.tabWidget_2 = QtWidgets.QTabWidget(self.centralwidget)
@@ -81,7 +88,7 @@ class Ui_AdminDashBoard(object):
         self.scrollAreaWidgetContents.setObjectName("scrollAreaWidgetContents")
         self.pushButton_7 = QtWidgets.QPushButton(self.scrollAreaWidgetContents)
         self.pushButton_7.setGeometry(QtCore.QRect(380, 400, 101, 101))
-        self.pushButton_7.setStyleSheet("background:url(:/back/back.png)")
+        self.pushButton_7.setStyleSheet("background:url(" + os.getcwd().replace("\\","/") + "/Assets/back.png)")
         self.pushButton_7.setText("")
         self.pushButton_7.setObjectName("pushButton_7")
         self.tableWidget_11 = QtWidgets.QTableWidget(self.scrollAreaWidgetContents)
@@ -104,7 +111,8 @@ class Ui_AdminDashBoard(object):
         self.label_18.setObjectName("label_18")
         self.pushButton_6 = QtWidgets.QPushButton(self.scrollAreaWidgetContents)
         self.pushButton_6.setGeometry(QtCore.QRect(480, 400, 101, 101))
-        self.pushButton_6.setStyleSheet("background:url(:/next/next.png)")
+        self.pushButton_6.setStyleSheet("background:url(" + os.getcwd().replace("\\","/") + "/Assets/next.png)")
+        
         self.pushButton_6.setText("")
         self.pushButton_6.setObjectName("pushButton_6")
         self.label_34 = QtWidgets.QLabel(self.scrollAreaWidgetContents)
@@ -222,21 +230,21 @@ class Ui_AdminDashBoard(object):
         self.sent_users.setObjectName("sent_users")
         self.pushButton_11 = QtWidgets.QPushButton(self.stackedWidget_3Page1)
         self.pushButton_11.setGeometry(QtCore.QRect(10, 40, 158, 141))
-        self.pushButton_11.setStyleSheet("background:url(:/adu/Assets/iconmonstr-user-8-120.png);\n"
+        self.pushButton_11.setStyleSheet("background:url(" + os.getcwd().replace("\\","/") + "/Assets/iconmonstr-user-8-120.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
         self.pushButton_11.setObjectName("pushButton_11")
         self.pushButton_12 = QtWidgets.QPushButton(self.stackedWidget_3Page1)
-        self.pushButton_12.setGeometry(QtCore.QRect(10, 350, 158, 141))
-        self.pushButton_12.setStyleSheet("background:url(:/pos/iconmonstr-flag-3-120.png);\n"
+        self.pushButton_12.setGeometry(QtCore.QRect(10, 350, 158, 141)) 
+        self.pushButton_12.setStyleSheet("background:url(" + os.getcwd().replace("\\","/") +"/Assets/iconmonstr-flag-3-120.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
         self.pushButton_12.setObjectName("pushButton_12")
         self.pushButton_13 = QtWidgets.QPushButton(self.stackedWidget_3Page1)
         self.pushButton_13.setGeometry(QtCore.QRect(10, 190, 158, 141))
-        self.pushButton_13.setStyleSheet("background-image: url(:/list/iconmonstr-list-lined-120.png);\n"
+        self.pushButton_13.setStyleSheet("background-image: url(" + os.getcwd().replace("\\","/") + "/Assets/iconmonstr-list-lined-120.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
@@ -485,7 +493,8 @@ class Ui_AdminDashBoard(object):
         self.stackedWidget_3Page2.setObjectName("stackedWidget_3Page2")
         self.pushButton_35 = QtWidgets.QPushButton(self.stackedWidget_3Page2)
         self.pushButton_35.setGeometry(QtCore.QRect(0, 160, 158, 141))
-        self.pushButton_35.setStyleSheet("background-image: url(:/list/iconmonstr-list-lined-120.png);\n"
+        
+        self.pushButton_35.setStyleSheet("background-image: url(" + os.getcwd().replace("\\","/") + "/Assets/iconmonstr-list-lined-120.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
@@ -501,14 +510,14 @@ class Ui_AdminDashBoard(object):
         self.line_10.setObjectName("line_10")
         self.pushButton_36 = QtWidgets.QPushButton(self.stackedWidget_3Page2)
         self.pushButton_36.setGeometry(QtCore.QRect(0, 10, 158, 141))
-        self.pushButton_36.setStyleSheet("background:url(:/adu/Assets/iconmonstr-user-8-120.png);\n"
+        self.pushButton_36.setStyleSheet("background:url(" + os.getcwd().replace("\\","/") + "/Assets/iconmonstr-user-8-120.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
         self.pushButton_36.setObjectName("pushButton_36")
         self.pushButton_37 = QtWidgets.QPushButton(self.stackedWidget_3Page2)
         self.pushButton_37.setGeometry(QtCore.QRect(0, 320, 158, 141))
-        self.pushButton_37.setStyleSheet("background:url(:/pos/iconmonstr-flag-3-120.png);\n"
+        self.pushButton_37.setStyleSheet("background:url(" + os.getcwd().replace("\\","/") + "/Assets/iconmonstr-flag-3-120.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
@@ -536,7 +545,7 @@ class Ui_AdminDashBoard(object):
         self.label_3.setObjectName("label_3")
         self.pushButton_29 = QtWidgets.QPushButton(self.positionmanagement)
         self.pushButton_29.setGeometry(QtCore.QRect(0, 180, 158, 141))
-        self.pushButton_29.setStyleSheet("background-image: url(:/list/iconmonstr-list-lined-120.png);\n"
+        self.pushButton_29.setStyleSheet("background-image: url(" + os.getcwd().replace("\\","/") + "/Assets/iconmonstr-list-lined-120.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
@@ -549,14 +558,14 @@ class Ui_AdminDashBoard(object):
         self.line_8.setObjectName("line_8")
         self.pushButton_30 = QtWidgets.QPushButton(self.positionmanagement)
         self.pushButton_30.setGeometry(QtCore.QRect(0, 30, 158, 141))
-        self.pushButton_30.setStyleSheet("background:url(:/adu/Assets/iconmonstr-user-8-120.png);\n"
+        self.pushButton_30.setStyleSheet("background:url(" + os.getcwd().replace("\\","/") + "/Assets/iconmonstr-user-8-120.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
         self.pushButton_30.setObjectName("pushButton_30")
         self.pushButton_31 = QtWidgets.QPushButton(self.positionmanagement)
         self.pushButton_31.setGeometry(QtCore.QRect(0, 340, 158, 141))
-        self.pushButton_31.setStyleSheet("background:url(:/pos/iconmonstr-flag-3-120.png);\n"
+        self.pushButton_31.setStyleSheet("background:url(" + os.getcwd().replace("\\","/") + "/Assets/iconmonstr-flag-3-120.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
@@ -733,7 +742,7 @@ class Ui_AdminDashBoard(object):
         self.formLayout_14.setWidget(5, QtWidgets.QFormLayout.FieldRole, self.aprrovedbx)
         self.pushButton_32 = QtWidgets.QPushButton(self.Addposition)
         self.pushButton_32.setGeometry(QtCore.QRect(0, 160, 158, 141))
-        self.pushButton_32.setStyleSheet("background-image: url(:/list/iconmonstr-list-lined-120.png);\n"
+        self.pushButton_32.setStyleSheet("background-image: url(" + os.getcwd().replace("\\","/") + "/Assets/iconmonstr-list-lined-120.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
@@ -746,14 +755,14 @@ class Ui_AdminDashBoard(object):
         self.line_9.setObjectName("line_9")
         self.pushButton_33 = QtWidgets.QPushButton(self.Addposition)
         self.pushButton_33.setGeometry(QtCore.QRect(0, 10, 158, 141))
-        self.pushButton_33.setStyleSheet("background:url(:/adu/Assets/iconmonstr-user-8-120.png);\n"
+        self.pushButton_33.setStyleSheet("background:url(" + os.getcwd().replace("\\","/") + "/Assets/iconmonstr-user-8-120.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
         self.pushButton_33.setObjectName("pushButton_33")
         self.pushButton_34 = QtWidgets.QPushButton(self.Addposition)
         self.pushButton_34.setGeometry(QtCore.QRect(0, 320, 158, 141))
-        self.pushButton_34.setStyleSheet("background:url(:/pos/iconmonstr-flag-3-120.png);\n"
+        self.pushButton_34.setStyleSheet("background:url(" + os.getcwd().replace("\\","/") + "/Assets/iconmonstr-flag-3-120.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
@@ -776,7 +785,7 @@ class Ui_AdminDashBoard(object):
         self.addEmployeeforResignation.setObjectName("addEmployeeforResignation")
         self.pushButton_17 = QtWidgets.QPushButton(self.addEmployeeforResignation)
         self.pushButton_17.setGeometry(QtCore.QRect(0, 0, 158, 141))
-        self.pushButton_17.setStyleSheet("background:url(:/adu/Assets/iconmonstr-user-8-120.png);\n"
+        self.pushButton_17.setStyleSheet("background:url(" + os.getcwd().replace("\\","/") + "/Assets/iconmonstr-user-8-120.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
@@ -789,7 +798,7 @@ class Ui_AdminDashBoard(object):
         self.line_4.setObjectName("line_4")
         self.pushButton_18 = QtWidgets.QPushButton(self.addEmployeeforResignation)
         self.pushButton_18.setGeometry(QtCore.QRect(0, 150, 158, 141))
-        self.pushButton_18.setStyleSheet("background-image: url(:/list/iconmonstr-list-lined-120.png);\n"
+        self.pushButton_18.setStyleSheet("background-image: url(" + os.getcwd().replace("\\","/") + "/Assets/iconmonstr-list-lined-120.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
@@ -804,7 +813,7 @@ class Ui_AdminDashBoard(object):
         self.comboBox_6.addItem("")
         self.pushButton_19 = QtWidgets.QPushButton(self.addEmployeeforResignation)
         self.pushButton_19.setGeometry(QtCore.QRect(0, 310, 158, 141))
-        self.pushButton_19.setStyleSheet("background:url(:/pos/iconmonstr-flag-3-120.png);\n"
+        self.pushButton_19.setStyleSheet("background:url(" + os.getcwd().replace("\\","/") + "/Assets/iconmonstr-flag-3-120.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
@@ -817,7 +826,7 @@ class Ui_AdminDashBoard(object):
         self.ReinstateEmployee.setObjectName("ReinstateEmployee")
         self.pushButton_26 = QtWidgets.QPushButton(self.ReinstateEmployee)
         self.pushButton_26.setGeometry(QtCore.QRect(0, 160, 158, 141))
-        self.pushButton_26.setStyleSheet("background-image: url(:/list/iconmonstr-list-lined-120.png);\n"
+        self.pushButton_26.setStyleSheet("background-image: url("+ os.getcwd().replace("\\","/") + "/Assets/iconmonstr-list-lined-120.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
@@ -833,14 +842,14 @@ class Ui_AdminDashBoard(object):
         self.line_7.setObjectName("line_7")
         self.pushButton_27 = QtWidgets.QPushButton(self.ReinstateEmployee)
         self.pushButton_27.setGeometry(QtCore.QRect(0, 10, 158, 141))
-        self.pushButton_27.setStyleSheet("background:url(:/adu/Assets/iconmonstr-user-8-120.png);\n"
+        self.pushButton_27.setStyleSheet("background:url(" + os.getcwd().replace("\\","/") + "/Assets/iconmonstr-user-8-120.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
         self.pushButton_27.setObjectName("pushButton_27")
         self.pushButton_28 = QtWidgets.QPushButton(self.ReinstateEmployee)
         self.pushButton_28.setGeometry(QtCore.QRect(0, 320, 158, 141))
-        self.pushButton_28.setStyleSheet("background:url(:/pos/iconmonstr-flag-3-120.png);\n"
+        self.pushButton_28.setStyleSheet("background:url(" + os.getcwd().replace("\\","/") + "/Assets/iconmonstr-flag-3-120.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
@@ -858,7 +867,7 @@ class Ui_AdminDashBoard(object):
         self.DisableAttendance.setObjectName("DisableAttendance")
         self.pushButton_20 = QtWidgets.QPushButton(self.DisableAttendance)
         self.pushButton_20.setGeometry(QtCore.QRect(0, 0, 158, 141))
-        self.pushButton_20.setStyleSheet("background:url(:/adu/Assets/iconmonstr-user-8-120.png);\n"
+        self.pushButton_20.setStyleSheet("background:url(" + os.getcwd().replace("\\","/") + "/Assets/iconmonstr-user-8-120.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
@@ -871,7 +880,7 @@ class Ui_AdminDashBoard(object):
         self.line_5.setObjectName("line_5")
         self.pushButton_21 = QtWidgets.QPushButton(self.DisableAttendance)
         self.pushButton_21.setGeometry(QtCore.QRect(0, 150, 158, 141))
-        self.pushButton_21.setStyleSheet("background-image: url(:/list/iconmonstr-list-lined-120.png);\n"
+        self.pushButton_21.setStyleSheet("background-image: url(" + os.getcwd().replace("\\","/") + "/Assets/iconmonstr-list-lined-120.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
@@ -886,7 +895,7 @@ class Ui_AdminDashBoard(object):
         self.comboBox_7.addItem("")
         self.pushButton_22 = QtWidgets.QPushButton(self.DisableAttendance)
         self.pushButton_22.setGeometry(QtCore.QRect(0, 310, 158, 141))
-        self.pushButton_22.setStyleSheet("background:url(:/pos/iconmonstr-flag-3-120.png);\n"
+        self.pushButton_22.setStyleSheet("background:url(" + os.getcwd().replace("\\","/") + "/Assets/iconmonstr-flag-3-120.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
@@ -899,7 +908,7 @@ class Ui_AdminDashBoard(object):
         self.Resignation.setObjectName("Resignation")
         self.pushButton_23 = QtWidgets.QPushButton(self.Resignation)
         self.pushButton_23.setGeometry(QtCore.QRect(0, 0, 158, 141))
-        self.pushButton_23.setStyleSheet("background:url(:/adu/Assets/iconmonstr-user-8-120.png);\n"
+        self.pushButton_23.setStyleSheet("background:url(" + os.getcwd().replace("\\","/") + "/Assets/iconmonstr-user-8-120.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
@@ -912,7 +921,7 @@ class Ui_AdminDashBoard(object):
         self.line_6.setObjectName("line_6")
         self.pushButton_24 = QtWidgets.QPushButton(self.Resignation)
         self.pushButton_24.setGeometry(QtCore.QRect(0, 150, 158, 141))
-        self.pushButton_24.setStyleSheet("background-image: url(:/list/iconmonstr-list-lined-120.png);\n"
+        self.pushButton_24.setStyleSheet("background-image: url(" + os.getcwd().replace("\\","/") + "/Assets/iconmonstr-list-lined-120.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
@@ -927,7 +936,7 @@ class Ui_AdminDashBoard(object):
         self.comboBox_8.addItem("")
         self.pushButton_25 = QtWidgets.QPushButton(self.Resignation)
         self.pushButton_25.setGeometry(QtCore.QRect(0, 310, 158, 141))
-        self.pushButton_25.setStyleSheet("background:url(:/pos/iconmonstr-flag-3-120.png);\n"
+        self.pushButton_25.setStyleSheet("background:url(" + os.getcwd().replace("\\","/") + "/Assets/iconmonstr-flag-3-120.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
@@ -956,7 +965,7 @@ class Ui_AdminDashBoard(object):
         self.label_2.setObjectName("label_2")
         self.pushButton_14 = QtWidgets.QPushButton(self.adddepartment)
         self.pushButton_14.setGeometry(QtCore.QRect(20, 300, 131, 131))
-        self.pushButton_14.setStyleSheet("background:url(:/setting/setting.png);\n"
+        self.pushButton_14.setStyleSheet("background:url(" + os.getcwd().replace("\\","/") + "/Assets/setting.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
@@ -969,28 +978,28 @@ class Ui_AdminDashBoard(object):
         self.line_3.setObjectName("line_3")
         self.pushButton_15 = QtWidgets.QPushButton(self.adddepartment)
         self.pushButton_15.setGeometry(QtCore.QRect(20, 150, 131, 141))
-        self.pushButton_15.setStyleSheet("background-image:url(:/edit/Edit.png);\n"
+        self.pushButton_15.setStyleSheet("background-image:url(" + os.getcwd().replace("\\","/") +"/Assets/Edit.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
         self.pushButton_15.setObjectName("pushButton_15")
         self.pushButton_16 = QtWidgets.QPushButton(self.adddepartment)
         self.pushButton_16.setGeometry(QtCore.QRect(10, 20, 141, 131))
-        self.pushButton_16.setStyleSheet("background:url(:/staff/staff.png);\n"
+        self.pushButton_16.setStyleSheet("background:url(" + os.getcwd().replace("\\","/") +"/Assets/staff.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
         self.pushButton_16.setObjectName("pushButton_16")
         self.pushButton_38 = QtWidgets.QPushButton(self.adddepartment)
         self.pushButton_38.setGeometry(QtCore.QRect(20, 440, 131, 141))
-        self.pushButton_38.setStyleSheet("background:url(:/del/delete.png);\n"
+        self.pushButton_38.setStyleSheet("background:url(" + os.getcwd().replace("\\","/") + "/Assets/delete.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
         self.pushButton_38.setObjectName("pushButton_38")
         self.pushButton_39 = QtWidgets.QPushButton(self.adddepartment)
         self.pushButton_39.setGeometry(QtCore.QRect(20, 590, 131, 131))
-        self.pushButton_39.setStyleSheet("background:url(:/act/Active.png);\n"
+        self.pushButton_39.setStyleSheet("background:url(" + os.getcwd().replace("\\","/") + "/Assets/Active.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
@@ -1088,35 +1097,35 @@ class Ui_AdminDashBoard(object):
         self.edit.setObjectName("edit")
         self.pushButton_40 = QtWidgets.QPushButton(self.edit)
         self.pushButton_40.setGeometry(QtCore.QRect(30, 470, 131, 141))
-        self.pushButton_40.setStyleSheet("background:url(:/del/delete.png);\n"
+        self.pushButton_40.setStyleSheet("background:url(" + os.getcwd().replace("\\","/") + "/Assets/delete.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
         self.pushButton_40.setObjectName("pushButton_40")
         self.pushButton_41 = QtWidgets.QPushButton(self.edit)
         self.pushButton_41.setGeometry(QtCore.QRect(30, 630, 131, 131))
-        self.pushButton_41.setStyleSheet("background:url(:/act/Active.png);\n"
+        self.pushButton_41.setStyleSheet("background:url(" + os.getcwd().replace("\\","/") +"/Assets/Active.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
         self.pushButton_41.setObjectName("pushButton_41")
         self.pushButton_42 = QtWidgets.QPushButton(self.edit)
         self.pushButton_42.setGeometry(QtCore.QRect(20, 150, 131, 141))
-        self.pushButton_42.setStyleSheet("background-image:url(:/edit/Edit.png);\n"
+        self.pushButton_42.setStyleSheet("background-image:url(" + os.getcwd().replace("\\","/") +"/Assets/Edit.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
         self.pushButton_42.setObjectName("pushButton_42")
         self.pushButton_43 = QtWidgets.QPushButton(self.edit)
         self.pushButton_43.setGeometry(QtCore.QRect(10, 20, 141, 131))
-        self.pushButton_43.setStyleSheet("background:url(:/staff/staff.png);\n"
+        self.pushButton_43.setStyleSheet("background:url(" + os.getcwd().replace("\\","/") + "/Assets/staff.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
         self.pushButton_43.setObjectName("pushButton_43")
         self.pushButton_44 = QtWidgets.QPushButton(self.edit)
         self.pushButton_44.setGeometry(QtCore.QRect(30, 320, 131, 131))
-        self.pushButton_44.setStyleSheet("background:url(:/setting/setting.png);\n"
+        self.pushButton_44.setStyleSheet("background:url(" + os.getcwd().replace("\\","/") +"/Assets/setting.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
@@ -1141,14 +1150,14 @@ class Ui_AdminDashBoard(object):
         self.Delete.setObjectName("Delete")
         self.pushButton_45 = QtWidgets.QPushButton(self.Delete)
         self.pushButton_45.setGeometry(QtCore.QRect(30, 580, 131, 131))
-        self.pushButton_45.setStyleSheet("background:url(:/act/Active.png);\n"
+        self.pushButton_45.setStyleSheet("background:url("  + os.getcwd().replace("\\","/") + "/Assets/Active.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
         self.pushButton_45.setObjectName("pushButton_45")
         self.pushButton_46 = QtWidgets.QPushButton(self.Delete)
         self.pushButton_46.setGeometry(QtCore.QRect(40, 290, 131, 131))
-        self.pushButton_46.setStyleSheet("background:url(:/setting/setting.png);\n"
+        self.pushButton_46.setStyleSheet("background:url("  + os.getcwd().replace("\\","/") + "/Assets/setting.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
@@ -1161,7 +1170,7 @@ class Ui_AdminDashBoard(object):
         self.line_12.setObjectName("line_12")
         self.pushButton_47 = QtWidgets.QPushButton(self.Delete)
         self.pushButton_47.setGeometry(QtCore.QRect(40, 140, 131, 141))
-        self.pushButton_47.setStyleSheet("background-image:url(:/edit/Edit.png);\n"
+        self.pushButton_47.setStyleSheet("background-image:url("  + os.getcwd().replace("\\","/") + "/Assets/Edit.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
@@ -1177,14 +1186,14 @@ class Ui_AdminDashBoard(object):
         self.label_24.setObjectName("label_24")
         self.pushButton_48 = QtWidgets.QPushButton(self.Delete)
         self.pushButton_48.setGeometry(QtCore.QRect(30, 430, 131, 141))
-        self.pushButton_48.setStyleSheet("background:url(:/del/delete.png);\n"
+        self.pushButton_48.setStyleSheet("background:url("  + os.getcwd().replace("\\","/") + "/Assets/delete.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
         self.pushButton_48.setObjectName("pushButton_48")
         self.pushButton_49 = QtWidgets.QPushButton(self.Delete)
         self.pushButton_49.setGeometry(QtCore.QRect(30, 10, 141, 131))
-        self.pushButton_49.setStyleSheet("background:url(:/staff/staff.png);\n"
+        self.pushButton_49.setStyleSheet("background:url("  + os.getcwd().replace("\\","/") + "/Assets/staff.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
@@ -1361,35 +1370,35 @@ class Ui_AdminDashBoard(object):
         self.horizontalLayout_4.addWidget(self.comboBox_2)
         self.pushButton_50 = QtWidgets.QPushButton(self.settingdepartment)
         self.pushButton_50.setGeometry(QtCore.QRect(20, 230, 131, 141))
-        self.pushButton_50.setStyleSheet("background-image:url(:/edit/Edit.png);\n"
+        self.pushButton_50.setStyleSheet("background-image:url("  + os.getcwd().replace("\\","/") + "/Assets/Edit.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
         self.pushButton_50.setObjectName("pushButton_50")
         self.pushButton_51 = QtWidgets.QPushButton(self.settingdepartment)
         self.pushButton_51.setGeometry(QtCore.QRect(10, 520, 131, 141))
-        self.pushButton_51.setStyleSheet("background:url(:/del/delete.png);\n"
+        self.pushButton_51.setStyleSheet("background:url("  + os.getcwd().replace("\\","/") + "/Assets/delete.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
         self.pushButton_51.setObjectName("pushButton_51")
         self.pushButton_52 = QtWidgets.QPushButton(self.settingdepartment)
         self.pushButton_52.setGeometry(QtCore.QRect(10, 100, 141, 131))
-        self.pushButton_52.setStyleSheet("background:url(:/staff/staff.png);\n"
+        self.pushButton_52.setStyleSheet("background:url("  + os.getcwd().replace("\\","/") + "/Assets/staff.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
         self.pushButton_52.setObjectName("pushButton_52")
         self.pushButton_53 = QtWidgets.QPushButton(self.settingdepartment)
         self.pushButton_53.setGeometry(QtCore.QRect(10, 670, 131, 131))
-        self.pushButton_53.setStyleSheet("background:url(:/act/Active.png);\n"
+        self.pushButton_53.setStyleSheet("background:url("  + os.getcwd().replace("\\","/") + "/Assets/Active.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
         self.pushButton_53.setObjectName("pushButton_53")
         self.pushButton_54 = QtWidgets.QPushButton(self.settingdepartment)
         self.pushButton_54.setGeometry(QtCore.QRect(20, 380, 131, 131))
-        self.pushButton_54.setStyleSheet("background:url(:/setting/setting.png);\n"
+        self.pushButton_54.setStyleSheet("background:url("  + os.getcwd().replace("\\","/") + "/Assets/setting.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
@@ -1437,35 +1446,35 @@ class Ui_AdminDashBoard(object):
         self.formLayout_2.setWidget(1, QtWidgets.QFormLayout.FieldRole, self.okbtn_3)
         self.pushButton_55 = QtWidgets.QPushButton(self.activedepartment)
         self.pushButton_55.setGeometry(QtCore.QRect(20, 160, 131, 141))
-        self.pushButton_55.setStyleSheet("background-image:url(:/edit/Edit.png);\n"
+        self.pushButton_55.setStyleSheet("background:url("  + os.getcwd().replace("\\","/") + "/Assets/Edit.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
         self.pushButton_55.setObjectName("pushButton_55")
         self.pushButton_56 = QtWidgets.QPushButton(self.activedepartment)
         self.pushButton_56.setGeometry(QtCore.QRect(10, 450, 131, 141))
-        self.pushButton_56.setStyleSheet("background:url(:/del/delete.png);\n"
+        self.pushButton_56.setStyleSheet("background:url("  + os.getcwd().replace("\\","/") + "/Assets/delete.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
         self.pushButton_56.setObjectName("pushButton_56")
         self.pushButton_57 = QtWidgets.QPushButton(self.activedepartment)
         self.pushButton_57.setGeometry(QtCore.QRect(10, 30, 141, 131))
-        self.pushButton_57.setStyleSheet("background:url(:/staff/staff.png);\n"
+        self.pushButton_57.setStyleSheet("background:url("  + os.getcwd().replace("\\","/") + "/Assets/staff.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
         self.pushButton_57.setObjectName("pushButton_57")
         self.pushButton_58 = QtWidgets.QPushButton(self.activedepartment)
         self.pushButton_58.setGeometry(QtCore.QRect(10, 600, 131, 131))
-        self.pushButton_58.setStyleSheet("background:url(:/act/Active.png);\n"
+        self.pushButton_58.setStyleSheet("background:url("  + os.getcwd().replace("\\","/") + "/Assets/Active.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
         self.pushButton_58.setObjectName("pushButton_58")
         self.pushButton_59 = QtWidgets.QPushButton(self.activedepartment)
         self.pushButton_59.setGeometry(QtCore.QRect(20, 310, 131, 131))
-        self.pushButton_59.setStyleSheet("background:url(:/setting/setting.png);\n"
+        self.pushButton_59.setStyleSheet("background:url("  + os.getcwd().replace("\\","/") + "/Assets/setting.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
@@ -2514,21 +2523,21 @@ class Ui_AdminDashBoard(object):
         self.gridLayout.addWidget(self.pushButton_105, 8, 2, 1, 1)
         self.pushButton_128 = QtWidgets.QPushButton(self.tabWidget_2Page1)
         self.pushButton_128.setGeometry(QtCore.QRect(30, 310, 131, 121))
-        self.pushButton_128.setStyleSheet("background:url(:/approve/approval.png);\n"
+        self.pushButton_128.setStyleSheet("background:url("  + os.getcwd().replace("\\","/") + "/Assets/approval.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
         self.pushButton_128.setObjectName("pushButton_128")
         self.pushButton_129 = QtWidgets.QPushButton(self.tabWidget_2Page1)
         self.pushButton_129.setGeometry(QtCore.QRect(40, 190, 121, 111))
-        self.pushButton_129.setStyleSheet("background:url(:/balance/balance.png);\n"
+        self.pushButton_129.setStyleSheet("background:url("  + os.getcwd().replace("\\","/") + "/Assets/balance.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
         self.pushButton_129.setObjectName("pushButton_129")
         self.pushButton_116 = QtWidgets.QPushButton(self.tabWidget_2Page1)
         self.pushButton_116.setGeometry(QtCore.QRect(40, 60, 111, 121))
-        self.pushButton_116.setStyleSheet("background:url(:/type/leave.png);\n"
+        self.pushButton_116.setStyleSheet("background:url("  + os.getcwd().replace("\\","/") + "/Assets/leave.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
@@ -2683,21 +2692,21 @@ class Ui_AdminDashBoard(object):
         self.line_26.setObjectName("line_26")
         self.pushButton_115 = QtWidgets.QPushButton(self.tabWidget_2Page2)
         self.pushButton_115.setGeometry(QtCore.QRect(40, 30, 111, 121))
-        self.pushButton_115.setStyleSheet("background:url(:/type/leave.png);\n"
+        self.pushButton_115.setStyleSheet("background:url("  + os.getcwd().replace("\\","/") + "/Assets/leave.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
         self.pushButton_115.setObjectName("pushButton_115")
         self.pushButton_126 = QtWidgets.QPushButton(self.tabWidget_2Page2)
         self.pushButton_126.setGeometry(QtCore.QRect(40, 160, 121, 111))
-        self.pushButton_126.setStyleSheet("background:url(:/balance/balance.png);\n"
+        self.pushButton_126.setStyleSheet("background:url(" + os.getcwd().replace("\\","/") + "/Assets/balance.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
         self.pushButton_126.setObjectName("pushButton_126")
         self.pushButton_127 = QtWidgets.QPushButton(self.tabWidget_2Page2)
         self.pushButton_127.setGeometry(QtCore.QRect(30, 280, 131, 121))
-        self.pushButton_127.setStyleSheet("background:url(:/approve/approval.png);\n"
+        self.pushButton_127.setStyleSheet("background:url("  + os.getcwd().replace("\\","/") + "/Assets/approval.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
@@ -2821,21 +2830,21 @@ class Ui_AdminDashBoard(object):
         self.gridLayout_7.addWidget(self.tableWidget, 0, 0, 3, 1)
         self.pushButton_130 = QtWidgets.QPushButton(self.tabWidget_2Page3)
         self.pushButton_130.setGeometry(QtCore.QRect(40, 290, 131, 121))
-        self.pushButton_130.setStyleSheet("background:url(:/approve/approval.png);\n"
+        self.pushButton_130.setStyleSheet("background:url("  + os.getcwd().replace("\\","/") + "/Assets/approval.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
         self.pushButton_130.setObjectName("pushButton_130")
         self.pushButton_131 = QtWidgets.QPushButton(self.tabWidget_2Page3)
         self.pushButton_131.setGeometry(QtCore.QRect(50, 170, 121, 111))
-        self.pushButton_131.setStyleSheet("background:url(:/balance/balance.png);\n"
+        self.pushButton_131.setStyleSheet("background:url("  + os.getcwd().replace("\\","/") + "/Assets/balance.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
         self.pushButton_131.setObjectName("pushButton_131")
         self.pushButton_117 = QtWidgets.QPushButton(self.tabWidget_2Page3)
         self.pushButton_117.setGeometry(QtCore.QRect(50, 40, 111, 121))
-        self.pushButton_117.setStyleSheet("background:url(:/type/leave.png);\n"
+        self.pushButton_117.setStyleSheet("background:url("  + os.getcwd().replace("\\","/") + "/Assets/leave.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
@@ -2880,11 +2889,7 @@ class Ui_AdminDashBoard(object):
         self.progressBar.setMinimum(0)
         self.progressBar.setMaximum(n)
         self.progressBar.setRange(0, n)
-        self.progressBar.setStyleSheet("\n"
-        "\n"
-        "#BlueProgressBar::chunk {\n"
-        "    background-color: #2196F3;\n"
-        "    ")
+        self.progressBar.setStyleSheet("background-color:#2196F3;\n")
         self.progressBar.setObjectName("progressBar")
         self.progressBar.hide()
         self.Payrollregister.addTab(self.tab_4, "")
@@ -4630,7 +4635,7 @@ class Thread(QThread):
 
                 c = int(i * (chunk_size / number_of_executions) * 100)
                 self._signal.emit(c * 5)
-                sys.stdout.write(f"\r{round(c, 4)}%")
+                # sys.stdout.write(f"\r{round(c, 4)}%")
                 time.sleep(.1)
                 
             self.progressBar.setFormat("Done")
@@ -4648,7 +4653,7 @@ class Thread(QThread):
                     df.to_excel('Attendance.xlsx')
                 c = int(i * (chunk_size / number_of_executions) * 100)
                 self._signal.emit(c * 5)
-                sys.stdout.write(f"\r{round(c, 4)}%")
+                # sys.stdout.write(f"\r{round(c, 4)}%")
                 time.sleep(.1)
                 
             time.sleep(2)

@@ -20,6 +20,8 @@ from datetime import *
 import calendar
 import array
 from onlineDb import *
+
+import leave_balance_page
 from PyQt5.QtCore import QThread, pyqtSignal
 import pandas as pd
 import numpy as np
@@ -3840,6 +3842,10 @@ class Ui_AdminDashBoard(object):
          except mc.Error as e:
                 print("Error Occured")
 
+     def onButtonClicked(self,MainWindow):
+        add_leave_ui = leave_balance_page.Ui_MainWindow()
+        add_leave_ui .setupUi(MainWindow)
+        MainWindow.show()
      def generator_thread(self,execution_type):
         self.thread = Thread(execution_type,self.progressBar)
         
@@ -4312,7 +4318,9 @@ class Ui_AdminDashBoard(object):
         self.pushButton_104.setText(_translate("AdminDashBoard", "Edit"))
         self.pushButton_105.setText(_translate("AdminDashBoard", "Delete"))
         self.pushButton_128.setText(_translate("AdminDashBoard", "Leave Approval"))
-        self.pushButton_129.setText(_translate("AdminDashBoard", "leave balance"))
+        self.pushButton_129.setText(_translate("AdminDashBoard", "Leave Balance"))
+        self.pushButton_129.clicked.connect(self.onButtonClicked)
+       
         self.pushButton_116.setText(_translate("AdminDashBoard", "Leave Type"))
         self.label_236.setText(_translate("AdminDashBoard", "Leave Type"))
         self.label_237.setText(_translate("AdminDashBoard", "Current Year Balance "))
@@ -4511,7 +4519,7 @@ class Ui_AdminDashBoard(object):
         self.tableWidget_5.setSortingEnabled(__sortingEnabled)
         self.Payrollregister.setTabText(self.Payrollregister.indexOf(self.tab_5), _translate("AdminDashBoard", "Payroll Registeration"))
         self.tabWidget_2.setTabText(self.tabWidget_2.indexOf(self.tab_3), _translate("AdminDashBoard", "Payroll"))
-        self.tabWidget_6.setTabText(self.tabWidget_6.indexOf(self.tab_73), _translate("AdminDashBoard", "Role"))
+        # self.tabWidget_6.setTabText(self.tabWidget_6.indexOf(self.tab_73), _translate("AdminDashBoard", "Role"))
         self.tabWidget_17.setTabText(self.tabWidget_17.indexOf(self.tab_74), _translate("AdminDashBoard", "Role management"))
         self.dep_saveandnwbtn_13.setText(_translate("AdminDashBoard", "save and new"))
         self.dep_okbtn_13.setText(_translate("AdminDashBoard", "ok"))
@@ -4564,8 +4572,8 @@ class Ui_AdminDashBoard(object):
         self.label_173.setText(_translate("AdminDashBoard", "password"))
         self.label_172.setText(_translate("AdminDashBoard", "Email address"))
         self.tabWidget_6.setTabText(self.tabWidget_6.indexOf(self.tab_32), _translate("AdminDashBoard", "Alert Settings"))
-        self.tabWidget_6.setTabText(self.tabWidget_6.indexOf(self.tab_72), _translate("AdminDashBoard", "Log Record"))
-        self.tabWidget_6.setTabText(self.tabWidget_6.indexOf(self.tab_71), _translate("AdminDashBoard", "Data cleaning"))
+        # self.tabWidget_6.setTabText(self.tabWidget_6.indexOf(self.tab_72), _translate("AdminDashBoard", "Log Record"))
+        # self.tabWidget_6.setTabText(self.tabWidget_6.indexOf(self.tab_71), _translate("AdminDashBoard", "Data cleaning"))
         self.tabWidget_2.setTabText(self.tabWidget_2.indexOf(self.SystemSettings), _translate("AdminDashBoard", "System Setting"))
         self.department.setText(_translate("AdminDashBoard", "Department"))
         self.actionPosition.setText(_translate("AdminDashBoard", "Position"))
@@ -4589,7 +4597,7 @@ class Ui_AdminDashBoard(object):
         self.actionCash_Advance.setText(_translate("AdminDashBoard", "Cash Advance"))
         self.actionPayroll_report.setText(_translate("AdminDashBoard", "Payroll report"))
         self.actionSystem_User_Management.setText(_translate("AdminDashBoard", "System User Management"))
-        self.actionCompany_Settings.setText(_translate("AdminDashBoard", "Company Settings"))
+        # self.actionCompany_Settings.setText(_translate("AdminDashBoard", "Company Settings"))
         self.actionAlert_Settings.setText(_translate("AdminDashBoard", "Alert Settings"))
         self.actionAdd_Personel.setText(_translate("AdminDashBoard", "Add Personel"))
         self.actionSetting_Approver.setText(_translate("AdminDashBoard", "setting Approver"))
@@ -4664,6 +4672,8 @@ class Thread(QThread):
 
 if __name__ == "__main__":
     import sys
+
+    import leave_balance_page
     today_date= datetime.now()
     n= 500
     os.environ["QT_AUTO_SCREEN_SCALE_FACTOR"] = "1"

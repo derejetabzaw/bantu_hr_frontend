@@ -13,11 +13,31 @@
 import os
 import time
 from PyQt5 import QtCore, QtGui, QtWidgets
-import ExcelGeneration
-import PdfGeneration
-from connection import *
+from PyQt5.QtWidgets import QTableWidgetItem 
+# from connection import *
+import mysql.connector as mc
+from datetime import *
+import calendar
+import array
+from onlineDb import *
 
+import leave_balance_page
+from PyQt5.QtCore import QThread, pyqtSignal
+import pandas as pd
+import numpy as np
+import os
+import pdfkit
+import time
 
+import os 
+chunk_size = 1
+
+# current_assets_directory = os.getcwd().replace("\\","/") + "/Assets/"
+
+# background_url = "background:url("  + current_assets_directory + "background.png" + ");"
+
+# def background(image_file_name):
+#     return background_url.replace("background.png", image_file_name)
 
 
 class Ui_AdminDashBoard(object):
@@ -34,11 +54,11 @@ class Ui_AdminDashBoard(object):
         #                         self.tableWidget_5.insertRow(row_number)
         #                         for column_number. data in enumerate(row_data):
         #                                 self.tableWidget_5.setItem(row_number, column_number, QtWidgets.QtableWidgetItem(str(data)))
-       
+        
         AdminDashBoard.setObjectName("AdminDashBoard")
         AdminDashBoard.resize(1922, 1080)
         AdminDashBoard.setMaximumSize(QtCore.QSize(16777215, 16777215))
-        AdminDashBoard.setStyleSheet("bacground-color:#fff")
+        AdminDashBoard.setStyleSheet("background-color:#fff")
         self.centralwidget = QtWidgets.QWidget(AdminDashBoard)
         self.centralwidget.setObjectName("centralwidget")
         self.tabWidget_2 = QtWidgets.QTabWidget(self.centralwidget)
@@ -70,7 +90,7 @@ class Ui_AdminDashBoard(object):
         self.scrollAreaWidgetContents.setObjectName("scrollAreaWidgetContents")
         self.pushButton_7 = QtWidgets.QPushButton(self.scrollAreaWidgetContents)
         self.pushButton_7.setGeometry(QtCore.QRect(380, 400, 101, 101))
-        self.pushButton_7.setStyleSheet("background:url(:/back/back.png)")
+        self.pushButton_7.setStyleSheet("background:url(" + os.getcwd().replace("\\","/") + "/Assets/back.png)")
         self.pushButton_7.setText("")
         self.pushButton_7.setObjectName("pushButton_7")
         self.tableWidget_11 = QtWidgets.QTableWidget(self.scrollAreaWidgetContents)
@@ -93,7 +113,8 @@ class Ui_AdminDashBoard(object):
         self.label_18.setObjectName("label_18")
         self.pushButton_6 = QtWidgets.QPushButton(self.scrollAreaWidgetContents)
         self.pushButton_6.setGeometry(QtCore.QRect(480, 400, 101, 101))
-        self.pushButton_6.setStyleSheet("background:url(:/next/next.png)")
+        self.pushButton_6.setStyleSheet("background:url(" + os.getcwd().replace("\\","/") + "/Assets/next.png)")
+        
         self.pushButton_6.setText("")
         self.pushButton_6.setObjectName("pushButton_6")
         self.label_34 = QtWidgets.QLabel(self.scrollAreaWidgetContents)
@@ -211,21 +232,21 @@ class Ui_AdminDashBoard(object):
         self.sent_users.setObjectName("sent_users")
         self.pushButton_11 = QtWidgets.QPushButton(self.stackedWidget_3Page1)
         self.pushButton_11.setGeometry(QtCore.QRect(10, 40, 158, 141))
-        self.pushButton_11.setStyleSheet("background:url(:/adu/Assets/iconmonstr-user-8-120.png);\n"
+        self.pushButton_11.setStyleSheet("background:url(" + os.getcwd().replace("\\","/") + "/Assets/iconmonstr-user-8-120.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
         self.pushButton_11.setObjectName("pushButton_11")
         self.pushButton_12 = QtWidgets.QPushButton(self.stackedWidget_3Page1)
-        self.pushButton_12.setGeometry(QtCore.QRect(10, 350, 158, 141))
-        self.pushButton_12.setStyleSheet("background:url(:/pos/iconmonstr-flag-3-120.png);\n"
+        self.pushButton_12.setGeometry(QtCore.QRect(10, 350, 158, 141)) 
+        self.pushButton_12.setStyleSheet("background:url(" + os.getcwd().replace("\\","/") +"/Assets/iconmonstr-flag-3-120.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
         self.pushButton_12.setObjectName("pushButton_12")
         self.pushButton_13 = QtWidgets.QPushButton(self.stackedWidget_3Page1)
         self.pushButton_13.setGeometry(QtCore.QRect(10, 190, 158, 141))
-        self.pushButton_13.setStyleSheet("background-image: url(:/list/iconmonstr-list-lined-120.png);\n"
+        self.pushButton_13.setStyleSheet("background-image: url(" + os.getcwd().replace("\\","/") + "/Assets/iconmonstr-list-lined-120.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
@@ -468,12 +489,14 @@ class Ui_AdminDashBoard(object):
         self.dateEdit_3.setGeometry(QtCore.QRect(350, 430, 111, 22))
         self.dateEdit_3.setDate(QtCore.QDate(2000, 5, 1))
         self.dateEdit_3.setObjectName("dateEdit_3")
+       
         self.stackedWidget_3.addWidget(self.stackedWidget_3Page1)
         self.stackedWidget_3Page2 = QtWidgets.QWidget()
         self.stackedWidget_3Page2.setObjectName("stackedWidget_3Page2")
         self.pushButton_35 = QtWidgets.QPushButton(self.stackedWidget_3Page2)
         self.pushButton_35.setGeometry(QtCore.QRect(0, 160, 158, 141))
-        self.pushButton_35.setStyleSheet("background-image: url(:/list/iconmonstr-list-lined-120.png);\n"
+        
+        self.pushButton_35.setStyleSheet("background-image: url(" + os.getcwd().replace("\\","/") + "/Assets/iconmonstr-list-lined-120.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
@@ -489,14 +512,14 @@ class Ui_AdminDashBoard(object):
         self.line_10.setObjectName("line_10")
         self.pushButton_36 = QtWidgets.QPushButton(self.stackedWidget_3Page2)
         self.pushButton_36.setGeometry(QtCore.QRect(0, 10, 158, 141))
-        self.pushButton_36.setStyleSheet("background:url(:/adu/Assets/iconmonstr-user-8-120.png);\n"
+        self.pushButton_36.setStyleSheet("background:url(" + os.getcwd().replace("\\","/") + "/Assets/iconmonstr-user-8-120.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
         self.pushButton_36.setObjectName("pushButton_36")
         self.pushButton_37 = QtWidgets.QPushButton(self.stackedWidget_3Page2)
         self.pushButton_37.setGeometry(QtCore.QRect(0, 320, 158, 141))
-        self.pushButton_37.setStyleSheet("background:url(:/pos/iconmonstr-flag-3-120.png);\n"
+        self.pushButton_37.setStyleSheet("background:url(" + os.getcwd().replace("\\","/") + "/Assets/iconmonstr-flag-3-120.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
@@ -524,7 +547,7 @@ class Ui_AdminDashBoard(object):
         self.label_3.setObjectName("label_3")
         self.pushButton_29 = QtWidgets.QPushButton(self.positionmanagement)
         self.pushButton_29.setGeometry(QtCore.QRect(0, 180, 158, 141))
-        self.pushButton_29.setStyleSheet("background-image: url(:/list/iconmonstr-list-lined-120.png);\n"
+        self.pushButton_29.setStyleSheet("background-image: url(" + os.getcwd().replace("\\","/") + "/Assets/iconmonstr-list-lined-120.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
@@ -537,14 +560,14 @@ class Ui_AdminDashBoard(object):
         self.line_8.setObjectName("line_8")
         self.pushButton_30 = QtWidgets.QPushButton(self.positionmanagement)
         self.pushButton_30.setGeometry(QtCore.QRect(0, 30, 158, 141))
-        self.pushButton_30.setStyleSheet("background:url(:/adu/Assets/iconmonstr-user-8-120.png);\n"
+        self.pushButton_30.setStyleSheet("background:url(" + os.getcwd().replace("\\","/") + "/Assets/iconmonstr-user-8-120.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
         self.pushButton_30.setObjectName("pushButton_30")
         self.pushButton_31 = QtWidgets.QPushButton(self.positionmanagement)
         self.pushButton_31.setGeometry(QtCore.QRect(0, 340, 158, 141))
-        self.pushButton_31.setStyleSheet("background:url(:/pos/iconmonstr-flag-3-120.png);\n"
+        self.pushButton_31.setStyleSheet("background:url(" + os.getcwd().replace("\\","/") + "/Assets/iconmonstr-flag-3-120.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
@@ -721,7 +744,7 @@ class Ui_AdminDashBoard(object):
         self.formLayout_14.setWidget(5, QtWidgets.QFormLayout.FieldRole, self.aprrovedbx)
         self.pushButton_32 = QtWidgets.QPushButton(self.Addposition)
         self.pushButton_32.setGeometry(QtCore.QRect(0, 160, 158, 141))
-        self.pushButton_32.setStyleSheet("background-image: url(:/list/iconmonstr-list-lined-120.png);\n"
+        self.pushButton_32.setStyleSheet("background-image: url(" + os.getcwd().replace("\\","/") + "/Assets/iconmonstr-list-lined-120.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
@@ -734,14 +757,14 @@ class Ui_AdminDashBoard(object):
         self.line_9.setObjectName("line_9")
         self.pushButton_33 = QtWidgets.QPushButton(self.Addposition)
         self.pushButton_33.setGeometry(QtCore.QRect(0, 10, 158, 141))
-        self.pushButton_33.setStyleSheet("background:url(:/adu/Assets/iconmonstr-user-8-120.png);\n"
+        self.pushButton_33.setStyleSheet("background:url(" + os.getcwd().replace("\\","/") + "/Assets/iconmonstr-user-8-120.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
         self.pushButton_33.setObjectName("pushButton_33")
         self.pushButton_34 = QtWidgets.QPushButton(self.Addposition)
         self.pushButton_34.setGeometry(QtCore.QRect(0, 320, 158, 141))
-        self.pushButton_34.setStyleSheet("background:url(:/pos/iconmonstr-flag-3-120.png);\n"
+        self.pushButton_34.setStyleSheet("background:url(" + os.getcwd().replace("\\","/") + "/Assets/iconmonstr-flag-3-120.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
@@ -764,7 +787,7 @@ class Ui_AdminDashBoard(object):
         self.addEmployeeforResignation.setObjectName("addEmployeeforResignation")
         self.pushButton_17 = QtWidgets.QPushButton(self.addEmployeeforResignation)
         self.pushButton_17.setGeometry(QtCore.QRect(0, 0, 158, 141))
-        self.pushButton_17.setStyleSheet("background:url(:/adu/Assets/iconmonstr-user-8-120.png);\n"
+        self.pushButton_17.setStyleSheet("background:url(" + os.getcwd().replace("\\","/") + "/Assets/iconmonstr-user-8-120.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
@@ -777,7 +800,7 @@ class Ui_AdminDashBoard(object):
         self.line_4.setObjectName("line_4")
         self.pushButton_18 = QtWidgets.QPushButton(self.addEmployeeforResignation)
         self.pushButton_18.setGeometry(QtCore.QRect(0, 150, 158, 141))
-        self.pushButton_18.setStyleSheet("background-image: url(:/list/iconmonstr-list-lined-120.png);\n"
+        self.pushButton_18.setStyleSheet("background-image: url(" + os.getcwd().replace("\\","/") + "/Assets/iconmonstr-list-lined-120.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
@@ -792,7 +815,7 @@ class Ui_AdminDashBoard(object):
         self.comboBox_6.addItem("")
         self.pushButton_19 = QtWidgets.QPushButton(self.addEmployeeforResignation)
         self.pushButton_19.setGeometry(QtCore.QRect(0, 310, 158, 141))
-        self.pushButton_19.setStyleSheet("background:url(:/pos/iconmonstr-flag-3-120.png);\n"
+        self.pushButton_19.setStyleSheet("background:url(" + os.getcwd().replace("\\","/") + "/Assets/iconmonstr-flag-3-120.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
@@ -805,7 +828,7 @@ class Ui_AdminDashBoard(object):
         self.ReinstateEmployee.setObjectName("ReinstateEmployee")
         self.pushButton_26 = QtWidgets.QPushButton(self.ReinstateEmployee)
         self.pushButton_26.setGeometry(QtCore.QRect(0, 160, 158, 141))
-        self.pushButton_26.setStyleSheet("background-image: url(:/list/iconmonstr-list-lined-120.png);\n"
+        self.pushButton_26.setStyleSheet("background-image: url("+ os.getcwd().replace("\\","/") + "/Assets/iconmonstr-list-lined-120.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
@@ -821,14 +844,14 @@ class Ui_AdminDashBoard(object):
         self.line_7.setObjectName("line_7")
         self.pushButton_27 = QtWidgets.QPushButton(self.ReinstateEmployee)
         self.pushButton_27.setGeometry(QtCore.QRect(0, 10, 158, 141))
-        self.pushButton_27.setStyleSheet("background:url(:/adu/Assets/iconmonstr-user-8-120.png);\n"
+        self.pushButton_27.setStyleSheet("background:url(" + os.getcwd().replace("\\","/") + "/Assets/iconmonstr-user-8-120.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
         self.pushButton_27.setObjectName("pushButton_27")
         self.pushButton_28 = QtWidgets.QPushButton(self.ReinstateEmployee)
         self.pushButton_28.setGeometry(QtCore.QRect(0, 320, 158, 141))
-        self.pushButton_28.setStyleSheet("background:url(:/pos/iconmonstr-flag-3-120.png);\n"
+        self.pushButton_28.setStyleSheet("background:url(" + os.getcwd().replace("\\","/") + "/Assets/iconmonstr-flag-3-120.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
@@ -846,7 +869,7 @@ class Ui_AdminDashBoard(object):
         self.DisableAttendance.setObjectName("DisableAttendance")
         self.pushButton_20 = QtWidgets.QPushButton(self.DisableAttendance)
         self.pushButton_20.setGeometry(QtCore.QRect(0, 0, 158, 141))
-        self.pushButton_20.setStyleSheet("background:url(:/adu/Assets/iconmonstr-user-8-120.png);\n"
+        self.pushButton_20.setStyleSheet("background:url(" + os.getcwd().replace("\\","/") + "/Assets/iconmonstr-user-8-120.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
@@ -859,7 +882,7 @@ class Ui_AdminDashBoard(object):
         self.line_5.setObjectName("line_5")
         self.pushButton_21 = QtWidgets.QPushButton(self.DisableAttendance)
         self.pushButton_21.setGeometry(QtCore.QRect(0, 150, 158, 141))
-        self.pushButton_21.setStyleSheet("background-image: url(:/list/iconmonstr-list-lined-120.png);\n"
+        self.pushButton_21.setStyleSheet("background-image: url(" + os.getcwd().replace("\\","/") + "/Assets/iconmonstr-list-lined-120.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
@@ -874,7 +897,7 @@ class Ui_AdminDashBoard(object):
         self.comboBox_7.addItem("")
         self.pushButton_22 = QtWidgets.QPushButton(self.DisableAttendance)
         self.pushButton_22.setGeometry(QtCore.QRect(0, 310, 158, 141))
-        self.pushButton_22.setStyleSheet("background:url(:/pos/iconmonstr-flag-3-120.png);\n"
+        self.pushButton_22.setStyleSheet("background:url(" + os.getcwd().replace("\\","/") + "/Assets/iconmonstr-flag-3-120.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
@@ -887,7 +910,7 @@ class Ui_AdminDashBoard(object):
         self.Resignation.setObjectName("Resignation")
         self.pushButton_23 = QtWidgets.QPushButton(self.Resignation)
         self.pushButton_23.setGeometry(QtCore.QRect(0, 0, 158, 141))
-        self.pushButton_23.setStyleSheet("background:url(:/adu/Assets/iconmonstr-user-8-120.png);\n"
+        self.pushButton_23.setStyleSheet("background:url(" + os.getcwd().replace("\\","/") + "/Assets/iconmonstr-user-8-120.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
@@ -900,7 +923,7 @@ class Ui_AdminDashBoard(object):
         self.line_6.setObjectName("line_6")
         self.pushButton_24 = QtWidgets.QPushButton(self.Resignation)
         self.pushButton_24.setGeometry(QtCore.QRect(0, 150, 158, 141))
-        self.pushButton_24.setStyleSheet("background-image: url(:/list/iconmonstr-list-lined-120.png);\n"
+        self.pushButton_24.setStyleSheet("background-image: url(" + os.getcwd().replace("\\","/") + "/Assets/iconmonstr-list-lined-120.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
@@ -915,7 +938,7 @@ class Ui_AdminDashBoard(object):
         self.comboBox_8.addItem("")
         self.pushButton_25 = QtWidgets.QPushButton(self.Resignation)
         self.pushButton_25.setGeometry(QtCore.QRect(0, 310, 158, 141))
-        self.pushButton_25.setStyleSheet("background:url(:/pos/iconmonstr-flag-3-120.png);\n"
+        self.pushButton_25.setStyleSheet("background:url(" + os.getcwd().replace("\\","/") + "/Assets/iconmonstr-flag-3-120.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
@@ -944,7 +967,7 @@ class Ui_AdminDashBoard(object):
         self.label_2.setObjectName("label_2")
         self.pushButton_14 = QtWidgets.QPushButton(self.adddepartment)
         self.pushButton_14.setGeometry(QtCore.QRect(20, 300, 131, 131))
-        self.pushButton_14.setStyleSheet("background:url(:/setting/setting.png);\n"
+        self.pushButton_14.setStyleSheet("background:url(" + os.getcwd().replace("\\","/") + "/Assets/setting.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
@@ -957,28 +980,28 @@ class Ui_AdminDashBoard(object):
         self.line_3.setObjectName("line_3")
         self.pushButton_15 = QtWidgets.QPushButton(self.adddepartment)
         self.pushButton_15.setGeometry(QtCore.QRect(20, 150, 131, 141))
-        self.pushButton_15.setStyleSheet("background-image:url(:/edit/Edit.png);\n"
+        self.pushButton_15.setStyleSheet("background-image:url(" + os.getcwd().replace("\\","/") +"/Assets/Edit.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
         self.pushButton_15.setObjectName("pushButton_15")
         self.pushButton_16 = QtWidgets.QPushButton(self.adddepartment)
         self.pushButton_16.setGeometry(QtCore.QRect(10, 20, 141, 131))
-        self.pushButton_16.setStyleSheet("background:url(:/staff/staff.png);\n"
+        self.pushButton_16.setStyleSheet("background:url(" + os.getcwd().replace("\\","/") +"/Assets/staff.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
         self.pushButton_16.setObjectName("pushButton_16")
         self.pushButton_38 = QtWidgets.QPushButton(self.adddepartment)
         self.pushButton_38.setGeometry(QtCore.QRect(20, 440, 131, 141))
-        self.pushButton_38.setStyleSheet("background:url(:/del/delete.png);\n"
+        self.pushButton_38.setStyleSheet("background:url(" + os.getcwd().replace("\\","/") + "/Assets/delete.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
         self.pushButton_38.setObjectName("pushButton_38")
         self.pushButton_39 = QtWidgets.QPushButton(self.adddepartment)
         self.pushButton_39.setGeometry(QtCore.QRect(20, 590, 131, 131))
-        self.pushButton_39.setStyleSheet("background:url(:/act/Active.png);\n"
+        self.pushButton_39.setStyleSheet("background:url(" + os.getcwd().replace("\\","/") + "/Assets/Active.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
@@ -1076,35 +1099,35 @@ class Ui_AdminDashBoard(object):
         self.edit.setObjectName("edit")
         self.pushButton_40 = QtWidgets.QPushButton(self.edit)
         self.pushButton_40.setGeometry(QtCore.QRect(30, 470, 131, 141))
-        self.pushButton_40.setStyleSheet("background:url(:/del/delete.png);\n"
+        self.pushButton_40.setStyleSheet("background:url(" + os.getcwd().replace("\\","/") + "/Assets/delete.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
         self.pushButton_40.setObjectName("pushButton_40")
         self.pushButton_41 = QtWidgets.QPushButton(self.edit)
         self.pushButton_41.setGeometry(QtCore.QRect(30, 630, 131, 131))
-        self.pushButton_41.setStyleSheet("background:url(:/act/Active.png);\n"
+        self.pushButton_41.setStyleSheet("background:url(" + os.getcwd().replace("\\","/") +"/Assets/Active.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
         self.pushButton_41.setObjectName("pushButton_41")
         self.pushButton_42 = QtWidgets.QPushButton(self.edit)
         self.pushButton_42.setGeometry(QtCore.QRect(20, 150, 131, 141))
-        self.pushButton_42.setStyleSheet("background-image:url(:/edit/Edit.png);\n"
+        self.pushButton_42.setStyleSheet("background-image:url(" + os.getcwd().replace("\\","/") +"/Assets/Edit.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
         self.pushButton_42.setObjectName("pushButton_42")
         self.pushButton_43 = QtWidgets.QPushButton(self.edit)
         self.pushButton_43.setGeometry(QtCore.QRect(10, 20, 141, 131))
-        self.pushButton_43.setStyleSheet("background:url(:/staff/staff.png);\n"
+        self.pushButton_43.setStyleSheet("background:url(" + os.getcwd().replace("\\","/") + "/Assets/staff.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
         self.pushButton_43.setObjectName("pushButton_43")
         self.pushButton_44 = QtWidgets.QPushButton(self.edit)
         self.pushButton_44.setGeometry(QtCore.QRect(30, 320, 131, 131))
-        self.pushButton_44.setStyleSheet("background:url(:/setting/setting.png);\n"
+        self.pushButton_44.setStyleSheet("background:url(" + os.getcwd().replace("\\","/") +"/Assets/setting.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
@@ -1129,14 +1152,14 @@ class Ui_AdminDashBoard(object):
         self.Delete.setObjectName("Delete")
         self.pushButton_45 = QtWidgets.QPushButton(self.Delete)
         self.pushButton_45.setGeometry(QtCore.QRect(30, 580, 131, 131))
-        self.pushButton_45.setStyleSheet("background:url(:/act/Active.png);\n"
+        self.pushButton_45.setStyleSheet("background:url("  + os.getcwd().replace("\\","/") + "/Assets/Active.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
         self.pushButton_45.setObjectName("pushButton_45")
         self.pushButton_46 = QtWidgets.QPushButton(self.Delete)
         self.pushButton_46.setGeometry(QtCore.QRect(40, 290, 131, 131))
-        self.pushButton_46.setStyleSheet("background:url(:/setting/setting.png);\n"
+        self.pushButton_46.setStyleSheet("background:url("  + os.getcwd().replace("\\","/") + "/Assets/setting.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
@@ -1149,7 +1172,7 @@ class Ui_AdminDashBoard(object):
         self.line_12.setObjectName("line_12")
         self.pushButton_47 = QtWidgets.QPushButton(self.Delete)
         self.pushButton_47.setGeometry(QtCore.QRect(40, 140, 131, 141))
-        self.pushButton_47.setStyleSheet("background-image:url(:/edit/Edit.png);\n"
+        self.pushButton_47.setStyleSheet("background-image:url("  + os.getcwd().replace("\\","/") + "/Assets/Edit.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
@@ -1165,14 +1188,14 @@ class Ui_AdminDashBoard(object):
         self.label_24.setObjectName("label_24")
         self.pushButton_48 = QtWidgets.QPushButton(self.Delete)
         self.pushButton_48.setGeometry(QtCore.QRect(30, 430, 131, 141))
-        self.pushButton_48.setStyleSheet("background:url(:/del/delete.png);\n"
+        self.pushButton_48.setStyleSheet("background:url("  + os.getcwd().replace("\\","/") + "/Assets/delete.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
         self.pushButton_48.setObjectName("pushButton_48")
         self.pushButton_49 = QtWidgets.QPushButton(self.Delete)
         self.pushButton_49.setGeometry(QtCore.QRect(30, 10, 141, 131))
-        self.pushButton_49.setStyleSheet("background:url(:/staff/staff.png);\n"
+        self.pushButton_49.setStyleSheet("background:url("  + os.getcwd().replace("\\","/") + "/Assets/staff.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
@@ -1349,35 +1372,35 @@ class Ui_AdminDashBoard(object):
         self.horizontalLayout_4.addWidget(self.comboBox_2)
         self.pushButton_50 = QtWidgets.QPushButton(self.settingdepartment)
         self.pushButton_50.setGeometry(QtCore.QRect(20, 230, 131, 141))
-        self.pushButton_50.setStyleSheet("background-image:url(:/edit/Edit.png);\n"
+        self.pushButton_50.setStyleSheet("background-image:url("  + os.getcwd().replace("\\","/") + "/Assets/Edit.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
         self.pushButton_50.setObjectName("pushButton_50")
         self.pushButton_51 = QtWidgets.QPushButton(self.settingdepartment)
         self.pushButton_51.setGeometry(QtCore.QRect(10, 520, 131, 141))
-        self.pushButton_51.setStyleSheet("background:url(:/del/delete.png);\n"
+        self.pushButton_51.setStyleSheet("background:url("  + os.getcwd().replace("\\","/") + "/Assets/delete.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
         self.pushButton_51.setObjectName("pushButton_51")
         self.pushButton_52 = QtWidgets.QPushButton(self.settingdepartment)
         self.pushButton_52.setGeometry(QtCore.QRect(10, 100, 141, 131))
-        self.pushButton_52.setStyleSheet("background:url(:/staff/staff.png);\n"
+        self.pushButton_52.setStyleSheet("background:url("  + os.getcwd().replace("\\","/") + "/Assets/staff.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
         self.pushButton_52.setObjectName("pushButton_52")
         self.pushButton_53 = QtWidgets.QPushButton(self.settingdepartment)
         self.pushButton_53.setGeometry(QtCore.QRect(10, 670, 131, 131))
-        self.pushButton_53.setStyleSheet("background:url(:/act/Active.png);\n"
+        self.pushButton_53.setStyleSheet("background:url("  + os.getcwd().replace("\\","/") + "/Assets/Active.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
         self.pushButton_53.setObjectName("pushButton_53")
         self.pushButton_54 = QtWidgets.QPushButton(self.settingdepartment)
         self.pushButton_54.setGeometry(QtCore.QRect(20, 380, 131, 131))
-        self.pushButton_54.setStyleSheet("background:url(:/setting/setting.png);\n"
+        self.pushButton_54.setStyleSheet("background:url("  + os.getcwd().replace("\\","/") + "/Assets/setting.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
@@ -1425,35 +1448,35 @@ class Ui_AdminDashBoard(object):
         self.formLayout_2.setWidget(1, QtWidgets.QFormLayout.FieldRole, self.okbtn_3)
         self.pushButton_55 = QtWidgets.QPushButton(self.activedepartment)
         self.pushButton_55.setGeometry(QtCore.QRect(20, 160, 131, 141))
-        self.pushButton_55.setStyleSheet("background-image:url(:/edit/Edit.png);\n"
+        self.pushButton_55.setStyleSheet("background:url("  + os.getcwd().replace("\\","/") + "/Assets/Edit.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
         self.pushButton_55.setObjectName("pushButton_55")
         self.pushButton_56 = QtWidgets.QPushButton(self.activedepartment)
         self.pushButton_56.setGeometry(QtCore.QRect(10, 450, 131, 141))
-        self.pushButton_56.setStyleSheet("background:url(:/del/delete.png);\n"
+        self.pushButton_56.setStyleSheet("background:url("  + os.getcwd().replace("\\","/") + "/Assets/delete.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
         self.pushButton_56.setObjectName("pushButton_56")
         self.pushButton_57 = QtWidgets.QPushButton(self.activedepartment)
         self.pushButton_57.setGeometry(QtCore.QRect(10, 30, 141, 131))
-        self.pushButton_57.setStyleSheet("background:url(:/staff/staff.png);\n"
+        self.pushButton_57.setStyleSheet("background:url("  + os.getcwd().replace("\\","/") + "/Assets/staff.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
         self.pushButton_57.setObjectName("pushButton_57")
         self.pushButton_58 = QtWidgets.QPushButton(self.activedepartment)
         self.pushButton_58.setGeometry(QtCore.QRect(10, 600, 131, 131))
-        self.pushButton_58.setStyleSheet("background:url(:/act/Active.png);\n"
+        self.pushButton_58.setStyleSheet("background:url("  + os.getcwd().replace("\\","/") + "/Assets/Active.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
         self.pushButton_58.setObjectName("pushButton_58")
         self.pushButton_59 = QtWidgets.QPushButton(self.activedepartment)
         self.pushButton_59.setGeometry(QtCore.QRect(20, 310, 131, 131))
-        self.pushButton_59.setStyleSheet("background:url(:/setting/setting.png);\n"
+        self.pushButton_59.setStyleSheet("background:url("  + os.getcwd().replace("\\","/") + "/Assets/setting.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
@@ -2116,17 +2139,17 @@ class Ui_AdminDashBoard(object):
         self.pushButton_10.setGeometry(QtCore.QRect(260, 30, 75, 23))
         self.pushButton_10.setObjectName("pushButton_10")
         self.label_110 = QtWidgets.QLabel(self.tab_9)
-        self.label_110.setGeometry(QtCore.QRect(380, 10, 47, 13))
+        self.label_110.setGeometry(QtCore.QRect(380, 15, 47, 13))
         self.label_110.setObjectName("label_110")
         self.pushButton_61 = QtWidgets.QPushButton(self.tab_9)
         self.pushButton_61.setGeometry(QtCore.QRect(540, 30, 121, 21))
         self.pushButton_61.setObjectName("pushButton_61")
         self.tableWidget_6 = QtWidgets.QTableWidget(self.tab_9)
-        self.tableWidget_6.setGeometry(QtCore.QRect(0, 60, 481, 421))
+        self.tableWidget_6.setGeometry(QtCore.QRect(0, 60, 560, 421))
         self.tableWidget_6.setObjectName("tableWidget_6")
-        self.tableWidget_6.setColumnCount(4)
-        self.tableWidget_6.setRowCount(0)
-        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget_6.setColumnCount(5)
+        self.tableWidget_6.setRowCount(5)
+        item = QtWidgets.QTableWidgetItem()        
         self.tableWidget_6.setHorizontalHeaderItem(0, item)
         item = QtWidgets.QTableWidgetItem()
         self.tableWidget_6.setHorizontalHeaderItem(1, item)
@@ -2134,14 +2157,25 @@ class Ui_AdminDashBoard(object):
         self.tableWidget_6.setHorizontalHeaderItem(2, item)
         item = QtWidgets.QTableWidgetItem()
         self.tableWidget_6.setHorizontalHeaderItem(3, item)
-        self.tableWidget_6.horizontalHeader().setVisible(False)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget_6.setHorizontalHeaderItem(4, item)
+        self.tableWidget_6.horizontalHeader().setVisible(True)
         self.tableWidget_6.horizontalHeader().setCascadingSectionResizes(False)
         self.tableWidget_6.horizontalHeader().setHighlightSections(True)
         self.tableWidget_6.horizontalHeader().setStretchLastSection(True)
         self.tableWidget_6.verticalHeader().setVisible(False)
         self.dateEdit_6 = QtWidgets.QDateEdit(self.tab_9)
-        self.dateEdit_6.setGeometry(QtCore.QRect(380, 30, 110, 16))
+        self.dateEdit_6.setGeometry(QtCore.QRect(380, 28, 110, 16))
+        self.dateEdit_6.setCalendarPopup(True)
+        self.dateEdit_6.setDisplayFormat("yyyy-MM-dd")
+        self.dateEdit_6.setDateTime(QtCore.QDateTime.currentDateTime())
         self.dateEdit_6.setObjectName("dateEdit_6")
+        self.label_137= QtWidgets.QLabel(self.tab_9)
+        self.label_137.setGeometry(QtCore.QRect(410, 12, 111, 22))
+        font = QtGui.QFont()
+        font.setPointSize(6)
+        self.label_137.setFont(font)
+        self.label_137.setObjectName("label_105")
         self.tabWidget.addTab(self.tab_9, "")
         self.tab_11 = QtWidgets.QWidget()
         self.tab_11.setObjectName("tab_11")
@@ -2160,18 +2194,29 @@ class Ui_AdminDashBoard(object):
         self.label_124 = QtWidgets.QLabel(self.tab_12)
         self.label_124.setGeometry(QtCore.QRect(110, 10, 61, 16))
         self.label_124.setObjectName("label_124")
-        self.spinBox_2 = QtWidgets.QSpinBox(self.tab_12)
-        self.spinBox_2.setGeometry(QtCore.QRect(110, 30, 121, 16))
-        self.spinBox_2.setObjectName("spinBox_2")
+        self.label_134=QtWidgets.QLabel(self.tab_12)
+        self.label_134.setGeometry(QtCore.QRect(172, 15, 61,16 )) 
+        font = QtGui.QFont()
+        font.setPointSize(6)
+        #font.setBold(false)
+        #font.setWeight(75)
+        self.label_134.setFont(font)
+        self.label_134.setObjectName("label_134")
+        self.dateEdit_7= QtWidgets.QDateEdit(self.tab_12)
+        self.dateEdit_7.setCalendarPopup(True)
+        self.dateEdit_7.setGeometry(QtCore.QRect(110, 30, 121, 16))
+        self.dateEdit_7.setDisplayFormat("yyyy-MM-dd")
+        self.dateEdit_7.setDateTime(QtCore.QDateTime.currentDateTime())
+        self.dateEdit_7.setObjectName("dateEdit_7")
         self.pushButton_62 = QtWidgets.QPushButton(self.tab_12)
-        self.pushButton_62.setGeometry(QtCore.QRect(240, 10, 75, 21))
+        self.pushButton_62.setGeometry(QtCore.QRect(370, 10, 75, 21))
         self.pushButton_62.setObjectName("pushButton_62")
         self.tableWidget_7 = QtWidgets.QTableWidget(self.tab_12)
         self.tableWidget_7.setGeometry(QtCore.QRect(0, 60, 221, 431))
         self.tableWidget_7.setShowGrid(False)
         self.tableWidget_7.setObjectName("tableWidget_7")
         self.tableWidget_7.setColumnCount(2)
-        self.tableWidget_7.setRowCount(3)
+        self.tableWidget_7.setRowCount(4)
         item = QtWidgets.QTableWidgetItem()
         self.tableWidget_7.setVerticalHeaderItem(0, item)
         item = QtWidgets.QTableWidgetItem()
@@ -2231,11 +2276,14 @@ class Ui_AdminDashBoard(object):
         self.label_126 = QtWidgets.QLabel(self.tab_14)
         self.label_126.setGeometry(QtCore.QRect(110, 10, 61, 16))
         self.label_126.setObjectName("label_126")
+        self.label_133= QtWidgets.QLabel(self.tab_14)
+        self.label_133.setGeometry(QtCore.QRect(250, 10, 61, 16))
+        self.label_133.setObjectName("label_133")
         self.pushButton_63 = QtWidgets.QPushButton(self.tab_14)
-        self.pushButton_63.setGeometry(QtCore.QRect(240, 10, 75, 21))
+        self.pushButton_63.setGeometry(QtCore.QRect(380, 10, 75, 21))
         self.pushButton_63.setObjectName("pushButton_63")
         self.comboBox_38 = QtWidgets.QComboBox(self.tab_14)
-        self.comboBox_38.setGeometry(QtCore.QRect(110, 30, 111, 16))
+        self.comboBox_38.setGeometry(QtCore.QRect(110, 30, 71, 16))
         self.comboBox_38.setObjectName("comboBox_38")
         self.comboBox_38.addItem("")
         self.comboBox_38.addItem("")
@@ -2251,7 +2299,7 @@ class Ui_AdminDashBoard(object):
         self.label_127.setGeometry(QtCore.QRect(0, 10, 61, 16))
         self.label_127.setObjectName("label_127")
         self.label_131 = QtWidgets.QLabel(self.tab_13)
-        self.label_131.setGeometry(QtCore.QRect(110, 10, 71, 16))
+        self.label_131.setGeometry(QtCore.QRect(110, 10, 81, 16))
         self.label_131.setObjectName("label_131")
         self.comboBox_36 = QtWidgets.QComboBox(self.tab_13)
         self.comboBox_36.setGeometry(QtCore.QRect(0, 30, 69, 16))
@@ -2286,8 +2334,17 @@ class Ui_AdminDashBoard(object):
         self.pushButton_64 = QtWidgets.QPushButton(self.tab_13)
         self.pushButton_64.setGeometry(QtCore.QRect(240, 10, 75, 21))
         self.pushButton_64.setObjectName("pushButton_64")
+        self.comboBox_40 = QtWidgets.QComboBox(self.tab_14)
+        self.comboBox_40.setGeometry(QtCore.QRect(240, 30, 69, 16))
+        self.comboBox_40.setObjectName("comboBox_40")
+        self.comboBox_40.addItem("")
+        self.comboBox_40.addItem("")
+        self.comboBox_40.addItem("")
+        self.comboBox_40.addItem("")
+        self.comboBox_40.addItem("")
+        self.comboBox_40.addItem("")
         self.comboBox_39 = QtWidgets.QComboBox(self.tab_13)
-        self.comboBox_39.setGeometry(QtCore.QRect(110, 30, 111, 16))
+        self.comboBox_39.setGeometry(QtCore.QRect(110, 30, 81, 16))
         self.comboBox_39.setObjectName("comboBox_39")
         self.comboBox_39.addItem("")
         self.comboBox_39.addItem("")
@@ -2350,11 +2407,25 @@ class Ui_AdminDashBoard(object):
         self.label_132.setGeometry(QtCore.QRect(250, 30, 21, 16))
         self.label_132.setObjectName("label_132")
         self.dateEdit_4 = QtWidgets.QDateEdit(self.tab_15)
+        self.dateEdit_4.setCalendarPopup(True)
         self.dateEdit_4.setGeometry(QtCore.QRect(120, 30, 110, 16))
         self.dateEdit_4.setObjectName("dateEdit_4")
+        self.dateEdit_4.setDisplayFormat("yyyy-MM-dd")
+        self.dateEdit_4.setDateTime(QtCore.QDateTime.currentDateTime())
+        self.label_135= QtWidgets.QLabel(self.tab_15)
+        self.label_135.setGeometry(QtCore.QRect(130, 16, 110, 16))
+        self.label_135.setFont(font)
+        self.label_135.setObjectName("label_135")
         self.dateEdit_5 = QtWidgets.QDateEdit(self.tab_15)
+        self.dateEdit_5.setCalendarPopup(True)
         self.dateEdit_5.setGeometry(QtCore.QRect(290, 30, 110, 16))
         self.dateEdit_5.setObjectName("dateEdit_5")
+        self.dateEdit_5.setDisplayFormat("yyyy-MM-dd")
+        self.dateEdit_5.setDateTime(QtCore.QDateTime.currentDateTime())
+        self.label_136 = QtWidgets.QLabel(self.tab_15)
+        self.label_136.setGeometry(QtCore.QRect(300, 16, 110, 16))
+        self.label_136.setFont(font)
+        self.label_136.setObjectName("label_136")
         self.tabWidget_4.addTab(self.tab_15, "")
         self.tabWidget.addTab(self.tab_11, "")
         self.tabWidget_2.addTab(self.tab_8, "")
@@ -2454,21 +2525,21 @@ class Ui_AdminDashBoard(object):
         self.gridLayout.addWidget(self.pushButton_105, 8, 2, 1, 1)
         self.pushButton_128 = QtWidgets.QPushButton(self.tabWidget_2Page1)
         self.pushButton_128.setGeometry(QtCore.QRect(30, 310, 131, 121))
-        self.pushButton_128.setStyleSheet("background:url(:/approve/approval.png);\n"
+        self.pushButton_128.setStyleSheet("background:url("  + os.getcwd().replace("\\","/") + "/Assets/approval.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
         self.pushButton_128.setObjectName("pushButton_128")
         self.pushButton_129 = QtWidgets.QPushButton(self.tabWidget_2Page1)
         self.pushButton_129.setGeometry(QtCore.QRect(40, 190, 121, 111))
-        self.pushButton_129.setStyleSheet("background:url(:/balance/balance.png);\n"
+        self.pushButton_129.setStyleSheet("background:url("  + os.getcwd().replace("\\","/") + "/Assets/balance.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
         self.pushButton_129.setObjectName("pushButton_129")
         self.pushButton_116 = QtWidgets.QPushButton(self.tabWidget_2Page1)
         self.pushButton_116.setGeometry(QtCore.QRect(40, 60, 111, 121))
-        self.pushButton_116.setStyleSheet("background:url(:/type/leave.png);\n"
+        self.pushButton_116.setStyleSheet("background:url("  + os.getcwd().replace("\\","/") + "/Assets/leave.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
@@ -2623,21 +2694,21 @@ class Ui_AdminDashBoard(object):
         self.line_26.setObjectName("line_26")
         self.pushButton_115 = QtWidgets.QPushButton(self.tabWidget_2Page2)
         self.pushButton_115.setGeometry(QtCore.QRect(40, 30, 111, 121))
-        self.pushButton_115.setStyleSheet("background:url(:/type/leave.png);\n"
+        self.pushButton_115.setStyleSheet("background:url("  + os.getcwd().replace("\\","/") + "/Assets/leave.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
         self.pushButton_115.setObjectName("pushButton_115")
         self.pushButton_126 = QtWidgets.QPushButton(self.tabWidget_2Page2)
         self.pushButton_126.setGeometry(QtCore.QRect(40, 160, 121, 111))
-        self.pushButton_126.setStyleSheet("background:url(:/balance/balance.png);\n"
+        self.pushButton_126.setStyleSheet("background:url(" + os.getcwd().replace("\\","/") + "/Assets/balance.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
         self.pushButton_126.setObjectName("pushButton_126")
         self.pushButton_127 = QtWidgets.QPushButton(self.tabWidget_2Page2)
         self.pushButton_127.setGeometry(QtCore.QRect(30, 280, 131, 121))
-        self.pushButton_127.setStyleSheet("background:url(:/approve/approval.png);\n"
+        self.pushButton_127.setStyleSheet("background:url("  + os.getcwd().replace("\\","/") + "/Assets/approval.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
@@ -2761,21 +2832,21 @@ class Ui_AdminDashBoard(object):
         self.gridLayout_7.addWidget(self.tableWidget, 0, 0, 3, 1)
         self.pushButton_130 = QtWidgets.QPushButton(self.tabWidget_2Page3)
         self.pushButton_130.setGeometry(QtCore.QRect(40, 290, 131, 121))
-        self.pushButton_130.setStyleSheet("background:url(:/approve/approval.png);\n"
+        self.pushButton_130.setStyleSheet("background:url("  + os.getcwd().replace("\\","/") + "/Assets/approval.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
         self.pushButton_130.setObjectName("pushButton_130")
         self.pushButton_131 = QtWidgets.QPushButton(self.tabWidget_2Page3)
         self.pushButton_131.setGeometry(QtCore.QRect(50, 170, 121, 111))
-        self.pushButton_131.setStyleSheet("background:url(:/balance/balance.png);\n"
+        self.pushButton_131.setStyleSheet("background:url("  + os.getcwd().replace("\\","/") + "/Assets/balance.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
         self.pushButton_131.setObjectName("pushButton_131")
         self.pushButton_117 = QtWidgets.QPushButton(self.tabWidget_2Page3)
         self.pushButton_117.setGeometry(QtCore.QRect(50, 40, 111, 121))
-        self.pushButton_117.setStyleSheet("background:url(:/type/leave.png);\n"
+        self.pushButton_117.setStyleSheet("background:url("  + os.getcwd().replace("\\","/") + "/Assets/leave.png);\n"
 "background-repeat:no-repeat;\n"
 "height:12px;\n"
 "text-align:bottom;")
@@ -2815,18 +2886,14 @@ class Ui_AdminDashBoard(object):
         self.lineEdit_7 = QtWidgets.QLineEdit(self.tab_4)
         self.lineEdit_7.setGeometry(QtCore.QRect(100, 60, 113, 20))
         self.lineEdit_7.setObjectName("lineEdit_7")
-#         self.progressBar = QtWidgets.QProgressBar(self.tab_4)
-#         self.progressBar.setGeometry(QtCore.QRect(20, 120, 241, 31))
-#         self.progressBar.setMinimum(0)
-#         self.progressBar.setMaximum(n)
-#         self.progressBar.setRange(0, n)
-#         self.progressBar.setStyleSheet("\n"
-# "\n"
-# "#BlueProgressBar::chunk {\n"
-# "    background-color: #2196F3;\n"
-# "    ")
-       # self.progressBar.setObjectName("progressBar")
-       # self.progressBar.hide()
+        self.progressBar = QtWidgets.QProgressBar(self.tab_4)
+        self.progressBar.setGeometry(QtCore.QRect(20, 120, 241, 31))
+        self.progressBar.setMinimum(0)
+        self.progressBar.setMaximum(n)
+        self.progressBar.setRange(0, n)
+        self.progressBar.setStyleSheet("background-color:#2196F3;\n")
+        self.progressBar.setObjectName("progressBar")
+        self.progressBar.hide()
         self.Payrollregister.addTab(self.tab_4, "")
         self.tab_5 = QtWidgets.QWidget()
         self.tab_5.setObjectName("tab_5")
@@ -3650,7 +3717,7 @@ class Ui_AdminDashBoard(object):
         self.actionSetting_Approver_2.setObjectName("actionSetting_Approver_2")
 
         self.retranslateUi(AdminDashBoard)
-        self.tabWidget_2.setCurrentIndex(5)
+        self.tabWidget_2.setCurrentIndex(0)
         self.stackedWidget.setCurrentIndex(0)
         self.stackedWidget_7.setCurrentIndex(2)
         self.AddArea.setCurrentIndex(0)
@@ -3658,13 +3725,150 @@ class Ui_AdminDashBoard(object):
         self.tabWidget_10.setCurrentIndex(0)
         self.tabWidget_11.setCurrentIndex(0)
         self.stackedWidget1.setCurrentIndex(1)
-        self.tabWidget.setCurrentIndex(1)
-        self.tabWidget_4.setCurrentIndex(3)
+        self.tabWidget.setCurrentIndex(0)
+        self.tabWidget_4.setCurrentIndex(0)
         self.Payrollregister.setCurrentIndex(0)
         self.tabWidget_6.setCurrentIndex(0)
         self.tabWidget_17.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(AdminDashBoard)
+     def view_todayReport(self):
+         try:
+            mycursor = bantudb.cursor()
+            mycursor.execute("SELECT full_name, check_date, check_in, check_out, worked_hours FROM attendance_log where check_date= CURRENT_DATE()") 
+            print("hi")
+            result = mycursor.fetchall()
+            self.tableWidget_6.setRowCount(0)
+            for row_number, row_data in enumerate(result):
+                self.tableWidget_6.insertRow(row_number)
+                for column_number, data in enumerate(row_data):
+                    self.tableWidget_6.setItem(row_number, column_number, QTableWidgetItem(str(data)))    
+         except mc.Error as e:
+            print ("Error Occured")
+        
+    
+     def view_DailyReport(self):
+         try: 
+              mycursor = bantudb.cursor()
+              checkDate= self.dateEdit_7.text()
+              #print(checkDate)
+              mycursor.execute("SELECT full_name, worked_hours fROM attendance_log WHERE check_date =%s", (checkDate,))
+             # print("connected")
+              result = mycursor.fetchall()
+              
+              self.tableWidget_7.setRowCount(0)
+              for row_number, row_data in enumerate(result):
+                self.tableWidget_7.insertRow(row_number)
+                for column_number, data in enumerate(row_data):
+                    self.tableWidget_7.setItem(row_number, column_number, QTableWidgetItem(str(data))) 
+         
+         except mc.Error as e:
+            print ("Error Occured")
 
+                
+     def view_customReport(self):
+         try:
+              start= self.dateEdit_4.text()
+              end= self.dateEdit_5.text()
+              mycursor = bantudb.cursor()
+              mycursor.execute("select ANY_VALUE(full_name), ANY_VALUE(sum(worked_hours)) from attendance_log where check_date between %s and %s group by devicepersonel", (start, end,))
+              result = mycursor.fetchall()
+              
+              self.tableWidget_13.setRowCount(0)
+              for row_number, row_data in enumerate(result):
+                self.tableWidget_13.insertRow(row_number)
+                for column_number, data in enumerate(row_data):
+                    self.tableWidget_13.setItem(row_number, column_number, QTableWidgetItem(str(data))) 
+
+         except mc.Error as e:
+            print (e)
+            print ("Error Occured")
+
+             
+     def view_monthlyReport(self):
+         try:
+              month_input = self.comboBox_39.currentText()
+              mycursor = bantudb.cursor()
+              print(month_input)
+              mycursor.execute("select ANY_VALUE(full_name), ANY_VALUE(sum(worked_hours)) from attendance_log where monthname(check_date) = %s  group by devicepersonel", (month_input,))
+              result = mycursor.fetchall()
+              
+              self.tableWidget_9.setRowCount(0)
+              for row_number, row_data in enumerate(result):
+                self.tableWidget_9.insertRow(row_number)
+                for column_number, data in enumerate(row_data):
+                    self.tableWidget_9.setItem(row_number, column_number, QTableWidgetItem(str(data))) 
+
+         except mc.Error as e:
+                print("Error Occured")
+
+     def view_weeklyReport(self):
+          weeks=[]
+          try:
+             
+              Mon_input= self.comboBox_38.currentText()
+              Mon_input= datetime.strptime(Mon_input, '%B').month
+              print(Mon_input)
+              week_input= self.comboBox_40.currentIndex()
+              obj= calendar.Calendar()
+              for day in obj.monthdayscalendar(2023,Mon_input):
+                weeks.append(day)
+              comp= weeks[week_input]
+              print(comp)
+              
+              mycursor = bantudb.cursor()
+              mycursor.execute("select ANY_VALUE(full_name), ANY_VALUE(sum(worked_hours)) from attendance_log where day(check_date) in %s and month(check_date)= %s", (comp, Mon_input,))
+              result = mycursor.fetchall()
+              self.tableWidget_8.setRowCount(0)
+              for row_number, row_data in enumerate(result):
+                self.tableWidget_8.insertRow(row_number)
+                for column_number, data in enumerate(row_data):
+                    self.tableWidget_8.setItem(row_number, column_number, QTableWidgetItem(str(data))) 
+          
+          except mc.Error as e:
+                print("Error Occured")
+
+     def view_ReportDateandName(self):
+         try:
+             Name_input= self.lineEdit_8.text()
+             Date_input= self.dateEdit_6.text()
+             mycursor= bantudb.cursor()
+             mycursor.execute("SELECT full_name, check_date, check_in, check_out, worked_hours FROM attendance_log where full_name= %s and check_date= %s", (Name_input, Date_input,))
+             result= mycursor.fetchall()
+             self.tableWidget_6.setRowCount(0)
+             for row_number, row_data in enumerate(result):
+                self.tableWidget_6.insertRow(row_number)
+                for column_number, data in enumerate(row_data):
+                    self.tableWidget_6.setItem(row_number, column_number, QTableWidgetItem(str(data)))
+         except mc.Error as e:
+                print("Error Occured")
+
+     def onButtonClicked(self,MainWindow):
+        add_leave_ui = leave_balance_page.Ui_MainWindow()
+        add_leave_ui .setupUi(MainWindow)
+        MainWindow.show()
+     def generator_thread(self,execution_type):
+        self.thread = Thread(execution_type,self.progressBar)
+        
+        if execution_type == "EXCEL":
+            self.thread._signal.connect(self.signal_accept)
+            self.thread.start()
+        #     self.pushButton_8.setEnabled(False)
+        else:
+            self.thread._signal.connect(self.signal_accept)
+            self.thread.start()
+        #     self.pushButton_9.setEnabled(False)
+        # self.thread._signal.connect(self.signal_accept(pushButton_option))
+        # self.thread.start()
+        # pushButton_option.setEnabled(False)
+     def signal_accept(self,msg):
+        self.progressBar.show()
+        self.progressBar.setValue(int(msg))
+        if self.progressBar.value() == 99:
+            self.progressBar.setValue(0)
+        #     self.pushButton_8.setEnabled(True)
+        #     self.pushButton_9.setEnabled(True)
+             
+         
      def retranslateUi(self, AdminDashBoard):
         _translate = QtCore.QCoreApplication.translate
         AdminDashBoard.setWindowTitle(_translate("AdminDashBoard", "G!ze"))
@@ -3674,15 +3878,15 @@ class Ui_AdminDashBoard(object):
         item.setText(_translate("AdminDashBoard", "Messsage"))
         self.label_18.setText(_translate("AdminDashBoard", "Device Status Bar"))
         self.tabWidget_2.setTabText(self.tabWidget_2.indexOf(self.Homepage), _translate("AdminDashBoard", "Home"))
-        self.label_17.setText(_translate("AdminDashBoard", "Add personel"))
+        self.label_17.setText(_translate("AdminDashBoard", "Add Personnel"))
         self.label_19.setText(_translate("AdminDashBoard", "<html><head/><body><p><img src=\":/placeholder/iconmonstr-user-14-240.png\"/></p></body></html>"))
         self.okbtn.setText(_translate("AdminDashBoard", "Ok"))
         self.cnclbtn.setText(_translate("AdminDashBoard", "Cancel"))
         self.okbtn_12.setText(_translate("AdminDashBoard", "Import from Excel"))
         self.syncFP.setText(_translate("AdminDashBoard", "Sync Fingerprint"))
-        self.pushButton_11.setText(_translate("AdminDashBoard", "add user"))
-        self.pushButton_12.setText(_translate("AdminDashBoard", "position management"))
-        self.pushButton_13.setText(_translate("AdminDashBoard", "view user"))
+        self.pushButton_11.setText(_translate("AdminDashBoard", "Add user"))
+        self.pushButton_12.setText(_translate("AdminDashBoard", "Position Management"))
+        self.pushButton_13.setText(_translate("AdminDashBoard", "View User"))
         self.comboBox_4.setItemText(0, _translate("AdminDashBoard", "Resignation"))
         self.comboBox_4.setItemText(1, _translate("AdminDashBoard", "Add employee for resignation"))
         self.comboBox_4.setItemText(2, _translate("AdminDashBoard", "Disabing attendance"))
@@ -3739,23 +3943,23 @@ class Ui_AdminDashBoard(object):
         self.label_103.setText(_translate("AdminDashBoard", "Tax Code"))
         self.label_105.setText(_translate("AdminDashBoard", "SCI Grade"))
         self.pushButton_35.setText(_translate("AdminDashBoard", "view user"))
-        self.label_22.setText(_translate("AdminDashBoard", "view personel"))
-        self.pushButton_36.setText(_translate("AdminDashBoard", "add user"))
-        self.pushButton_37.setText(_translate("AdminDashBoard", "position management"))
+        self.label_22.setText(_translate("AdminDashBoard", "View Personnel"))
+        self.pushButton_36.setText(_translate("AdminDashBoard", "Add User"))
+        self.pushButton_37.setText(_translate("AdminDashBoard", "Position Management"))
         self.comboBox_12.setItemText(0, _translate("AdminDashBoard", "Resignation"))
         self.comboBox_12.setItemText(1, _translate("AdminDashBoard", "Add employee for resignation"))
         self.comboBox_12.setItemText(2, _translate("AdminDashBoard", "Disabing attendance"))
         self.comboBox_12.setItemText(3, _translate("AdminDashBoard", "Reinstating Employee"))
         self.label_3.setText(_translate("AdminDashBoard", "Position Mangement"))
-        self.pushButton_29.setText(_translate("AdminDashBoard", "view user"))
-        self.pushButton_30.setText(_translate("AdminDashBoard", "add user"))
-        self.pushButton_31.setText(_translate("AdminDashBoard", "position management"))
+        self.pushButton_29.setText(_translate("AdminDashBoard", "View User"))
+        self.pushButton_30.setText(_translate("AdminDashBoard", "Add User"))
+        self.pushButton_31.setText(_translate("AdminDashBoard", "Position Management"))
         self.comboBox_10.setItemText(0, _translate("AdminDashBoard", "Resignation"))
         self.comboBox_10.setItemText(1, _translate("AdminDashBoard", "Add employee for resignation"))
         self.comboBox_10.setItemText(2, _translate("AdminDashBoard", "Disabing attendance"))
         self.comboBox_10.setItemText(3, _translate("AdminDashBoard", "Reinstating Employee"))
-        self.saveandnwbtn.setText(_translate("AdminDashBoard", "save and new"))
-        self.pos_okbtn.setText(_translate("AdminDashBoard", "ok"))
+        self.saveandnwbtn.setText(_translate("AdminDashBoard", "Save and New"))
+        self.pos_okbtn.setText(_translate("AdminDashBoard", "Ok"))
         self.cancel_posbtn.setText(_translate("AdminDashBoard", "cancel"))
         self.label_30.setText(_translate("AdminDashBoard", "Add Position"))
         self.label_46.setText(_translate("AdminDashBoard", "position ID"))
@@ -3807,32 +4011,32 @@ class Ui_AdminDashBoard(object):
         self.comboBox_8.setItemText(3, _translate("AdminDashBoard", "Reinstating Employee"))
         self.pushButton_25.setText(_translate("AdminDashBoard", "position management"))
         self.label.setText(_translate("AdminDashBoard", "Resignation"))
-        self.tabWidget_2.setTabText(self.tabWidget_2.indexOf(self.personel), _translate("AdminDashBoard", "Personel"))
+        self.tabWidget_2.setTabText(self.tabWidget_2.indexOf(self.personel), _translate("AdminDashBoard", "Personnel"))
         self.label_2.setText(_translate("AdminDashBoard", "Add Department"))
-        self.pushButton_14.setText(_translate("AdminDashBoard", "setting a department"))
-        self.pushButton_15.setText(_translate("AdminDashBoard", "edit departement"))
-        self.pushButton_16.setText(_translate("AdminDashBoard", "add staff"))
-        self.pushButton_38.setText(_translate("AdminDashBoard", "setting a department"))
-        self.pushButton_39.setText(_translate("AdminDashBoard", "setting a department"))
+        self.pushButton_14.setText(_translate("AdminDashBoard", "Setting a Department"))
+        self.pushButton_15.setText(_translate("AdminDashBoard", "Edit Departement"))
+        self.pushButton_16.setText(_translate("AdminDashBoard", "Add Staff"))
+        self.pushButton_38.setText(_translate("AdminDashBoard", "Setting a Department"))
+        self.pushButton_39.setText(_translate("AdminDashBoard", "Setting a Department"))
         self.label_42.setText(_translate("AdminDashBoard", "Department Id"))
         self.label_43.setText(_translate("AdminDashBoard", "Department Name"))
-        self.dep_okbtn.setText(_translate("AdminDashBoard", "okay"))
-        self.cancel_depbtn.setText(_translate("AdminDashBoard", "cancel"))
+        self.dep_okbtn.setText(_translate("AdminDashBoard", "Okay"))
+        self.cancel_depbtn.setText(_translate("AdminDashBoard", "Cancel"))
         self.okbtn_2.setText(_translate("AdminDashBoard", "Add Department"))
-        self.pushButton_40.setText(_translate("AdminDashBoard", "setting a department"))
-        self.pushButton_41.setText(_translate("AdminDashBoard", "setting a department"))
-        self.pushButton_42.setText(_translate("AdminDashBoard", "edit departement"))
-        self.pushButton_43.setText(_translate("AdminDashBoard", "add staff"))
-        self.pushButton_44.setText(_translate("AdminDashBoard", "setting a department"))
+        self.pushButton_40.setText(_translate("AdminDashBoard", "Setting a department"))
+        self.pushButton_41.setText(_translate("AdminDashBoard","Setting a Department"))
+        self.pushButton_42.setText(_translate("AdminDashBoard", "Edit Departement"))
+        self.pushButton_43.setText(_translate("AdminDashBoard", "Add staff"))
+        self.pushButton_44.setText(_translate("AdminDashBoard", "Setting a department"))
         self.label_23.setText(_translate("AdminDashBoard", "Edit"))
-        self.pushButton_45.setText(_translate("AdminDashBoard", "setting a department"))
-        self.pushButton_46.setText(_translate("AdminDashBoard", "setting a department"))
-        self.pushButton_47.setText(_translate("AdminDashBoard", "edit departement"))
-        self.label_24.setText(_translate("AdminDashBoard", "delete"))
-        self.pushButton_48.setText(_translate("AdminDashBoard", "setting a department"))
-        self.pushButton_49.setText(_translate("AdminDashBoard", "add staff"))
-        self.search_personel_rb.setText(_translate("AdminDashBoard", "Search by personel no"))
-        self.search_dep_rb.setText(_translate("AdminDashBoard", "search by department"))
+        self.pushButton_45.setText(_translate("AdminDashBoard", "Setting a Department"))
+        self.pushButton_46.setText(_translate("AdminDashBoard", "Setting a Department"))
+        self.pushButton_47.setText(_translate("AdminDashBoard", "Edit Departement"))
+        self.label_24.setText(_translate("AdminDashBoard", "Delete"))
+        self.pushButton_48.setText(_translate("AdminDashBoard", "Setting a Department"))
+        self.pushButton_49.setText(_translate("AdminDashBoard", "Add Staff"))
+        self.search_personel_rb.setText(_translate("AdminDashBoard", "Search by personnel no"))
+        self.search_dep_rb.setText(_translate("AdminDashBoard", "Search by department"))
         self.select_all_chbx.setText(_translate("AdminDashBoard", "Select all personel in the department"))
         self.label_32.setText(_translate("AdminDashBoard", "Select New Position"))
         self.approve_updt.setText(_translate("AdminDashBoard", "Ok"))
@@ -3970,21 +4174,31 @@ class Ui_AdminDashBoard(object):
         self.tabWidget_2.setTabText(self.tabWidget_2.indexOf(self.Device), _translate("AdminDashBoard", "Device"))
         self.label_109.setText(_translate("AdminDashBoard", "Search Memeber"))
         self.pushButton_10.setText(_translate("AdminDashBoard", "Search"))
+        self.pushButton_10.clicked.connect(self.view_ReportDateandName)
         self.label_110.setText(_translate("AdminDashBoard", "Date"))
+        self.label_137.setText(_translate("AdminDashBoard", "YYYY-dd-MM"))
+
         self.pushButton_61.setText(_translate("AdminDashBoard", "See Today\'s Report"))
+        self.pushButton_61.clicked.connect(self.view_todayReport)
         item = self.tableWidget_6.horizontalHeaderItem(0)
         item.setText(_translate("AdminDashBoard", "Employee Name"))
         item = self.tableWidget_6.horizontalHeaderItem(1)
-        item.setText(_translate("AdminDashBoard", "Clock In"))
+        item.setText(_translate("AdminDashboard", "Date"))
         item = self.tableWidget_6.horizontalHeaderItem(2)
-        item.setText(_translate("AdminDashBoard", "Clock Out"))
+        item.setText(_translate("AdminDashBoard", "Clock In"))
         item = self.tableWidget_6.horizontalHeaderItem(3)
+        item.setText(_translate("AdminDashBoard", "Clock Out"))
+        item = self.tableWidget_6.horizontalHeaderItem(4)
         item.setText(_translate("AdminDashBoard", "Time Worked"))
+
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_9), _translate("AdminDashBoard", "Clock In/Out"))
         self.label_111.setText(_translate("AdminDashBoard", "Department"))
         self.comboBox_13.setItemText(0, _translate("AdminDashBoard", "Finance"))
         self.label_124.setText(_translate("AdminDashBoard", "Select Date"))
+        self.label_134.setText(_translate("AdminDashBoard", "YYYY-dd-MM"))
+
         self.pushButton_62.setText(_translate("AdminDashBoard", "Generate"))
+        self.pushButton_62.clicked.connect(self.view_DailyReport)
         item = self.tableWidget_7.horizontalHeaderItem(0)
         item.setText(_translate("AdminDashBoard", "Employes "))
         item = self.tableWidget_7.horizontalHeaderItem(1)
@@ -3992,11 +4206,11 @@ class Ui_AdminDashBoard(object):
         __sortingEnabled = self.tableWidget_7.isSortingEnabled()
         self.tableWidget_7.setSortingEnabled(False)
         item = self.tableWidget_7.item(0, 0)
-        item.setText(_translate("AdminDashBoard", "abebe"))
-        item = self.tableWidget_7.item(1, 0)
-        item.setText(_translate("AdminDashBoard", "kebede"))
-        item = self.tableWidget_7.item(2, 0)
-        item.setText(_translate("AdminDashBoard", "sara"))
+        # item.setText(_translate("AdminDashBoard", "abebe"))
+        # item = self.tableWidget_7.item(1, 0)
+        # item.setText(_translate("AdminDashBoard", "kebede"))
+        # item = self.tableWidget_7.item(2, 0)
+        # item.setText(_translate("AdminDashBoard", "sara"))
         self.tableWidget_7.setSortingEnabled(__sortingEnabled)
         self.tabWidget_4.setTabText(self.tabWidget_4.indexOf(self.tab_12), _translate("AdminDashBoard", "Daily"))
         item = self.tableWidget_8.horizontalHeaderItem(0)
@@ -4006,23 +4220,31 @@ class Ui_AdminDashBoard(object):
         __sortingEnabled = self.tableWidget_8.isSortingEnabled()
         self.tableWidget_8.setSortingEnabled(False)
         item = self.tableWidget_8.item(0, 0)
-        item.setText(_translate("AdminDashBoard", "abebe"))
-        item = self.tableWidget_8.item(1, 0)
-        item.setText(_translate("AdminDashBoard", "kebede"))
-        item = self.tableWidget_8.item(2, 0)
-        item.setText(_translate("AdminDashBoard", "sara"))
         self.tableWidget_8.setSortingEnabled(__sortingEnabled)
         self.comboBox_35.setItemText(0, _translate("AdminDashBoard", "Finance"))
         self.label_125.setText(_translate("AdminDashBoard", "Department"))
-        self.label_126.setText(_translate("AdminDashBoard", "Select Week"))
+        self.label_126.setText(_translate("AdminDashBoard", "Select Month"))
+        self.label_133.setText(_translate("AdminDashBoard", "Select Week"))
         self.pushButton_63.setText(_translate("AdminDashBoard", "Generate"))
-        self.comboBox_38.setItemText(0, _translate("AdminDashBoard", "Monday"))
-        self.comboBox_38.setItemText(1, _translate("AdminDashBoard", "Tuesday"))
-        self.comboBox_38.setItemText(2, _translate("AdminDashBoard", "Wednsday"))
-        self.comboBox_38.setItemText(3, _translate("AdminDashBoard", "Thursday"))
-        self.comboBox_38.setItemText(4, _translate("AdminDashBoard", "Friday"))
-        self.comboBox_38.setItemText(5, _translate("AdminDashBoard", "Saturday"))
-        self.comboBox_38.setItemText(6, _translate("AdminDashBoard", "Sunday"))
+        self.pushButton_63.clicked.connect(self.view_weeklyReport)
+        self.comboBox_38.setItemText(0, _translate("AdminDashBoard", "January"))
+        self.comboBox_38.setItemText(1, _translate("AdminDashBoard", "February"))
+        self.comboBox_38.setItemText(2, _translate("AdminDashBoard", "March"))
+        self.comboBox_38.setItemText(3, _translate("AdminDashBoard", "April"))
+        self.comboBox_38.setItemText(4, _translate("AdminDashBoard", "May"))
+        self.comboBox_38.setItemText(5, _translate("AdminDashBoard", "June"))
+        self.comboBox_38.setItemText(6, _translate("AdminDashBoard", "July"))
+        self.comboBox_38.setItemText(7, _translate("AdminDashBoard", "August"))
+        self.comboBox_38.setItemText(8, _translate("AdminDashBoard", "September"))
+        self.comboBox_38.setItemText(9, _translate("AdminDashBoard", "October"))
+        self.comboBox_38.setItemText(10, _translate("AdminDashBoard", "November"))
+        self.comboBox_38.setItemText(11, _translate("AdminDashBoard", "December"))
+        self.comboBox_38.setCurrentText(today_date.strftime('%B'))
+        self.comboBox_40.setItemText(0, _translate("AdminDashBoard", "1"))
+        self.comboBox_40.setItemText(1, _translate("AdminDashBoard", "2"))
+        self.comboBox_40.setItemText(2, _translate("AdminDashBoard", "3"))
+        self.comboBox_40.setItemText(3, _translate("AdminDashBoard", "4"))
+        self.comboBox_40.setItemText(4, _translate("AdminDashBoard", "5"))
         self.tabWidget_4.setTabText(self.tabWidget_4.indexOf(self.tab_14), _translate("AdminDashBoard", "Weekly"))
         self.label_127.setText(_translate("AdminDashBoard", "Department"))
         self.label_131.setText(_translate("AdminDashBoard", "Select Month"))
@@ -4034,13 +4256,9 @@ class Ui_AdminDashBoard(object):
         __sortingEnabled = self.tableWidget_9.isSortingEnabled()
         self.tableWidget_9.setSortingEnabled(False)
         item = self.tableWidget_9.item(0, 0)
-        item.setText(_translate("AdminDashBoard", "abebe"))
-        item = self.tableWidget_9.item(1, 0)
-        item.setText(_translate("AdminDashBoard", "kebede"))
-        item = self.tableWidget_9.item(2, 0)
-        item.setText(_translate("AdminDashBoard", "sara"))
         self.tableWidget_9.setSortingEnabled(__sortingEnabled)
         self.pushButton_64.setText(_translate("AdminDashBoard", "Generate"))
+        self.pushButton_64.clicked.connect(self.view_monthlyReport)
         self.comboBox_39.setItemText(0, _translate("AdminDashBoard", "January"))
         self.comboBox_39.setItemText(1, _translate("AdminDashBoard", "February"))
         self.comboBox_39.setItemText(2, _translate("AdminDashBoard", "March"))
@@ -4053,6 +4271,7 @@ class Ui_AdminDashBoard(object):
         self.comboBox_39.setItemText(9, _translate("AdminDashBoard", "October"))
         self.comboBox_39.setItemText(10, _translate("AdminDashBoard", "November"))
         self.comboBox_39.setItemText(11, _translate("AdminDashBoard", "December"))
+        self.comboBox_39.setCurrentText(today_date.strftime('%B'))
         self.tabWidget_4.setTabText(self.tabWidget_4.indexOf(self.tab_13), _translate("AdminDashBoard", "Monthly"))
         self.label_129.setText(_translate("AdminDashBoard", "Department"))
         self.label_130.setText(_translate("AdminDashBoard", "Date Range"))
@@ -4063,15 +4282,13 @@ class Ui_AdminDashBoard(object):
         item.setText(_translate("AdminDashBoard", "Total Hours"))
         __sortingEnabled = self.tableWidget_13.isSortingEnabled()
         self.tableWidget_13.setSortingEnabled(False)
-        item = self.tableWidget_13.item(0, 0)
-        item.setText(_translate("AdminDashBoard", "abebe"))
-        item = self.tableWidget_13.item(1, 0)
-        item.setText(_translate("AdminDashBoard", "kebede"))
-        item = self.tableWidget_13.item(2, 0)
-        item.setText(_translate("AdminDashBoard", "sara"))
+        
         self.tableWidget_13.setSortingEnabled(__sortingEnabled)
         self.pushButton_65.setText(_translate("AdminDashBoard", "Generate Report"))
+        self.pushButton_65.clicked.connect(self.view_customReport)
         self.label_132.setText(_translate("AdminDashBoard", "to"))
+        self.label_135.setText(_translate("AdminDashBoard", "YYYY-dd-MM"))
+        self.label_136.setText(_translate("AdminDashBoard", "YYYY-dd-MM"))
         self.tabWidget_4.setTabText(self.tabWidget_4.indexOf(self.tab_15), _translate("AdminDashBoard", "Custom"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_11), _translate("AdminDashBoard", "Report"))
         self.tabWidget_2.setTabText(self.tabWidget_2.indexOf(self.tab_8), _translate("AdminDashBoard", "Attendance"))
@@ -4101,7 +4318,9 @@ class Ui_AdminDashBoard(object):
         self.pushButton_104.setText(_translate("AdminDashBoard", "Edit"))
         self.pushButton_105.setText(_translate("AdminDashBoard", "Delete"))
         self.pushButton_128.setText(_translate("AdminDashBoard", "Leave Approval"))
-        self.pushButton_129.setText(_translate("AdminDashBoard", "leave balance"))
+        self.pushButton_129.setText(_translate("AdminDashBoard", "Leave Balance"))
+        self.pushButton_129.clicked.connect(self.onButtonClicked)
+       
         self.pushButton_116.setText(_translate("AdminDashBoard", "Leave Type"))
         self.label_236.setText(_translate("AdminDashBoard", "Leave Type"))
         self.label_237.setText(_translate("AdminDashBoard", "Current Year Balance "))
@@ -4226,11 +4445,11 @@ class Ui_AdminDashBoard(object):
         self.comboBox_14.setItemText(0, _translate("AdminDashBoard", "Bahirdar"))
         self.pushButton_8.setText(_translate("AdminDashBoard", "Generate Excel"))
         
-        #self.pushButton_8.clicked.connect(ExcelGeneration)
-        self.pushButton_8.clicked.connect(lambda status, n_size= n: self.run(n_size))
+        self.pushButton_8.clicked.connect(lambda x: self.generator_thread("EXCEL"))
+        # self.pushButton_8.clicked.connect(lambda status, n_size= n: self.run(n_size))
         self.pushButton_9.setText(_translate("AdminDashBoard", "Generate PDF"))
-       # self.pushButton_9.clicked.connect(PdfGeneration)
-        self.pushButton_8.clicked.connect(lambda status, n_size= n: self.run(n_size)) 
+        self.pushButton_9.clicked.connect(lambda x: self.generator_thread("PDF"))
+        # self.pushButton_8.clicked.connect(lambda status, n_size= n: self.run(n_size)) 
         self.Payrollregister.setTabText(self.Payrollregister.indexOf(self.tab_4), _translate("AdminDashBoard", "Payroll Generation"))
         self.label_44.setText(_translate("AdminDashBoard", "Payroll Year"))
         self.label_106.setText(_translate("AdminDashBoard", "Field Office"))
@@ -4300,7 +4519,7 @@ class Ui_AdminDashBoard(object):
         self.tableWidget_5.setSortingEnabled(__sortingEnabled)
         self.Payrollregister.setTabText(self.Payrollregister.indexOf(self.tab_5), _translate("AdminDashBoard", "Payroll Registeration"))
         self.tabWidget_2.setTabText(self.tabWidget_2.indexOf(self.tab_3), _translate("AdminDashBoard", "Payroll"))
-        self.tabWidget_6.setTabText(self.tabWidget_6.indexOf(self.tab_73), _translate("AdminDashBoard", "Role"))
+        # self.tabWidget_6.setTabText(self.tabWidget_6.indexOf(self.tab_73), _translate("AdminDashBoard", "Role"))
         self.tabWidget_17.setTabText(self.tabWidget_17.indexOf(self.tab_74), _translate("AdminDashBoard", "Role management"))
         self.dep_saveandnwbtn_13.setText(_translate("AdminDashBoard", "save and new"))
         self.dep_okbtn_13.setText(_translate("AdminDashBoard", "ok"))
@@ -4353,8 +4572,8 @@ class Ui_AdminDashBoard(object):
         self.label_173.setText(_translate("AdminDashBoard", "password"))
         self.label_172.setText(_translate("AdminDashBoard", "Email address"))
         self.tabWidget_6.setTabText(self.tabWidget_6.indexOf(self.tab_32), _translate("AdminDashBoard", "Alert Settings"))
-        self.tabWidget_6.setTabText(self.tabWidget_6.indexOf(self.tab_72), _translate("AdminDashBoard", "Log Record"))
-        self.tabWidget_6.setTabText(self.tabWidget_6.indexOf(self.tab_71), _translate("AdminDashBoard", "Data cleaning"))
+        # self.tabWidget_6.setTabText(self.tabWidget_6.indexOf(self.tab_72), _translate("AdminDashBoard", "Log Record"))
+        # self.tabWidget_6.setTabText(self.tabWidget_6.indexOf(self.tab_71), _translate("AdminDashBoard", "Data cleaning"))
         self.tabWidget_2.setTabText(self.tabWidget_2.indexOf(self.SystemSettings), _translate("AdminDashBoard", "System Setting"))
         self.department.setText(_translate("AdminDashBoard", "Department"))
         self.actionPosition.setText(_translate("AdminDashBoard", "Position"))
@@ -4378,7 +4597,7 @@ class Ui_AdminDashBoard(object):
         self.actionCash_Advance.setText(_translate("AdminDashBoard", "Cash Advance"))
         self.actionPayroll_report.setText(_translate("AdminDashBoard", "Payroll report"))
         self.actionSystem_User_Management.setText(_translate("AdminDashBoard", "System User Management"))
-        self.actionCompany_Settings.setText(_translate("AdminDashBoard", "Company Settings"))
+        # self.actionCompany_Settings.setText(_translate("AdminDashBoard", "Company Settings"))
         self.actionAlert_Settings.setText(_translate("AdminDashBoard", "Alert Settings"))
         self.actionAdd_Personel.setText(_translate("AdminDashBoard", "Add Personel"))
         self.actionSetting_Approver.setText(_translate("AdminDashBoard", "setting Approver"))
@@ -4387,18 +4606,75 @@ class Ui_AdminDashBoard(object):
         self.actionAdd_position.setText(_translate("AdminDashBoard", "add position"))
         self.actionSetting_Department.setText(_translate("AdminDashBoard", "setting Department"))
         self.actionSetting_Approver_2.setText(_translate("AdminDashBoard", "Setting Approver"))
+    
+
      
-     
-#      def run(self, n):
-#         self.progressBar.show()
-#         for i in range(n):
-#              time.sleep(0.01)
-#              self.progressBar.setValue(i+1) 
-#         self.progressBar.hide() 
+
+
+
+
+
+class Thread(QThread):
+    _signal = pyqtSignal(int)
+    def __init__(self,execution_type,progressBar):
+        super(Thread, self).__init__()
+        self.execution_type = execution_type
+        self.progressBar = progressBar
+
+    def run(self):
+        if self.execution_type == "PDF":
+            number_of_executions = 6
+            for i in range(number_of_executions + 1):
+                if i==0:
+                    self.progressBar.setFormat('Accepting CSV input')
+                    df = pd.read_csv('emplist.csv', encoding = "ISO-8859-1") 
+                if i==1:
+                    self.progressBar.setFormat('Converting to HTML')
+                    f = open('exp.html','w', encoding = "ISO-8859-1")
+                if i==2:
+                    a = df.to_html()
+                if i==3:
+                    f.write(a)
+                if i==4:
+                    f.close()
+                if i==5:
+                    self.progressBar.setFormat("Converting to PDF")
+                    pdfkit.from_file('exp.html', 'Attendance.pdf')
+
+                c = int(i * (chunk_size / number_of_executions) * 100)
+                self._signal.emit(c * 5)
+                # sys.stdout.write(f"\r{round(c, 4)}%")
+                time.sleep(.1)
+                
+            self.progressBar.setFormat("Done")
+            time.sleep(2)
+            self.progressBar.setValue(99)
+            self.progressBar.hide()
+        if self.execution_type == "EXCEL":
+            number_of_executions = 2
+            for i in range(number_of_executions + 1):
+                if i==0:
+                    df = pd.read_csv('emplist.csv', encoding = "ISO-8859-1") 
+                    self.progressBar.setFormat("Accepting CSV Input")
+                if i==1:
+                    self.progressBar.setFormat("Exporting")
+                    df.to_excel('Attendance.xlsx')
+                c = int(i * (chunk_size / number_of_executions) * 100)
+                self._signal.emit(c * 5)
+                # sys.stdout.write(f"\r{round(c, 4)}%")
+                time.sleep(.1)
+                
+            time.sleep(2)
+            self.progressBar.setFormat("Done")
+            self.progressBar.setValue(99)
+            self.progressBar.hide()
                 
 
 if __name__ == "__main__":
     import sys
+
+    import leave_balance_page
+    today_date= datetime.now()
     n= 500
     os.environ["QT_AUTO_SCREEN_SCALE_FACTOR"] = "1"
     excel_file_path = 'Attendance.xlsx'

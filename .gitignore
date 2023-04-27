@@ -1,5 +1,13 @@
 *.qrc,
 # *.ui,
 *.cpython-38.pyc
+**/__pycache__/**
+*.pyc
+*.pyo
+*.pyd
 *.ini
+*.html
+*.pdf
+*.xlsx
+**bantu_ui**
 

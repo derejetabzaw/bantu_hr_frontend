@@ -22,6 +22,8 @@ import array
 from onlineDb import *
 
 import leave_balance_page
+import Personnel_viewUser
+import Personnel_positionMang
 from PyQt5.QtCore import QThread, pyqtSignal
 import pandas as pd
 import numpy as np
@@ -3846,6 +3848,16 @@ class Ui_AdminDashBoard(object):
         add_leave_ui = leave_balance_page.Ui_MainWindow()
         add_leave_ui .setupUi(MainWindow)
         MainWindow.show()
+     def ViewUserButtonClicked(self,MainWindow):
+        view_user_ui = Personnel_viewUser.Ui_MainWindow()
+        view_user_ui .setupUi(MainWindow)
+        MainWindow.show()
+     def Personnel_positionMangButtonClicked(self, MainWindow):
+         Personnel_positionMang_ui = Personnel_positionMang.Ui_MainWindow()
+         Personnel_positionMang_ui .setupUi(MainWindow)
+         MainWindow.show()
+        
+        
      def generator_thread(self,execution_type):
         self.thread = Thread(execution_type,self.progressBar)
         
@@ -3886,7 +3898,9 @@ class Ui_AdminDashBoard(object):
         self.syncFP.setText(_translate("AdminDashBoard", "Sync Fingerprint"))
         self.pushButton_11.setText(_translate("AdminDashBoard", "Add user"))
         self.pushButton_12.setText(_translate("AdminDashBoard", "Position Management"))
+        self.pushButton_12.clicked.connect(lambda x: self.Personnel_positionMangButtonClicked(AdminDashBoard))
         self.pushButton_13.setText(_translate("AdminDashBoard", "View User"))
+        self.pushButton_13.clicked.connect(lambda x: self.ViewUserButtonClicked(AdminDashBoard))
         self.comboBox_4.setItemText(0, _translate("AdminDashBoard", "Resignation"))
         self.comboBox_4.setItemText(1, _translate("AdminDashBoard", "Add employee for resignation"))
         self.comboBox_4.setItemText(2, _translate("AdminDashBoard", "Disabing attendance"))
@@ -4319,7 +4333,7 @@ class Ui_AdminDashBoard(object):
         self.pushButton_105.setText(_translate("AdminDashBoard", "Delete"))
         self.pushButton_128.setText(_translate("AdminDashBoard", "Leave Approval"))
         self.pushButton_129.setText(_translate("AdminDashBoard", "Leave Balance"))
-        self.pushButton_129.clicked.connect(self.onButtonClicked)
+        self.pushButton_129.clicked.connect(lambda x: self.onButtonClicked(AdminDashBoard))
        
         self.pushButton_116.setText(_translate("AdminDashBoard", "Leave Type"))
         self.label_236.setText(_translate("AdminDashBoard", "Leave Type"))

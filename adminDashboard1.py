@@ -41,6 +41,10 @@ chunk_size = 1
 
 
 class Ui_AdminDashBoard(object):
+     images = ["images/1.jpg", "images/2.jpg",
+            "images/3.jpg", "images/4.jpg", "images/5.jpg"]
+     state = 0
+     clickedItem = ""
        
      def setupUi(self, AdminDashBoard):
         #function to load data
@@ -3716,6 +3720,11 @@ class Ui_AdminDashBoard(object):
         self.actionSetting_Approver_2 = QtWidgets.QAction(AdminDashBoard)
         self.actionSetting_Approver_2.setObjectName("actionSetting_Approver_2")
 
+        self.pushButton_6.clicked.connect(lambda x: self.nextImage())
+        self.pushButton_7.clicked.connect(lambda x: self.prevImage())
+        # self.treeWidget.itemClicked.connect(self.onItemClicked)
+        # self.okbtn_2.clicked.connect(lambda c:self.newDep())
+
         self.retranslateUi(AdminDashBoard)
         self.tabWidget_2.setCurrentIndex(0)
         self.stackedWidget.setCurrentIndex(0)
@@ -3731,6 +3740,8 @@ class Ui_AdminDashBoard(object):
         self.tabWidget_6.setCurrentIndex(0)
         self.tabWidget_17.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(AdminDashBoard)
+    
+
      def view_todayReport(self):
          try:
             mycursor = bantudb.cursor()
@@ -3764,7 +3775,24 @@ class Ui_AdminDashBoard(object):
          except mc.Error as e:
             print ("Error Occured")
 
-                
+     def nextImage(self):
+        if(self.state == len(self.images)-1):
+                self.state=0
+                self.label_34.setStyleSheet(f"background:url({self.images[self.state]})")
+                self.state+=1
+        else:
+                self.label_34.setStyleSheet(f"background:url({self.images[self.state]})")
+                self.state+=1
+     def prevImage(self):
+        if(self.state == 0):
+                self.state=len(self.images)-1
+                self.label_34.setStyleSheet(f"background:url({self.images[self.state]})")
+                self.state-=1
+        else:
+                self.label_34.setStyleSheet(f"background:url({self.images[self.state]})")
+                self.state-=1
+
+
      def view_customReport(self):
          try:
               start= self.dateEdit_4.text()
@@ -3867,6 +3895,7 @@ class Ui_AdminDashBoard(object):
             self.progressBar.setValue(0)
         #     self.pushButton_8.setEnabled(True)
         #     self.pushButton_9.setEnabled(True)
+
              
          
      def retranslateUi(self, AdminDashBoard):
@@ -4319,7 +4348,8 @@ class Ui_AdminDashBoard(object):
         self.pushButton_105.setText(_translate("AdminDashBoard", "Delete"))
         self.pushButton_128.setText(_translate("AdminDashBoard", "Leave Approval"))
         self.pushButton_129.setText(_translate("AdminDashBoard", "Leave Balance"))
-        self.pushButton_129.clicked.connect(self.onButtonClicked)
+        # self.pushButton_129.clicked.connect(self.onButtonClicked)
+        self.pushButton_129.clicked.connect(lambda x: self.onButtonClicked(AdminDashBoard))
        
         self.pushButton_116.setText(_translate("AdminDashBoard", "Leave Type"))
         self.label_236.setText(_translate("AdminDashBoard", "Leave Type"))

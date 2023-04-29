@@ -1,12 +1,13 @@
 
 import os
-import time
 from PyQt5 import QtCore, QtGui, QtWidgets
-import os
-import time
+
 parent_dir = os.path.dirname(os.getcwd().replace("\\","/"))
 icons_dir = os.path.join(parent_dir, "Assets/icons/").replace("\\","/")
+images_dir = os.path.join(parent_dir, "Assets/images/").replace("\\","/")
 
+IMAGES = [str(images_dir) + "1.jpg", str(images_dir) + "2.jpg",
+            str(images_dir) + "3.jpg", str(images_dir) + "4.jpg", str(images_dir) + "5.jpg"]
 
 def fontSpecifier(Family , PointSize , Bold , Weight):
     font = QtGui.QFont()
@@ -16,10 +17,21 @@ def fontSpecifier(Family , PointSize , Bold , Weight):
     font.setWeight(Weight)
     return font
 
-def lineDrawer(widget, x, y, length, width):
+def lineDrawer(widget, orientation, x, y, length, width):
     line = QtWidgets.QFrame(widget)
-    line.setGeometry(QtCore.QRect(x, y, length, width))
-    line.setStyleSheet("")
+    if orientation == "Horizontal":
+        line = QtWidgets.QFrame(widget)
+        line.setGeometry(QtCore.QRect(x, y, length, width))
+        line.setFrameShape(QtWidgets.QFrame.HLine)
+        line.setFrameShadow(QtWidgets.QFrame.Sunken)
+        line.setStyleSheet("")
+    if orientation == "Vertical":
+        line = QtWidgets.QFrame(widget)
+        line.setGeometry(QtCore.QRect(x, y, length, width))
+        line.setFrameShape(QtWidgets.QFrame.VLine)
+        line.setFrameShadow(QtWidgets.QFrame.Sunken)
+        line.setStyleSheet("")
+
     return line
 
 
@@ -83,29 +95,59 @@ def pushButtonDrawers(widget,x, y, length, width, text , icon):
             
     return pushbutton
 
-def frameDrawer(widget ,x, y, length, width):
+def frameDrawer(widget ,x, y, length, width, FrameShape, FrameShadow):
     frame = QtWidgets.QFrame(widget)
     frame.setEnabled(True)
     frame.setGeometry(QtCore.QRect(x, y, length, width))
     frame.setStyleSheet("")
-    frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
-    frame.setFrameShadow(QtWidgets.QFrame.Raised)
+    if FrameShape == "StyledPanel":
+        frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
+    if FrameShape == "HLine":
+        frame.setFrameShape(QtWidgets.QFrame.HLine)
+    if FrameShadow == "Raised":
+        frame.setFrameShadow(QtWidgets.QFrame.Raised)
+    if FrameShadow == "Sunken":
+        frame.setFrameShadow(QtWidgets.QFrame.Sunken)
+        
     return frame
 def widgetDrawer(widget, x, y, length, width):
-    widget = QtWidgets.QWidget(widget)
-    widget.setGeometry(QtCore.QRect(x, y, length, width))
+    if widget is None:
+        widget = QtWidgets.QWidget()
+        if (x,y,length,width) != (0,0,0,0):
+            widget.setGeometry(QtCore.QRect(x, y, length, width))
+    else:
+        widget = QtWidgets.QWidget(widget)
+        if (x,y,length,width) != (0,0,0,0):
+            widget.setGeometry(QtCore.QRect(x, y, length, width))
+    
     return widget
+def scrollAreaDrawer(widget, x, y, length, width):
+    scrollArea = QtWidgets.QScrollArea(widget)
+    scrollArea.setGeometry(QtCore.QRect(x, y, length, width))
+    scrollArea.setFrameShadow(QtWidgets.QFrame.Raised)
+    scrollArea.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOn)
+    scrollArea.setWidgetResizable(True)
+    return scrollArea
 def stackedWidgetDrawer(widget, x, y, length, width):
     stackedWidget = QtWidgets.QStackedWidget(widget)
     stackedWidget.setGeometry(QtCore.QRect(x, y, length, width))
     return stackedWidget
-def tableWidgetDrawer(widget, x, y, length, width):
+def tableWidgetDrawer(widget, x, y, length, width, columnCount, rowCount, Texts):
     tableWidget = QtWidgets.QTableWidget(widget)
     tableWidget.setGeometry(QtCore.QRect(x, y, length, width))
+    tableWidget.setColumnCount(columnCount)
+    tableWidget.setRowCount(rowCount)
+    item = []
+    for i in range(len(Texts)):
+        item.append(QtWidgets.QTableWidgetItem())
+    for i, Text in enumerate(Texts):
+        tableWidget.setHorizontalHeaderItem(i, item[i])
+        item[i].setText(Text)
     return tableWidget
 def tabWidgetDrawer(widget, x, y, length, width):
     tabWidget = QtWidgets.QTabWidget(widget)
     tabWidget.setGeometry(QtCore.QRect(x, y, length, width))
+    tabWidget.setIconSize(QtCore.QSize(20,20))
     return tabWidget
 
 def formLayoutDrawer(widget):
@@ -118,4 +160,9 @@ def treeWidgetDrawer(widget, x, y, length, width):
     treeWidget = QtWidgets.QTreeWidget(widget)
     treeWidget.setGeometry(QtCore.QRect(x, y, length, width))
     return treeWidget
+
+def hBoxLayoutDrawer(widget):
+    hBoxLayout = QtWidgets.QHBoxLayout(widget)
+    hBoxLayout.setContentsMargins(0, 0, 0, 0)
+    return hBoxLayout
 

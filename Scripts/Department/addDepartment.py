@@ -1,8 +1,6 @@
 import os
-from PyQt5 import QtCore, QtGui, QtWidgets
-import os
+from PyQt5 import QtCore, QtWidgets
 import sys
- 
 sys.path.append(os.path.dirname(os.getcwd().replace("\\","/")))
 import utils
 
@@ -11,8 +9,7 @@ icons_dir = os.path.join(parent_dir, "Assets/icons/").replace("\\","/")
 
 class Department(object):
     def setupUi(self, AdminDashBoard):
-        self.centralwidget = QtWidgets.QWidget(AdminDashBoard)
-        self.centralwidget.setObjectName("centralwidget")
+        self.centralwidget = utils.widgetDrawer(AdminDashBoard, 0,0,0,0)
 
         self.tabWidget = utils.tabWidgetDrawer(self.centralwidget, 0, 0, 1920, 1000)
         self.font = utils.fontSpecifier("Yu Gothic UI Semibold", 9 , True , 75)
@@ -22,7 +19,7 @@ class Department(object):
         self.department = utils.widgetDrawer(None,0,0,0,0)
         self.stackedWidget = utils.stackedWidgetDrawer(self.department, 0, 0, 1920, 1000)
         self.addDepartment = utils.widgetDrawer(None,0,0,0,0)
-        self.frame = utils.frameDrawer(self.addDepartment , 740, 160, 421, 191)
+        self.frame = utils.frameDrawer(self.addDepartment , 740, 160, 421, 191, "StyledPanel", "Raised")
         self.formLayoutWidget = utils.widgetDrawer(self.frame , 0, 30, 421, 160)
         self.formLayout = utils.formLayoutDrawer(self.formLayoutWidget)
 
@@ -52,8 +49,7 @@ class Department(object):
         self.treeWidget.headerItem().setText(0, "1")
 
         '''Divider Line'''
-        self.line = utils.lineDrawer(self.addDepartment, 180, -30, 21, 1001)
-        self.line.setFrameShape(QtWidgets.QFrame.VLine)
+        self.line = utils.lineDrawer(self.addDepartment, "Vertical",180, -30, 21, 1001)
         self.line.setFrameShadow(QtWidgets.QFrame.Sunken)
 
         '''Buttons'''
@@ -92,7 +88,7 @@ class Department(object):
 
 
 
-
+        '''Setting Widgets as Central Widgets'''
         self.stackedWidget.addWidget(self.addDepartment)
         self.tabWidget.addTab(self.department, "")
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.department), "Personnel")
@@ -103,13 +99,3 @@ class Department(object):
         return self.addDepartment
 
 
-# if __name__ == "__main__":
-#     import sys
-#     os.environ["QT_AUTO_SCREEN_SCALE_FACTOR"] = "1"
-#     app = QtWidgets.QApplication(sys.argv)
-#     app.setAttribute(QtCore.Qt.AA_EnableHighDpiScaling)
-#     AdminDashBoard = QtWidgets.QMainWindow()
-#     ui = Department()
-#     ui.setupUi(AdminDashBoard)
-#     AdminDashBoard.show()
-#     sys.exit(app.exec_())

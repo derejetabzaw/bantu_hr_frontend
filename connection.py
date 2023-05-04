@@ -1,10 +1,10 @@
 import mysql.connector as mysql
-from PyQt5 import QtCore, QtGui, QtWidgets
+# from PyQt5 import QtCore, QtGui, QtWidgets
 # from datetime import date
 # import datetime
 # from pymysql import MySQLError
 import itertools
-import adminDashboard1
+import helper
 
 #from zktecotest import sync_finger_print
 
@@ -12,24 +12,36 @@ import adminDashboard1
 
 # Change the below config code to make it connect with your database
 # Change the user and password with your mysql configuration
-config = {
-    "host": "localhost",
-    "user": "root",
-    "database": "bantu-hr-db",
-     #"password": 'wutangclan',
-    #"password": "Sa@654321",
-    "password": 'Brightfuture22.',
-    "port": 3306,
-    "auth_plugin": "mysql_native_password",
-}
+# config = {
+#     "host": "db4free.net",
+#     "user": "bantuuser",
+#     "database": "bantu_test",
+#      "password": 'P@$sW0rD!',
+#     #"password": "Sa@654321",
+#     # "password": 'Brightfuture22.',
+#     "port": 3306,
+#     "auth_plugin": "mysql_native_password",
+# }
+
+
+
+config = helper.read_config()
 
 try:
-    bantudb = mysql.connect(**config)
+    bantudb = mysql.connect(user= config['db_credentials']['user'],
+                              password= config['db_credentials']['Password'],
+                              host=config['db_credentials']['host'],
+                              port = 3306,
+                              database = config['db_credentials']['database'], 
+                              auth_plugin= config['db_credentials']['auth_plugin']
+                            
+       )
+    # bantudb = mysql.connect(**config)
     print("Connection Opened Successfully!")
  
     try:
         mycursor = bantudb.cursor()
-        mycursor.execute("use `bantu-hr-db`;")
+        mycursor.execute("use `bantu_test`;")
         
       
 
@@ -44,31 +56,31 @@ try:
         #     viewDepartment()
 
     
-        def loaddata(self):
+        # def loaddata(self):
                 
-                sql_select_Query = "select * from payroll"
+        #         sql_select_Query = "select * from payroll"
                 
-                mycursor.execute(sql_select_Query)
-                # get all records
-                records = mycursor.fetchall()
-                self.tableWidget_5.setRowCount(100)
-                tablerow = 0
-                for row in records:
+        #         mycursor.execute(sql_select_Query)
+        #         # get all records
+        #         records = mycursor.fetchall()
+        #         self.tableWidget_5.setRowCount(100)
+        #         tablerow = 0
+        #         for row in records:
                   
 
-                        self.tableWidget_5.setItem(tablerow, 0, QtWidgets.QtableWodgetItem(row[0]))
-                        self.tableWidget_5.setItem(tablerow, 1, QtWidgets.QtableWodgetItem(row[1]))
-                        self.tableWidget_5.setItem(tablerow, 2, QtWidgets.QtableWodgetItem(row[2]))
-                        self.tableWidget_5.setItem(tablerow, 3, QtWidgets.QtableWodgetItem(row[3]))
-                        self.tableWidget_5.setItem(tablerow, 4, QtWidgets.QtableWodgetItem(row[4]))
-                        self.tableWidget_5.setItem(tablerow, 5, QtWidgets.QtableWodgetItem(row[5]))
-                        self.tableWidget_5.setItem(tablerow, 6, QtWidgets.QtableWodgetItem(row[6]))
-                        self.tableWidget_5.setItem(tablerow, 7, QtWidgets.QtableWodgetItem(row[7]))
-                        self.tableWidget_5.setItem(tablerow, 8, QtWidgets.QtableWodgetItem(row[8]))
-                        self.tableWidget_5.setItem(tablerow, 9, QtWidgets.QtableWodgetItem(row[9]))
-                        self.tableWidget_5.setItem(tablerow, 10, QtWidgets.QtableWodgetItem(row[10]))
-                        self.tableWidget_5.setItem(tablerow, 11, QtWidgets.QtableWodgetItem(row[11]))
-                        tablerow+=1
+        #                 self.tableWidget_5.setItem(tablerow, 0, QtWidgets.QtableWodgetItem(row[0]))
+        #                 self.tableWidget_5.setItem(tablerow, 1, QtWidgets.QtableWodgetItem(row[1]))
+        #                 self.tableWidget_5.setItem(tablerow, 2, QtWidgets.QtableWodgetItem(row[2]))
+        #                 self.tableWidget_5.setItem(tablerow, 3, QtWidgets.QtableWodgetItem(row[3]))
+        #                 self.tableWidget_5.setItem(tablerow, 4, QtWidgets.QtableWodgetItem(row[4]))
+        #                 self.tableWidget_5.setItem(tablerow, 5, QtWidgets.QtableWodgetItem(row[5]))
+        #                 self.tableWidget_5.setItem(tablerow, 6, QtWidgets.QtableWodgetItem(row[6]))
+        #                 self.tableWidget_5.setItem(tablerow, 7, QtWidgets.QtableWodgetItem(row[7]))
+        #                 self.tableWidget_5.setItem(tablerow, 8, QtWidgets.QtableWodgetItem(row[8]))
+        #                 self.tableWidget_5.setItem(tablerow, 9, QtWidgets.QtableWodgetItem(row[9]))
+        #                 self.tableWidget_5.setItem(tablerow, 10, QtWidgets.QtableWodgetItem(row[10]))
+        #                 self.tableWidget_5.setItem(tablerow, 11, QtWidgets.QtableWodgetItem(row[11]))
+        #                 tablerow+=1
                         # self.actionSalir.triggered.connect(self.close)
 
         def deleteDepartment(dep_id):
@@ -90,7 +102,7 @@ try:
 
         def viewAreas():
             #Displays all the areas recorded
-            mycursor.execute("SELECT * FROM Areas;")
+            mycursor.execute("SELECT * FROM areas;")
             for temp in mycursor:
                 print(temp)
 
@@ -108,7 +120,7 @@ try:
         def addPersonel(**personel):
             #Adds new record to personel 
             mycursor.execute(
-                """INSERT INTO personelInfo
+                """INSERT INTO personnelInfo
                   (employeeCode, full_name, birthDate, birthPlace, bloodType, gender, religion, maritalStatus, employmentType, drivingLicenceGrade, remarks,image, hiredDate, payrollType, contractEndDate, position, _member, location, station, orgUnit, subOffice, supervisorPosition, supervisorName,sciGrade, salary, accountNumber, bankArea, natureOfAssignment, projectAttachement, taxCode, pensionCode, _status)
                               VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s,
                               %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s,
@@ -154,7 +166,7 @@ try:
         def viewPersonel():
             #displays all the personel records 
             mycursor.execute(
-                "SELECT personel_id, full_name, fingerprint FROM personel;")
+                "SELECT personel_id, full_name, fingerprint FROM personnelInfo;")
             # Get all records
             records = mycursor.fetchall()
 
@@ -354,7 +366,10 @@ try:
             bantudb.commit()
             viewAttendance()
 
+        
+
     except Exception as e:
+        print("ERROR", e)
         print("MySQL Query Error!")
 
     def get_registered_users():
@@ -403,14 +418,13 @@ try:
         return list(itertools.chain(*child_departments))
             
         
-
-
     # finally:
     #       if bantudb.is_connected():
     #             bantudb.close()
     #             print("Connection Closed Successfully!")
 
 except Exception as e:
+    print("ERROR", e)
     print("MySQL Error! Cannot Connect to the Database.")
 
 #print(get_top_level_parents())

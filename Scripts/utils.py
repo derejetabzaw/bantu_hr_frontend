@@ -42,12 +42,23 @@ def labelDrawers(widget, x, y,length,width, text):
     return label  
 def lineEditDrawers(widget, x, y, length, width):
     if (x,y,length,width) != (0,0,0,0):
-        lineedit = QtWidgets.QLineEdit(widget).setGeometry(QtCore.QRect(x, y, length, width))
+        lineedit = QtWidgets.QLineEdit(widget)
+        lineedit.setGeometry(QtCore.QRect(x, y, length, width))
     else:
         lineedit = QtWidgets.QLineEdit(widget)
+
     return lineedit
+
+def widgetEditStyle(widget , attributes):
+    style = []
+    for attribute in (attributes):
+        style.append(str(attribute + ';\n'))
+    stylelist = '\n'.join(style)
+    widget.setStyleSheet(stylelist)
+    return widget
 def dateEditDrawers(widget, x, y, length, width):
-    dateedit = QtWidgets.QDateEdit(widget).setGeometry(QtCore.QRect(x, y, length, width))
+    dateedit = QtWidgets.QDateEdit(widget)
+    dateedit.setGeometry(QtCore.QRect(x, y, length, width))
     return dateedit
 def plainEditDrawers(widget, x, y, length, width):
     plainedit = QtWidgets.QPlainTextEdit(widget).setGeometry(QtCore.QRect(x, y, length, width))
@@ -59,6 +70,12 @@ def comboBoxDrawers(widget, x, y, length, width , comboitems):
         combobox.addItem(items)
         combobox.setItemText(i, items)
     return combobox
+
+def checkBoxDrawers(widget, x, y, length, width, text):
+    checkbox = QtWidgets.QCheckBox(widget)
+    checkbox.setGeometry(QtCore.QRect(x, y, length, width))
+    checkbox.setText(text)
+    return checkbox
 def pushButtonDrawers(widget,x, y, length, width, text , icon):
     pushbutton = QtWidgets.QPushButton(widget)
     pushbutton.setGeometry(QtCore.QRect(x, y, length, width))
@@ -104,6 +121,8 @@ def frameDrawer(widget ,x, y, length, width, FrameShape, FrameShadow):
         frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
     if FrameShape == "HLine":
         frame.setFrameShape(QtWidgets.QFrame.HLine)
+    if FrameShape == "VLine":
+        frame.setFrameShape(QtWidgets.QFrame.VLine)
     if FrameShadow == "Raised":
         frame.setFrameShadow(QtWidgets.QFrame.Raised)
     if FrameShadow == "Sunken":
@@ -156,13 +175,39 @@ def formLayoutDrawer(widget):
     formLayout.setContentsMargins(0, 0, 0, 0)
     
     return formLayout
+
+def horizontalLayoutDrawer(widget):
+    horizontalLayout = QtWidgets.QHBoxLayout(widget)
+    horizontalLayout.setContentsMargins(0, 0, 0, 0)
+    return horizontalLayout
+def verticalLayoutDrawer(widget):
+    verticalLayout = QtWidgets.QVBoxLayout(widget)
+    verticalLayout.setContentsMargins(0, 0, 0, 0)
+    return verticalLayout
+
+
 def treeWidgetDrawer(widget, x, y, length, width):
     treeWidget = QtWidgets.QTreeWidget(widget)
     treeWidget.setGeometry(QtCore.QRect(x, y, length, width))
     return treeWidget
 
-def hBoxLayoutDrawer(widget):
-    hBoxLayout = QtWidgets.QHBoxLayout(widget)
-    hBoxLayout.setContentsMargins(0, 0, 0, 0)
-    return hBoxLayout
+def gridLayoutDrawer(widget):
+    gridLayout = QtWidgets.QGridLayout(widget)
+    gridLayout.setContentsMargins(0, 0, 0, 0)
+    return gridLayout
+def listWidgetDrawer(widget, x, y, length, width,Texts):
+    listWidget = QtWidgets.QListWidget(widget)
+    listWidget.setGeometry(QtCore.QRect(x, y, length, width))
+    item = QtWidgets.QListWidgetItem()
+    item = []
+    for i in range(len(Texts)):
+        item.append(QtWidgets.QListWidgetItem())
+    for i, Text in enumerate(Texts):
+        listWidget.addItem(item[i])
+        item[i].setText(Text)    
+    listWidget.setSortingEnabled(True)
+    return listWidget
+
+
+
 

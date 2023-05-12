@@ -10,6 +10,7 @@ sys.path.append(os.getcwd())
 from Home import home
 from Personel import addUser
 from Department import addDepartment
+from Device import addDevice
 
 class Main(object):
     def setupUi(self, AdminDashBoard):
@@ -29,6 +30,7 @@ class Main(object):
         Homepage = home.Home().setupUi(AdminDashBoard)
         Personel = addUser.Personel().setupUi(AdminDashBoard)
         Department = addDepartment.Department().setupUi(AdminDashBoard)
+        Device = addDevice.Device().setupUi(AdminDashBoard)
         '''Add Pages as Tab'''
         self.tabWidget.addTab(Homepage, "")
         self.tabWidget.addTab(Personel, "")

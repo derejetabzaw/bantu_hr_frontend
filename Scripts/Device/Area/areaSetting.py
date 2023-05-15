@@ -5,12 +5,12 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 sys.path.append(os.path.dirname(os.path.dirname(os.getcwd().replace("\\","/"))))
 import utils
 
-class Area (object):
+class AreaSetting (object):
     def setupUi(self, AdminDashBoard):
-        self.tabWidget = utils.tabWidgetDrawer(AdminDashBoard, 0, 0, 1920, 1000)
+        #self.tabWidget = utils.tabWidgetDrawer(AdminDashBoard, 0, 0, 1920, 1000)
         self.tab = utils.widgetDrawer(None, 0, 0, 0, 0)
-        self.tabWidget.addTab(self.tab, "")
-        AdminDashBoard.setCentralWidget(self.tabWidget)
+        #self.tabWidget.addTab(self.tab, "")
+        #AdminDashBoard.setCentralWidget(self.tabWidget)
         
         '''Font Specifier'''
         self.fontHeader = utils.fontSpecifier("Yu Gothic UI Semibold", 16 , True , 75)
@@ -48,17 +48,17 @@ class Area (object):
 
 
         
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), "Area Settings")
-        return self.tabWidget
+        #self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), "Area Settings")
+        return self.tab
     
 
-if __name__ == "__main__":
-    import sys
-    os.environ["QT_AUTO_SCREEN_SCALE_FACTOR"] = "1"
-    app = QtWidgets.QApplication(sys.argv)
-    app.setAttribute(QtCore.Qt.AA_EnableHighDpiScaling)
-    AdminDashBoard = QtWidgets.QMainWindow()
-    ui = Area()
-    ui.setupUi(AdminDashBoard)
-    AdminDashBoard.show()
-    sys.exit(app.exec_())
+# if __name__ == "__main__":
+#     import sys
+#     os.environ["QT_AUTO_SCREEN_SCALE_FACTOR"] = "1"
+#     app = QtWidgets.QApplication(sys.argv)
+#     app.setAttribute(QtCore.Qt.AA_EnableHighDpiScaling)
+#     AdminDashBoard = QtWidgets.QMainWindow()
+#     ui = AreaSetting()
+#     ui.setupUi(AdminDashBoard)
+#     AdminDashBoard.show()
+#     sys.exit(app.exec_())

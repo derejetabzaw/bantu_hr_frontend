@@ -15,7 +15,7 @@ class AddDevice(object):
     def setupUi(self, AdminDashBoard):
         self.tabWidget = utils.tabWidgetDrawer(AdminDashBoard, 0, 0, 1920, 1000)
         self.tab = utils.widgetDrawer(None, 0, 0, 0, 0)
-        self.formLayoutAddDeviceWidget = utils.widgetDrawer(self.tab, 10, 50, 431, 256)
+        self.formLayoutAddDeviceWidget = utils.widgetDrawer(self.tab, 10, 70, 431, 256)
         self.horizontalLayoutAddDeviceWidget = utils.widgetDrawer(self.tab, 10, 330, 541, 80)
         self.tabWidget.addTab(self.tab, "")
         AdminDashBoard.setCentralWidget(self.tabWidget)
@@ -95,6 +95,9 @@ class AddDevice(object):
         self.horizontalLayoutAddDevice.addWidget(self.buttonSave)
         self.horizontalLayoutAddDevice.addWidget(self.buttonOkay)
         self.horizontalLayoutAddDevice.addWidget(self.buttonCancel)
+        QtCore.QMetaObject.connectSlotsByName(AdminDashBoard)
+        return self.tab
+        
 
 
 

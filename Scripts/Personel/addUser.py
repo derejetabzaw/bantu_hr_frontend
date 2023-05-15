@@ -37,7 +37,7 @@ class Personel(object):
         
         self.innerWidget = utils.widgetDrawer(None,0,0,0,0)
         self.bottomButtonLayoutWidgets = utils.widgetDrawer(self.innerWidget,540, 650, 571, 61)
-        self.bottomButtonLayout = utils.hBoxLayoutDrawer(self.bottomButtonLayoutWidgets)
+        self.bottomButtonLayout = utils.horizontalLayoutDrawer(self.bottomButtonLayoutWidgets)
 
 
         '''Defining Labels/LineEdit/ComboBoxes - Section I'''

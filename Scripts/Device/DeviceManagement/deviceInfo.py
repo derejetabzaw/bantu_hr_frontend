@@ -11,7 +11,7 @@ import utils
 
 
 
-class DeviceManagement(object):
+class DeviceInfo(object):
     def setupUi(self, AdminDashBoard):
         self.tabWidget = utils.tabWidgetDrawer(AdminDashBoard, 0, 0, 1920, 1000)
         self.tab = utils.widgetDrawer(None, 0, 0, 0, 0)
@@ -70,6 +70,10 @@ class DeviceManagement(object):
         self.formLayoutAddDevice.setWidget(11, QtWidgets.QFormLayout.LabelRole, self.labelSoftwareVersion)
         self.formLayoutAddDevice.setWidget(12, QtWidgets.QFormLayout.LabelRole, self.labelVendor)
 
+
+        QtCore.QMetaObject.connectSlotsByName(AdminDashBoard)
+        return self.tab
+
       
 
 if __name__ == "__main__":
@@ -78,7 +82,7 @@ if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
     app.setAttribute(QtCore.Qt.AA_EnableHighDpiScaling)
     AdminDashBoard = QtWidgets.QMainWindow()
-    ui = DeviceManagement()
+    ui = DeviceInfo()
     ui.setupUi(AdminDashBoard)
     AdminDashBoard.show()
     sys.exit(app.exec_())

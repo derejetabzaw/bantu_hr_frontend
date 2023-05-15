@@ -11,7 +11,7 @@ import utils
 
 
 
-class Payroll(object):
+class PayrollGeneration(object):
     def setupUi(self, AdminDashBoard):
         self.tabWidget = utils.tabWidgetDrawer(AdminDashBoard, 0, 0, 1920, 1000)
         self.tab = utils.widgetDrawer(None, 0, 0, 0, 0)
@@ -51,6 +51,11 @@ class Payroll(object):
         # self.labelDeviceTime.setFont(self.fontNormal)
         # self.labelBuildVersion.setFont(self.fontNormal)
 
+        self.tabWidget.addTab(self.tab, "")
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), "Payroll Generation")
+        QtCore.QMetaObject.connectSlotsByName(AdminDashBoard)
+        return self.tab
+
 
        
 
@@ -64,7 +69,7 @@ if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
     app.setAttribute(QtCore.Qt.AA_EnableHighDpiScaling)
     AdminDashBoard = QtWidgets.QMainWindow()
-    ui = Payroll()
+    ui = PayrollGeneration()
     ui.setupUi(AdminDashBoard)
     AdminDashBoard.show()
     sys.exit(app.exec_())

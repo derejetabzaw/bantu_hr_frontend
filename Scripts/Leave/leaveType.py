@@ -107,16 +107,14 @@ class Leave(object):
         self.gridLayout.addWidget(self.buttonDeleteSpecialLeave, 8, 3, 1, 1)
 
 
+        '''Setting Widgets as Central Widgets'''
+        self.tabWidget.addTab(self.tab, "")
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), "Leave")
+        
+        QtCore.QMetaObject.connectSlotsByName(AdminDashBoard)
+        return self.tab
+
+
        
       
 
-if __name__ == "__main__":
-    import sys
-    os.environ["QT_AUTO_SCREEN_SCALE_FACTOR"] = "1"
-    app = QtWidgets.QApplication(sys.argv)
-    app.setAttribute(QtCore.Qt.AA_EnableHighDpiScaling)
-    AdminDashBoard = QtWidgets.QMainWindow()
-    ui = Leave()
-    ui.setupUi(AdminDashBoard)
-    AdminDashBoard.show()
-    sys.exit(app.exec_())

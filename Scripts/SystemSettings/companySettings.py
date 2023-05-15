@@ -11,7 +11,7 @@ import utils
 
 
 
-class SystemSettings(object):
+class CompanySettings(object):
     def setupUi(self, AdminDashBoard):
         self.tabWidget = utils.tabWidgetDrawer(AdminDashBoard, 0, 0, 1920, 1000)
         self.tab = utils.widgetDrawer(None, 0, 0, 0, 0)
@@ -99,6 +99,13 @@ class SystemSettings(object):
         self.formLayout.setWidget(6, QtWidgets.QFormLayout.FieldRole, self.lineEditPhoneNumber)
         self.formLayout.setWidget(7, QtWidgets.QFormLayout.FieldRole, self.lineEditNationality)
 
+        '''Setting Widgets as Central Widgets'''
+        self.tabWidget.addTab(self.tab, "")
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), "Company Settings")
+        
+        QtCore.QMetaObject.connectSlotsByName(AdminDashBoard)
+        return self.tab
+
       
 
 if __name__ == "__main__":
@@ -107,7 +114,7 @@ if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
     app.setAttribute(QtCore.Qt.AA_EnableHighDpiScaling)
     AdminDashBoard = QtWidgets.QMainWindow()
-    ui = SystemSettings()
+    ui = CompanySettings()
     ui.setupUi(AdminDashBoard)
     AdminDashBoard.show()
     sys.exit(app.exec_())

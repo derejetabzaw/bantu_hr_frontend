@@ -11,7 +11,7 @@ import utils
 
 
 
-class Payroll(object):
+class PayrollRegistration(object):
     def setupUi(self, AdminDashBoard):
         self.tabWidget = utils.tabWidgetDrawer(AdminDashBoard, 0, 0, 1920, 1000)
         self.tab = utils.widgetDrawer(None, 0, 0, 0, 0)
@@ -51,6 +51,13 @@ class Payroll(object):
         # self.labelBuildVersion.setFont(self.fontNormal)
 
 
+        '''Setting Widgets as Central Widgets'''
+        self.tabWidget.addTab(self.tab, "")
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), "Payroll Registration")
+        QtCore.QMetaObject.connectSlotsByName(AdminDashBoard)
+        return self.tab
+
+
        
 
 
@@ -63,7 +70,7 @@ if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
     app.setAttribute(QtCore.Qt.AA_EnableHighDpiScaling)
     AdminDashBoard = QtWidgets.QMainWindow()
-    ui = Payroll()
+    ui = PayrollRegistration()
     ui.setupUi(AdminDashBoard)
     AdminDashBoard.show()
     sys.exit(app.exec_())

@@ -11,7 +11,7 @@ import utils
 
 
 
-class SystemSettings(object):
+class AlertSettings(object):
     def setupUi(self, AdminDashBoard):
         self.tabWidget = utils.tabWidgetDrawer(AdminDashBoard, 0, 0, 1920, 1000)
         self.tab = utils.widgetDrawer(None, 0, 0, 0, 0)
@@ -118,6 +118,13 @@ class SystemSettings(object):
         self.formLowerLayout.setWidget(2, QtWidgets.QFormLayout.FieldRole, self.lineEditAbsentExceed)
         self.formLowerLayout.setWidget(3, QtWidgets.QFormLayout.FieldRole, self.comboBoxEmailSendingFrequency)
         self.formLowerLayout.setWidget(4, QtWidgets.QFormLayout.FieldRole, self.comboBoxEmailAlert)
+
+
+        '''Setting Widgets as Central Widgets'''
+        self.tabWidget.addTab(self.tab, "")
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), "Alert Settings")
+        QtCore.QMetaObject.connectSlotsByName(AdminDashBoard)
+        return self.tab
         
 
 
@@ -129,7 +136,7 @@ if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
     app.setAttribute(QtCore.Qt.AA_EnableHighDpiScaling)
     AdminDashBoard = QtWidgets.QMainWindow()
-    ui = SystemSettings()
+    ui = AlertSettings()
     ui.setupUi(AdminDashBoard)
     AdminDashBoard.show()
     sys.exit(app.exec_())

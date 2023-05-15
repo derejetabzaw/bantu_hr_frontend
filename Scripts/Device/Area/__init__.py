@@ -4,16 +4,13 @@ import os
 import sys
 import time
 from datetime import *
-sys.path.append(os.path.dirname(os.getcwd().replace("\\","/")))
+sys.path.append(os.path.dirname(os.path.dirname(os.getcwd().replace("\\","/"))))
 
 import utils
 sys.path.append(os.getcwd())
-from .Area import AreaTabs
-from .AddDevice import addDevice
-from .DeviceManagement import DeviceManagementTabs
-# from WorkCode import *
+from . import addArea , areaSetting , deleteArea , editArea , syncData
 
-class DeviceTabs(object):
+class AreaTabs(object):
     def setupUi(self, AdminDashBoard):
         AdminDashBoard.setObjectName("AdminDashBoard")
         AdminDashBoard.resize(1922, 1080)
@@ -28,21 +25,14 @@ class DeviceTabs(object):
         self.tabWidget.setIconSize(QtCore.QSize(20, 40))
 
         '''Import Pages'''
-        area = AreaTabs().setupUi(AdminDashBoard)
-        addDevices = addDevice.AddDevice().setupUi(AdminDashBoard)
-        deviceManagement = DeviceManagementTabs().setupUi(AdminDashBoard)
-        #alertSetting = alertSettings.AlertSettings().setupUi(AdminDashBoard)
-        #companySetting = companySettings.CompanySettings().setupUi(AdminDashBoard)
+        areasettings = areaSetting.AreaSetting().setupUi(AdminDashBoard)
+
         
         '''Add Pages as Tab'''
-        self.tabWidget.addTab(area, "")
-        self.tabWidget.addTab(addDevices, "")
-        self.tabWidget.addTab(deviceManagement, "")
+        self.tabWidget.addTab(areasettings, "")
         self.tabWidget.setCurrentIndex(0)
         '''Add Tab Text'''
-        self.tabWidget.setTabText(self.tabWidget.indexOf(area), "Area")
-        self.tabWidget.setTabText(self.tabWidget.indexOf(addDevices), "Add Device")
-        self.tabWidget.setTabText(self.tabWidget.indexOf(deviceManagement), "Device Management")
+        self.tabWidget.setTabText(self.tabWidget.indexOf(areasettings), "Area Setting")
 
 
         QtCore.QMetaObject.connectSlotsByName(AdminDashBoard)
@@ -59,7 +49,7 @@ class DeviceTabs(object):
 #     app = QtWidgets.QApplication(sys.argv)
 #     app.setAttribute(QtCore.Qt.AA_EnableHighDpiScaling)
 #     AdminDashBoard = QtWidgets.QMainWindow()
-#     ui = DeviceTabs()
+#     ui = AreaTabs()
 #     ui.setupUi(AdminDashBoard)
 #     AdminDashBoard.show()
 #     sys.exit(app.exec_())

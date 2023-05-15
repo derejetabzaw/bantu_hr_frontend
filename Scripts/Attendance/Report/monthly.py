@@ -14,11 +14,10 @@ import utils
 
 
 
-class Attendance(object):
+class Monthly(object):
     def setupUi(self, AdminDashBoard):
         self.tabWidget = utils.tabWidgetDrawer(AdminDashBoard, 0, 0, 1920, 1000)
         self.tab = utils.widgetDrawer(None, 0, 0, 0, 0)
-        self.tabWidget.addTab(self.tab, "")
         self.formLayoutWidgets = utils.widgetDrawer(self.tab, 10, 0, 621, 398)
         AdminDashBoard.setCentralWidget(self.tabWidget)
 
@@ -52,6 +51,8 @@ class Attendance(object):
         self.tableWidget = utils.tableWidgetDrawer(self.tab, 0, 60, 560, 421, 2,0,["Employee Name" , "Total Hours"])
 
 
+        QtCore.QMetaObject.connectSlotsByName(AdminDashBoard)
+        return self.tab
 
 
      
@@ -66,7 +67,7 @@ if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
     app.setAttribute(QtCore.Qt.AA_EnableHighDpiScaling)
     AdminDashBoard = QtWidgets.QMainWindow()
-    ui = Attendance()
+    ui = Monthly()
     ui.setupUi(AdminDashBoard)
     AdminDashBoard.show()
     sys.exit(app.exec_())

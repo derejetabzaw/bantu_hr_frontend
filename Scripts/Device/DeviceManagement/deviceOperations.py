@@ -10,7 +10,7 @@ sys.path.append(os.path.dirname(os.path.dirname(os.getcwd().replace("\\","/"))))
 import utils
 
 
-class DeviceManagement(object):
+class DeviceOperations(object):
     def setupUi(self, AdminDashBoard):
         self.tabWidget = utils.tabWidgetDrawer(AdminDashBoard, 0, 0, 1920, 1000)
         self.tab = utils.widgetDrawer(None, 0, 0, 0, 0)
@@ -88,6 +88,9 @@ class DeviceManagement(object):
         self.horizontalLayoutAddDevice.addWidget(self.buttonCancel)
         self.stackedWidget.addWidget(self.pageOne)
         
+        QtCore.QMetaObject.connectSlotsByName(AdminDashBoard)
+        return self.tab
+        
 
 
 
@@ -98,7 +101,7 @@ if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
     app.setAttribute(QtCore.Qt.AA_EnableHighDpiScaling)
     AdminDashBoard = QtWidgets.QMainWindow()
-    ui = DeviceManagement()
+    ui = DeviceOperations()
     ui.setupUi(AdminDashBoard)
     AdminDashBoard.show()
     sys.exit(app.exec_())

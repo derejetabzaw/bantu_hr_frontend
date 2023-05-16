@@ -23,8 +23,6 @@ import helper
 #     "auth_plugin": "mysql_native_password",
 # }
 
-
-
 config = helper.read_config()
 
 try:
@@ -43,19 +41,6 @@ try:
         mycursor = bantudb.cursor()
         mycursor.execute("use `bantu_test`;")
         
-      
-
-        # def editDepartment(dep_id, dep_name, par_dep):
-        #     mycursor.execute(
-        #         """UPDATE Department SET Department_name=%s, Parent_Department=%s
-        #                                   WHERE Department_id=%s""",
-        #         (dep_name, par_dep, dep_id),
-        #     )
-        #     bantudb.commit()
-        #     print("Department Updated Successfully!")
-        #     viewDepartment()
-
-    
         # def loaddata(self):
                 
         #         sql_select_Query = "select * from payroll"
@@ -66,8 +51,6 @@ try:
         #         self.tableWidget_5.setRowCount(100)
         #         tablerow = 0
         #         for row in records:
-                  
-
         #                 self.tableWidget_5.setItem(tablerow, 0, QtWidgets.QtableWodgetItem(row[0]))
         #                 self.tableWidget_5.setItem(tablerow, 1, QtWidgets.QtableWodgetItem(row[1]))
         #                 self.tableWidget_5.setItem(tablerow, 2, QtWidgets.QtableWodgetItem(row[2]))
@@ -81,7 +64,19 @@ try:
         #                 self.tableWidget_5.setItem(tablerow, 10, QtWidgets.QtableWodgetItem(row[10]))
         #                 self.tableWidget_5.setItem(tablerow, 11, QtWidgets.QtableWodgetItem(row[11]))
         #                 tablerow+=1
-                        # self.actionSalir.triggered.connect(self.close)
+        #                 self.actionSalir.triggered.connect(self.close)
+      
+        def editDepartment(dep_id, dep_name, par_dep):
+            mycursor.execute(
+                """UPDATE Department SET Department_name=%s, Parent_Department=%s
+                                          WHERE Department_id=%s""",
+                (dep_name, par_dep, dep_id),
+            )
+            bantudb.commit()
+            print("Department Updated Successfully!")
+            viewDepartment()
+
+    
 
         def deleteDepartment(dep_id):
             #Delets department using department id
@@ -366,57 +361,55 @@ try:
             bantudb.commit()
             viewAttendance()
 
+        def get_registered_users():
+            sql = 'select devicePersonel_id from personel where fingerprint = 1'
+            mycursor.execute(sql)
+            registeredusers = mycursor.fetchall()
+            bantudb.commit()
+            out = list(itertools.chain(*registeredusers))
+            return out
         
+        #department operations
+        def viewDepartment():
+            #on the current logic this seems useless but keep in case requiremnent changes
+            mycursor.execute(
+                "SELECT * FROM Department ORDER BY Department_Id;")
+            # Get all records
+            records = mycursor.fetchall()
+
+            return records
+
+        def addDepartment(dep_id, dep_name, par_dep):
+            #adds new records to the department table
+            mycursor.execute(
+                    """INSERT INTO Department (Department_id, Department_name, Parent_Department)
+                                        VALUES (%s, %s, %s)""",
+                    (dep_id, dep_name, par_dep),
+                )
+            bantudb.commit()
+            
+        def get_top_level_parents():
+            #this module is for getting departements with no parent i.e top level departments
+            sql_query = "select DISTINCT Department_name from Department where Parent_Department is null"
+            mycursor.execute(sql_query)
+            department_names = mycursor.fetchall()
+            department_names=(list(itertools.chain(*department_names)))
+            bantudb.commit()
+            if len(department_names) == 0:
+                return 0
+            else:
+                return department_names
+            
+        def get_department_children(department):
+            #this module is for getting departments with parents
+            sql_query = f"select Department_name from Department where Parent_Department = '{department}'"
+            mycursor.execute(sql_query)
+            child_departments = mycursor.fetchall()
+            return list(itertools.chain(*child_departments))
 
     except Exception as e:
         print("ERROR", e)
-        print("MySQL Query Error!")
-
-    def get_registered_users():
-        sql = 'select devicePersonel_id from personel where fingerprint = 1'
-        mycursor.execute(sql)
-        registeredusers = mycursor.fetchall()
-        bantudb.commit()
-        out = list(itertools.chain(*registeredusers))
-        return out
-    #department operations
-    def viewDepartment():
-        #on the current logic this seems useless but keep in case requiremnent changes
-        mycursor.execute(
-            "SELECT * FROM Department ORDER BY Department_Id;")
-        # Get all records
-        records = mycursor.fetchall()
-
-        return records
-
-    def addDepartment(dep_id, dep_name, par_dep):
-        #adds new records to the department table
-        mycursor.execute(
-                """INSERT INTO Department (Department_id, Department_name, Parent_Department)
-                                    VALUES (%s, %s, %s)""",
-                (dep_id, dep_name, par_dep),
-            )
-        bantudb.commit()
-        
-    def get_top_level_parents():
-        #this module is for getting departements with no parent i.e top level departments
-        sql_query = "select DISTINCT Department_name from Department where Parent_Department is null"
-        mycursor.execute(sql_query)
-        department_names = mycursor.fetchall()
-        department_names=(list(itertools.chain(*department_names)))
-        bantudb.commit()
-        if len(department_names) == 0:
-            return 0
-        else:
-            return department_names
-        
-    def get_department_children(department):
-        #this module is for getting departments with parents
-        sql_query = f"select Department_name from Department where Parent_Department = '{department}'"
-        mycursor.execute(sql_query)
-        child_departments = mycursor.fetchall()
-        return list(itertools.chain(*child_departments))
-            
+        print("MySQL Query Error!")            
         
     # finally:
     #       if bantudb.is_connected():
@@ -427,4 +420,3 @@ except Exception as e:
     print("ERROR", e)
     print("MySQL Error! Cannot Connect to the Database.")
 
-#print(get_top_level_parents())

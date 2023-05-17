@@ -2,7 +2,9 @@ import os
 import sys
 sys.path.append(os.path.dirname(os.getcwd().replace("\\","/")))
 import utils
-
+from numpy import double
+import connection as con
+import zktecotest as dev
 
 
 class Personel(object):
@@ -37,7 +39,7 @@ class Personel(object):
         
         self.innerWidget = utils.widgetDrawer(None,0,0,0,0)
         self.bottomButtonLayoutWidgets = utils.widgetDrawer(self.innerWidget,540, 650, 571, 61)
-        self.bottomButtonLayout = utils.horizontalLayoutDrawer(self.bottomButtonLayoutWidgets)
+        self.bottomButtonLayout = utils.hBoxLayoutDrawer(self.bottomButtonLayoutWidgets)
 
 
         '''Defining Labels/LineEdit/ComboBoxes - Section I'''
@@ -56,7 +58,11 @@ class Personel(object):
         self.bottomButtonLayout.addWidget(self.cancelButton)
         self.bottomButtonLayout.addWidget(self.importFromExcelButton)
         self.bottomButtonLayout.addWidget(self.syncFPButton)
-        
+
+        '''Button Events'''
+        self.okayButton.clicked.connect(lambda x:self.get_personel_added())
+        self.cancelButton.clicked.connect(lambda x:self.clearPersonel())
+        self.syncFPButton.clicked.connect(lambda x:self.sync_finger_print())
 
         '''Title Font and Label'''
         self.addPersonelLabel = utils.labelDrawers(self.innerWidget, 235, 50, 231, 61, "Add Personel")
@@ -151,4 +157,111 @@ class Personel(object):
         AdminDashBoard.setCentralWidget(self.centralwidget)
         return self.innerWidget
 
+    def get_personel_added(self):
+        employeeCode = self.employeeCodeEdit.text()
+        full_name = self.fullNameEdit.text()
+        birthDate = self.birthDateEdit.date().toPyDate()
+        birthPlace = self.birthPlaceEdit.text()
+        bloodType = self.bloodTypeEdit.text()
+        gender = self.genderComboBox.currentText()
+        religion = self.religionComboBox.currentText()
+        maritalStatus = self.maritalStatusComboBox.currentText()
+        employmentType = self.employeTypeComboBox.currentText()
+        drivingLicenceGrade = self.drivingLicenseEdit.text()
+        remarks = self.remarksEdit.toPlainText()
 
+        hiredDate = self.hiredDateEdit.date().toPyDate()
+        payrollType = self.payrollTypeComboBox.currentText()
+        contractEndDate = self.contractEndDateComboBox.date().toPyDate()
+        position = self.positionComboBox.currentText()
+        _member = self.memberComboBox.currentText()
+        location = self.locationComboBox.currentText()
+        station = self.stationComboBox.currentText()
+        orgUnit = self.orgUnitComboBox.currentText()
+        subOffice = self.subOfficeComboBox.currentText()
+        supervisorPosition = self.supervisorPositionComboBox.currentText()
+        supervisorName = self.supervisorNameComboBox.currentText()
+        sciGrade = self.sciGradeComboBox.currentText()
+
+        salary = self.salaryEdit.text()
+        accountNumber = self.accountNumberEdit.text()
+        bankArea = self.bankAreaEdit.text()
+
+        natureOfAssignment = self.natureOfAssignmentComboBox.currentText()
+        projectAttachement = self.projectAttachmentComboBox.currentText()
+
+        taxCode = self.taxCodeEdit.text()
+        pensionCode = self.pensionCodeEdit.text()
+        _status = self.statusComboBox.currentText()
+
+        con.addPersonel(
+            employeeCode=employeeCode,
+            full_name=full_name,
+            birthDate=birthDate,
+            birthPlace=birthPlace,
+            bloodType=bloodType,
+            gender=gender,
+            religion=religion,
+            maritalStatus=maritalStatus,
+            employmentType=employmentType,
+            drivingLicenceGrade=drivingLicenceGrade,
+            remarks=remarks,
+            hiredDate=hiredDate,
+            payrollType=payrollType,
+            contractEndDate=contractEndDate,
+            position=position,
+            _member=_member,
+            location=location,
+            station=station,
+            orgUnit=orgUnit,
+            subOffice=subOffice,
+            supervisorPosition=supervisorPosition,
+            supervisorName=supervisorName,
+            sciGrade=sciGrade,
+            salary=double(salary),
+            accountNumber=accountNumber,
+            bankArea=bankArea,
+            natureOfAssignment=natureOfAssignment,
+            projectAttachement=projectAttachement,
+            taxCode=taxCode,
+            pensionCode=pensionCode,
+            _status=_status,
+            image=self.image_file
+        )
+        self.clearPersonel()
+        print("Connection succesfull")
+
+    def sync_finger_print(self):
+        dev.sync_finger_print()
+        self.get_Personel()
+
+    def clearPersonel(self):
+        self.employeeCodeEdit.setText("")
+        self.fullNameEdit.setText("")
+        self.birthDateEdit.date().toPyDate()
+        self.birthPlaceEdit.setText("")
+        self.bloodTypeEdit.setText("")
+        self.genderComboBox.setCurrentText("Male")
+        self.religionComboBox.setCurrentText()
+        self.maritalStatusComboBox.setCurrentText()
+        self.employeTypeComboBox.setCurrentText()
+        self.drivingLicenseEdit.setText("")
+        self.remarksEdit.setPlainText("")
+        self.payrollTypeComboBox.setCurrentText("Permanent")
+        self.positionComboBox.setCurrentText("")
+        self.memberComboBox.setCurrentText("Bantu")
+        self.locationComboBox.setCurrentText("Addis Ababa")
+        self.stationComboBox.setCurrentText("Addis Ababa")
+        self.orgUnitComboBox.setCurrentText("Admin & IT")
+        self.subOfficeComboBox.setCurrentText("Addis Ababa")
+        self.supervisorPositionComboBox.setCurrentText("")
+        self.supervisorNameComboBox.setCurrentText("")
+        self.sciGradeComboBox.setCurrentText("1")
+        self.salaryEdit.setText("")
+        self.accountNumberEdit.setText("")
+        self.bankAreaEdit.setText("")
+        self.natureOfAssignmentComboBox.setCurrentText("Managerial")
+        self.projectAttachmentComboBox.setCurrentText("Program")
+        self.taxCodeEdit.setText("")
+        self.pensionCodeEdit.setText("")
+        self.statusComboBox.setCurrentText("Active")

@@ -3333,7 +3333,7 @@ class Ui_AdminDashBoard(object):
         font.setWeight(75)
         self.label_218.setFont(font)
         self.label_218.setObjectName("label_218")
-        self.formLayout_8.setWidget(4, QtWidgets.QFormLayout.LabelRole, self.label_218)
+        self.formLayout_8.setWidget(4, QtWidgets.QFormLayout.LabelRole, self.label_218)=
         self.label_219 = QtWidgets.QLabel(self.formLayoutWidget_8)
         font = QtGui.QFont()
         font.setFamily("Yu Gothic UI Semibold")

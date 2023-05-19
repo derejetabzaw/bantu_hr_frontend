@@ -1,12 +1,21 @@
+"""_This module is where everything is put in order the content of each tab is called_
+"""
+
 import os
 from PyQt5 import QtCore, QtGui, QtWidgets
-import os
+"""importing packages used for pyhton Gui """
+import os 
+"""OS module in Python provides functions for interacting with the operating system.
+This module provides a portable way of using operating system dependent functionality."""
 import sys
+"""It allows operating on the interpreter as it provides access to the variables and 
+functions that interact strongly with the interpreter"""
 import time
 from datetime import *
 import utils
 
 sys.path.append(os.getcwd())
+"""import tabs which we will execute here"""
 from Home import home
 from Personel import addUser
 from Department import addDepartment
@@ -16,10 +25,12 @@ from Payroll import PayrollTabs
 from Attendance import AttendanceTab
 from SystemSettings import SystemSettingsTab
 
+      
 
 class Main(object):
     def setupUi(self, AdminDashBoard):
         AdminDashBoard.setObjectName("AdminDashBoard")
+        """here  style choices are made for the Admindashboard"""
         AdminDashBoard.resize(1922, 1080)
         AdminDashBoard.setMaximumSize(QtCore.QSize(16777215, 16777215))
         AdminDashBoard.setStyleSheet("background-color:#fff")

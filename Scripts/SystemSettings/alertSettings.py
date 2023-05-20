@@ -58,6 +58,13 @@ class AlertSettings(object):
         self.lineEditLateExceed = utils.lineEditDrawers(self.formLayoutLowerWidgets, 0, 1, 1, 1)
         self.lineEditEarlyExceed = utils.lineEditDrawers(self.formLayoutLowerWidgets, 1, 1, 1, 1)
         self.lineEditAbsentExceed = utils.lineEditDrawers(self.formLayoutLowerWidgets, 2, 1, 1, 1)
+        '''set font'''
+        LineEdit_list=[self.lineEditEmailSendingServer, self.lineEditServerPort, self.lineEditEmailAccount,self.lineEditPassword, 
+                        self.lineEditEmailAddress, self.lineEditPassword, self.lineEditEmailAddress, self.lineEditLateExceed, 
+                         self.lineEditEarlyExceed, self.lineEditAbsentExceed ]
+        for line in LineEdit_list:
+            utils.widgetEditStyle(line,["border :1px solid #000000" , "border-radius:0px"])
+            line.setMinimumSize(QtCore.QSize(20, 20))
 
         '''Buttons'''
         self.buttonOkay = utils.pushButtonDrawers(self.tab, 530, 590, 165, 27, "Okay" , "")
@@ -91,7 +98,7 @@ class AlertSettings(object):
         utils.widgetEditStyle(self.labelMailSetting , ["color:#0076bd"])
         utils.widgetEditStyle(self.labelAlertSetting , ["color:#0076bd"])
         utils.widgetEditStyle(self.labelApprovalAlert , ["color:#0076bd"])
-        utils.widgetEditStyle(self.lineEditEmailSendingServer ,["border :1px solid #0076bd", "border-radius:10px"])
+        # utils.widgetEditStyle(self.lineEditEmailSendingServer ,["border :1px solid #0076bd", "border-radius:10px"])
         #self.lineEditEmailSendingServer.setMinimumSize(QtCore.QSize(20, 40))
 
         

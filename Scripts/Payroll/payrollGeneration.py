@@ -35,7 +35,9 @@ class PayrollGeneration(object):
 
         '''Line Edits'''
         self.lineEditPayrollIndex = utils.lineEditDrawers(self.tab, 110, 60, 113, 20)
-
+        '''set font'''
+        utils.widgetEditStyle(self.lineEditPayrollIndex ,["border :1px solid #000000" , "border-radius:0px"])
+        self.lineEditPayrollIndex.setMinimumSize(QtCore.QSize(20, 20))
         '''Combo Boxes'''
         self.comboBoxYear = utils.comboBoxDrawers(self.tab, 100, 30, 69, 22, ["2022"])
         self.comboBoxFieldOffice = utils.comboBoxDrawers(self.tab, 470, 30, 90, 22, ["Addis Ababa" , "Bahir Dar"])

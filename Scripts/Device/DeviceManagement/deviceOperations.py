@@ -70,7 +70,7 @@ class DeviceOperations(object):
 #         self.dev_okbtn_3.setObjectName("dev_okbtn_3")
 
         '''TableWidget'''
-        self.tableWidgetDeviceList = utils.tableWidgetDrawer(self.pageOne, 120, 60, 881, 311,6,0,["Device ID","Device Name" , "Serial Number", "IP Address", "Port Number", "MAC Address"])
+        self.tableWidgetDeviceList = utils.tableWidgetDrawer(self.pageOne, 220, 60, 881, 311,6,0,["Device ID","Device Name" , "Serial Number", "IP Address", "Port Number", "MAC Address"])
         
 
         '''Set Fonts'''

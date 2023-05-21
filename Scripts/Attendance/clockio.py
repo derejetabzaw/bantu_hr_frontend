@@ -36,6 +36,7 @@ class ClockIO(object):
         utils.widgetEditStyle(self.lineEditSearchMember ,["border :1px solid #000000" , "border-radius:0px"])
         self.lineEditSearchMember.setMinimumSize(QtCore.QSize(20, 20))
         
+
         '''Date Time Edits'''
         self.dateTimeEditDate = utils.dateEditDrawers(self.tab, 380, 28, 110, 16)
         self.dateTimeEditDate.setCalendarPopup(True)

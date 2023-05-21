@@ -66,6 +66,7 @@ class AlertSettings(object):
             utils.widgetEditStyle(line,["border :1px solid #000000" , "border-radius:0px"])
             line.setMinimumSize(QtCore.QSize(20, 20))
 
+
         '''Buttons'''
         self.buttonOkay = utils.pushButtonDrawers(self.tab, 530, 590, 165, 27, "Okay" , "")
         '''Check Boxes'''
@@ -98,7 +99,10 @@ class AlertSettings(object):
         utils.widgetEditStyle(self.labelMailSetting , ["color:#0076bd"])
         utils.widgetEditStyle(self.labelAlertSetting , ["color:#0076bd"])
         utils.widgetEditStyle(self.labelApprovalAlert , ["color:#0076bd"])
-        # utils.widgetEditStyle(self.lineEditEmailSendingServer ,["border :1px solid #0076bd", "border-radius:10px"])
+
+
+        utils.widgetEditStyle(self.lineEditEmailSendingServer ,["border :1px solid #0076bd", "border-radius:10px"])
+
         #self.lineEditEmailSendingServer.setMinimumSize(QtCore.QSize(20, 40))
 
         

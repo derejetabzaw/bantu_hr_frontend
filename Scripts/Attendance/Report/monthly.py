@@ -1,17 +1,12 @@
 import os
 
+
 from PyQt5 import QtCore, QtGui, QtWidgets
 import os
 import sys
 import calendar
-
-
-
-
-
 import time
 from datetime import *
-from PyQt5 import QtCore, QtGui, QtWidgets
 sys.path.append(os.path.dirname(os.path.dirname(os.getcwd().replace("\\","/"))))
 import utils
 
@@ -33,6 +28,15 @@ class Monthly(object):
         self.labelDate = utils.labelDrawers(self.tab, 380, 15, 65, 13, "Select Month")
 
         
+
+ 
+
+
+ 
+
+        currentMonth =  datetime.now().strftime("%B")
+        
+
         '''Buttons'''
         self.buttonGenerate = utils.pushButtonDrawers(self.tab, 560, 30, 121, 21, "Generate" , "")
 
@@ -42,6 +46,7 @@ class Monthly(object):
         for num in range(1, 13):
          currentMonth.append( calendar.month_name[num])
         self.dateTimeEditDate = utils.comboBoxDrawers(self.tab, 380, 30, 110, 16, currentMonth)  
+
         self.comboBoxDepartment = utils.comboBoxDrawers(self.tab,  0, 30, 241, 20, ["Select Department" , "Finance" , "IT" , "HR" , "Marketing" , "Sales"])
 
         '''Table Widget'''

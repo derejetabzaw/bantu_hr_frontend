@@ -48,6 +48,7 @@ class Department(object):
         for line in LineEdit_list:
             utils.widgetEditStyle(line ,["border :1px solid #000000" , "border-radius:0px"])
             line.setMinimumSize(QtCore.QSize(20, 20))
+
         '''Tree Widget'''
         self.treeWidget = utils.treeWidgetDrawer(self.addDepartment, 200, 60, 531, 501)
         self.treeWidget.headerItem().setText(0, "1")

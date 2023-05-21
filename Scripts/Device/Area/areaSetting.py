@@ -18,7 +18,8 @@ class AreaSetting (object):
         self.fontButton = utils.fontSpecifier("Yu Gothic UI Semibold", 10 , True , 75)
         
         '''Labels'''
-       # self.labelAreaSettings = utils.labelDrawers(self.tab, 20, 0, 201, 51, "Area Settings")
+
+        self.labelAreaSettings = utils.labelDrawers(self.tab, 20, 0, 201, 51, "Area Settings")
         self.labelSearch = utils.labelDrawers(self.tab, 0, 50 , 91, 31, "Search")
         self.labelAreaCode = utils.labelDrawers(self.tab, 90, 40 , 141, 41, "Area Code")
         self.labelAreaName = utils.labelDrawers(self.tab, 450, 40 , 101, 31, "Area Name")
@@ -26,6 +27,7 @@ class AreaSetting (object):
         '''Line Edits'''
         self.lineEditAreaCode = utils.lineEditDrawers(self.tab, 190, 40, 250, 30)
         self.lineEditAreaName = utils.lineEditDrawers(self.tab, 560, 40, 250, 30)
+
        
         '''Set Fonts'''
         LineEdit_list = [self.lineEditAreaCode,self.lineEditAreaName]
@@ -33,6 +35,8 @@ class AreaSetting (object):
             utils.widgetEditStyle(line ,["border :1px solid #000000" , "border-radius:0px"])
             line.setMinimumSize(QtCore.QSize(20, 20))
         
+
+
         '''Buttons'''
         self.buttonSearch = utils.pushButtonDrawers(self.tab, 820, 40, 93, 28, "Search" ,  "")
         self.buttonClear = utils.pushButtonDrawers(self.tab, 940, 40, 93, 28, "Clear" ,  "")
@@ -44,7 +48,8 @@ class AreaSetting (object):
         self.listWidgetAreaSetting = utils.listWidgetDrawer(self.tab, 670, 100, 521, 551,["Area"])
 
         '''Set Fonts'''
-      #  self.labelAreaSettings.setFont(self.fontHeader)
+
+        self.labelAreaSettings.setFont(self.fontHeader)
         self.labelSearch.setFont(self.fontNormal)
         self.labelAreaCode.setFont(self.fontNormal)
         self.labelAreaName.setFont(self.fontNormal)
@@ -58,13 +63,14 @@ class AreaSetting (object):
         return self.tab
     
 
-if __name__ == "__main__":
-    import sys
-    os.environ["QT_AUTO_SCREEN_SCALE_FACTOR"] = "1"
-    app = QtWidgets.QApplication(sys.argv)
-    app.setAttribute(QtCore.Qt.AA_EnableHighDpiScaling)
-    AdminDashBoard = QtWidgets.QMainWindow()
-    ui = AreaSetting()
-    ui.setupUi(AdminDashBoard)
-    AdminDashBoard.show()
-    sys.exit(app.exec_())
+
+# if __name__ == "__main__":
+#     import sys
+#     os.environ["QT_AUTO_SCREEN_SCALE_FACTOR"] = "1"
+#     app = QtWidgets.QApplication(sys.argv)
+#     app.setAttribute(QtCore.Qt.AA_EnableHighDpiScaling)
+#     AdminDashBoard = QtWidgets.QMainWindow()
+#     ui = AreaSetting()
+#     ui.setupUi(AdminDashBoard)
+#     AdminDashBoard.show()
+#     sys.exit(app.exec_())

@@ -125,6 +125,16 @@ class Personel(object):
         self.pensionCodeEdit = utils.lineEditDrawers(self.innerWidget, 660, 540, 113, 20)
         self.hiredDateEdit = utils.dateEditDrawers(self.innerWidget, 350, 360, 111, 22)
         self.contractEndDateComboBox = utils.dateEditDrawers(self.innerWidget, 350, 430, 111, 22)
+        '''line style'''
+        # self.salaryEdit = utils.widgetEditStyle( self.salaryEdit , ["border:1px solid #0076bd" , "border-radius:10px"])
+        # self.accountNumberEdit = utils.widgetEditStyle( self.accountNumberEdit , ["border:1px solid #0076bd" , "border-radius:10px"])
+        # self.bankAreaEdit = utils.widgetEditStyle( self.bankAreaEdit , ["border:1px solid #0076bd" , "border-radius:10px"])
+        # self.taxCodeEdit = utils.widgetEditStyle( self.taxCodeEdit , ["border:1px solid #0076bd" , "border-radius:10px"])
+        # self.pensionCodeEdit = utils.widgetEditStyle( self.pensionCodeEdit , ["border:1px solid #0076bd" , "border-radius:10px"])
+        # self.hiredDateEdit = utils.widgetEditStyle( self.hiredDateEdit, ["border:1px solid #0076bd" , "border-radius:10px"])
+        
+
+
 
         '''ComboBoxes'''
         self.payrollTypeComboBox = utils.comboBoxDrawers(self.innerWidget, 350, 400, 111, 22,["Permanent" , "Contract"])

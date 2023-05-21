@@ -4362,6 +4362,10 @@ class Ui_AdminDashBoard(object):
         self.pushButton_105.setText(_translate("AdminDashBoard", "Delete"))
         self.pushButton_128.setText(_translate("AdminDashBoard", "Leave Approval"))
         self.pushButton_129.setText(_translate("AdminDashBoard", "Leave Balance"))
+
+
+        # self.pushButton_129.clicked.connect(self.onButtonClicked)
+
         self.pushButton_129.clicked.connect(lambda x: self.onButtonClicked(AdminDashBoard))
        
         self.pushButton_116.setText(_translate("AdminDashBoard", "Leave Type"))

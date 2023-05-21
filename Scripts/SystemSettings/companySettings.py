@@ -45,6 +45,15 @@ class CompanySettings(object):
         self.lineEditEmail = utils.lineEditDrawers(self.formLayoutWidgets, 4, 1, 1, 1)
         self.lineEditPhoneNumber = utils.lineEditDrawers(self.formLayoutWidgets, 5, 1, 1, 1)
         self.lineEditNationality = utils.lineEditDrawers(self.formLayoutWidgets, 6, 1, 1, 1)
+
+        '''set fonts'''
+        LineEdit_List=[self.labelCompanyLogoPH, self.lineEditCompanyName, self.lineEditShowinReport,self.lineEditAgentID ,
+                       self.lineEditCurrency, self.lineEditEmail, self.lineEditPhoneNumber, self.lineEditNationality]
+        for line in LineEdit_List:
+            utils.widgetEditStyle(line ,["border :1px solid #000000" , "border-radius:0px"])
+            line.setMinimumSize(QtCore.QSize(20, 20))
+
+
         '''Buttons'''
         self.buttonBrowse = utils.pushButtonDrawers(self.tab, 420, 170, 165, 27, "Browse" , "")
         self.buttonOkay = utils.pushButtonDrawers(self.tab, 530, 590, 165, 27, "Okay" , "")

@@ -66,8 +66,14 @@ class UserManagement(object):
      
 
         '''Set Style'''
-        utils.widgetEditStyle(self.lineEditUsername,["border :1px solid #0076bd" , "border-radius:10px"])
-        #self.lineEditUsername.setMinimumSize(QtCore.QSize(20, 40))
+
+        LineEdit_list= [self.lineEditUsername, self.lineEditPassword,  self.lineEditConfirmPassword,self.lineEditFirstName,
+                        self.lineEditLastName,  self.lineEditEmail]
+        for line in LineEdit_list:
+            utils.widgetEditStyle(line,["border :1px solid #000000" , "border-radius:0px"])
+            line.setMinimumSize(QtCore.QSize(20, 20))
+
+ 
 
         '''Set Widget'''
 

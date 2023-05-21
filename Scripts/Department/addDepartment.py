@@ -43,6 +43,11 @@ class Department(object):
         self.formLayout.setWidget(0, QtWidgets.QFormLayout.FieldRole, self.departmentIdLineEdit)
         self.departmentNameLineEdit = utils.lineEditDrawers(self.formLayoutWidget, 0, 0, 0, 0)
         self.formLayout.setWidget(1, QtWidgets.QFormLayout.FieldRole, self.departmentNameLineEdit)
+        '''line sytle'''
+        LineEdit_list= [self.departmentIdLineEdit , self.departmentNameLineEdit]
+        for line in LineEdit_list:
+            utils.widgetEditStyle(line ,["border :1px solid #000000" , "border-radius:0px"])
+            line.setMinimumSize(QtCore.QSize(20, 20))
 
         '''Tree Widget'''
         self.treeWidget = utils.treeWidgetDrawer(self.addDepartment, 200, 60, 531, 501)

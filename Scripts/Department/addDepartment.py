@@ -3,6 +3,7 @@ from PyQt5 import QtCore, QtWidgets
 import sys
 sys.path.append(os.path.dirname(os.getcwd().replace("\\","/")))
 import utils
+from Department import editDepartment, deleteDepartment , activeDepartment
 
 parent_dir = os.path.dirname(os.path.dirname(os.getcwd().replace("\\","/")))
 icons_dir = os.path.join(parent_dir, "Assets/icons/").replace("\\","/")
@@ -96,11 +97,45 @@ class Department(object):
         '''Setting Widgets as Central Widgets'''
         self.stackedWidget.addWidget(self.addDepartment)
         self.tabWidget.addTab(self.department, "")
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.department), "Personnel")
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.department), "Department")
         self.stackedWidget.setCurrentIndex(2)
+
+        "Button Events"
+        self.editDepartmentButton.clicked.connect(lambda x: editDepartmentEvent(AdminDashBoard))
+        self.deleteDepartmentButton.clicked.connect(lambda x: deleteDepartmentEvent(AdminDashBoard))
+        self.checkDepartmentButton.clicked.connect(lambda x: activeDepartmentEvent(AdminDashBoard))
         
         AdminDashBoard.setCentralWidget(self.centralwidget)
-        QtCore.QMetaObject.connectSlotsByName(AdminDashBoard)
+        # QtCore.QMetaObject.connectSlotsByName(AdminDashBoard)
+
+        
         return self.addDepartment
 
 
+def editDepartmentEvent(MainWindow):
+    editDepartmentUi = editDepartment.Department()
+    editDepartmentUi.setupUi(MainWindow)
+    MainWindow.setCentralWidget(editDepartmentUi.centralwidget)
+    MainWindow.show()
+    return editDepartmentUi
+def deleteDepartmentEvent(MainWindow):
+    deleteDepartmentUi = deleteDepartment.Department()
+    deleteDepartmentUi.setupUi(MainWindow)
+    MainWindow.setCentralWidget(deleteDepartmentUi.centralwidget)
+    MainWindow.show()
+    return deleteDepartmentUi
+def activeDepartmentEvent(MainWindow):
+    activeDepartmentUi = activeDepartment.Department()
+    activeDepartmentUi.setupUi(MainWindow)
+    MainWindow.setCentralWidget(activeDepartmentUi.centralwidget)
+    MainWindow.show()
+    return activeDepartmentUi
+
+# if __name__ == "__main__":
+#     import sys
+#     app = QtWidgets.QApplication(sys.argv)
+#     MainWindow = QtWidgets.QMainWindow()
+#     ui = Department()
+#     ui.setupUi(MainWindow)
+#     MainWindow.show()
+#     sys.exit(app.exec_())

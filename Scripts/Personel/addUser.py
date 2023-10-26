@@ -1,7 +1,9 @@
 import os
+from Personel import viewUser,positionManagement
 import sys
 sys.path.append(os.path.dirname(os.getcwd().replace("\\","/")))
 import utils
+from PyQt5 import QtCore, QtGui, QtWidgets
 
 
 
@@ -158,7 +160,36 @@ class Personel(object):
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.personel), "Personnel")
         self.stackedWidget.setCurrentIndex(1)
         
+        "Button Events"
+        self.viewUserButton.clicked.connect(lambda x: viewUserEvent(AdminDashBoard))
+        self.positionManagementButton.clicked.connect(lambda x: positionManagementEvent(AdminDashBoard))
+
+            
+
+
         AdminDashBoard.setCentralWidget(self.centralwidget)
         return self.innerWidget
 
+def viewUserEvent(MainWindow):
+    viewUserUi = viewUser.Personel()
+    viewUserUi.setupUi(MainWindow)
+    MainWindow.setCentralWidget(viewUserUi.centralwidget)
+    MainWindow.show()
+    return viewUserUi
 
+def positionManagementEvent(MainWindow):
+    positionManagementUi = positionManagement.Ui_MainWindow()
+    positionManagementUi.setupUi(MainWindow)
+    MainWindow.setCentralWidget(positionManagementUi.centralwidget)
+    MainWindow.show()
+    return positionManagementUi
+  
+
+# if __name__ == "__main__":
+#     import sys
+#     app = QtWidgets.QApplication(sys.argv)
+#     MainWindow = QtWidgets.QMainWindow()
+#     ui = Personel()
+#     ui.setupUi(MainWindow)
+#     MainWindow.show()
+#     sys.exit(app.exec_())

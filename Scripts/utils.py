@@ -207,6 +207,14 @@ def listWidgetDrawer(widget, x, y, length, width,Texts):
         item[i].setText(Text)    
     listWidget.setSortingEnabled(True)
     return listWidget
+def menuBarDrawer(widget,x,y,length,width):
+    menuBar = QtWidgets.QMenuBar(widget)
+    menuBar.setGeometry(QtCore.QRect(x, y, length, width))
+    return menuBar
+def statusBarDrawer(widget):
+    statusBar = QtWidgets.QStatusBar(widget)
+    return statusBar
+        
 
 
 

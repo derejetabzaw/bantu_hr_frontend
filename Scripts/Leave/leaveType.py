@@ -1,13 +1,11 @@
 import os
-from PyQt5 import QtCore, QtGui, QtWidgets
-import os
-import sys
-
 import time
 from datetime import *
-from PyQt5 import QtCore, QtGui, QtWidgets
+import sys
 sys.path.append(os.path.dirname(os.getcwd().replace("\\","/")))
+from Leave import leaveApproval,leaveBalance
 import utils
+from PyQt5 import QtCore, QtGui, QtWidgets
 
 
 
@@ -62,7 +60,7 @@ class Leave(object):
         self.buttonEditSpecialLeave = utils.pushButtonDrawers(self.gridLayoutWidgets, 810, 360, 81, 31, "Edit" , "")
         self.buttonDeleteSpecialLeave = utils.pushButtonDrawers(self.gridLayoutWidgets, 900, 360, 81, 31, "Delete" , "")
         self.buttonLeaveType = utils.pushButtonDrawers(self.tab, 40, 60, 130, 120, "Leave Type" , "")
-        self.buttonLeaveButton = utils.pushButtonDrawers(self.tab, 40, 190, 130, 120, "Leave Balance" , "")
+        self.buttonLeaveBalance = utils.pushButtonDrawers(self.tab, 40, 190, 130, 120, "Leave Balance" , "")
         self.buttonLeaveApproval = utils.pushButtonDrawers(self.tab, 40, 320, 130, 120, "Leave Approval" , "")
         '''Set Fonts'''
         # self.labelDeviceSettings.setFont(self.fontHeader)
@@ -110,11 +108,33 @@ class Leave(object):
         '''Setting Widgets as Central Widgets'''
         self.tabWidget.addTab(self.tab, "")
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), "Leave")
+
+        "Button Events"
         
-        QtCore.QMetaObject.connectSlotsByName(AdminDashBoard)
+
+        self.buttonLeaveBalance.clicked.connect(lambda x: leaveBalanceEvent(AdminDashBoard))
+        self.buttonLeaveApproval.clicked.connect(lambda x: leaveApprovalEvent(AdminDashBoard))
+        
+        # QtCore.QMetaObject.connectSlotsByName(AdminDashBoard)
         return self.tab
 
 
        
-      
+def leaveBalanceEvent(MainWindow):
+    leaveBalanceUi = leaveBalance.Leave()
+    leaveBalanceUi.setupUi(MainWindow)
+    MainWindow.setCentralWidget(leaveBalanceUi.centralwidget)
+    MainWindow.show()
+    return leaveBalanceUi
+    
+
+
+
+
+def leaveApprovalEvent(MainWindow):
+    leaveApprovalUi = leaveApproval.Leave()
+    leaveApprovalUi.setupUi(MainWindow)
+    MainWindow.setCentralWidget(leaveApprovalUi.centralwidget)
+    MainWindow.show()
+    return leaveApprovalUi
 
